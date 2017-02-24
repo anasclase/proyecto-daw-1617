@@ -21,7 +21,7 @@ DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
--- Table `himevico`.`empresas`
+-- Table `himevico`.`empresas` comentario de prueba
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `himevico`.`empresas` ;
 

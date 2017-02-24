@@ -29,6 +29,7 @@ class ParteLogistica{
     private $estado;
     private $trabajador;// Objeto logistica?? o Trabajador??
     private $viajes;
+    //añadimos horasextras
     /**
      * ParteLogistica constructor.
      * @param $id

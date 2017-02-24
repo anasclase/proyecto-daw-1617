@@ -18,18 +18,24 @@ class Festivo
     private $id;
     private $fecha;
     private $motivo;
+    private $centros_id;
+    private $calendario_id;
 
     /**
      * Festivo constructor.
      * @param $id
      * @param $fecha
      * @param $motivo
+     * @param $centros_id
+     * @param $calendario_id
      */
-    public function __construct($id = null, $fecha = null, $motivo = null)
+    public function __construct($id, $fecha, $motivo, $centros_id, $calendario_id)
     {
-        $this->setId($id);
-        $this->setFecha($fecha);
-        $this->setMotivo($motivo);
+        $this->id = $id;
+        $this->fecha = $fecha;
+        $this->motivo = $motivo;
+        $this->centros_id = $centros_id;
+        $this->calendario_id = $calendario_id;
     }
 
 
@@ -79,6 +85,38 @@ class Festivo
     public function setMotivo($motivo)
     {
         $this->motivo = $motivo;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCentrosId()
+    {
+        return $this->centros_id;
+    }
+
+    /**
+     * @param mixed $centros_id
+     */
+    public function setCentrosId($centros_id)
+    {
+        $this->centros_id = $centros_id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCalendarioId()
+    {
+        return $this->calendario_id;
+    }
+
+    /**
+     * @param mixed $calendario_id
+     */
+    public function setCalendarioId($calendario_id)
+    {
+        $this->calendario_id = $calendario_id;
     }
 
     public static function getAll()

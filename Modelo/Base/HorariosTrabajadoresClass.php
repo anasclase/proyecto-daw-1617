@@ -20,6 +20,7 @@ class HorariosTrabajadores{
     private $numeroSemana;
     private $trabajador;
     private $horario;
+    private $calendario_id;
 
     /**
      * HorariosTrabajadores constructor.
@@ -27,15 +28,16 @@ class HorariosTrabajadores{
      * @param $numeroSemana
      * @param $trabajador
      * @param $horario
+     * @param $calendario_id
      */
-    public function __construct($id = null, $numeroSemana= null, $trabajador= null, $horario= null)
+    public function __construct($id, $numeroSemana, $trabajador, $horario, $calendario_id)
     {
-        $this->setId($id);
-        $this->setNumeroSemana($numeroSemana);
-        $this->setTrabajador($trabajador);
-        $this->setHorario($horario);
+        $this->id = $id;
+        $this->numeroSemana = $numeroSemana;
+        $this->trabajador = $trabajador;
+        $this->horario = $horario;
+        $this->calendario_id = $calendario_id;
     }
-
 
     /**
      * @return mixed
@@ -106,6 +108,22 @@ class HorariosTrabajadores{
     public function setHorario($horario)
     {
         $this->horario = $horario;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCalendarioId()
+    {
+        return $this->calendario_id;
+    }
+
+    /**
+     * @param mixed $calendario_id
+     */
+    public function setCalendarioId($calendario_id)
+    {
+        $this->calendario_id = $calendario_id;
     }
 
     public function add(){

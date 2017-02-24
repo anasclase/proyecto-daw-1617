@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5ca1acb5-411e-4129-befd-8f19de674ea5" name="Default" comment="" />
+    <list default="true" id="5ca1acb5-411e-4129-befd-8f19de674ea5" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="public.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -25,7 +28,7 @@
       <file leaf-file-name="ParteProduccionClass.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Modelo/Base/ParteProduccionClass.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-18.125">
+            <state vertical-scroll-proportion="0.0">
               <caret line="29" column="4" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
               <folding />
             </state>
@@ -35,19 +38,9 @@
       <file leaf-file-name="ParteProduccionBD.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Modelo/BD/ParteProduccionBD.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.0">
+            <state vertical-scroll-proportion="0.0">
               <caret line="110" column="350" selection-start-line="110" selection-start-column="340" selection-end-line="110" selection-end-column="350" />
-              <folding>
-                <marker date="1467910862000" expanded="true" signature="385:427" placeholder="SELECT * FRO..${self::$tabla}..." />
-                <marker date="1467910862000" expanded="true" signature="812:915" placeholder="SELECT * FRO..${self::$tabla}..." />
-                <marker date="1467910862000" expanded="true" signature="1290:1403" placeholder="SELECT * FRO..." />
-                <marker date="1467910862000" expanded="true" signature="1752:1862" placeholder="SELECT * FRO..." />
-                <marker date="1467910862000" expanded="true" signature="2342:2447" placeholder="SELECT * FRO..${self::$tabla}..." />
-                <marker date="1467910862000" expanded="true" signature="2834:2875" placeholder="SELECT * FRO..${self::$tabla}..." />
-                <marker date="1467910862000" expanded="true" signature="3263:3591" placeholder="INSERT INTO ${self::$tabla}..." />
-                <marker date="1467910862000" expanded="true" signature="6915:6955" placeholder="DELETE FROM ..." />
-                <marker date="1467910862000" expanded="true" signature="7365:7424" placeholder="SELECT * FRO..${self::$tabla}..." />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -55,13 +48,9 @@
       <file leaf-file-name="ControladorCalendario.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Controlador/Logistica/ControladorCalendario.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.3333335">
+            <state vertical-scroll-proportion="0.0">
               <caret line="252" column="39" selection-start-line="252" selection-start-column="39" selection-end-line="252" selection-end-column="39" />
-              <folding>
-                <marker date="1485272229000" expanded="true" signature="2636:2744" placeholder="insert into parteslogistica..." />
-                <marker date="1485272229000" expanded="true" signature="2960:3014" placeholder="delete from ..." />
-                <marker date="1485272229000" expanded="true" signature="4523:4726" placeholder="select fecha..parteslogistica..." />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -69,24 +58,10 @@
       <file leaf-file-name="PartesLogisticaBD.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Modelo/BD/PartesLogisticaBD.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.09804">
+            <state vertical-scroll-proportion="0.0">
               <caret line="38" column="89" selection-start-line="38" selection-start-column="89" selection-end-line="38" selection-end-column="89" />
               <folding>
                 <element signature="e#6#87#0#PHP" expanded="true" />
-                <marker date="1485272875000" expanded="true" signature="373:414" placeholder="SELECT * FRO..${self::$tabla}..." />
-                <marker date="1485272875000" expanded="true" signature="775:873" placeholder="SELECT * FRO..${self::$tabla}..." />
-                <marker date="1485272875000" expanded="true" signature="1202:1287" placeholder="INSERT INTO ..${self::$tabla}..." />
-                <marker date="1485272875000" expanded="true" signature="1202:1288" placeholder="INSERT INTO ..${self::$tabla}..." />
-                <marker date="1485272875000" expanded="true" signature="1202:1365" placeholder="INSERT INTO ..${self::$tabla}..." />
-                <marker date="1485272875000" expanded="true" signature="1202:1366" placeholder="INSERT INTO ..${self::$tabla}..." />
-                <marker date="1485272875000" expanded="true" signature="1202:1414" placeholder="INSERT INTO ..${self::$tabla}..." />
-                <marker date="1485272875000" expanded="true" signature="1202:1415" placeholder="INSERT INTO ${self::$tabla}..." />
-                <marker date="1485272875000" expanded="true" signature="1417:1461" placeholder="INSERT INTO ..${self::$tabla}..." />
-                <marker date="1485272875000" expanded="true" signature="1719:1821" placeholder="SELECT * FRO..${self::$tabla}..." />
-                <marker date="1485272875000" expanded="true" signature="2171:2274" placeholder="SELECT * FRO..${self::$tabla}..." />
-                <marker date="1485272875000" expanded="true" signature="2610:2720" placeholder="SELECT idEst..${self::$tabla}..." />
-                <marker date="1485272875000" expanded="true" signature="3526:3585" placeholder="SELECT * FRO..${self::$tabla}..." />
-                <marker date="1485272875000" expanded="true" signature="3893:3933" placeholder="DELETE FROM ..." />
               </folding>
             </state>
           </provider>
@@ -95,8 +70,8 @@
       <file leaf-file-name="pie.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Vista/Plantilla/pie.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4214876">
-              <caret line="17" column="74" selection-start-line="17" selection-start-column="74" selection-end-line="17" selection-end-column="74" />
+            <state vertical-scroll-proportion="0.44871795">
+              <caret line="28" column="97" selection-start-line="28" selection-start-column="97" selection-end-line="28" selection-end-column="97" />
               <folding />
             </state>
           </provider>
@@ -105,7 +80,7 @@
       <file leaf-file-name="ParteLogisticaClass.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Modelo/Base/ParteLogisticaClass.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-25.0">
+            <state vertical-scroll-proportion="0.0">
               <caret line="48" column="34" selection-start-line="48" selection-start-column="34" selection-end-line="48" selection-end-column="34" />
               <folding />
             </state>
@@ -115,7 +90,7 @@
       <file leaf-file-name="Controlador.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Controlador/Logistica/Controlador.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="14.791667">
+            <state vertical-scroll-proportion="0.0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
@@ -125,7 +100,7 @@
     </leaf>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -163,9 +138,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
+    <option name="x" value="60" />
     <option name="y" value="23" />
-    <option name="width" value="1280" />
-    <option name="height" value="773" />
+    <option name="width" value="1860" />
+    <option name="height" value="1057" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -392,6 +368,28 @@
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="External Dependencies">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="/">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Users">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="2gdwec04">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
             <PATH_ELEMENT USER_OBJECT="public">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
@@ -527,10 +525,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="773" extended-state="0" />
+    <frame x="60" y="23" width="1860" height="1057" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21728595" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14946237" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977098" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -861,7 +859,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="141" column="17" selection-start-line="141" selection-start-column="17" selection-end-line="141" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -869,7 +866,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -877,13 +873,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.024793388">
           <caret line="27" column="53" selection-start-line="27" selection-start-column="53" selection-end-line="27" selection-end-column="53" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Modelo/Base/ParteProduccionClass.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.125">
+        <state vertical-scroll-proportion="0.0">
           <caret line="29" column="4" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
           <folding />
         </state>
@@ -891,7 +886,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Modelo/Base/ParteLogisticaClass.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-25.0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="48" column="34" selection-start-line="48" selection-start-column="34" selection-end-line="48" selection-end-column="34" />
           <folding />
         </state>
@@ -899,7 +894,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Controlador/Logistica/Controlador.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="14.791667">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
@@ -907,62 +902,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Modelo/BD/ParteProduccionBD.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="110" column="350" selection-start-line="110" selection-start-column="340" selection-end-line="110" selection-end-column="350" />
-          <folding>
-            <marker date="1467910862000" expanded="true" signature="385:427" placeholder="SELECT * FRO..${self::$tabla}..." />
-            <marker date="1467910862000" expanded="true" signature="812:915" placeholder="SELECT * FRO..${self::$tabla}..." />
-            <marker date="1467910862000" expanded="true" signature="1290:1403" placeholder="SELECT * FRO..." />
-            <marker date="1467910862000" expanded="true" signature="1752:1862" placeholder="SELECT * FRO..." />
-            <marker date="1467910862000" expanded="true" signature="2342:2447" placeholder="SELECT * FRO..${self::$tabla}..." />
-            <marker date="1467910862000" expanded="true" signature="2834:2875" placeholder="SELECT * FRO..${self::$tabla}..." />
-            <marker date="1467910862000" expanded="true" signature="3263:3591" placeholder="INSERT INTO ${self::$tabla}..." />
-            <marker date="1467910862000" expanded="true" signature="6915:6955" placeholder="DELETE FROM ..." />
-            <marker date="1467910862000" expanded="true" signature="7365:7424" placeholder="SELECT * FRO..${self::$tabla}..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Controlador/Logistica/ControladorCalendario.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.3333335">
+        <state vertical-scroll-proportion="0.0">
           <caret line="252" column="39" selection-start-line="252" selection-start-column="39" selection-end-line="252" selection-end-column="39" />
-          <folding>
-            <marker date="1485272229000" expanded="true" signature="2636:2744" placeholder="insert into parteslogistica..." />
-            <marker date="1485272229000" expanded="true" signature="2960:3014" placeholder="delete from ..." />
-            <marker date="1485272229000" expanded="true" signature="4523:4726" placeholder="select fecha..parteslogistica..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Modelo/BD/PartesLogisticaBD.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.09804">
+        <state vertical-scroll-proportion="0.0">
           <caret line="38" column="89" selection-start-line="38" selection-start-column="89" selection-end-line="38" selection-end-column="89" />
           <folding>
             <element signature="e#6#87#0#PHP" expanded="true" />
-            <marker date="1485272875000" expanded="true" signature="373:414" placeholder="SELECT * FRO..${self::$tabla}..." />
-            <marker date="1485272875000" expanded="true" signature="775:873" placeholder="SELECT * FRO..${self::$tabla}..." />
-            <marker date="1485272875000" expanded="true" signature="1202:1287" placeholder="INSERT INTO ..${self::$tabla}..." />
-            <marker date="1485272875000" expanded="true" signature="1202:1288" placeholder="INSERT INTO ..${self::$tabla}..." />
-            <marker date="1485272875000" expanded="true" signature="1202:1365" placeholder="INSERT INTO ..${self::$tabla}..." />
-            <marker date="1485272875000" expanded="true" signature="1202:1366" placeholder="INSERT INTO ..${self::$tabla}..." />
-            <marker date="1485272875000" expanded="true" signature="1202:1414" placeholder="INSERT INTO ..${self::$tabla}..." />
-            <marker date="1485272875000" expanded="true" signature="1202:1415" placeholder="INSERT INTO ${self::$tabla}..." />
-            <marker date="1485272875000" expanded="true" signature="1417:1461" placeholder="INSERT INTO ..${self::$tabla}..." />
-            <marker date="1485272875000" expanded="true" signature="1719:1821" placeholder="SELECT * FRO..${self::$tabla}..." />
-            <marker date="1485272875000" expanded="true" signature="2171:2274" placeholder="SELECT * FRO..${self::$tabla}..." />
-            <marker date="1485272875000" expanded="true" signature="2610:2720" placeholder="SELECT idEst..${self::$tabla}..." />
-            <marker date="1485272875000" expanded="true" signature="3526:3585" placeholder="SELECT * FRO..${self::$tabla}..." />
-            <marker date="1485272875000" expanded="true" signature="3893:3933" placeholder="DELETE FROM ..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Vista/Plantilla/pie.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4214876">
-          <caret line="17" column="74" selection-start-line="17" selection-start-column="74" selection-end-line="17" selection-end-column="74" />
+        <state vertical-scroll-proportion="0.44871795">
+          <caret line="28" column="97" selection-start-line="28" selection-start-column="97" selection-end-line="28" selection-end-column="97" />
           <folding />
         </state>
       </provider>

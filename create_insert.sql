@@ -145,7 +145,7 @@ CREATE TABLE IF NOT EXISTS `himevico`.`festivos` (
 )
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
-
+--Prueba
 
 -- -----------------------------------------------------
 -- Table `himevico`.`tipos`

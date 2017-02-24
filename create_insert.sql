@@ -123,12 +123,15 @@ CREATE TABLE IF NOT EXISTS `himevico`.`festivos` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `fecha` DATETIME NOT NULL,
   `motivo` VARCHAR(45) NOT NULL,
-   /* Para cuando se programe la parte de calendario
+  
+   /* Para cuando se programe la parte de calendario */
+   
+   
   `centros_id` INT(11) NOT NULL,
   `calendario_id` INT(4) NOT NULL,
-  */
+  
   PRIMARY KEY (`id`)
-  /*,
+  ,
   INDEX `fk_festivos_centros1_idx` (`centros_id` ASC),
   INDEX `fk_festivos_calendario1_idx` (`calendario_id` ASC),
   CONSTRAINT `fk_festivos_centros1`
@@ -141,11 +144,11 @@ CREATE TABLE IF NOT EXISTS `himevico`.`festivos` (
     REFERENCES `himevico`.`calendario` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION
-    */
+    
 )
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
---Prueba
+
 
 -- -----------------------------------------------------
 -- Table `himevico`.`tipos`
@@ -432,11 +435,11 @@ CREATE TABLE IF NOT EXISTS `himevico`.`horariotrabajadores` (
   `dniTrabajador` VARCHAR(9) NOT NULL,
   `idHorario` INT(11) NOT NULL,
   `numeroSemana` INT(11) NOT NULL,
--- `calendario_id` INT(4), para cuando se programe calendarios
+  `calendario_id` INT(4), /*para cuando se programe calendarios*/
   PRIMARY KEY (`id`),
   INDEX `ht_trabjadores_FK_idx` (`dniTrabajador` ASC),
   INDEX `ht_horario_FK_idx` (`idHorario` ASC),
-  -- INDEX `fk_horariotrabajadores_calendario1_idx` (`calendario_id` ASC),
+  INDEX `fk_horariotrabajadores_calendario1_idx` (`calendario_id` ASC),
   CONSTRAINT `ht_horario_FK`
     FOREIGN KEY (`idHorario`)
     REFERENCES `himevico`.`horarios` (`id`)
@@ -445,12 +448,16 @@ CREATE TABLE IF NOT EXISTS `himevico`.`horariotrabajadores` (
   CONSTRAINT `ht_trabjadores_FK`
     FOREIGN KEY (`dniTrabajador`)
     REFERENCES `himevico`.`trabajadores` (`dni`)
-  /* OJO:!! Activar cuando se  programe la parte de calendario
+    
+    
+  /* OJO:!! Activar cuando se  programe la parte de calendario*/
+  
+  
   , CONSTRAINT `fk_horariotrabajadores_calendario1`
     FOREIGN KEY (`calendario_id`)
     REFERENCES `himevico`.`calendario` (`id`)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION*/
+    ON UPDATE NO ACTION
    )
 ENGINE = InnoDB
 AUTO_INCREMENT = 107
@@ -528,7 +535,8 @@ CREATE TABLE IF NOT EXISTS `himevico`.`parteslogistica` (
 ENGINE = InnoDB
 AUTO_INCREMENT = 8
 DEFAULT CHARACTER SET = utf8;
-/*
+
+
 CREATE TABLE IF NOT EXISTS `himevico`.`parteslogistica` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `dniTrabajador` VARCHAR(9) NULL DEFAULT NULL,
@@ -553,7 +561,7 @@ ENGINE = InnoDB
 AUTO_INCREMENT = 8
 DEFAULT CHARACTER SET = utf8;
 
-*/
+
 -- -----------------------------------------------------
 -- Table `himevico`.`tipostarea`
 -- -----------------------------------------------------
@@ -758,6 +766,7 @@ CREATE TABLE IF NOT EXISTS `himevico`.`vacacionestrabajadores` (
   `horaInicio` DATETIME NOT NULL,
   `horaFin` DATETIME NOT NULL,
   `calendario_id` INT(4) NOT NULL,
+  `estado` VARCHAR(1) NOT NULL,
   PRIMARY KEY (`id`, `calendario_id`),
   INDEX `trabajador_FK_idx` (`dniTrabajador` ASC),
   INDEX `fk_ausenciastrabajadores_calendario1_idx` (`calendario_id` ASC),

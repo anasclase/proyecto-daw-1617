@@ -26,6 +26,9 @@ a.agregar_evento{display:block;position:absolute;right:0;top:0; background:#e9e9
 .siguiente,.anterior,.hoyEnlace{color:red;text-decoration:none;/*line-height:40px;*/}
 
 #mask {/*position:absolute;left:0;top:0;z-index:9000;*/background:#ffffff;padding: 10px;display:none;/*width:100%;height:100%;*/}
+
+/*Añadido por pablo */
+
 .cerrar{
 	
 	float:right;

@@ -25,7 +25,9 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
             <h3 class="page-header" xmlns="http://www.w3.org/1999/html">Trabajador</h3>
                 <a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/insertTrabajador.php">Añadir Trabajador</a><br/>
                 <a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/deleteTrabajador.php">Ver Trabajadores</a><br/>
+            <h3 class="page-header">Contraseñas</h3>
                 <a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/updatePassword.php">Modificar Contraseñas</a><br/>
+            <h3 class="page-header">Fotos</h3>
                 <a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/updateFoto.php">Modificar Fotos</a>
             <h3 class="page-header">Empresa</h3>
                 <a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/insertEmpresa.php">Añadir Empresa</a><br/>

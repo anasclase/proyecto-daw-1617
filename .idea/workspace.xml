@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5ca1acb5-411e-4129-befd-8f19de674ea5" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Vista/Administracion/AdministracionViews.php" afterPath="$PROJECT_DIR$/Vista/Administracion/AdministracionViews.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Vista/Produccion/CalendarioViews.php" afterPath="$PROJECT_DIR$/Vista/Produccion/CalendarioViews.php" />
     </list>
     <ignored path="public.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -93,8 +93,8 @@
       <file leaf-file-name="CalendarioViews.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Vista/Produccion/CalendarioViews.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5448718">
-              <caret line="86" column="23" selection-start-line="86" selection-start-column="23" selection-end-line="86" selection-end-column="23" />
+            <state vertical-scroll-proportion="0.49679488">
+              <caret line="86" column="20" selection-start-line="86" selection-start-column="20" selection-end-line="86" selection-end-column="87" />
               <folding />
             </state>
           </provider>
@@ -154,7 +154,6 @@
         <option value="$PROJECT_DIR$/Vista/Plantilla/cabecera.php" />
         <option value="$PROJECT_DIR$/Modelo/BD/FestivoBD.php" />
         <option value="$PROJECT_DIR$/Controlador/Produccion/ControladorCalendario.php" />
-        <option value="$PROJECT_DIR$/Vista/Produccion/CalendarioViews.php" />
         <option value="$PROJECT_DIR$/Vista/Produccion/GeneradorFormsViews.php" />
         <option value="$PROJECT_DIR$/Modelo/Base/ParteProduccionClass.php" />
         <option value="$PROJECT_DIR$/Modelo/Base/ParteLogisticaClass.php" />
@@ -164,6 +163,7 @@
         <option value="$PROJECT_DIR$/Modelo/Base/VacacionesTrabajadoresClass.php" />
         <option value="$PROJECT_DIR$/Vista/Plantilla/pie.php" />
         <option value="$PROJECT_DIR$/Vista/Administracion/AdministracionViews.php" />
+        <option value="$PROJECT_DIR$/Vista/Produccion/CalendarioViews.php" />
       </list>
     </option>
   </component>
@@ -704,7 +704,13 @@
       <option name="project" value="LOCAL" />
       <updated>1488362418780</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Commit Ganeko CRUD">
+      <created>1488368560172</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1488368560172</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -1147,8 +1153,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Vista/Produccion/CalendarioViews.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5448718">
-          <caret line="86" column="23" selection-start-line="86" selection-start-column="23" selection-end-line="86" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.49679488">
+          <caret line="86" column="20" selection-start-line="86" selection-start-column="20" selection-end-line="86" selection-end-column="87" />
           <folding />
         </state>
       </provider>

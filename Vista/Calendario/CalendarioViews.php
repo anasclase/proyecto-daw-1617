@@ -87,7 +87,7 @@ public static function generarcalendario(){
 
             });
 
-            $(document).on("click",'.close',function (e)
+            $(document).on("click",'.cerrar',function (e)
             {
                 e.preventDefault();
                 $('#mask').fadeOut();

@@ -96,7 +96,7 @@ abstract class CalendarioViews extends \Vista\Plantilla\Views
 
                 });
 
-                $(document).on("click",'.close',function (e)
+                $(document).on("click",'.cerrar',function (e)
                 {
                     e.preventDefault();
                     $('#mask').fadeOut();

@@ -84,7 +84,7 @@ public static function generarcalendario(){
 
                 $('#mask').fadeIn(700)
                 .html(
-                    "<input type='button' value='Salir' class='close btn btn-warning'>" +
+                    "<input type='button' value='Salir' class='cerrar btn btn-warning'>" +
                     "<div id='nuevo_evento col-xs-12 text-center' rel='"+fecha+"'>" +
                         "<h2>Parte de "+formatDate(fecha)+"</h2>" +
                     "</div>" +
@@ -124,7 +124,7 @@ public static function generarcalendario(){
             });
 
             //CERRAR DEL VENTANA
-            $(document).on("click",'.close',function (e)
+            $(document).on("click",'.cerrar',function (e)
             {
                 e.preventDefault();
 

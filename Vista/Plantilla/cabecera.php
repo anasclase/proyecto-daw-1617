@@ -95,6 +95,17 @@
                     ?>
                     <li><a href="<?php echo parent::getUrlRaiz().$urlListas?>">Gestionar tablas</a></li>
                     <li><a href="<?php echo parent::getUrlRaiz().$urlPartes?>">Gestionar partes</a></li>
+                    <li class="dropdown">                                                                       <!--Cambio Aitor-->
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
+                            <span>Gestionar Calendarios</span> <!--Cambio Aitor-->
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="<?php echo parent::getUrlRaiz()?>/Vista/Calendario/Calendario.php">Gestionar Calendario</a></li>    <!--Cambio Aitor-->
+                            <li><a href="<?php echo parent::getUrlRaiz()?>/Vista/Calendario/Calendario.php">Gestionar Festivos Nacionales</a></li>  <!--Cambio Aitor-->
+                            <li><a href="<?php echo parent::getUrlRaiz()?>/Vista/Calendario/Calendario.php">Gestionar Festivos Centros</a></li>  <!--Cambio Aitor-->
+                            <li><a href="<?php echo parent::getUrlRaiz()?>/Vista/Calendario/Calendario.php">Gestionar Calendarios Individuales</a></li>  <!--Cambio Aitor-->
+                        </ul>
+                    </li>
                     <?php
                 }
                 ?>

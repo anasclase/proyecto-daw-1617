@@ -75,7 +75,7 @@
                 }
                 ?>
                 <?php
-                /* prueba */
+                //ksjhdgfkjsdghfkjh
                 if(parent::isRoot()){
                     $trabajador = unserialize($_SESSION['trabajador']);
                     $perfil = get_class($trabajador);

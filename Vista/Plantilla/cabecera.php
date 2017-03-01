@@ -95,7 +95,7 @@
                     <li><a href="<?php echo parent::getUrlRaiz().$urlListas?>">Gestionar tablas</a></li>
                     <li><a href="<?php echo parent::getUrlRaiz().$urlPartes?>">Gestionar partes</a></li>
                     <!--
-                        Generar el desplegable para Vacaciones 1
+                        Generar el desplegable para Vacaciones
                         Anas
                     -->
                     <li class="dropdown">

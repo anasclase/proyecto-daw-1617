@@ -112,10 +112,10 @@
                             <span>Gestionar Calendarios</span> <!--Cambio Aitor-->
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="<?php echo parent::getUrlRaiz()?>/Vista/Calendario/Calendario.php">Gestionar Calendario</a></li>    <!--Cambio Aitor-->
-                            <li><a href="<?php echo parent::getUrlRaiz()?>/Vista/Calendario/Calendario.php">Gestionar Festivos Nacionales</a></li>  <!--Cambio Aitor-->
-                            <li><a href="<?php echo parent::getUrlRaiz()?>/Vista/Calendario/Calendario.php">Gestionar Festivos Centros</a></li>  <!--Cambio Aitor-->
-                            <li><a href="<?php echo parent::getUrlRaiz()?>/Vista/Calendario/Calendario.php">Gestionar Calendarios Individuales</a></li>  <!--Cambio Aitor-->
+                            <li><a href="<?php echo parent::getUrlRaiz()?>/Vista/Calendario/GestionarCalendario.php">Gestionar Calendario</a></li>    <!--Cambio Aitor-->
+                            <li><a href="<?php echo parent::getUrlRaiz()?>/Vista/Calendario/GestionarFestivosNacionales.php">Gestionar Festivos Nacionales</a></li>  <!--Cambio Aitor-->
+                            <li><a href="<?php echo parent::getUrlRaiz()?>/Vista/Calendario/GestionarFestivosCentros.php">Gestionar Festivos Centros</a></li>  <!--Cambio Aitor-->
+                            <li><a href="<?php echo parent::getUrlRaiz()?>/Vista/Calendario/GestionarCalendariosIndividuales.php">Gestionar Calendarios Individuales</a></li>  <!--Cambio Aitor-->
                         </ul>
                     </li>
                     <?php

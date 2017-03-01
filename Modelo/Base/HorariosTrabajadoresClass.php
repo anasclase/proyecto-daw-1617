@@ -13,6 +13,7 @@ require_once __DIR__."/../BD/HorarioBD.php";
 require_once __DIR__."/../BD/HorarioTrabajadorBD.php";
 require_once __DIR__."/TrabajadorClass.php";
 require_once __DIR__."/HorariosClass.php";
+require_once __DIR__."/CalendarioClass.php";
 
 class HorariosTrabajadores{
 
@@ -20,6 +21,7 @@ class HorariosTrabajadores{
     private $numeroSemana;
     private $trabajador;
     private $horario;
+    private $calendario; //Cambiado calendario_id por calendario --Ibai
 
     /**
      * HorariosTrabajadores constructor.
@@ -27,15 +29,16 @@ class HorariosTrabajadores{
      * @param $numeroSemana
      * @param $trabajador
      * @param $horario
+     * @param $calendario
      */
-    public function __construct($id = null, $numeroSemana= null, $trabajador= null, $horario= null)
+    public function __construct($id = null, $numeroSemana = null, $trabajador = null, $horario = null, $calendario = null)
     {
-        $this->setId($id);
-        $this->setNumeroSemana($numeroSemana);
-        $this->setTrabajador($trabajador);
-        $this->setHorario($horario);
+        $this->id = $id;
+        $this->numeroSemana = $numeroSemana;
+        $this->trabajador = $trabajador;
+        $this->horario = $horario;
+        $this->calendario = $calendario;
     }
-
 
     /**
      * @return mixed
@@ -106,6 +109,22 @@ class HorariosTrabajadores{
     public function setHorario($horario)
     {
         $this->horario = $horario;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCalendarioId()
+    {
+        return $this->calendario;
+    }
+
+    /**
+     * @param mixed $calendario
+     */
+    public function setCalendarioId($calendario)
+    {
+        $this->calendario = $calendario;
     }
 
     public function add(){

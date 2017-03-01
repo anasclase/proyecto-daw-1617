@@ -6,9 +6,11 @@ use Modelo\BD;
 
 require_once __DIR__."/TrabajadorClass.php";
 require_once __DIR__."/AusenciaClass.php";
+require_once __DIR__."/CalendarioClass.php";
 require_once __DIR__."/../BD/TrabajadorAusenciaBD.php";
 require_once __DIR__."/../BD/TrabajadorBD.php";
 require_once __DIR__."/../BD/AusenciaBD.php";
+require_once __DIR__."/CalendarioClass.php";
 
 
 class TrabajadorAusencia
@@ -20,6 +22,7 @@ class TrabajadorAusencia
     private $horaFin;
     private $trabajador; //No es codificada porque no es necesaria la bidireccionalidad.
     private $ausencia;
+    private $calendario;
 
     /**
      * TrabajadoresAusencias constructor.
@@ -29,8 +32,9 @@ class TrabajadorAusencia
      * @param $horaFin
      * @param $trabajador
      * @param $ausencia
+     * @param $calendario
      */
-    public function __construct($id = null, $fecha = null, $horaInicio = null, $horaFin = null, $trabajador = null, $ausencia = null)
+    public function __construct($id = null, $fecha = null, $horaInicio = null, $horaFin = null, $trabajador = null, $ausencia = null, $calendario = null)
     {
         $this->setId($id);
         $this->setFecha($fecha);
@@ -38,6 +42,7 @@ class TrabajadorAusencia
         $this->setHoraFin($horaFin);
         $this->setTrabajador($trabajador);
         $this->setAusencia($ausencia);
+        $this->setCalendario($calendario);
     }
 
 
@@ -135,6 +140,22 @@ class TrabajadorAusencia
     public function setAusencia($ausencia)
     {
         $this->ausencia = $ausencia;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCalendario()
+    {
+        return $this->calendario;
+    }
+
+    /**
+     * @param mixed $calendario
+     */
+    public function setCalendario($calendario)
+    {
+        $this->calendario = $calendario;
     }
 
 

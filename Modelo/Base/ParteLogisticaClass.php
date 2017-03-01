@@ -29,26 +29,35 @@ class ParteLogistica{
     private $estado;
     private $trabajador;// Objeto logistica?? o Trabajador??
     private $viajes;
-    //añadimos horasextras
+    private $horasExtra;
+
     /**
      * ParteLogistica constructor.
      * @param $id
-     * @param $trabajador
-     * @param $estado
+     * @param $fecha
      * @param $nota
+     * @param $autopista
+     * @param $dieta
+     * @param $otroGasto
+     * @param $estado
+     * @param $trabajador
+     * @param $viajes
+     * @param $horasExtra
      */
-    public function __construct($id=null, $fecha=null, $nota=null,$autopista=null,$dieta=null,$otroGasto = null, $estado=null, $trabajador=null, $viajes=null)
+    public function __construct($id = null, $fecha = null, $nota = null, $autopista = null, $dieta = null, $otroGasto = null, $estado = null, $trabajador = null, $viajes = null, $horasExtra = null)
     {
-        $this->setId($id);
-        $this->setFecha($fecha);
-        $this->setNota($nota);
-        $this->setAutopista($autopista);
-        $this->setDieta($dieta);
-        $this->setOtroGasto($otroGasto);
-        $this->setTrabajador($trabajador);
-        $this->setEstado($estado);
-        $this->setViajes($viajes);
+        $this->id = $id;
+        $this->fecha = $fecha;
+        $this->nota = $nota;
+        $this->autopista = $autopista;
+        $this->dieta = $dieta;
+        $this->otroGasto = $otroGasto;
+        $this->estado = $estado;
+        $this->trabajador = $trabajador;
+        $this->viajes = $viajes;
+        $this->horasExtra = $horasExtra;
     }
+
 
     /**
      * @return mixed
@@ -208,5 +217,21 @@ class ParteLogistica{
 
     public function add(){
         BD\PartelogisticaBD::add($this);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getHorasExtra()
+    {
+        return $this->horasExtra;
+    }
+
+    /**
+     * @param mixed $horasExtra
+     */
+    public function setHorasExtra($horasExtra)
+    {
+        $this->horasExtra = $horasExtra;
     }
 }

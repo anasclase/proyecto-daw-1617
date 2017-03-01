@@ -32,7 +32,6 @@ abstract class CalendarioViews extends \Vista\Plantilla\Views
         <div class="calendario_ajax">
             <div class="cal"></div><div id="mask"></div>
         </div>
-
         <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
         <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.12.0/jquery.validate.min.js"></script>
         <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.12.0/localization/messages_es.js "></script>

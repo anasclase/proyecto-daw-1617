@@ -31,7 +31,7 @@ class HorariosTrabajadores{
      * @param $horario
      * @param $calendario
      */
-    public function __construct($id, $numeroSemana, $trabajador, $horario, $calendario)
+    public function __construct($id = null, $numeroSemana = null, $trabajador = null, $horario = null, $calendario = null)
     {
         $this->id = $id;
         $this->numeroSemana = $numeroSemana;

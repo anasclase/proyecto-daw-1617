@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5ca1acb5-411e-4129-befd-8f19de674ea5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vista/Calendario/GestionarCalendario.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vista/Calendario/GestionarCalendariosIndividuales.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vista/Calendario/GestionarFestivosCentros.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vista/Calendario/GestionarFestivosNacionales.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Controlador/Calendario/ControladorCalendario.php" afterPath="$PROJECT_DIR$/Controlador/Calendario/ControladorCalendario.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Vista/Plantilla/cabecera.php" afterPath="$PROJECT_DIR$/Vista/Plantilla/cabecera.php" />
     </list>
     <ignored path="public.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -69,7 +64,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GestionarCalendario.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GestionarCalendario.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Vista/Calendario/GestionarCalendario.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
@@ -79,21 +74,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ControladorCalendario.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ControladorCalendario.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Controlador/Calendario/ControladorCalendario.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2550">
-              <caret line="170" column="0" lean-forward="true" selection-start-line="170" selection-start-column="0" selection-end-line="170" selection-end-column="0" />
+            <state relative-caret-position="1155">
+              <caret line="77" column="25" lean-forward="false" selection-start-line="77" selection-start-column="25" selection-end-line="77" selection-end-column="25" />
               <folding>
-                <marker date="1488368376000" expanded="true" signature="542:615" ph="select * fro... ${$tabla}" />
-                <marker date="1488368376000" expanded="true" signature="1014:1115" ph="insert into ${$tabla}... " />
-                <marker date="1488368376000" expanded="true" signature="1331:1388" ph="delete from " />
-                <marker date="1488368376000" expanded="true" signature="2713:2864" ph="select fecha... ${$tabla}" />
-                <marker date="1488368376000" expanded="true" signature="4003:4011" ph="é" />
-                <marker date="1488368376000" expanded="true" signature="4058:4066" ph="á" />
-                <marker date="1488368376000" expanded="true" signature="5763:5769" ph=" " />
-                <marker date="1488368376000" expanded="true" signature="6112:6119" ph="«" />
-                <marker date="1488368376000" expanded="true" signature="6255:6262" ph="»" />
+                <marker date="1488370405000" expanded="true" signature="542:615" ph="select * fro... ${$tabla}" />
+                <marker date="1488370405000" expanded="true" signature="1014:1115" ph="insert into ${$tabla}... " />
+                <marker date="1488370405000" expanded="true" signature="1331:1388" ph="delete from " />
+                <marker date="1488370405000" expanded="true" signature="2627:2778" ph="select fecha... ${$tabla}" />
+                <marker date="1488370405000" expanded="true" signature="3917:3925" ph="é" />
+                <marker date="1488370405000" expanded="true" signature="3972:3980" ph="á" />
+                <marker date="1488370405000" expanded="true" signature="5677:5683" ph=" " />
+                <marker date="1488370405000" expanded="true" signature="6026:6033" ph="«" />
+                <marker date="1488370405000" expanded="true" signature="6169:6176" ph="»" />
               </folding>
             </state>
           </provider>
@@ -156,8 +151,8 @@
         <option value="$PROJECT_DIR$/Vista/Calendario/GestionarFestivosCentros.php" />
         <option value="$PROJECT_DIR$/Vista/Calendario/GestionarFestivosNacionales.php" />
         <option value="$PROJECT_DIR$/Vista/Administracion/prueba.php" />
-        <option value="$PROJECT_DIR$/Controlador/Calendario/ControladorCalendario.php" />
         <option value="$PROJECT_DIR$/Vista/Calendario/GestionarCalendario.php" />
+        <option value="$PROJECT_DIR$/Controlador/Calendario/ControladorCalendario.php" />
       </list>
     </option>
   </component>
@@ -736,7 +731,7 @@
       <workItem from="1488353444297" duration="986000" />
       <workItem from="1488356462556" duration="3279000" />
       <workItem from="1488364859750" duration="251000" />
-      <workItem from="1488365567116" duration="4670000" />
+      <workItem from="1488365567116" duration="4819000" />
     </task>
     <task id="LOCAL-00001" summary="prueba iker">
       <created>1488361626538</created>
@@ -745,11 +740,18 @@
       <option name="project" value="LOCAL" />
       <updated>1488361626538</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Crear archivos Irune">
+      <created>1488370336757</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1488370336757</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10787000" />
+    <option name="totallyTimeSpent" value="10936000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -800,7 +802,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="prueba iker" />
-    <option name="LAST_COMMIT_MESSAGE" value="prueba iker" />
+    <MESSAGE value="Crear archivos Irune" />
+    <option name="LAST_COMMIT_MESSAGE" value="Crear archivos Irune" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1139,24 +1142,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Controlador/Calendario/ControladorCalendario.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2550">
-          <caret line="170" column="0" lean-forward="true" selection-start-line="170" selection-start-column="0" selection-end-line="170" selection-end-column="0" />
-          <folding>
-            <marker date="1488368376000" expanded="true" signature="542:615" ph="select * fro... ${$tabla}" />
-            <marker date="1488368376000" expanded="true" signature="1014:1115" ph="insert into ${$tabla}... " />
-            <marker date="1488368376000" expanded="true" signature="1331:1388" ph="delete from " />
-            <marker date="1488368376000" expanded="true" signature="2713:2864" ph="select fecha... ${$tabla}" />
-            <marker date="1488368376000" expanded="true" signature="4003:4011" ph="é" />
-            <marker date="1488368376000" expanded="true" signature="4058:4066" ph="á" />
-            <marker date="1488368376000" expanded="true" signature="5763:5769" ph=" " />
-            <marker date="1488368376000" expanded="true" signature="6112:6119" ph="«" />
-            <marker date="1488368376000" expanded="true" signature="6255:6262" ph="»" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Vista/Plantilla/cabecera.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -1208,6 +1193,24 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Controlador/Calendario/ControladorCalendario.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1155">
+          <caret line="77" column="25" lean-forward="false" selection-start-line="77" selection-start-column="25" selection-end-line="77" selection-end-column="25" />
+          <folding>
+            <marker date="1488370405000" expanded="true" signature="542:615" ph="select * fro... ${$tabla}" />
+            <marker date="1488370405000" expanded="true" signature="1014:1115" ph="insert into ${$tabla}... " />
+            <marker date="1488370405000" expanded="true" signature="1331:1388" ph="delete from " />
+            <marker date="1488370405000" expanded="true" signature="2627:2778" ph="select fecha... ${$tabla}" />
+            <marker date="1488370405000" expanded="true" signature="3917:3925" ph="é" />
+            <marker date="1488370405000" expanded="true" signature="3972:3980" ph="á" />
+            <marker date="1488370405000" expanded="true" signature="5677:5683" ph=" " />
+            <marker date="1488370405000" expanded="true" signature="6026:6033" ph="«" />
+            <marker date="1488370405000" expanded="true" signature="6169:6176" ph="»" />
+          </folding>
         </state>
       </provider>
     </entry>

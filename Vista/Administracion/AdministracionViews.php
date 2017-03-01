@@ -19,37 +19,38 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
 
         parent::setOn(true);
         parent::setRoot(true);
+        /* Ganeko */
 
         require_once __DIR__ . "/../Plantilla/cabecera.php";
         ?>
             <h3 class="page-header" xmlns="http://www.w3.org/1999/html">Trabajador</h3>
-                <a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/insertTrabajador.php">Añadir Trabajador</a><br/>
+                <a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/insertTrabajador.php"><span src="" class="glyphicon glyphicon-plus" style="font-size: 32px; color: green;"></span></a>
                 <a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/deleteTrabajador.php">Ver Trabajadores</a><br/>
             <h3 class="page-header">Contraseñas</h3>
                 <a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/updatePassword.php">Modificar Contraseñas</a><br/>
             <h3 class="page-header">Fotos</h3>
                 <a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/updateFoto.php">Modificar Fotos</a>
             <h3 class="page-header">Empresa</h3>
-                <a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/insertEmpresa.php">Añadir Empresa</a><br/>
+                <a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/insertEmpresa.php"><span src="" class="glyphicon glyphicon-plus" style="font-size: 32px; color: green;"></span></a><br/>
                 <a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/deleteEmpresa.php">Ver Empresas</a><br/>
             <h3 class="page-header">Centro</h3>
-                <a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/insertCentro.php">Añadir Centro</a><br/>
+                <a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/insertCentro.php"><span src="" class="glyphicon glyphicon-plus" style="font-size: 32px; color: green;"></span></a><br/>
                 <a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/deleteCentro.php">Ver Centros</a><br/>
             <h3 class="page-header">Vehiculo</h3>
-                <a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/insertVehiculo.php">Añadir Vehiculo</a><br/>
+                <a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/insertVehiculo.php"><span src="" class="glyphicon glyphicon-plus" style="font-size: 32px; color: green;"></span></a><br/>
                 <a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/deleteVehiculo.php">Ver Vehiculos</a><br/>
             <h3 class="page-header">Convenio</h3>
-                <a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/insertHorasConvenio.php">Añadir Convenio</a><br/>
+                <a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/insertHorasConvenio.php"><span src="" class="glyphicon glyphicon-plus" style="font-size: 32px; color: green;"></span></a><br/>
                 <a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/deleteHorasConvenio.php">Ver Convenios</a><br/>
                 <a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/updateHorasConvenio.php">Modificar Horas de Convenios</a><br/>
             <h3 class="page-header">Tipo Franja</h3>
-                <a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/insertTipoFranja.php">Añadir Tipo Franja</a><br/>
+                <a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/insertTipoFranja.php"><span src="" class="glyphicon glyphicon-plus" style="font-size: 32px; color: green;"></span></a><br/>
                 <a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/deleteTipoFranja.php">Ver Tipos Franja</a><br/>
             <h3 class="page-header">Horario</h3>
-                <a href="<?php echo self::getUrlRaiz() ?>/Vista/Administracion/insertHorario.php">Añadir Horario</a><br/>
+                <a href="<?php echo self::getUrlRaiz() ?>/Vista/Administracion/insertHorario.php"><span src="" class="glyphicon glyphicon-plus" style="font-size: 32px; color: green;"></span></a><br/>
                 <a href="<?php echo self::getUrlRaiz() ?>/Vista/Administracion/deleteHorario.php">Ver Horario</a><br/>
             <h3 class="page-header">Horario-Trabajador</h3>
-                <a href="<?php echo self::getUrlRaiz() ?>/Vista/Administracion/insertHorarioTrabajador.php">Añadir Horario-trabajador</a><br/>
+                <a href="<?php echo self::getUrlRaiz() ?>/Vista/Administracion/insertHorarioTrabajador.php"><span src="" class="glyphicon glyphicon-plus" style="font-size: 32px; color: green;"></span></a><br/>
                 <a href="<?php echo self::getUrlRaiz() ?>/Vista/Administracion/deleteHorarioTrabajador.php">Ver Horario Trabajador</a><br/>
             <h3 class="page-header">Tipos de Horario</h3>
                 <a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/updateTipoFranja.php">Modificar Tipos de Horarios</a><br/>

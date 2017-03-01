@@ -28,43 +28,73 @@
       <file leaf-file-name="AdministracionViews.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Vista/Administracion/AdministracionViews.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.24038461">
-              <caret line="17" column="36" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
+            <state vertical-scroll-proportion="0.16025642">
+              <caret line="12" column="65" selection-start-line="12" selection-start-column="65" selection-end-line="12" selection-end-column="65" />
               <folding>
-                <marker date="1488358449000" expanded="true" signature="60915:60926" placeholder="..." />
-                <marker date="1488358449000" expanded="true" signature="64271:64282" placeholder="..." />
-                <marker date="1488358449000" expanded="true" signature="72159:72170" placeholder="..." />
-                <marker date="1488358449000" expanded="true" signature="80797:80808" placeholder="..." />
+                <element signature="e#981#1019#0#HTML" expanded="true" />
+                <element signature="e#1693#1731#0#HTML" expanded="true" />
+                <element signature="e#2058#2096#0#HTML" expanded="true" />
+                <element signature="e#2425#2463#0#HTML" expanded="true" />
+                <element signature="e#2801#2839#0#HTML" expanded="true" />
+                <element signature="e#3323#3361#0#HTML" expanded="true" />
+                <element signature="e#3698#3736#0#HTML" expanded="true" />
+                <element signature="e#4087#4125#0#HTML" expanded="true" />
+                <marker date="1488360565000" expanded="true" signature="61536:61547" placeholder="..." />
+                <marker date="1488360565000" expanded="true" signature="64892:64903" placeholder="..." />
+                <marker date="1488360565000" expanded="true" signature="72780:72791" placeholder="..." />
+                <marker date="1488360565000" expanded="true" signature="81418:81429" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="foto.jpg" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Vista/Fotos/Default/foto.jpg">
-          <provider selected="true" editor-type-id="images">
-            <state />
+      <file leaf-file-name="pie.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Vista/Plantilla/pie.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.625">
+              <caret line="1" column="21" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
+              <folding />
+            </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Dude.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Vista/Fotos/77777777A/Dude.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
+      <file leaf-file-name="Views.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Vista/Plantilla/Views.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Guard.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Vista/Fotos/72845480H/Guard.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
+      <file leaf-file-name="cabecera.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Vista/Plantilla/cabecera.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IMAGEN-DE-PERFIL-FACEBOOK-619x346.jpg" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Vista/Fotos/72827654V/IMAGEN-DE-PERFIL-FACEBOOK-619x346.jpg">
-          <provider selected="true" editor-type-id="images">
-            <state />
+      <file leaf-file-name="estilos.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Vista/Plantilla/CSS/Bootstrap/estilos.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="customize.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Vista/Plantilla/CSS/Bootstrap/customize.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="15.375">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
           </provider>
         </entry>
       </file>
@@ -96,16 +126,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="VistaProbarRequines.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Vista/VistaProbarRequines.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="Git.Settings">
@@ -131,9 +151,9 @@
         <option value="$PROJECT_DIR$/Modelo/Base/ParteLogisticaClass.php" />
         <option value="$PROJECT_DIR$/Controlador/Logistica/ControladorCalendario.php" />
         <option value="$PROJECT_DIR$/Modelo/BD/PartesLogisticaBD.php" />
-        <option value="$PROJECT_DIR$/Vista/Plantilla/pie.php" />
         <option value="$PROJECT_DIR$/create_insert.sql" />
         <option value="$PROJECT_DIR$/Modelo/Base/VacacionesTrabajadoresClass.php" />
+        <option value="$PROJECT_DIR$/Vista/Plantilla/pie.php" />
         <option value="$PROJECT_DIR$/Vista/Administracion/AdministracionViews.php" />
       </list>
     </option>
@@ -627,7 +647,13 @@
       <option name="project" value="LOCAL" />
       <updated>1488358256897</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Commit Ganeko CRUD">
+      <created>1488358473995</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1488358473995</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -690,13 +716,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Controlador/Administracion/Controlador.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Controlador/Logistica/Router.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -719,20 +738,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Controlador/Administracion/Router.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Vista/Plantilla/CSS/Bootstrap/estilos.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Vista/Plantilla/Views.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -764,13 +769,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Vista/Plantilla/cabecera.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="92" column="22" selection-start-line="92" selection-start-column="22" selection-end-line="92" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -901,16 +899,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="38" column="89" selection-start-line="38" selection-start-column="89" selection-end-line="38" selection-end-column="89" />
           <folding>
-            <element signature="e#6#87#0#PHP" expanded="true" />
+            <element signature="e#6#87#0#PHP" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Vista/Plantilla/pie.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="38" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1044,15 +1034,63 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Vista/Plantilla/CSS/Bootstrap/customize.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="15.375">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vista/Plantilla/CSS/Bootstrap/estilos.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vista/Plantilla/Views.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vista/Plantilla/cabecera.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vista/Plantilla/pie.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.625">
+          <caret line="1" column="21" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Vista/Administracion/AdministracionViews.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24038461">
-          <caret line="17" column="36" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
+        <state vertical-scroll-proportion="0.16025642">
+          <caret line="12" column="65" selection-start-line="12" selection-start-column="65" selection-end-line="12" selection-end-column="65" />
           <folding>
-            <marker date="1488358449000" expanded="true" signature="60915:60926" placeholder="..." />
-            <marker date="1488358449000" expanded="true" signature="64271:64282" placeholder="..." />
-            <marker date="1488358449000" expanded="true" signature="72159:72170" placeholder="..." />
-            <marker date="1488358449000" expanded="true" signature="80797:80808" placeholder="..." />
+            <element signature="e#981#1019#0#HTML" expanded="true" />
+            <element signature="e#1693#1731#0#HTML" expanded="true" />
+            <element signature="e#2058#2096#0#HTML" expanded="true" />
+            <element signature="e#2425#2463#0#HTML" expanded="true" />
+            <element signature="e#2801#2839#0#HTML" expanded="true" />
+            <element signature="e#3323#3361#0#HTML" expanded="true" />
+            <element signature="e#3698#3736#0#HTML" expanded="true" />
+            <element signature="e#4087#4125#0#HTML" expanded="true" />
+            <marker date="1488360565000" expanded="true" signature="61536:61547" placeholder="..." />
+            <marker date="1488360565000" expanded="true" signature="64892:64903" placeholder="..." />
+            <marker date="1488360565000" expanded="true" signature="72780:72791" placeholder="..." />
+            <marker date="1488360565000" expanded="true" signature="81418:81429" placeholder="..." />
           </folding>
         </state>
       </provider>

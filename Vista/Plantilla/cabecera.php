@@ -75,7 +75,6 @@
                 }
                 ?>
                 <?php
-                //ksjhdgfkjsdghfkjh
                 if(parent::isRoot()){
                     $trabajador = unserialize($_SESSION['trabajador']);
                     $perfil = get_class($trabajador);
@@ -95,6 +94,19 @@
                     ?>
                     <li><a href="<?php echo parent::getUrlRaiz().$urlListas?>">Gestionar tablas</a></li>
                     <li><a href="<?php echo parent::getUrlRaiz().$urlPartes?>">Gestionar partes</a></li>
+                    <!--
+                        Generar el desplegable para Vacaciones 1
+                        Anas
+                    -->
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
+                            Vacaciones/Incidencias
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="<?php echo parent::getUrlRaiz()?>/Vista/Login/CambiarPassword.php">Vacaciones</a></li>
+                            <li><a href="<?php echo parent::getUrlRaiz()?>/Vista/Login/Perfil.php">Incidencias</a></li>
+                        </ul>
+                    </li>
                     <li class="dropdown">                                                                       <!--Cambio Aitor-->
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
                             <span>Gestionar Calendarios</span> <!--Cambio Aitor-->

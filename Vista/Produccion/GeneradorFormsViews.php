@@ -66,8 +66,10 @@ use Modelo\Base;
                             <input type="text" id="paquetesTotal" class="form-control" readonly="readonly">
                         </div>
                         </div><div class="form-group">
-                        <div class="col-sm-12 col-xs-offset-1">
-                            <button type="button" name="btnEnviar" class="btn btn-primary enviar">Guardar</button>
+                        <div class="col-sm-12 col-xs-offset-1"> 
+						<!--- Cambiar boton GUARDAR POR AÑADIR
+						Pablo --->
+                            <button type="button" name="btnEnviar" class="btn btn-primary enviar">Añadir</button>
                         </div>
                         </div>
                     <?php

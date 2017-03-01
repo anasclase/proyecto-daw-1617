@@ -8,10 +8,10 @@
  */
 
 namespace Modelo\Base;
+
 require_once __DIR__."/CalendarioClass.php";
 
-class FestivosNacionalClass
-{
+class FestivosNacional{
 
     private $id;
     private $fecha;

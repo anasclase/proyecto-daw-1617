@@ -11,6 +11,7 @@ namespace Modelo\Base;
 use Modelo\BD;
 
 require_once __DIR__."/../BD/FestivoBD.php";
+require_once __DIR__."/CalendarioClass.php";
 
 class Festivo
 {
@@ -18,24 +19,24 @@ class Festivo
     private $id;
     private $fecha;
     private $motivo;
-    private $centros_id;
-    private $calendario_id;
+    private $centro; //Cambiado centros por centro --Ibai
+    private $calendario; //Cambiado calendario por calendario --Ibai
 
     /**
      * Festivo constructor.
      * @param $id
      * @param $fecha
      * @param $motivo
-     * @param $centros_id
-     * @param $calendario_id
+     * @param $centro
+     * @param $calendario
      */
-    public function __construct($id, $fecha, $motivo, $centros_id, $calendario_id)
+    public function __construct($id = null, $fecha = null, $motivo = null, $centro = null, $calendario = null)
     {
         $this->id = $id;
         $this->fecha = $fecha;
         $this->motivo = $motivo;
-        $this->centros_id = $centros_id;
-        $this->calendario_id = $calendario_id;
+        $this->centro = $centro;
+        $this->calendario = $calendario;
     }
 
 
@@ -90,33 +91,33 @@ class Festivo
     /**
      * @return mixed
      */
-    public function getCentrosId()
+    public function getCentro()
     {
-        return $this->centros_id;
+        return $this->centro;
     }
 
     /**
-     * @param mixed $centros_id
+     * @param mixed $centro
      */
-    public function setCentrosId($centros_id)
+    public function setCentro($centro)
     {
-        $this->centros_id = $centros_id;
+        $this->centro = $centro;
     }
 
     /**
      * @return mixed
      */
-    public function getCalendarioId()
+    public function getCalendario()
     {
-        return $this->calendario_id;
+        return $this->calendario;
     }
 
     /**
-     * @param mixed $calendario_id
+     * @param mixed $calendario
      */
-    public function setCalendarioId($calendario_id)
+    public function setCalendario($calendario)
     {
-        $this->calendario_id = $calendario_id;
+        $this->calendario = $calendario;
     }
 
     public static function getAll()

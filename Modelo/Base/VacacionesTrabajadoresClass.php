@@ -14,17 +14,14 @@ use Modelo\BD;
 
 require_once __DIR__."/TrabajadorClass.php";
 require_once __DIR__."/CalendarioClass.php";
-require_once __DIR__."/../BD/TrabajadorBD.php";
-require_once __DIR__."/../BD/CalendarioBD.php";
 
-class VacacionesTrabajadoresClass
-{
+class VacacionesTrabajadores{
     private $id;
     private $dniTrabajador;
     private $fecha;
     private $horaInicio;
     private $horaFin;
-    private $calendario_id;
+    private $calendario;
     private $estado;
 
     /**
@@ -34,17 +31,17 @@ class VacacionesTrabajadoresClass
      * @param $fecha
      * @param $horaInicio
      * @param $horaFin
-     * @param $calendario_id
+     * @param $calendario
      * @param $estado
      */
-    public function __construct($id = null, $dniTrabajador = null, $fecha = null, $horaInicio = null, $horaFin = null, $calendario_id = null, $estado = null)
+    public function __construct($id = null, $dniTrabajador = null, $fecha = null, $horaInicio = null, $horaFin = null, $calendario = null, $estado = null)
     {
         $this->id = $id;
         $this->dniTrabajador = $dniTrabajador;
         $this->fecha = $fecha;
         $this->horaInicio = $horaInicio;
         $this->horaFin = $horaFin;
-        $this->calendario_id = $calendario_id;
+        $this->calendario = $calendario;
         $this->estado = $estado;
     }
 
@@ -131,17 +128,17 @@ class VacacionesTrabajadoresClass
     /**
      * @return null
      */
-    public function getCalendarioId()
+    public function getCalendario()
     {
-        return $this->calendario_id;
+        return $this->calendario;
     }
 
     /**
-     * @param null $calendario_id
+     * @param null $calendario
      */
-    public function setCalendarioId($calendario_id)
+    public function setCalendario($calendario)
     {
-        $this->calendario_id = $calendario_id;
+        $this->calendario = $calendario;
     }
 
     /**

@@ -6,9 +6,11 @@ use Modelo\BD;
 
 require_once __DIR__."/TrabajadorClass.php";
 require_once __DIR__."/AusenciaClass.php";
+require_once __DIR__."/CalendarioClass.php";
 require_once __DIR__."/../BD/TrabajadorAusenciaBD.php";
 require_once __DIR__."/../BD/TrabajadorBD.php";
 require_once __DIR__."/../BD/AusenciaBD.php";
+require_once __DIR__."/CalendarioClass.php";
 
 
 class TrabajadorAusencia
@@ -20,6 +22,7 @@ class TrabajadorAusencia
     private $horaFin;
     private $trabajador; //No es codificada porque no es necesaria la bidireccionalidad.
     private $ausencia;
+    private $calendario;
 
     /**
      * TrabajadoresAusencias constructor.

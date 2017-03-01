@@ -83,8 +83,8 @@ public static function generarcalendario(){
                 });
 
                 $('#mask').fadeIn(700)
-                .html(
-                    "<input type='button' value='Salir' class='cerrar btn btn-warning'>" +
+                .html( /* CAMBIADO POR PABLO*/
+                    "<input type='submit' value='Salir' class='cerrar btn btn-warning'>" +
                     "<div id='nuevo_evento col-xs-12 text-center' rel='"+fecha+"'>" +
                         "<h2>Parte de "+formatDate(fecha)+"</h2>" +
                     "</div>" +

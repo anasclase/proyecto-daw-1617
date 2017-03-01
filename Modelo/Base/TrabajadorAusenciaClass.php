@@ -32,8 +32,9 @@ class TrabajadorAusencia
      * @param $horaFin
      * @param $trabajador
      * @param $ausencia
+     * @param $calendario
      */
-    public function __construct($id = null, $fecha = null, $horaInicio = null, $horaFin = null, $trabajador = null, $ausencia = null)
+    public function __construct($id = null, $fecha = null, $horaInicio = null, $horaFin = null, $trabajador = null, $ausencia = null, $calendario = null)
     {
         $this->setId($id);
         $this->setFecha($fecha);
@@ -41,6 +42,7 @@ class TrabajadorAusencia
         $this->setHoraFin($horaFin);
         $this->setTrabajador($trabajador);
         $this->setAusencia($ausencia);
+        $this->setCalendario($calendario);
     }
 
 
@@ -138,6 +140,22 @@ class TrabajadorAusencia
     public function setAusencia($ausencia)
     {
         $this->ausencia = $ausencia;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCalendario()
+    {
+        return $this->calendario;
+    }
+
+    /**
+     * @param mixed $calendario
+     */
+    public function setCalendario($calendario)
+    {
+        $this->calendario = $calendario;
     }
 
 

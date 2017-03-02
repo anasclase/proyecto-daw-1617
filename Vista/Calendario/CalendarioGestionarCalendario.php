@@ -19,20 +19,35 @@ abstract class CalendarioGestionarCalendario extends Plantilla\Views
 
         <form name="buscar" action="<?php echo parent::getUrlRaiz()?>/Vista/Administracion/Administracion.php?cod=3" method="post">
 
-
             <h2>Crear un calendario</h2>
-            <label>CENTRO: </label>
+            <p><label>CENTRO: </label>
             <select name="centro">
 
                 <?php
                 require_once "../../Modelo/BD/CentroBD.php";
                 $centros = \Modelo\BD\CentroBD::getNombreCentro();
-                for($x=0;$x<count($centros) -1;$x++){
+                echo "<option value=''>-- Selecciona --</option>";
+                for($x=0; $x<count($centros) -1; $x++){
                     echo "<option value='$centros[$x]'>$centros[$x]</option>";
                 }
                 ?>
 
-            </select>
+            </select></p>
+            <p><label>NUEVO CALENDARIO: </label>
+                <select name="calendario">
+
+                    <?php
+                    require_once "../../Modelo/BD/CentroBD.php";
+                    $anoActual = date(Y);
+                    echo "<option value=''>-- Selecciona --</option>";
+                    for($x=0; $x<9; $x++){
+                        $ano = $anoActual + $x;
+                        echo "<option value='$ano'>$ano</option>";
+                    }
+                    ?>
+
+                </select></p>
+
             <input type="submit" name="crear" value="Crear">
 
             <h2>Cerrar un calendario</h2>

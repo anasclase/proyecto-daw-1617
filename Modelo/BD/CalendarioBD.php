@@ -1,13 +1,25 @@
 <?php
-error_reporting(E_ERROR | E_WARNING | E_PARSE);
-date_default_timezone_set('Europe/Madrid');
-$dbhost="localhost";
-$dbname="himevico";
-$dbuser="root";
-$dbpass="root";
-$tabla="";
-$db = new mysqli($dbhost,$dbuser,$dbpass,$dbname);
-if ($db->connect_errno) {
-    die ("<h1>Fallo al conectar a MySQL: (" . $db->connect_errno . ") " . $db->connect_error."</h1>");
+namespace Modelo\BD;
+require_once __DIR__."/GenericoBD.php";
+
+abstract class CalendarioBD extends GenericoBD   //Aitor
+{
+
+    public static function getIdCalendario()
+    {
+        $con = self::conectar();
+
+        $query = "SELECT id FROM calendario " . " WHERE estado ='Abierto'";
+
+        $rs = mysqli_query($con, $query) or die("Error getCentrosByEmpresa");
+        while ($fila = mysqli_fetch_array($rs)) {
+            return $fila;
+
+
+            self::desconectar($con);
+
+        }
+    }
 }
+
 ?>

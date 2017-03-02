@@ -2,7 +2,7 @@
 
 require_once __DIR__.'/../../Modelo/BD/GenericoBD.php';;
 require_once __DIR__.'/../Plantilla/Views.php';
-
+require_once __DIR__.'/../../Modelo/BD/EmpresaBD.php';
 use Vista\Plantilla;
 abstract class CalendarioVac extends Plantilla\Views
 {
@@ -15,11 +15,53 @@ abstract class CalendarioVac extends Plantilla\Views
 
         <link type="text/css" rel="stylesheet" media="all" href="<?php echo parent::getUrlRaiz()?>/Vista/Plantilla/CSS/Bootstrap/estilos.css">
 
+        <?php if ($comprobar){?>
 
         <div class="calendario_ajax">
-            <div class="cal"></div><div id="mask"></div>
-        </div>
+            <!--
+                Rango entre fechas
+                Anas
+            -->
+            <div id="empresa">
+                <label for="nomEmpresa">Nombre de la empresa :</label> <select id="nomEmpresa">
+                    <?php
+                    $empresas = \Modelo\BD\EmpresaBD::getAll();
+                    foreach($empresas as $empresa){
+                        ?>
+                        <option value="<?php echo $empresa->getId(); ?>"><?php echo $empresa->getNombre(); ?></option>
+                        <?php
+                        }
+                    ?>
+                </select>
 
+                <label for="nomTrabajador">Trabajador :</label>
+
+                <?php
+
+                ?>
+
+            </div>
+            <form name="rango" >
+                <h4><p>Vacaciones por Rango o dias Sueltos:</p>
+                    <label for="rango"> Rango </label> <input type="radio" name="rangoVacaciones" value="rango"/>
+                    <label for="dSueltos"> D&iacute;as Sueltos </label> <input type="radio" name="rangoVacaciones" value="sueltos"/>
+                </h4><br/>
+                <div style="visibility: hidden"  id="fechas">
+                    <label for="fInicial"> Desde : </label>  <input type="date" id="fInicial"/>  <label for="fFinal"> Hasta : </label>  <input type="date" id="fFinal"/>
+                </div>
+            </form>
+
+            <div style='visibility: hidden' class="cal"></div><div id="mask"></div>
+        </div>
+            <?php
+        }else{
+            ?>
+            <div class="calendario_ajax">
+                <div class="cal"></div><div id="mask"></div>
+            </div>
+        <?php
+            }
+        ?>
         <script src="<?php echo parent::getUrlRaiz();?>/Vista/Plantilla/JS/jquery-2.2.1.min.js"></script>
         <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.12.0/jquery.validate.min.js"></script>
         <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.12.0/localization/messages_es.js "></script>
@@ -236,6 +278,32 @@ abstract class CalendarioVac extends Plantilla\Views
                     var nueva_fecha=datos.split("-");
                     generar_calendario(nueva_fecha[1],nueva_fecha[0]);
                 });
+
+
+
+                /**
+                 * Comprobar lo que ha escogido en el rango
+                 *
+                 * Anas
+                 */
+                 $("input[name='rangoVacaciones']").change(function () {
+
+                     if($(this).val()=="rango"){
+
+                        $("#fechas").css("visibility","visible ");
+
+
+
+                     }else{
+
+                         $("#fechas").css("visibility","hidden");
+
+                     }
+                 });
+
+
+
+
 
             });
         </script>

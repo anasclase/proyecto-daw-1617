@@ -336,8 +336,14 @@ use Modelo\Base;
                                 <textarea class="form-control" name="incidencias" id="incidencias" rows="5"></textarea>
                             </div>
                         </div>
-                        <div class="form-group col-xs-12" >
-                               <button type="button" id="btnCP" style="display: none" name="btnCerrarParte" class="btn btn-primary cerrarParte">Guardar</button>
+                        </div>
+						<div class="form-group">
+                        <div class="center-block col-sm-12 col-xs-offset-1"> 
+						<!--- Cambiar boton
+						Pablo --->
+                           <button type="button" id="btnCP" style="display: none" name="btnCerrarParte" class="btn btn-primary cerrarParte">Guardar</button>
+						   <button type='button' id="btnSP" style='display:none;' name="btnSalirParte"  class='cerrar btn btn-warning' >Salir</button>
+                        </div>
                         </div>
                         <script>
                             $(document).ready(function(){
@@ -346,12 +352,14 @@ use Modelo\Base;
                                     if(valor=="1"){
                                         $("#jornada1").css("display","block");
                                         $("#jornada2").css("display","none");
-                                        $("#btnCP").css("display","block");
+                                        $("#btnCP").css("display","inline");
+										$("#btnSP").css("display","inline");
                                         $('#jornadaElegida').val(1);
                                     }else if(valor=="2"){
                                         $("#jornada1").css("display","inline");
                                         $("#jornada2").css("display","inline");
-                                        $("#btnCP").css("display","block");
+                                        $("#btnCP").css("display","inline");
+										$("#btnSP").css("display","inline");
                                         $('#jornadaElegida').val(2);
                                     }
                                 });

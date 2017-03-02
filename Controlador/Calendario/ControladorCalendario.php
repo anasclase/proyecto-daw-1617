@@ -12,6 +12,7 @@ function fecha ($valor)
 	return $fechex;
 }
 
+
 function buscar_en_array($fecha,$array)
 {
 	$total_eventos=count($array);

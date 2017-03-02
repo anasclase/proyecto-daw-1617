@@ -59,7 +59,7 @@ switch ($_POST["accion"])
 
 
 		}
-		echo '</div> </div><div><button id="close" class="btn-danger btn pull-right col-sm-2 cerrar">Volver</button></div>';
+		echo '</div> </div><div><button id="cerrar" class="btn-warning btn pull-right col-sm-2 cerrar">Volver</button></div>';
 
 
 		break;

@@ -172,11 +172,9 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                         </div>
                     </div>
                     <div class="form-group">
-                        <div class="col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-2">
+                        <div class="col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-2"><!--Ganeko-->
                             <input class="btn btn-primary" type="submit" name="addTrabajador" value="Añadir">
-                        </div>
-                        <div class="col-sm-4 col-md-3">
-                            <input class="btn btn-danger" type="submit" name="volver" value="Volver">
+                            <input class="btn btn-warning" type="submit" name="volver" value="Volver">
                         </div>
                     </div>
                 </fieldset>
@@ -246,8 +244,8 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                 </div>
                 <form name="deleteTrabajador" method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
 
-                    <div class="col-sm-4 col-md-3">
-                         <input class="btn btn-danger" type="submit" name="volver" value="Volver">
+                    <div class="col-md-10 col-md-offset-1"><!--Ganeko-->
+                         <input class="btn btn-warning pull-right" type="submit" name="volver" value="Volver">
                     </div>
                 </form>
 

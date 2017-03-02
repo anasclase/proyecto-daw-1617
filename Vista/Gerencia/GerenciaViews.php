@@ -1323,7 +1323,7 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
             </tr>
             <?php
             foreach ($partes as $log) {
-            if ($log->getEstado()->getTipo() == "Validado" || $log->getEstado()->getTipo() == "Finalizado") {
+            if ($log->getEstado()->getTipo() == "Validado" || $log->getEstado()->getTipo() == "Finalizado" || $log->getEstado()->getTipo() == "Cerrado") {
 
                 ?>
             <form method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Gerencia/Router.php">                   <tr>
@@ -1447,7 +1447,7 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
             </tr>
             <?php
             foreach ($partes as $prod) {
-            if ($prod->getEstado()->getTipo() == "Validado" || $prod->getEstado()->getTipo() == "Finalizado") {
+            if ($prod->getEstado()->getTipo() == "Validado" || $prod->getEstado()->getTipo() == "Finalizado" || $prod->getEstado()->getTipo() == "Cerrado") {
 
                 ?>
                 <form method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Gerencia/Router.php">
@@ -1582,7 +1582,7 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
                 </tr>
                 <?php
                 foreach ($partesLog as $log) {
-                    if ($log->getEstado()->getTipo() == "Validado" || $log->getEstado()->getTipo() == "Finalizado") {
+                    if ($log->getEstado()->getTipo() == "Validado" || $log->getEstado()->getTipo() == "Finalizado" || $log->getEstado()->getTipo() == "Cerrado") {
                         ?>
 
                         <form method="post"
@@ -1707,7 +1707,7 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
                 </tr>
                 <?php
                 foreach ($partesProd as $prod) {
-                    if ($prod->getEstado()->getTipo() == "Validado" || $prod->getEstado()->getTipo() == "Finalizado") {
+                    if ($prod->getEstado()->getTipo() == "Validado" || $prod->getEstado()->getTipo() == "Finalizado" || $prod->getEstado()->getTipo() == "Cerrado") {
                         ?>
                         <form method="post"
                               action="<?php echo self::getUrlRaiz() ?>/Controlador/Gerencia/Router.php">

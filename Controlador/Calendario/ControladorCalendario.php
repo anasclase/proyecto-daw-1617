@@ -21,7 +21,10 @@ function buscar_en_array($fecha,$array)
 		if ($array[$e]["fecha"]==$fecha) return true;
 	}
 }
-
+if(isset($_POST["idempresa"])){
+    header("Location : www.google.es");
+    echo "llega";
+}
 switch ($_GET["accion"])
 {
 	case "listar_evento":
@@ -170,5 +173,12 @@ switch ($_GET["accion"])
 
 		break;
 	}
+
+    case "buscarTrab":
+    {
+        header("Location : www.google.es");
+        echo "llega";
+        break;
+    }
 }
 ?>

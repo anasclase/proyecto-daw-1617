@@ -22,25 +22,32 @@ abstract class CalendarioVac extends Plantilla\Views
                 Rango entre fechas
                 Anas
             -->
-            <div id="empresa">
-                <label for="nomEmpresa">Nombre de la empresa :</label> <select id="nomEmpresa">
-                    <?php
-                    $empresas = \Modelo\BD\EmpresaBD::getAll();
-                    foreach($empresas as $empresa){
-                        ?>
-                        <option value="<?php echo $empresa->getId(); ?>"><?php echo $empresa->getNombre(); ?></option>
+            <form name="trabajador" method="post" action="../../Controlador/Calendario/ControladorCalendario.php">
+
+                <div id="empresa">
+                    <label for="nomEmpresa">Nombre de la empresa :</label>
+                    <select id="nomEmpresa">
+                        <option value="-1" > Seleccionar </option>
                         <?php
+                        $empresas = \Modelo\BD\EmpresaBD::getAll();
+                        foreach($empresas as $empresa){
+                            ?>
+                            <option value="<?php echo $empresa->getId(); ?>"><?php echo $empresa->getNombre(); ?></option>
+                            <?php
                         }
+                        ?>
+                    </select>
+
+                    <label for="nomTrabajador">Trabajador :</label>
+                    <input type="text" id="nomTrabajador"/>
+                    <?php
+
                     ?>
-                </select>
+                </div>
 
-                <label for="nomTrabajador">Trabajador :</label>
+            </form>
 
-                <?php
 
-                ?>
-
-            </div>
             <form name="rango" >
                 <h4><p>Vacaciones por Rango o dias Sueltos:</p>
                     <label for="rango"> Rango </label> <input type="radio" name="rangoVacaciones" value="rango"/>
@@ -279,6 +286,31 @@ abstract class CalendarioVac extends Plantilla\Views
                     generar_calendario(nueva_fecha[1],nueva_fecha[0]);
                 });
 
+                /**
+                 * A la hora de cambiar el nombre de la empresa , que te busque los trabajadores
+                 *
+                 * Anas
+                **/
+                $( "#nomEmpresa").on("change",function () {
+                    $idEmpresa = $(this).val();
+
+                    $.ajax({
+                        type: "POST",
+                        url: "<?php echo parent::getUrlRaiz()?>/Controlador/Calendario/ControladorCalendario.php",
+                        cache: false,
+                        data: { idempresa: idempresa}
+
+                    }).done(function( respuesta )
+                    {
+                        $("#nomTrabajador").html(respuesta);
+
+                        },3000);
+
+
+
+                    })
+
+                });
 
 
                 /**
@@ -291,8 +323,6 @@ abstract class CalendarioVac extends Plantilla\Views
                      if($(this).val()=="rango"){
 
                         $("#fechas").css("visibility","visible ");
-
-
 
                      }else{
 

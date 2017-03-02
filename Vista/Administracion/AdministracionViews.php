@@ -284,13 +284,11 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                             <input class="form-control" type="text" name="nif" maxlength="9">
                         </div>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group"><!--Ganeko-->
                         <div class="col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-2">
                             <input class="btn btn-primary" type="submit" name="addEmpresa" value="Añadir">
+                            <input class="btn btn-warning" type="submit" name="volver" value="Volver">
                         </div>
-                            <div class="col-sm-4 col-md-3">
-                                <input class="btn btn-danger" type="submit" name="volver" value="Volver">
-                            </div>
                     </div>
                 </fieldset>
             </form>
@@ -344,8 +342,8 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
             </div>
             <form name="deleteTrabajador" method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
 
-                <div class="col-sm-4 col-md-3">
-                    <input class="btn btn-danger" type="submit" name="volver" value="Volver">
+                <div class="col-md-10 col-md-offset-1"><!--Ganeko-->
+                    <input class="btn btn-warning pull-right" type="submit" name="volver" value="Volver">
                 </div>
             </form>
             <?php
@@ -398,13 +396,11 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                             </select>
                         </div>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group"><!--Ganeko-->
                         <div class="col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-2">
                             <input class="btn btn-primary" type="submit" name="addCentro" value="Añadir">
+                            <input class="btn btn-warning" type="submit" name="volver" value="Volver">
                         </div>
-                            <div class="col-sm-4 col-md-3">
-                                <input class="btn btn-danger" type="submit" name="volver" value="Volver">
-                            </div>
                     </div>
                 </fieldset>
             </form>
@@ -459,8 +455,8 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                 </div>
                 <form name="deleteTrabajador" method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
 
-                    <div class="col-sm-4 col-md-3">
-                        <input class="btn btn-danger" type="submit" name="volver" value="Volver">
+                    <div class="col-md-10 col-md-offset-1"><!--Ganeko-->
+                        <input class="btn btn-warning pull-right" type="submit" name="volver" value="Volver">
                     </div>
                 </form>
                 <?php
@@ -585,13 +581,11 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                                 <input class="form-control" type="text" name="marca">
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group"><!--Ganeko-->
                             <div class="col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-2">
                                 <input class="btn btn-primary" type="submit" value="Añadir" name="addVehiculo">
+                                <input class="btn btn-warning" type="submit" name="volver" value="Volver">
                             </div>
-                                <div class="col-sm-4 col-md-3">
-                                    <input class="btn btn-danger" type="submit" name="volver" value="Volver">
-                                </div>
                         </div>
                     </fieldset>
                 </form>
@@ -647,8 +641,8 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                 </div>
                 <form name="deleteEstado" method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
 
-                    <div class="col-sm-4 col-md-3">
-                        <input class="btn btn-danger" type="submit" name="volver" value="Volver">
+                    <div class="col-md-10 col-md-offset-1"><!--Ganeko-->
+                        <input class="btn btn-warning pull-right" type="submit" name="volver" value="Volver">
                     </div>
                 </form>
                 <?php
@@ -700,13 +694,11 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                             <input class="form-control" type="text" name="denominacion">
                         </div>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group"><!--Ganeko-->
                         <div class="col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-2">
                             <input class="btn btn-primary" type="submit" value="Añadir" name="addHorasConvenio">
+                            <input class="btn btn-warning" type="submit" name="volver" value="Volver">
                         </div>
-                            <div class="col-sm-4 col-md-3">
-                                <input class="btn btn-danger" type="submit" name="volver" value="Volver">
-                            </div>
                     </div>
                 </fieldset>
             </form>
@@ -761,8 +753,8 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                 </div>
                 <form name="deleteEstado" method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
 
-                    <div class="col-sm-4 col-md-3">
-                        <input class="btn btn-danger" type="submit" name="volver" value="Volver">
+                    <div class="col-md-10 col-md-offset-1"><!--Ganeko-->
+                        <input class="btn btn-warning pull-right" type="submit" name="volver" value="Volver">
                     </div>
                 </form>
                 <?php
@@ -824,8 +816,8 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
             </div>
             <form name="deleteEstado" method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
 
-                <div class="col-sm-4 col-md-3">
-                    <input class="btn btn-danger" type="submit" name="volver" value="Volver">
+                <div class="col-md-10 col-md-offset-1"><!--Ganeko-->
+                    <input class="btn btn-warning pull-right" type="submit" name="volver" value="Volver">
                 </div>
             </form>
             <?php
@@ -883,8 +875,8 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
             </div>
             <form name="deleteEstado" method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
 
-                <div class="col-sm-4 col-md-3">
-                    <input class="btn btn-danger" type="submit" name="volver" value="Volver">
+                <div class="col-md-10 col-md-offset-1"><!--Ganeko-->
+                    <input class="btn btn-warning pull-right" type="submit" name="volver" value="Volver">
                 </div>
             </form>
             <?php
@@ -916,13 +908,11 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                             <input class="form-control" type="text" name="precio">
                         </div>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group"><!--Ganeko-->
                         <div class="col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-2">
                             <input class="btn btn-primary" type="submit" value="Añadir" name="addTipoFranja">
+                            <input class="btn btn-warning" type="submit" name="volver" value="Volver">
                         </div>
-                            <div class="col-sm-4 col-md-3">
-                                <input class="btn btn-danger" type="submit" name="volver" value="Volver">
-                            </div>
                     </div>
                 </fieldset>
             </form>
@@ -943,7 +933,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
             echo "no hay tipos";
         }else {
             ?>
-            <h2 class="page-header">Convenios</h2>
+            <h2 class="page-header">Tipos de Franjas</h2>
             <div class="table-responsive col-md-offset-1 col-md-10">
                 <table class="table table-bordered">
                     <tr>
@@ -974,8 +964,8 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
             </div>
             <form name="deleteEstado" method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
 
-                <div class="col-sm-4 col-md-3">
-                    <input class="btn btn-danger" type="submit" name="volver" value="Volver">
+                <div class="col-md-10 col-md-offset-1">
+                    <input class="btn btn-warning pull-right" type="submit" name="volver" value="Volver">
                 </div>
             </form>
             <?php
@@ -1030,8 +1020,8 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                 </table>
             </div>
             <form name="updatePassword" method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
-                <div class="col-sm-4 col-md-3">
-                    <input class="btn btn-danger" type="submit" name="volver" value="Volver">
+                <div class="col-md-10 col-md-offset-1"><!--Ganeko-->
+                    <input class="btn btn-warning pull-right" type="submit" name="volver" value="Volver">
                 </div>
             </form>
 
@@ -1123,14 +1113,10 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                         </select>
                     </div>
                 </div>
-                <div class="form-group">
+                <div class="form-group"><!--Ganeko-->
                     <div class="col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-2">
                         <input class="btn btn-primary" type="submit" value="Añadir" name="addHorario">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-sm-4 col-md-3">
-                        <input class="btn btn-danger" type="submit" name="volver" value="Volver">
+                        <input class="btn btn-warning" type="submit" name="volver" value="Volver">
                     </div>
                 </div>
 

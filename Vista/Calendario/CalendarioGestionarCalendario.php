@@ -15,7 +15,7 @@ abstract class CalendarioGestionarCalendario extends Plantilla\Views
 
         <link type="text/css" rel="stylesheet" media="all" href="<?php echo parent::getUrlRaiz()?>/Vista/Plantilla/CSS/Bootstrap/estilos.css">
 
-    <!-- CREAR CERRAR CALENDARIOS IRUNE -->
+    <!-- CREAR CERRAR CALENDARIOS IRUNE SI -->
 
         <form name="buscar" action="<?php echo parent::getUrlRaiz()?>/Vista/Administracion/Administracion.php?cod=0" method="post">
 

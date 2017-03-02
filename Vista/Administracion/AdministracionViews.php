@@ -1255,6 +1255,15 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
             require_once __DIR__ . "/../Plantilla/pie.php";
         }
 
+        public static function filtroHorarioTrabajador(){
+            parent::setOn(true);
+            parent::setRoot(true);
+            require_once __DIR__ . "/../Plantilla/cabecera.php";
+            ?>
+
+            <?php
+        }
+
         public static function deleteHorarioTrabajador()
         {
             parent::setOn(true);
@@ -1268,6 +1277,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                     <th>TRABAJADOR</th>
                     <th>SEMANA</th>
                     <th>HORARIO</th>
+                    <th>Calendario</th>
                     <th>ACCIÓN</th>
                 </tr>
                 <?php
@@ -1278,6 +1288,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                             <td><?php echo $horario->getTrabajador()->getDni() ?></td>
                             <td><?php echo $horario->getNumeroSemana() ?></td>
                             <td><?php echo $horario->getHorario()->getTipo() ?></td>
+                            <td><?php echo $horario->getCalendario()->getId()?></td>
                             <td><button type="submit" name="borrarHorarioTrabajador" value="Eliminar" style="border: none; background: none"><span class="glyphicon glyphicon-remove" style="color: red; font-size: 1.5em"></span></button></td>
 
                         </tr>

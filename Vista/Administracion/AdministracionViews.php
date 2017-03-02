@@ -51,6 +51,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
             <h3 class="page-header">Tipo Franja
                 <a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/insertTipoFranja.php"><span src="" class="glyphicon glyphicon-plus" style="font-size: 24px; color: green;"></span></a>
                 <a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/deleteTipoFranja.php"><span class="glyphicon glyphicon-eye-open" style="font-size: 24px; color: black;"></span></a>
+                <a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/updateTipoFranja.php"><span class="glyphicon glyphicon-pencil" style="font-size: 24px;"></span></a>
             </h3>
             <h3 class="page-header">Horario
                 <a href="<?php echo self::getUrlRaiz() ?>/Vista/Administracion/insertHorario.php"><span src="" class="glyphicon glyphicon-plus" style="font-size: 24px; color: green;"></span></a>
@@ -60,9 +61,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                 <a href="<?php echo self::getUrlRaiz() ?>/Vista/Administracion/insertHorarioTrabajador.php"><span src="" class="glyphicon glyphicon-plus" style="font-size: 24px; color: green;"></span></a>
                 <a href="<?php echo self::getUrlRaiz() ?>/Vista/Administracion/deleteHorarioTrabajador.php"><span class="glyphicon glyphicon-eye-open" style="font-size: 24px; color: black;"></span></a>
             </h3>
-            <h3 class="page-header">Tipos de Horario
-                <a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/updateTipoFranja.php"><span class="glyphicon glyphicon-pencil" style="font-size: 24px;"></span></a>
-            </h3>
+
 
 
 
@@ -171,12 +170,10 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                             </select>
                         </div>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group"><!-- Ganeko -->
                         <div class="col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-2">
                             <input class="btn btn-primary" type="submit" name="addTrabajador" value="Añadir">
-                        </div>
-                        <div class="col-sm-4 col-md-3">
-                            <input class="btn btn-danger" type="submit" name="volver" value="Volver">
+                            <input class="btn btn-warning" type="submit" name="volver" value="Volver">
                         </div>
                     </div>
                 </fieldset>
@@ -246,8 +243,8 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                 </div>
                 <form name="deleteTrabajador" method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
 
-                    <div class="col-sm-4 col-md-3">
-                         <input class="btn btn-danger" type="submit" name="volver" value="Volver">
+                    <div class="col-md-10 col-md-offset-1"><!-- Ganeko -->
+                         <input class="btn btn-warning pull-right" type="submit" name="volver" value="Volver">
                     </div>
                 </form>
 
@@ -1137,35 +1134,35 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                 echo "No hay horarios";
             }else {
                 ?>
-
-                <table class="table table-bordered">
-                    <tr>
-                        <th>HORARIO</th>
-                        <th>ACCIÓN</th>
-                    </tr>
-                    <?php
-                    foreach ($horarios as $horario) {
-                        ?>
-                        <form name="deleteHorario" method="post"
-                              action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
-                            <tr>
-                                <td><?php echo $horario->getTipo() ?></td>
-								<!-- PABLO cambiar botones por glypicon unico boton volver-->
-                                <td><button type="submit" name="eliminarHorario" value="Eliminar" style="border: none; background: none;"><span class="glyphicon glyphicon-remove" style="color:red; font-size: 1.5em"></span></button></td>
-                                
-                            </tr>
-							
-                            <input type="hidden" name="id" value="<?php echo $horario->getId(); ?>">
-                        </form>
+                <div class="table-responsive col-md-offset-1 col-md-10">
+                    <table class="table table-bordered">
+                        <tr>
+                            <th>HORARIO</th>
+                            <th>ACCIÓN</th>
+                        </tr>
                         <?php
-                    }
-                    ?>
-                </table>
-				<form method='post' name="atrasHorarios" action='<?php echo self::getUrlRaiz() ?>/Vista/Administracion/Administracion.php?cod=1'>
-				<div class='form-group'>
-					<input type="submit" value="Volver" class='center-block cerrar btn btn-warning ' name='volver'>
-				</div>
-				</form>
+                        foreach ($horarios as $horario) {
+                            ?>
+                            <form name="deleteHorario" method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
+                                <tr>
+                                    <td><?php echo $horario->getTipo() ?></td>
+								    <!-- PABLO cambiar botones por glypicon unico boton volver-->
+                                    <td><button type="submit" name="eliminarHorario" value="Eliminar" style="border: none; background: none;"><span class="glyphicon glyphicon-remove" style="color:red; font-size: 1.5em"></span></button></td>
+                                </tr>
+                                <input type="hidden" name="id" value="<?php echo $horario->getId(); ?>">
+                            </form>
+                            <?php
+                        }
+                        ?>
+                    </table>
+                </div>
+				    <form method='post' name="atrasHorarios" action='<?php echo self::getUrlRaiz() ?>/Vista/Administracion/Administracion.php?cod=1'>
+				    <div class='form-group'>
+				        <div class="col-md-10 col-md-offset-1"><!-- Pablo Ganeko -->
+					        <input type="submit" value="Volver" class='cerrar btn btn-warning pull-right' name='volver'>
+					    </div>
+				    </div>
+				    </form>
                 <?php
             }
             require_once __DIR__ . "/../Plantilla/pie.php";
@@ -1227,12 +1224,10 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                         </select>
                     </div>
                 </div>
-                <div class="form-group">
+                <div class="form-group"><!-- Ganeko -->
                     <div class="col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-2">
                         <input class="btn btn-primary" type="submit" value="Añadir" name="añadirHorarioTrabajador">
-                    </div>
-                    <div class="col-sm-4 col-md-3">
-                        <input class="btn btn-danger" type="submit" name="volver" value="Volver">
+                        <input class="btn btn-warning" type="submit" name="volver" value="Volver">
                     </div>
                 </div>
             </form>
@@ -1248,34 +1243,35 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
             $horarioTrabajador = Administracion\Controlador::getAllHoraioTrabajador();
             require_once __DIR__ . "/../Plantilla/cabecera.php";
             ?>
-
-            <table class="table table-bordered">
-                <tr>
-                    <th>TRABAJADOR</th>
-                    <th>SEMANA</th>
-                    <th>HORARIO</th>
-                    <th>ACCIÓN</th>
-                </tr>
-                <?php
-                foreach ($horarioTrabajador as $horario) {
-                    ?>
-                    <form method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
-                        <tr>
-                            <td><?php echo $horario->getTrabajador()->getDni() ?></td>
-                            <td><?php echo $horario->getNumeroSemana() ?></td>
-                            <td><?php echo $horario->getHorario()->getTipo() ?></td>
-                            <td><button type="submit" name="borrarHorarioTrabajador" value="Eliminar" style="border: none; background: none"><span class="glyphicon glyphicon-remove" style="color: red; font-size: 1.5em"></span></button></td>
-
-                        </tr>
-                        <input type="hidden" value="<?php echo $horario->getId() ?>" name="id">
-                    </form>
+            <div class="table-responsive col-md-offset-1 col-md-10">
+                <table class="table table-bordered">
+                    <tr>
+                        <th>TRABAJADOR</th>
+                        <th>SEMANA</th>
+                        <th>HORARIO</th>
+                        <th>ACCIÓN</th>
+                    </tr>
                     <?php
-                }
-                ?>
-            </table>
+                    foreach ($horarioTrabajador as $horario) {
+                        ?>
+                        <form method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
+                            <tr>
+                                <td><?php echo $horario->getTrabajador()->getDni() ?></td>
+                                <td><?php echo $horario->getNumeroSemana() ?></td>
+                                <td><?php echo $horario->getHorario()->getTipo() ?></td>
+                                <td><button type="submit" name="borrarHorarioTrabajador" value="Eliminar" style="border: none; background: none"><span class="glyphicon glyphicon-remove" style="color: red; font-size: 1.5em"></span></button></td>
+
+                            </tr>
+                            <input type="hidden" value="<?php echo $horario->getId() ?>" name="id">
+                        </form>
+                        <?php
+                    }
+                    ?>
+                </table>
+            </div>
             <form method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
-                <div class="col-sm-4 col-md-3">
-                    <input class="btn btn-danger" type="submit" name="volver" value="Volver">
+                <div class="col-md-10 col-md-offset-1"><!-- Ganeko -->
+                    <input class="btn btn-warning pull-right" type="submit" name="volver" value="Volver">
                 </div>
             </form>
             <?php

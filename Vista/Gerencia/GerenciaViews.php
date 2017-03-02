@@ -211,7 +211,7 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
                     </table>
                 </div>
         <form name="deleteTrabajador" method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Gerencia/Router.php">
-        <div class="col-md-10">
+        <div class="col-md-10 col-md-offset-1">
             <input class="btn btn-danger pull-right" type="submit" name="volver" value="Volver">
         </div>
         </form>
@@ -300,7 +300,7 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
                 </table>
             </div>
             <form name="deleteTrabajador" method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Gerencia/Router.php">
-                <div class="col-md-10">
+                <div class="col-md-10 col-md-offset-1">
                     <input class="btn btn-danger pull-right" type="submit" name="volver" value="Volver">
                 </div>
             </form>
@@ -407,8 +407,8 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
                     </table>
                 </div>
                 <form name="deleteTrabajador" method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Gerencia/Router.php">
-                    <div class="col-md-10">
-                        <input class="btn btn-danger" type="submit" name="volver" value="Volver">
+                    <div class="col-md-10 col-md-offset-1">
+                        <input class="btn btn-danger pull-right" type="submit" name="volver" value="Volver">
                     </div>
                 </form>
                 <?php
@@ -480,8 +480,8 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
             </table>
         </div>
         <form name="deleteEstado" method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Gerencia/Router.php">
-            <div class="col-md-10">
-                <input class="btn btn-danger" type="submit" name="volver" value="Volver">
+            <div class="col-md-10 col-md-offset-1">
+                <input class="btn btn-danger pull-right" type="submit" name="volver" value="Volver">
             </div>
         </form>
 
@@ -589,8 +589,8 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
             </div>
             <form name="deleteEstado" method="post"
                   action="<?php echo self::getUrlRaiz() ?>/Controlador/Gerencia/Router.php">
-                <div class="col-md-10">
-                    <input class="btn btn-danger" type="submit" name="volver" value="Volver">
+                <div class="col-md-10 col-md-offset-1">
+                    <input class="btn btn-danger pull-right" type="submit" name="volver" value="Volver">
                 </div>
             </form>
             <?php
@@ -697,8 +697,8 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
             </div>
             <form name="deleteEstado" method="post"
                   action="<?php echo self::getUrlRaiz() ?>/Controlador/Gerencia/Router.php">
-                <div class="col-md-10">
-                    <input class="btn btn-danger" type="submit" name="volver" value="Volver">
+                <div class="col-md-10 col-md-offset-1">
+                    <input class="btn btn-danger pull-right" type="submit" name="volver" value="Volver">
                 </div>
             </form>
             <?php
@@ -753,8 +753,8 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
             </div>
             <form name="deleteEstado" method="post"
                   action="<?php echo self::getUrlRaiz() ?>/Controlador/Gerencia/Router.php">
-                <div class="col-sm-4  col-md-3 ">
-                    <input class="btn btn-danger" type="submit" name="volver" value="Volver">
+                <div class="col-md-10 col-md-offset-1">
+                    <input class="btn btn-danger pull-right" type="submit" name="volver" value="Volver">
                 </div>
             </form>
             <?php
@@ -844,8 +844,8 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
             </div>
             <form name="deleteEstado" method="post"
                   action="<?php echo self::getUrlRaiz() ?>/Controlador/Gerencia/Router.php">
-                <div class="col-md-10">
-                    <input class="btn btn-danger" type="submit" name="volver" value="Volver">
+                <div class="col-md-10 col-md-offset-1">
+                    <input class="btn btn-danger pull-right" type="submit" name="volver" value="Volver">
                 </div>
             </form>
             <?php
@@ -908,8 +908,8 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
             </div>
             <form name="deleteEstado" method="post"
                   action="<?php echo self::getUrlRaiz() ?>/Controlador/Gerencia/Router.php">
-                <div class="col-sm-4  col-md-3 ">
-                    <input class="btn btn-danger" type="submit" name="volver" value="Volver">
+                <div class="col-md-10 col-md-offset-1">
+                    <input class="btn btn-danger pull-right" type="submit" name="volver" value="Volver">
                 </div>
             </form>
             <?php

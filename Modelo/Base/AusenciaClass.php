@@ -4,9 +4,7 @@ namespace Modelo\Base;
 
 use Modelo\BD;
 
-require_once __DIR__."/../BD/ConvenioAusenciaBD.php";
 require_once __DIR__."/../BD/AusenciaBD.php";
-require_once __DIR__."/ConvenioAusenciaClass.php";
 class Ausencia
 {
 

@@ -109,7 +109,7 @@ abstract class GenericoBD
                 return new Base\Produccion($fila['dni'], $fila['nombre'], $fila['apellido1'], $fila['apellido2'], $fila['telefono'], $fila["foto"]);//entroBD::getCentrosById($fila['idCentro'])
                 break;
             case "Ausencias":
-                return new Base\TrabajadorAusencia($fila['id'], $fila['fecha'], $fila['horaInicio'], $fila['horaFin']);
+                return new Base\AusenciaTrabajador($fila['id'], $fila['fecha'], $fila['horaInicio'], $fila['horaFin']);
                 break;
             case "ConvenioAusencias":
                 return new Base\ConvenioAusencia($fila['id'], $fila['fecha']);

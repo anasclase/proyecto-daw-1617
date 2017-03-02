@@ -6,12 +6,13 @@ namespace Modelo\Base;
 use Modelo\BD;
 
 require_once __DIR__."/CentroClass.php";
-require_once __DIR__."/TrabajadorAusenciaClass.php";
+require_once __DIR__."/AusenciaTrabajadorClass.php";
 require_once __DIR__."/HorariosTrabajadoresClass.php";
 require_once __DIR__."/../BD/TrabajadorBD.php";
 require_once __DIR__."/../BD/CentroBD.php";
 require_once __DIR__."/../BD/TrabajadorAusenciaBD.php";
 require_once __DIR__."/../BD/HorarioTrabajadorBD.php";
+require_once __DIR__."/../BD/HorasConvenioBD.php";
 
 
 
@@ -24,10 +25,11 @@ abstract class Trabajador{
     private $telefono;
     private $foto;
     private $centro; //objeto centro (no he codificado nada BD)
-    private $trabajadorAusencias; // array ausencias --tabla intermedia
+    private $ausenciasTrabajador; // array ausencias --tabla intermedia
     private $horariosTrabajador; // array Horarios(puede tener mñana, tarde y noche) --tabla intermedia
+    private $horasConvenio;
 
-    public function __construct($dni = null, $nombre = null, $apellido1 = null, $apellido2 = null, $telefono = null,$foto = null , $centro = null,  $trabajadorAusencias = null, $horariosTrabajador = null)
+    public function __construct($dni = null, $nombre = null, $apellido1 = null, $apellido2 = null, $telefono = null,$foto = null , $centro = null,  $ausenciasTrabajador = null, $horariosTrabajador = null, $horasConvenio=null)
     {
         $this->setDni($dni);
         $this->setNombre($nombre);
@@ -36,9 +38,9 @@ abstract class Trabajador{
         $this->setTelefono($telefono);
         $this->setFoto($foto);
         $this->setCentro($centro);
-
-        $this->setTrabajadorAusencias($trabajadorAusencias);
+        $this->setAusenciasTrabajador($ausenciasTrabajador);
         $this->setHorariosTrabajador($horariosTrabajador);
+        $this->setHorasConvenio($horasConvenio);
     }
 
     /**
@@ -159,17 +161,17 @@ abstract class Trabajador{
     /**
      * @return mixed
      */
-    public function getTrabajadorAusencias()
+    public function getAusenciasTrabajador()
     {
-        return $this->trabajadorAusencias;
+        return $this->ausenciasTrabajador;
     }
 
     /**
      * @param mixed $trabajadorAusencias
      */
-    public function setTrabajadorAusencias($trabajadorAusencias)
+    public function setAusenciasTrabajador($ausenciasTrabajador)
     {
-        $this->trabajadorAusencias = $trabajadorAusencias;
+        $this->ausenciasTrabajador = $ausenciasTrabajador;
     }
 
     /**
@@ -201,6 +203,25 @@ abstract class Trabajador{
 
     public function add(){
         BD\TrabajadorBD::add($this);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getHorasConvenio()
+    {
+        if($this->horasConvenio==null){
+            $this->setHorasConvenio(BD\HorasConvenioBD::getHorasConvenioByPerfil($this));
+        }
+        return $this->horasConvenio;
+    }
+
+    /**
+     * @param mixed $horasConvenio
+     */
+    public function setHorasConvenio($horasConvenio)
+    {
+        $this->horasConvenio = $horasConvenio;
     }
 
 }

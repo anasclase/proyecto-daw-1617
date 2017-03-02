@@ -93,8 +93,7 @@ public static function generarcalendario(){
 
                 $('#mask').fadeIn(1600)
                 .html(
-                    "<a class='cerrar close'><span class='glyphicon glyphicon-remove' aria-hidden='true'></span></a>" +
-                    "<div id='nuevo_evento' class='row' rel='"+fecha+"'>" +
+				"<div id='nuevo_evento' class='row' rel='"+fecha+"'>" +
                         "<h2 class='col-xs-12 text-center'>Parte de "+formatDate(fecha)+"</h2>" +
                     "</div>" +
                     "<div class='row window' rel='"+fecha+"'>"+

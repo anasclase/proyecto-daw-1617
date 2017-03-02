@@ -15,16 +15,23 @@ abstract class CalendarioGestionarCalendario extends Plantilla\Views
 
         <link type="text/css" rel="stylesheet" media="all" href="<?php echo parent::getUrlRaiz()?>/Vista/Plantilla/CSS/Bootstrap/estilos.css">
 
+    <!-- CREAR CERRAR CALENDARIOS IRUNE SI -->
 
-        <form name="buscar" action="<?php echo parent::getUrlRaiz()?>/Vista/Administracion/Administracion.php?cod=3" method="post">
+        <form name="buscar" action="<?php echo parent::getUrlRaiz()?>/Vista/Administracion/Administracion.php?cod=0" method="post">
+
+
+            <?php $centros = parent::getUrlRaiz()?>/Vista/Administracion/Administracion.php?cod=0";
 
             <h2>Crear un calendario</h2>
-            <label>PAÍS: </label><select name="pais"></select>
-            <label>CENTRO: </label><select name="centro"></select>
+            <label>CENTRO: </label>
+            <select name="centro">
+                <?php for (var $x=0; $x < count($centros); $x++) { ?>
+
+                <?php } ?>
+            </select>
             <input type="submit" name="crear" value="Crear">
 
             <h2>Cerrar un calendario</h2>
-            <label>PAÍS: </label><select name="pais"></select>
             <label>CENTRO: </label><select name="centro"></select>
             <label>CALENDARIOS: </label><select name="calendarios"></select>
             <input type="submit" name="cerrar" value="Cerrar">

@@ -71,7 +71,7 @@ abstract class GenericoBD
                 break;
             case "Partelogistica":
                 //Correccion Aitor I
-                return new Base\ParteLogistica($fila["id"],$fila['fecha'],$fila["nota"], null,null,null,EstadoBD::selectEstadoById($fila["idEstado"]), TrabajadorBD::getTrabajadorByDni($fila['dniTrabajador']), null);
+                return new Base\ParteLogistica($fila["id"],$fila['fecha'],$fila["nota"],$fila["autopista"], $fila["dieta"], $fila["otroGasto"],EstadoBD::selectEstadoById($fila["idEstado"]), TrabajadorBD::getTrabajadorByDni($fila['dniTrabajador']), null);
                 break;
             case "Centro":
                 return new Base\Centro($fila["id"], $fila["nombre"], $fila["localizacion"], null, null, null, null);

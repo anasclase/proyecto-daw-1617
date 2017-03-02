@@ -1652,10 +1652,10 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
 			echo "<div class='panel panel-default'><div class='panel-body'>El Parte no tiene ninguna Tarea.</div></div>";
 			if(strnatcasecmp($estado->getTipo(),"abierto")==0){
 				echo "<button type='button' class='btn btn-danger pBorrar' rel='".$parte->getId()."'>Eliminar Parte</button>";
-			}
+			}/*CAMBIAR BOTON PABLO*/
 		}?>
 
-            <a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/Administracion.php?cod=2">Volver</a>
+            <a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/Administracion.php?cod=2"><button type="button" class="center-block btn btn-warning cerrar">Volver</button></a>
 
             <?php
             //echo '</div> </div><div><button id="close" class="btn-danger btn pull-right col-sm-2 cerrar">Volver</button></div>';
@@ -1869,15 +1869,14 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
 			echo "<div class='panel panel-default'><div class='panel-body'>El Parte no tiene ninguna Tarea.</div></div>";
 			if(strnatcasecmp($parte->getEstado()->getTipo(),"abierto")==0){
 				echo "<button type='button' class='btn btn-danger pBorrar' rel='".$parte->getId()."'>Eliminar Parte</button>";
-			}
+			}/*CAMBIAR BOTONES PABLO*/
 		}?>
-		        <button type="submit" name="guardarParteProduccion"
-                   style="border: none; background: none"><span
-                   class="glyphicon glyphicon-floppy-saved" style="color:blue; font-size: 1.5em"></span> <span style="color:blue;">Guardar</span>
-                </button>
+		        <button type="submit" name="guardarParteProduccion"  class="center-block btn btn-primary">Guardar</button>
+				<a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/Administracion.php?cod=2" style='text-decoration:none;'><button type="button" class="center-block btn btn-warning cerrar">Volver</button></a>
+                
                 </form>
 
-            <a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/Administracion.php?cod=2">Volver</a>
+            
 
             <?php
             //echo '</div> </div><div><button id="close" class="btn-danger btn pull-right col-sm-2 cerrar">Volver</button></div>';
@@ -1914,9 +1913,6 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                     <th>NOMBRE</th>
                     <th>FECHA</th>
                     <th>NOTA</th>
-                    <th>AUTOPISTAS</th>
-                    <th>DIETAS</th>
-                    <th>OTROS GASTOS</th>
                     <th>ESTADO</th>
                     <th>ACCIÓN</th>
                 </tr>
@@ -1932,9 +1928,6 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                                 <td><?php echo $log->getTrabajador()->getNombre()." ".$log->getTrabajador()->getApellido1()." ".$log->getTrabajador()->getApellido2(); ?></td>
                                 <td><?php echo $log->getFecha(); ?></td>
                                 <td><?php echo $log->getNota(); ?></td>
-                                <td><?php echo $log->getAutopista(); ?></td>
-                                <td><?php echo $log->getDieta(); ?></td>
-                                <td><?php echo $log->getOtroGasto(); ?></td>
                                 <td><?php echo $log->getEstado()->getTipo(); ?></td>
                                 <td>
                                     <button type="submit" name="listarParteLog"
@@ -2224,9 +2217,6 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                 <th>NOMBRE</th>
                 <th>FECHA</th>
                 <th>NOTA</th>
-                <th>DIETAS</th>
-                <th>OTROS GASTOS</th>
-                <th>ESTADO</th>
                 <th>ESTADO</th>
                 <th>ACCIÓN</th>
             </tr>
@@ -2239,9 +2229,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                         <td><?php echo $log->getTrabajador()->getDni(); ?></td>
                         <td><?php echo $log->getTrabajador()->getNombre()." ".$log->getTrabajador()->getApellido1()." ".$log->getTrabajador()->getApellido2(); ?></td>
                         <td><?php echo $log->getFecha(); ?></td>
-                        <td><?php echo $log->getNota(); ?></td><td><?php echo $log->getAutopista(); ?></td>
-                        <td><?php echo $log->getDieta(); ?></td>
-                        <td><?php echo $log->getOtroGasto(); ?></td>
+                        <td><?php echo $log->getNota(); ?></td>
                         <td><?php echo $log->getEstado()->getTipo(); ?></td>
                         <td>
 

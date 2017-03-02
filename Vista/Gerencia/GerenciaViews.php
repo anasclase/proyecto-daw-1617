@@ -15,23 +15,33 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
 
         require_once __DIR__ . "/../Plantilla/cabecera.php";
         ?>
-            <h3 class="page-header">Añadir</h3>
-                <a href="<?php echo self::getUrlRaiz()?>/Vista/Gerencia/insertTrabajador.php">Añadir Trabajador</a><br/>
-                <a href="<?php echo self::getUrlRaiz()?>/Vista/Gerencia/insertEmpresa.php">Añadir Empresa</a><br/>
-                <a href="<?php echo self::getUrlRaiz()?>/Vista/Gerencia/insertVehiculo.php">Añadir Vehículo</a><br/>
-                <a href="<?php echo self::getUrlRaiz()?>/Vista/Gerencia/insertHorasConvenio.php">Añadir Convenio</a><br/>
-                <a href="<?php echo self::getUrlRaiz()?>/Vista/Gerencia/insertCentro.php">Añadir Centro</a><br/>
-                <a href="<?php echo self::getUrlRaiz()?>/Vista/Gerencia/insertTipoFranja.php">Añadir Tipo de Horario</a><br/>
-            <h3 class="page-header">Eliminar</h3>
-                <a href="<?php echo self::getUrlRaiz()?>/Vista/Gerencia/deleteTrabajador.php">Ver Trabajadores</a><br/>
-                <a href="<?php echo self::getUrlRaiz()?>/Vista/Gerencia/deleteEmpresa.php">Ver Empresas</a><br/>
-                <a href="<?php echo self::getUrlRaiz()?>/Vista/Gerencia/deleteCentro.php">Ver Centros</a><br/>
-                <a href="<?php echo self::getUrlRaiz()?>/Vista/Gerencia/deleteVehiculo.php">Ver Vehículos</a><br/>
-                <a href="<?php echo self::getUrlRaiz()?>/Vista/Gerencia/deleteHorasConvenio.php">Ver Convenios</a><br/>
-                <a href="<?php echo self::getUrlRaiz()?>/Vista/Gerencia/deleteTipoFranja.php">Ver Tipos de Horarios</a><br/>
-            <h3 class="page-header">Modificar</h3>
-                <a href="<?php echo self::getUrlRaiz()?>/Vista/Gerencia/updateTipoFranja.php">Modificar Tipos de Horarios</a><br/>
-                <a href="<?php echo self::getUrlRaiz()?>/Vista/Gerencia/updateHorasConvenio.php">Modificar Horas de Convenios</a><br/>
+            <h3 class="page-header">Trabajadores
+                <a href="<?php echo self::getUrlRaiz()?>/Vista/Gerencia/insertTrabajador.php"><span class="glyphicon glyphicon-plus" style="font-size: 24px; color: green;"></a>
+                <a href="<?php echo self::getUrlRaiz()?>/Vista/Gerencia/deleteTrabajador.php"><span class="glyphicon glyphicon-eye-open" style="font-size: 24px; color: black;"></a>
+            </h3>
+            <h3 class="page-header">Empresas
+                <a href="<?php echo self::getUrlRaiz()?>/Vista/Gerencia/insertEmpresa.php"><span class="glyphicon glyphicon-plus" style="font-size: 24px; color: green;"></a>
+                <a href="<?php echo self::getUrlRaiz()?>/Vista/Gerencia/deleteEmpresa.php"><span class="glyphicon glyphicon-eye-open" style="font-size: 24px; color: black;"></a>
+            </h3>
+            <h3 class="page-header">Vehiculos
+                <a href="<?php echo self::getUrlRaiz()?>/Vista/Gerencia/insertVehiculo.php"><span class="glyphicon glyphicon-plus" style="font-size: 24px; color: green;"></a>
+                <a href="<?php echo self::getUrlRaiz()?>/Vista/Gerencia/deleteVehiculo.php"><span class="glyphicon glyphicon-eye-open" style="font-size: 24px; color: black;"></a>
+            </h3>
+            <h3 class="page-header">Convenios
+                <a href="<?php echo self::getUrlRaiz()?>/Vista/Gerencia/insertHorasConvenio.php"><span class="glyphicon glyphicon-plus" style="font-size: 24px; color: green;"></a>
+                <a href="<?php echo self::getUrlRaiz()?>/Vista/Gerencia/deleteHorasConvenio.php"><span class="glyphicon glyphicon-eye-open" style="font-size: 24px; color: black;"></a>
+                <a href="<?php echo self::getUrlRaiz()?>/Vista/Gerencia/updateHorasConvenio.php"><span class="glyphicon glyphicon-pencil" style="font-size: 24px;"></a>
+            </h3>
+            <h3 class="page-header">Centros
+                <a href="<?php echo self::getUrlRaiz()?>/Vista/Gerencia/insertCentro.php"><span class="glyphicon glyphicon-plus" style="font-size: 24px; color: green;"></a>
+                <a href="<?php echo self::getUrlRaiz()?>/Vista/Gerencia/deleteCentro.php"><span class="glyphicon glyphicon-eye-open" style="font-size: 24px; color: black;"></a>
+            </h3>
+            <h3 class="page-header">Horarios
+                <a href="<?php echo self::getUrlRaiz()?>/Vista/Gerencia/insertTipoFranja.php"><span class="glyphicon glyphicon-plus" style="font-size: 24px; color: green;"></a>
+                <a href="<?php echo self::getUrlRaiz()?>/Vista/Gerencia/deleteTipoFranja.php"><span class="glyphicon glyphicon-eye-open" style="font-size: 24px; color: black;"></a>
+                <a href="<?php echo self::getUrlRaiz()?>/Vista/Gerencia/updateTipoFranja.php"><span class="glyphicon glyphicon-pencil" style="font-size: 24px;"></a>
+            </h3>
+
 
         <?php
         require_once __DIR__ . "/../Plantilla/pie.php";
@@ -90,7 +100,7 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-2 col-md-2">Empresa:</label>
-                        <div class="col-sm-4 col-md-3">
+                        <div class="col-sm-4 col-md-3 ">
                             <select class="form-control" name="empresa">
                                 <?php
                                 foreach($empresas as $empresa){
@@ -133,12 +143,11 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
                             </select>
                         </div>
                     </div>
+                    <!-- Ganeko -->
                     <div class="form-group">
-                        <div class="col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-2">
+                        <div class="col-sm-4 col-sm-offset-2 col-md-4">
                             <input class="btn btn-primary" type="submit" name="addTrabajador" value="Añadir">
-                        </div>
-                        <div class="col-sm-4  col-md-3 ">
-                            <input class="btn btn-danger" type="submit" name="volver" value="Volver">
+                            <input class="btn btn-warning" type="submit" name="volver" value="Volver">
                         </div>
                     </div>
                 </fieldset>
@@ -203,8 +212,9 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
                     </table>
                 </div>
         <form name="deleteTrabajador" method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Gerencia/Router.php">
-        <div class="col-sm-4  col-md-3 ">
-            <input class="btn btn-danger" type="submit" name="volver" value="Volver">
+        <!-- Ganeko -->
+        <div class="col-md-10 col-md-offset-1">
+            <input class="btn btn-warning pull-right" type="submit" name="volver" value="Volver">
         </div>
         </form>
         <?php
@@ -235,11 +245,9 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
                         </div>
                     </div>
                     <div class="form-group">
-                        <div class="col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-2">
+                        <div class="col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-2"><!-- Ganeko -->
                             <input class="btn btn-primary" type="submit" name="addEmpresa" value="Añadir">
-                        </div>
-                        <div class="col-sm-4  col-md-3 ">
-                            <input class="btn btn-danger" type="submit" name="volver" value="Volver">
+                            <input class="btn btn-warning" type="submit" name="volver" value="Volver">
                         </div>
                     </div>
                 </fieldset>
@@ -294,8 +302,8 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
                 </table>
             </div>
             <form name="deleteTrabajador" method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Gerencia/Router.php">
-                <div class="col-sm-4  col-md-3 ">
-                    <input class="btn btn-danger" type="submit" name="volver" value="Volver">
+                <div class="col-md-10 col-md-offset-1"><!-- Ganeko -->
+                    <input class="btn btn-warning pull-right" type="submit" name="volver" value="Volver">
                 </div>
             </form>
             <?php
@@ -344,11 +352,9 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
                         </div>
                     </div>
                     <div class="form-group">
-                        <div class="col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-2">
+                        <div class="col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-2"><!-- Ganeko -->
                             <input class="btn btn-primary" type="submit" name="addCentro" value="Añadir">
-                        </div>
-                        <div class="col-sm-4  col-md-3 ">
-                            <input class="btn btn-danger" type="submit" name="volver" value="Volver">
+                            <input class="btn btn-warning" type="submit" name="volver" value="Volver">
                         </div>
                     </div>
                 </fieldset>
@@ -403,8 +409,8 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
                     </table>
                 </div>
                 <form name="deleteTrabajador" method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Gerencia/Router.php">
-                    <div class="col-sm-4  col-md-3 ">
-                        <input class="btn btn-danger" type="submit" name="volver" value="Volver">
+                    <div class="col-md-10 col-md-offset-1"><!-- Ganeko -->
+                        <input class="btn btn-warning pull-right" type="submit" name="volver" value="Volver">
                     </div>
                 </form>
                 <?php
@@ -430,11 +436,9 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
                         </div>
                     </div>
                     <div class="form-group">
-                        <div class="col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-2">
+                        <div class="col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-2"><!-- Ganeko -->
                             <input class="btn btn-primary" type="submit" name="addEstado" value="Añadir">
-                        </div>
-                        <div class="col-sm-4  col-md-3 ">
-                            <input class="btn btn-danger" type="submit" name="volver" value="Volver">
+                            <input class="btn btn-warning" type="submit" name="volver" value="Volver">
                         </div>
                     </div>
                 </fieldset>
@@ -478,8 +482,8 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
             </table>
         </div>
         <form name="deleteEstado" method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Gerencia/Router.php">
-            <div class="col-sm-4  col-md-3 ">
-                <input class="btn btn-danger" type="submit" name="volver" value="Volver">
+            <div class="col-md-10 col-md-offset-1"><!-- Ganeko -->
+                <input class="btn btn-warning pull-right" type="submit" name="volver" value="Volver">
             </div>
         </form>
 
@@ -528,11 +532,9 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
                         </div>
                     </div>
                     <div class="form-group">
-                        <div class="col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-2">
+                        <div class="col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-2"><!-- Ganeko -->
                             <input class="btn btn-primary" type="submit" value="Añadir" name="addVehiculo">
-                        </div>
-                        <div class="col-sm-4  col-md-3 ">
-                            <input class="btn btn-danger" type="submit" name="volver" value="Volver">
+                            <input class="btn btn-warning" type="submit" name="volver" value="Volver">
                         </div>
                     </div>
                 </fieldset>
@@ -589,8 +591,8 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
             </div>
             <form name="deleteEstado" method="post"
                   action="<?php echo self::getUrlRaiz() ?>/Controlador/Gerencia/Router.php">
-                <div class="col-sm-4  col-md-3 ">
-                    <input class="btn btn-danger" type="submit" name="volver" value="Volver">
+                <div class="col-md-10 col-md-offset-1"><!-- Ganeko -->
+                    <input class="btn btn-warning pull-right" type="submit" name="volver" value="Volver">
                 </div>
             </form>
             <?php
@@ -639,11 +641,9 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
                         </div>
                     </div>
                     <div class="form-group">
-                        <div class="col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-2">
+                        <div class="col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-2"><!-- Ganeko -->
                             <input class="btn btn-primary" type="submit" value="Añadir" name="addHorasConvenio">
-                        </div>
-                        <div class="col-sm-4  col-md-3 ">
-                            <input class="btn btn-danger" type="submit" name="volver" value="Volver">
+                            <input class="btn btn-warning" type="submit" name="volver" value="Volver">
                         </div>
                     </div>
                 </fieldset>
@@ -699,8 +699,8 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
             </div>
             <form name="deleteEstado" method="post"
                   action="<?php echo self::getUrlRaiz() ?>/Controlador/Gerencia/Router.php">
-                <div class="col-sm-4  col-md-3 ">
-                    <input class="btn btn-danger" type="submit" name="volver" value="Volver">
+                <div class="col-md-10 col-md-offset-1"><!-- Ganeko -->
+                    <input class="btn btn-warning pull-right" type="submit" name="volver" value="Volver">
                 </div>
             </form>
             <?php
@@ -755,8 +755,8 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
             </div>
             <form name="deleteEstado" method="post"
                   action="<?php echo self::getUrlRaiz() ?>/Controlador/Gerencia/Router.php">
-                <div class="col-sm-4  col-md-3 ">
-                    <input class="btn btn-danger" type="submit" name="volver" value="Volver">
+                <div class="col-md-10 col-md-offset-1"><!-- Ganeko -->
+                    <input class="btn btn-warning pull-right" type="submit" name="volver" value="Volver">
                 </div>
             </form>
             <?php
@@ -789,11 +789,9 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
                             </div>
                     </div>
                     <div class="form-group">
-                        <div class="col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-2">
+                        <div class="col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-2"><!-- Ganeko -->
                             <input class="btn btn-primary" type="submit" value="Añadir" name="addTipoFranja">
-                        </div>
-                        <div class="col-sm-4  col-md-3 ">
-                            <input class="btn btn-danger" type="submit" name="volver" value="Volver">
+                            <input class="btn btn-warning" type="submit" name="volver" value="Volver">
                         </div>
                     </div>
                 </fieldset>
@@ -848,8 +846,8 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
             </div>
             <form name="deleteEstado" method="post"
                   action="<?php echo self::getUrlRaiz() ?>/Controlador/Gerencia/Router.php">
-                <div class="col-sm-4  col-md-3 ">
-                    <input class="btn btn-danger" type="submit" name="volver" value="Volver">
+                <div class="col-md-10 col-md-offset-1"><!-- Ganeko -->
+                    <input class="btn btn-warning pull-right" type="submit" name="volver" value="Volver">
                 </div>
             </form>
             <?php
@@ -912,8 +910,8 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
             </div>
             <form name="deleteEstado" method="post"
                   action="<?php echo self::getUrlRaiz() ?>/Controlador/Gerencia/Router.php">
-                <div class="col-sm-4  col-md-3 ">
-                    <input class="btn btn-danger" type="submit" name="volver" value="Volver">
+                <div class="col-md-10 col-md-offset-1"><!-- Ganeko -->
+                    <input class="btn btn-warning pull-right" type="submit" name="volver" value="Volver">
                 </div>
             </form>
             <?php
@@ -1317,6 +1315,9 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
                 <th>NOMBRE</th>
                 <th>FECHA</th>
                 <th>NOTA</th>
+                <th>AUTOPISTAS</th>
+                <th>DIETAS</th>
+                <th>OTROS GASTOS</th>
                 <th>ESTADO</th>
                 <th>ACCIÓN</th>
             </tr>
@@ -1330,6 +1331,9 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
                         <td><?php echo $log->getTrabajador()->getNombre()." ".$log->getTrabajador()->getApellido1()." ".$log->getTrabajador()->getApellido2(); ?></td>
                         <td><?php echo $log->getFecha(); ?></td>
                         <td><?php echo $log->getNota(); ?></td>
+                        <td><?php echo $log->getAutopista(); ?></td>
+                        <td><?php echo $log->getDieta(); ?></td>
+                        <td><?php echo $log->getOtroGasto(); ?></td>
                         <td><?php echo $log->getEstado()->getTipo(); ?></td>
                         <td>
 
@@ -1570,6 +1574,9 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
                     <th>NOMBRE</th>
                     <th>FECHA</th>
                     <th>NOTA</th>
+                    <th>AUTOPISTAS</th>
+                    <th>DIETAS</th>
+                    <th>OTROS GASTOS</th>
                     <th>ESTADO</th>
                     <th>ACCIÓN</th>
                 </tr>
@@ -1585,6 +1592,9 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
                                 <td><?php echo $log->getTrabajador()->getNombre()." ".$log->getTrabajador()->getApellido1()." ".$log->getTrabajador()->getApellido2(); ?></td>
                                 <td><?php echo $log->getFecha(); ?></td>
                                 <td><?php echo $log->getNota(); ?></td>
+                                <td><?php echo $log->getAutopista(); ?></td>
+                                <td><?php echo $log->getDieta(); ?></td>
+                                <td><?php echo $log->getOtroGasto(); ?></td>
                                 <td><?php echo $log->getEstado()->getTipo(); ?></td>
                                 <td>
                                 <button type="submit" name="listarParteLog"

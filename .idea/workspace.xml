@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5ca1acb5-411e-4129-befd-8f19de674ea5" name="Default" comment="Commit Ganeko botones amarillos">
+    <list default="true" id="5ca1acb5-411e-4129-befd-8f19de674ea5" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="public.iws" />
@@ -70,8 +70,8 @@
       <file leaf-file-name="CalendarioViews.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Vista/Logistica/CalendarioViews.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6633663">
-              <caret line="143" column="48" selection-start-line="143" selection-start-column="48" selection-end-line="143" selection-end-column="48" />
+            <state vertical-scroll-proportion="0.38283828">
+              <caret line="126" column="19" selection-start-line="126" selection-start-column="19" selection-end-line="126" selection-end-column="19" />
               <folding>
                 <marker date="1488446240000" expanded="true" signature="3450:4141" placeholder="..." />
                 <marker date="1488446240000" expanded="true" signature="3629:4111" placeholder="..." />
@@ -768,7 +768,13 @@
       <option name="project" value="LOCAL" />
       <updated>1488445431168</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Commit Ganeko botones amarillos">
+      <created>1488446487882</created>
+      <option name="number" value="00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1488446487882</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -822,9 +828,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Commit Ganeko VacacionesClass" />
     <MESSAGE value="Commit Ganeko CRUD" />
-    <MESSAGE value="Commit Ganeko botones amarillos" />
     <MESSAGE value="Commit Ganeko botones gerencia" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit Ganeko botones gerencia" />
+    <MESSAGE value="Commit Ganeko botones amarillos" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit Ganeko botones amarillos" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1328,8 +1334,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Vista/Logistica/CalendarioViews.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6633663">
-          <caret line="143" column="48" selection-start-line="143" selection-start-column="48" selection-end-line="143" selection-end-column="48" />
+        <state vertical-scroll-proportion="0.38283828">
+          <caret line="126" column="19" selection-start-line="126" selection-start-column="19" selection-end-line="126" selection-end-column="19" />
           <folding>
             <marker date="1488446240000" expanded="true" signature="3450:4141" placeholder="..." />
             <marker date="1488446240000" expanded="true" signature="3629:4111" placeholder="..." />

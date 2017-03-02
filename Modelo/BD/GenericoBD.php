@@ -70,6 +70,7 @@ abstract class GenericoBD
                 return new Base\Estado($fila["id"], $fila["tipo"]);
                 break;
             case "Partelogistica":
+                //Correccion Aitor I
                 return new Base\ParteLogistica($fila["id"],$fila['fecha'],$fila["nota"], null,null,null,EstadoBD::selectEstadoById($fila["idEstado"]), TrabajadorBD::getTrabajadorByDni($fila['dniTrabajador']), null);
                 break;
             case "Centro":

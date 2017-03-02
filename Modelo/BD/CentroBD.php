@@ -99,6 +99,22 @@ abstract class CentroBD extends GenericoBD{
 
     }
 
+
+    public static function getNombreCentro(){
+
+        $con = parent::conectar();
+
+        $query = "SELECT nombre FROM ".self::$tabla;
+
+        $rs = mysqli_query($con, $query) or die("Error getAllCentros");
+        while ($fila = mysqli_fetch_array($rs)) {
+            return $fila;
+        }
+
+        parent::desconectar($con);
+
+    }
+
     public static function getCentrosByHorasConvenio($horasConvenio){
 
         $con = parent::conectar();

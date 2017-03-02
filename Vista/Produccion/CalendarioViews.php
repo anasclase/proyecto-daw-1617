@@ -84,7 +84,7 @@ public static function generarcalendario(){
 
                 $('#mask').fadeIn(700)
                 .html( /* CAMBIADO POR PABLO*/
-                    "<input type='submit' value='Salir' class='cerrar btn btn-warning'>" +
+                    
                     "<div id='nuevo_evento col-xs-12 text-center' rel='"+fecha+"'>" +
                         "<h2>Parte de "+formatDate(fecha)+"</h2>" +
                     "</div>" +
@@ -95,7 +95,7 @@ public static function generarcalendario(){
                                 //"<input type='text' name='evento_titulo' id='evento_titulo' class='required'>" +
                                 //"<input type='button' name='Enviar' value='Guardar' class='enviar'>" +
                                 "<input type='hidden' name='evento_fecha' id='evento_fecha' value='"+fecha+"'>" +
-                            "</form>"+
+                            "</form>" + 
                         "</div>"+
                     "</div>");
                 });

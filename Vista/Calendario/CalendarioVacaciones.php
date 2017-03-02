@@ -6,8 +6,9 @@ require_once __DIR__.'/../Plantilla/Views.php';
 use Vista\Plantilla;
 abstract class CalendarioVac extends Plantilla\Views
 {
-    public static function cal(){
+    public static function cal($comprobar){
         parent::setOn(true);
+        parent::setRoot($comprobar);
         require_once __DIR__."/../Plantilla/cabecera.php";
         ?>
 

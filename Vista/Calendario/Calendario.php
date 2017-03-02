@@ -44,7 +44,7 @@ $perfil = substr($perfil,12);
 if ($login->getPassword() == $trabajorPasswordm5){
     \Vista\Login\LoginViews::changePassword();
 }
-else {
+else{
     switch($perfil){
         case "Administracion":
             \Vista\Administracion\AdministracionViews::allPartesByDni();

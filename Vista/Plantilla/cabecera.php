@@ -3,6 +3,7 @@
 <!--[if IE 7 ]><html class="ie ie7" lang="es"> <![endif]-->
 <!--[if IE 8 ]><html class="ie ie8" lang="es"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!--><html lang="es"> <!--<![endif]-->
+<?php require_once __DIR__.'/../Produccion/CalendarioViews.php'?>
 
 <head>
 
@@ -103,16 +104,16 @@
                             Vacaciones/Incidencias
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="<?php echo parent::getUrlRaiz()?>/Vista/Login/CambiarPassword.php">Vacaciones</a></li>
+                            <li><a href="<?php echo parent::getUrlRaiz()?>/Vista/Calendario/Vacaciones.php"> Vacaciones </a> </li>
                             <li><a href="<?php echo parent::getUrlRaiz()?>/Vista/Login/Perfil.php">Incidencias</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown">                                                                       <!--Cambio Aitor-->
+                    <li class="dropdown"> <!--Cambio Aitor-->
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
                             <span>Gestionar Calendarios</span> <!--Cambio Aitor-->
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="<?php echo parent::getUrlRaiz()?>/Vista/Calendario/GestionarCalendario.php">Gestionar Calendario</a></li>    <!--Cambio Aitor-->
+                            <li><a href="<?php echo parent::getUrlRaiz()?>/Vista/Calendario/GestionarCalendario.php">Gestionar Calendario</a></li>   <!--Cambio Aitor-->
                             <li><a href="<?php echo parent::getUrlRaiz()?>/Vista/Calendario/GestionarFestivosNacionales.php">Gestionar Festivos Nacionales</a></li>  <!--Cambio Aitor-->
                             <li><a href="<?php echo parent::getUrlRaiz()?>/Vista/Calendario/GestionarFestivosCentros.php">Gestionar Festivos Centros</a></li>  <!--Cambio Aitor-->
                             <li><a href="<?php echo parent::getUrlRaiz()?>/Vista/Calendario/GestionarCalendariosIndividuales.php">Gestionar Calendarios Individuales</a></li>  <!--Cambio Aitor-->

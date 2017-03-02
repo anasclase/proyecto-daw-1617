@@ -86,7 +86,7 @@ abstract class PartelogisticaBD extends GenericoBD{
 
         $conexion=parent::conectar();
 
-        $query="UPDATE ".self::$tabla." SET idEstado=2, autopista =$autopista, dieta=$dieta, otroGasto = $otrosGastos, nota='".$nota."' WHERE fecha= '".$fecha."' AND dniTrabajador= '".$trabajador->getDni()."'";
+        $query="UPDATE ".self::$tabla." SET idEstado=2, autopista =$autopista, dieta=".$dieta.", otroGasto =". $otrosGastos .", nota='".$nota."' WHERE fecha= '".$fecha."' AND dniTrabajador= '".$trabajador->getDni()."'";
 
 
         $rs=mysqli_query($conexion,$query) or die(mysqli_error($conexion));

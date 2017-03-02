@@ -84,9 +84,9 @@ switch ($_POST["accion"])
 		$trabajador = unserialize($_SESSION["trabajador"]);
 		$nota = $_POST["nota"];
         //Añadido por Aitor I
-        $autopista = floatval($_POST["autopista"]);
-        $dietas = floatval($_POST["dietas"]);
-        $otros_gasto = floatval($_POST["otrosGastos"]);
+        $autopista = floatval($_POST["autopistas"]);;
+        $dietas = floatval($_POST["dieta"]);
+        $otros_gasto = floatval($_POST["otroGastos"]);
 
 		 Modelo\BD\PartelogisticaBD::cerrarEstadoParteByFecha($trabajador,$fecha,$nota,$autopista,$dietas,$otros_gasto);
 

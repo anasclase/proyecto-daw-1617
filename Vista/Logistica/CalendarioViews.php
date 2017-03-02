@@ -147,7 +147,7 @@ public static function generarcalendario(){
                         type: "POST",
                         url: "<?php echo parent::getUrlRaiz()?>/Controlador/Logistica/ControladorCalendario.php",
                         cache: false,
-                        data: { fecha:fecha,nota:nota,accion:"cerrarParte" }
+                        data: { fecha:fecha,nota:nota,autopistas:$("#autopistas").val(), otroGastos:$("#otrosGastos").val(), dieta:$("#dietas").val(),accion:"cerrarParte" }
                     }).done(function( respuesta )
                     {
                         $("#respuesta").html(respuesta);

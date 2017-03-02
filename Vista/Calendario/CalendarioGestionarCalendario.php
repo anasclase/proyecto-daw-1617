@@ -53,7 +53,7 @@ abstract class CalendarioGestionarCalendario extends Plantilla\Views
             <h2>Cerrar un calendario</h2>
             <label>CALENDARIOS: </label><select name="calendarios">  <!--Aitor-->
                 <?php
-                require_once "../../Modelo/BD/CalendarioBD.php";    //Aitor
+                require_once "../../Modelo/BD/CalendarioBD.php";     //Aitor
                 $id = getIdCalendario();                             //Aitor
                 for($x=0;$x<count($id) -1;$x++){                    //Aitor
                     echo "<option value='$id[$x]'>$id[$x]</option>";    //Aitor

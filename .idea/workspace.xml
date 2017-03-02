@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5ca1acb5-411e-4129-befd-8f19de674ea5" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Controlador/Produccion/ControladorCalendario.php" afterPath="$PROJECT_DIR$/Controlador/Produccion/ControladorCalendario.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Modelo/BD/CalendarioBD.php" afterPath="$PROJECT_DIR$/Modelo/BD/CalendarioBD.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Controlador/Logistica/ControladorCalendario.php" afterPath="$PROJECT_DIR$/Controlador/Logistica/ControladorCalendario.php" />
     </list>
     <ignored path="public.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -59,11 +58,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ControladorCalendario.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ControladorCalendario.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Controlador/Produccion/ControladorCalendario.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="264" column="9" lean-forward="false" selection-start-line="264" selection-start-column="9" selection-end-line="264" selection-end-column="9" />
+            <state relative-caret-position="629">
+              <caret line="269" column="14" lean-forward="true" selection-start-line="269" selection-start-column="14" selection-end-line="269" selection-end-column="14" />
               <folding>
                 <marker date="1488453829369" expanded="true" signature="963:1035" ph="select * fro... partesproducciontareas" />
                 <marker date="1488453829369" expanded="true" signature="8560:8630" ph="delete from " />
@@ -72,6 +71,25 @@
                 <marker date="1488453829369" expanded="true" signature="11727:11735" ph="á" />
                 <marker date="1488453829369" expanded="true" signature="13913:13919" ph=" " />
                 <marker date="1488453829369" expanded="true" signature="14289:14666" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ControladorCalendario.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Controlador/Logistica/ControladorCalendario.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="629">
+              <caret line="130" column="9" lean-forward="false" selection-start-line="130" selection-start-column="9" selection-end-line="130" selection-end-column="9" />
+              <folding>
+                <marker date="1488454014584" expanded="true" signature="2636:2744" ph="insert into parteslogistica... " />
+                <marker date="1488454014584" expanded="true" signature="2960:3014" ph="delete from " />
+                <marker date="1488454014584" expanded="true" signature="4969:5172" ph="select fecha... parteslogistica" />
+                <marker date="1488454014584" expanded="true" signature="6369:6377" ph="é" />
+                <marker date="1488454014584" expanded="true" signature="6427:6435" ph="á" />
+                <marker date="1488454014584" expanded="true" signature="8410:8416" ph=" " />
+                <marker date="1488454014584" expanded="true" signature="8759:8766" ph="«" />
+                <marker date="1488454014584" expanded="true" signature="8902:8909" ph="»" />
               </folding>
             </state>
           </provider>
@@ -128,7 +146,6 @@
         <option value="$PROJECT_DIR$/Vista/Produccion/GeneradorFormsViews.php" />
         <option value="$PROJECT_DIR$/Modelo/Base/ParteProduccionClass.php" />
         <option value="$PROJECT_DIR$/Modelo/Base/ParteLogisticaClass.php" />
-        <option value="$PROJECT_DIR$/Controlador/Logistica/ControladorCalendario.php" />
         <option value="$PROJECT_DIR$/Modelo/BD/PartesLogisticaBD.php" />
         <option value="$PROJECT_DIR$/Vista/Plantilla/pie.php" />
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -146,6 +163,7 @@
         <option value="$PROJECT_DIR$/Vista/Calendario/CalendarioGestionarCalendario.php" />
         <option value="$PROJECT_DIR$/Modelo/BD/CalendarioBD.php" />
         <option value="$PROJECT_DIR$/Controlador/Produccion/ControladorCalendario.php" />
+        <option value="$PROJECT_DIR$/Controlador/Logistica/ControladorCalendario.php" />
       </list>
     </option>
   </component>
@@ -436,10 +454,6 @@
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Produccion">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT USER_OBJECT="Root">
@@ -451,6 +465,10 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT USER_OBJECT="Controlador">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Logistica">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -688,7 +706,7 @@
       <workItem from="1488364859750" duration="251000" />
       <workItem from="1488365567116" duration="4819000" />
       <workItem from="1488370574031" duration="1618000" />
-      <workItem from="1488441853916" duration="10580000" />
+      <workItem from="1488441853916" duration="10786000" />
     </task>
     <task id="LOCAL-00001" summary="prueba iker">
       <created>1488361626538</created>
@@ -732,11 +750,18 @@
       <option name="project" value="LOCAL" />
       <updated>1488453455605</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="error db">
+      <created>1488453858347</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1488453858347</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23134000" />
+    <option name="totallyTimeSpent" value="23340000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -790,7 +815,8 @@
     <MESSAGE value="Crear archivos Irune" />
     <MESSAGE value="Combo box Centros" />
     <MESSAGE value="Combo box ids Calendarios" />
-    <option name="LAST_COMMIT_MESSAGE" value="Combo box ids Calendarios" />
+    <MESSAGE value="error db" />
+    <option name="LAST_COMMIT_MESSAGE" value="error db" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1055,23 +1081,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Controlador/Logistica/ControladorCalendario.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-255">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1488365576155" expanded="true" signature="2636:2744" ph="insert into parteslogistica... " />
-            <marker date="1488365576155" expanded="true" signature="2960:3014" ph="delete from " />
-            <marker date="1488365576155" expanded="true" signature="4523:4726" ph="select fecha... parteslogistica" />
-            <marker date="1488365576155" expanded="true" signature="5923:5931" ph="é" />
-            <marker date="1488365576155" expanded="true" signature="5981:5989" ph="á" />
-            <marker date="1488365576155" expanded="true" signature="7964:7970" ph=" " />
-            <marker date="1488365576155" expanded="true" signature="8313:8320" ph="«" />
-            <marker date="1488365576155" expanded="true" signature="8456:8463" ph="»" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Vista/Logistica/GeneradorFormsViews.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1887">
@@ -1215,8 +1224,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Controlador/Produccion/ControladorCalendario.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="264" column="9" lean-forward="false" selection-start-line="264" selection-start-column="9" selection-end-line="264" selection-end-column="9" />
+        <state relative-caret-position="629">
+          <caret line="269" column="14" lean-forward="true" selection-start-line="269" selection-start-column="14" selection-end-line="269" selection-end-column="14" />
           <folding>
             <marker date="1488453829369" expanded="true" signature="963:1035" ph="select * fro... partesproducciontareas" />
             <marker date="1488453829369" expanded="true" signature="8560:8630" ph="delete from " />
@@ -1225,6 +1234,23 @@
             <marker date="1488453829369" expanded="true" signature="11727:11735" ph="á" />
             <marker date="1488453829369" expanded="true" signature="13913:13919" ph=" " />
             <marker date="1488453829369" expanded="true" signature="14289:14666" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Controlador/Logistica/ControladorCalendario.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="130" column="9" lean-forward="false" selection-start-line="130" selection-start-column="9" selection-end-line="130" selection-end-column="9" />
+          <folding>
+            <marker date="1488454014584" expanded="true" signature="2636:2744" ph="insert into parteslogistica... " />
+            <marker date="1488454014584" expanded="true" signature="2960:3014" ph="delete from " />
+            <marker date="1488454014584" expanded="true" signature="4969:5172" ph="select fecha... parteslogistica" />
+            <marker date="1488454014584" expanded="true" signature="6369:6377" ph="é" />
+            <marker date="1488454014584" expanded="true" signature="6427:6435" ph="á" />
+            <marker date="1488454014584" expanded="true" signature="8410:8416" ph=" " />
+            <marker date="1488454014584" expanded="true" signature="8759:8766" ph="«" />
+            <marker date="1488454014584" expanded="true" signature="8902:8909" ph="»" />
           </folding>
         </state>
       </provider>

@@ -180,6 +180,10 @@ if(isset($_POST['abrirParteLogistica'])){
     header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/Administracion.php?cod=2");
 
 }
+if(isset($_POST["insertarIncidencia"])){ //David
+    Controlador::insertarIncidencia($_POST);
+
+}
 /*
 if(isset($_POST['dni']) and !isset($_POST['semanas'])) {
     $perfil = Controlador::getPerfilbyDni($_POST['dni']);

@@ -559,4 +559,9 @@ abstract class Controlador{
 
         $_SESSION['parte'] = serialize($parte);
     }
+
+    //David
+    public static function insertarIncidencia($datos){
+
+    }
 }

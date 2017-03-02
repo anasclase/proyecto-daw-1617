@@ -105,7 +105,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a href="<?php echo parent::getUrlRaiz()?>/Vista/Calendario/Vacaciones.php"> Vacaciones </a> </li>
-                            <li><a href="<?php echo parent::getUrlRaiz()?>/Vista/Login/Perfil.php">Incidencias</a></li>
+                            <li><a href="<?php echo parent::getUrlRaiz()?>/Vista/Administracion/insertIncidencia.php">Incidencias</a></li>
                         </ul>
                     </li>
                     <li class="dropdown"> <!--Cambio Aitor-->

@@ -70,7 +70,7 @@ abstract class GenericoBD
                 return new Base\Estado($fila["id"], $fila["tipo"]);
                 break;
             case "Partelogistica":
-                return new Base\ParteLogistica($fila["id"], TrabajadorBD::getTrabajadorByDni($fila['dniTrabajador']), EstadoBD::selectEstadoById($fila["idEstado"]), $fila["nota"], null, $fila['fecha']);
+                return new Base\ParteLogistica($fila["id"],$fila['fecha'],$fila["nota"], null,null,null,EstadoBD::selectEstadoById($fila["idEstado"]), TrabajadorBD::getTrabajadorByDni($fila['dniTrabajador']), null);
                 break;
             case "Centro":
                 return new Base\Centro($fila["id"], $fila["nombre"], $fila["localizacion"], null, null, null, null);

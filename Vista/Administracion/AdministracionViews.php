@@ -1924,7 +1924,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                         <form method="post"
                               action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
                             <tr>
-                                <td><?php echo $log->getTrabajador()->getDni(); ?></td>
+                                <td><?php  echo $log->getTrabajador()->getDni(); ?></td>
                                 <td><?php echo $log->getTrabajador()->getNombre()." ".$log->getTrabajador()->getApellido1()." ".$log->getTrabajador()->getApellido2(); ?></td>
                                 <td><?php echo $log->getFecha(); ?></td>
                                 <td><?php echo $log->getNota(); ?></td>

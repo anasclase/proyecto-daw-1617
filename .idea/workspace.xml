@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5ca1acb5-411e-4129-befd-8f19de674ea5" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Vista/Calendario/CalendarioGestionarCalendario.php" afterPath="$PROJECT_DIR$/Vista/Calendario/CalendarioGestionarCalendario.php" />
     </list>
     <ignored path="public.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,46 +29,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="165">
               <caret line="116" column="110" lean-forward="true" selection-start-line="116" selection-start-column="110" selection-end-line="116" selection-end-column="110" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GestionarFestivosNacionales.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Vista/Calendario/GestionarFestivosNacionales.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GestionarCalendariosIndividuales.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Vista/Calendario/GestionarCalendariosIndividuales.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GestionarCalendario.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Vista/Calendario/GestionarCalendario.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CalendarioGestionarCalendario.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Vista/Calendario/CalendarioGestionarCalendario.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -113,8 +74,8 @@
         <option value="$PROJECT_DIR$/Controlador/Administracion/Controlador.php" />
         <option value="$PROJECT_DIR$/Vista/Administracion/Administracion.php" />
         <option value="$PROJECT_DIR$/Modelo/BD/CalendarioBD.php" />
-        <option value="$PROJECT_DIR$/Vista/Calendario/CalendarioGestionarCalendario.php" />
         <option value="$PROJECT_DIR$/Vista/Calendario/GestionarFestivosNacionales.php" />
+        <option value="$PROJECT_DIR$/Vista/Calendario/CalendarioGestionarCalendario.php" />
       </list>
     </option>
   </component>
@@ -616,7 +577,7 @@
       <workItem from="1488364859750" duration="251000" />
       <workItem from="1488365437574" duration="870000" />
       <workItem from="1488439522375" duration="5042000" />
-      <workItem from="1488446544369" duration="6445000" />
+      <workItem from="1488446544369" duration="7910000" />
     </task>
     <task id="LOCAL-00001" summary="prueba iker">
       <created>1488361626538</created>
@@ -646,11 +607,18 @@
       <option name="project" value="LOCAL" />
       <updated>1488456226927</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="CREAR CERRAR CALENDARIOS IRUNE">
+      <created>1488457417528</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1488457417528</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18474000" />
+    <option name="totallyTimeSpent" value="19939000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -1115,14 +1083,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Vista/Calendario/CalendarioGestionarCalendario.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Vista/Calendario/GestionarCalendariosIndividuales.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1143,6 +1103,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vista/Calendario/CalendarioGestionarCalendario.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="36" column="40" lean-forward="true" selection-start-line="36" selection-start-column="40" selection-end-line="36" selection-end-column="40" />
           <folding />
         </state>
       </provider>

@@ -15,7 +15,7 @@ abstract class CalendarioGestionarCalendario extends Plantilla\Views
 
         <link type="text/css" rel="stylesheet" media="all" href="<?php echo parent::getUrlRaiz()?>/Vista/Plantilla/CSS/Bootstrap/estilos.css">
 
-    <!-- CREAR CERRAR CALENDARIOS IRUNE -->
+    <!-- IRUNE -->
 
         <form name="buscar" action="<?php echo parent::getUrlRaiz()?>/Vista/Administracion/Administracion.php?cod=6" method="post">
 
@@ -35,7 +35,7 @@ abstract class CalendarioGestionarCalendario extends Plantilla\Views
 
                 </select></p>
             <label>DESCRIPCION: </label><br>
-                <textarea name="descripcion" placeholder="Introduce la descripción aquí"></textarea>
+                <textarea name="descripcion" placeholder="Introduce la descripción aquí"></textarea><br>
 
             <input type="submit" name="crear" value="Crear">
 

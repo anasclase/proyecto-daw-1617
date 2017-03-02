@@ -25,6 +25,10 @@ switch($_GET['cod']) {
         $calendario = \Controlador\Administracion\Controlador::crearCalendario();
         Modelo\BD\CalendarioBD::crearCalendario($calendario);
         break;
+    case "7":   //Aitor
+        if(Modelo\BD\CalendarioBD::cerrarCalendario($_POST["calendarios"]))
+            echo "Calendario cerrado";
+        break;
 
 }
 ?>

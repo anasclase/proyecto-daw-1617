@@ -41,12 +41,13 @@ abstract class CalendarioGestionarCalendario extends Plantilla\Views
 
         </form>
 
-        <form name="buscar" action="<?php echo parent::getUrlRaiz()?>/Vista/Administracion/Administracion.php?cod=3" method="post">
+        <form name="buscar" action="<?php echo parent::getUrlRaiz()?>/Vista/Administracion/Administracion.php?cod=7" method="post"> <!--Aitor-->
 
             <h2>Cerrar un calendario</h2>
             <label>CALENDARIOS: </label><select name="calendarios">  <!--Aitor-->
                 <?php
                 require_once "../../Modelo/BD/CalendarioBD.php";     //Aitor
+                echo "<option value=''>-- Selecciona --</option>";  //Aitor
                 $id = \Modelo\BD\CalendarioBD::getIdCalendario();    //Aitor
                 for($x=0;$x<count($id) -1;$x++){                    //Aitor
                     echo "<option value='$id[$x]'>$id[$x]</option>";    //Aitor

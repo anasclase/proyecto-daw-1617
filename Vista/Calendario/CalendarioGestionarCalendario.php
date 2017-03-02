@@ -34,8 +34,8 @@ abstract class CalendarioGestionarCalendario extends Plantilla\Views
                     ?>
 
                 </select></p>
-            <p><label>DESCRIPCION: </label>
-                <input type="text" name="descripcion"></p>
+            <label>DESCRIPCION: </label><br>
+                <textarea name="descripcion" placeholder="Introduce la descripción aquí"></textarea>
 
             <input type="submit" name="crear" value="Crear">
 
@@ -47,7 +47,7 @@ abstract class CalendarioGestionarCalendario extends Plantilla\Views
             <label>CALENDARIOS: </label><select name="calendarios">  <!--Aitor-->
                 <?php
                 require_once "../../Modelo/BD/CalendarioBD.php";     //Aitor
-                $id = getIdCalendario();                             //Aitor
+                $id = \Modelo\BD\CalendarioBD::getIdCalendario();    //Aitor
                 for($x=0;$x<count($id) -1;$x++){                    //Aitor
                     echo "<option value='$id[$x]'>$id[$x]</option>";    //Aitor
                 }

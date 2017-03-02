@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5ca1acb5-411e-4129-befd-8f19de674ea5" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Modelo/BD/CalendarioBD.php" afterPath="$PROJECT_DIR$/Modelo/BD/CalendarioBD.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Vista/Calendario/CalendarioGestionarCalendario.php" afterPath="$PROJECT_DIR$/Vista/Calendario/CalendarioGestionarCalendario.php" />
     </list>
     <ignored path="public.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -688,7 +686,7 @@
       <workItem from="1488364859750" duration="251000" />
       <workItem from="1488365567116" duration="4819000" />
       <workItem from="1488370574031" duration="1618000" />
-      <workItem from="1488441853916" duration="10031000" />
+      <workItem from="1488441853916" duration="10091000" />
     </task>
     <task id="LOCAL-00001" summary="prueba iker">
       <created>1488361626538</created>
@@ -711,11 +709,18 @@
       <option name="project" value="LOCAL" />
       <updated>1488450979318</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Combo box ids Calendarios">
+      <created>1488453326163</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1488453326163</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22585000" />
+    <option name="totallyTimeSpent" value="22645000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -768,7 +773,8 @@
     <MESSAGE value="prueba iker" />
     <MESSAGE value="Crear archivos Irune" />
     <MESSAGE value="Combo box Centros" />
-    <option name="LAST_COMMIT_MESSAGE" value="Combo box Centros" />
+    <MESSAGE value="Combo box ids Calendarios" />
+    <option name="LAST_COMMIT_MESSAGE" value="Combo box ids Calendarios" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

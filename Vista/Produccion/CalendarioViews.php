@@ -223,9 +223,9 @@ public static function generarcalendario(){
             //ELIMINAR PARTE
             $(document).on("click",".pBorrar",function(e){
                 e.preventDefault();
-
+				var conf=confirm("¿Desea eliminar el parte?");
                 var idParte = $(this).attr("rel");
-
+				if(conf){
                 $.ajax({
                     type: "POST",
                     url: "<?php echo parent::getUrlRaiz()?>/Controlador/Produccion/ControladorCalendario.php",
@@ -239,7 +239,7 @@ public static function generarcalendario(){
                         $(".close").trigger("click");
                     },2200);
 
-                });
+                });}
 
             });
 

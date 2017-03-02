@@ -1175,7 +1175,11 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                     }
                     ?>
                 </table>
-				<input type="submit" value="Volver" class='center-block btn btn-warning' name="volver">
+				<form method='post' name="atrasHorarios" action='<?php echo self::getUrlRaiz() ?>/Vista/Administracion/Administracion.php?cod=1'>
+				<div class='form-group'>
+					<input type="submit" value="Volver" class='center-block cerrar btn btn-warning ' name='volver'>
+				</div>
+				</form>
                 <?php
             }
             require_once __DIR__ . "/../Plantilla/pie.php";
@@ -1915,9 +1919,6 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                     <th>NOMBRE</th>
                     <th>FECHA</th>
                     <th>NOTA</th>
-                    <th>AUTOPISTAS</th>
-                    <th>DIETAS</th>
-                    <th>OTROS GASTOS</th>
                     <th>ESTADO</th>
                     <th>ACCIÓN</th>
                 </tr>
@@ -1933,9 +1934,6 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                                 <td><?php echo $log->getTrabajador()->getNombre()." ".$log->getTrabajador()->getApellido1()." ".$log->getTrabajador()->getApellido2(); ?></td>
                                 <td><?php echo $log->getFecha(); ?></td>
                                 <td><?php echo $log->getNota(); ?></td>
-                                <td><?php echo $log->getAutopista(); ?></td>
-                                <td><?php echo $log->getDieta(); ?></td>
-                                <td><?php echo $log->getOtroGasto(); ?></td>
                                 <td><?php echo $log->getEstado()->getTipo(); ?></td>
                                 <td>
                                     <button type="submit" name="listarParteLog"

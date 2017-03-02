@@ -158,7 +158,11 @@ use Modelo\Base;
                             <div class="form-group">
 
 
-                                    <button id="enviar" class="btn-primary btn pull-right col-sm-3 enviar">Añadir</button>
+                                    <div class="col-sm-12 col-xs-offset-1 col-sm-offset-6"> 
+								<!--- Cambiar boton GUARDAR POR AÑADIR
+								Pablo --->
+										<button type="button" name="btnEnviar" class="btn btn-primary enviar">Añadir</button> <input type='submit' value='Salir' class='cerrar btn btn-warning'>
+									</div>
 
                                 </div>
                 </form>

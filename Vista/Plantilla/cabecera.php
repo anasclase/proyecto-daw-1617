@@ -69,11 +69,13 @@
                 <?php if(!parent::isRoot()){
                     ?>
                     <li><a href="<?php echo parent::getUrlRaiz()?>/Vista/Horario/Horario.php">Horario Semanal</a></li>
+                    <li><a href="<?php echo parent::getUrlRaiz()?>/Vista/Calendario/Calendario.php">Vacaciones/Incidencias</a></li> <!--Cambio David-->
                     <li><a href="<?php echo parent::getUrlRaiz()?>/Vista/Calendario/Calendario.php">Partes</a></li>
                 <?php
                 }
                 ?>
                 <?php
+                /* prueba */
                 if(parent::isRoot()){
                     $trabajador = unserialize($_SESSION['trabajador']);
                     $perfil = get_class($trabajador);

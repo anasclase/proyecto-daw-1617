@@ -14,7 +14,7 @@ use Modelo\Base\Logistica;
 use Modelo\Base\Produccion;
 use Modelo\Base\TiposFranjas;
 use Modelo\Base\Trabajador;
-use Modelo\Base\TrabajadorAusencia;
+use Modelo\Base\AusenciaTrabajador;
 use Modelo\Base\Vehiculo;
 use Modelo\BD;
 use Vista\Gerencia\GerenciaViews;

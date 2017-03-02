@@ -16,22 +16,19 @@ require_once __DIR__."/ParteProduccionClass.php";
  * Time: 12:58
  */
 class Produccion extends Trabajador
-
-
-
 {
-    private $horasConvenio;
     private $partes = null;
 
     /**
      * Produccion constructor.
      * @param null $partes
      */
-    public function __construct($dni=null, $nombre=null, $apellido1=null, $apellido2=null, $telefono=null, $foto = null, $centro=null, $trabajadorAusencias = null, $horariosTrabajador = null, $partes = null)
+    public function __construct($dni=null, $nombre=null, $apellido1=null, $apellido2=null, $telefono=null, $foto = null, $centro=null, $ausenciasTrabajador = null, $horariosTrabajador = null, $partes = null, $horasConvenio = null)
     {
-        parent::__construct($dni , $nombre , $apellido1 , $apellido2 , $telefono , $foto , $centro , $trabajadorAusencias , $horariosTrabajador );
+        parent::__construct($dni , $nombre , $apellido1 , $apellido2 , $telefono , $foto , $centro ,  $ausenciasTrabajador , $horariosTrabajador, $horasConvenio);
         $this->setPartes($partes);
     }
+
 
     public function setPartes($parte)
     {
@@ -76,25 +73,5 @@ class Produccion extends Trabajador
         }
 
     }
-    /**
-     * @return mixed
-     */
-    public function getHorasConvenio()
-    {
-        if($this->horasConvenio==null){
-            $this->setHorasConvenio(BD\HorasConvenioBD::getHorasConvenioByPerfil($this));
-        }
-        return $this->horasConvenio;
-    }
-
-    /**
-     * @param mixed $horasConvenio
-     */
-    public function setHorasConvenio($horasConvenio)
-    {
-        $this->horasConvenio = $horasConvenio;
-    }
-
-
 
 }

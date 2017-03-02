@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5ca1acb5-411e-4129-befd-8f19de674ea5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vista/Administracion/Incidencias.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Vista/Administracion/insertIncidencia.php" />
+    <list default="true" id="5ca1acb5-411e-4129-befd-8f19de674ea5" name="Default" comment="David formulario poner incidencias">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Controlador/Administracion/Controlador.php" afterPath="$PROJECT_DIR$/Controlador/Administracion/Controlador.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Controlador/Administracion/Router.php" afterPath="$PROJECT_DIR$/Controlador/Administracion/Router.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Vista/Plantilla/cabecera.php" afterPath="$PROJECT_DIR$/Vista/Plantilla/cabecera.php" />
     </list>
     <ignored path="public.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -87,8 +83,8 @@
       <file leaf-file-name="Controlador.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Controlador/Administracion/Controlador.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="802">
-              <caret line="564" column="0" lean-forward="false" selection-start-line="564" selection-start-column="0" selection-end-line="564" selection-end-column="0" />
+            <state relative-caret-position="3149">
+              <caret line="565" column="8" lean-forward="true" selection-start-line="565" selection-start-column="8" selection-end-line="565" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -99,6 +95,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>tarea</find>
+      <find>Trabajador</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -205,29 +202,7 @@
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Vista">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Produccion">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="public">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Vista">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Login">
+            <PATH_ELEMENT USER_OBJECT="Modelo">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -245,67 +220,7 @@
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="public">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Controlador">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="public">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Controlador">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Calendario">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="public">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Controlador">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Administracion">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="public">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT=".idea">
+            <PATH_ELEMENT USER_OBJECT="Base">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -525,11 +440,11 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/Vista/Calendario/Calendario.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/Vista/Calendario/CalendarioVacaciones.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Vista/Administracion/Calendario.php</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/Vista/Calendario/GestionarCalendario.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/Vista/Calendario/Vacaciones.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/Vista/Plantilla/cabecera.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Vista/Calendario/GestionarCalendariosIndividuales.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Vista/Calendario/GestionarFestivosCentros.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Vista/Calendario/GestionarFestivosNacionales.php</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -537,6 +452,12 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="CREATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Vista/Calendario/CalendarioGestionarCalendario.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Vista/Calendario/CalendarioGestionarCalendariosIndividuales.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Vista/Calendario/CalendarioGestionarFestivosCentros.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Vista/Calendario/CalendarioGestionarFestivosNacionales.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Vista/Calendario/CalendarioIncidencias.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Vista/Calendario/Incidencias.php</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Deleted" />
@@ -710,7 +631,7 @@
       <workItem from="1488356462556" duration="3279000" />
       <workItem from="1488364859750" duration="251000" />
       <workItem from="1488365437574" duration="870000" />
-      <workItem from="1488439522375" duration="5042000" />
+      <workItem from="1488439522375" duration="6120000" />
     </task>
     <task id="LOCAL-00001" summary="prueba iker">
       <created>1488361626538</created>
@@ -719,11 +640,18 @@
       <option name="project" value="LOCAL" />
       <updated>1488361626538</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="David formulario poner incidencias">
+      <created>1488445824930</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1488445824930</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12029000" />
+    <option name="totallyTimeSpent" value="13107000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -774,7 +702,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="prueba iker" />
-    <option name="LAST_COMMIT_MESSAGE" value="prueba iker" />
+    <MESSAGE value="David formulario poner incidencias" />
+    <option name="LAST_COMMIT_MESSAGE" value="David formulario poner incidencias" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -783,27 +712,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Modelo/Base/HorarioParteClass.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Modelo/BD/TrabajadorBD.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Modelo/Base/TrabajadorClass.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Modelo/BD/GenericoBD.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -857,13 +765,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1650">
           <caret line="110" column="350" lean-forward="false" selection-start-line="110" selection-start-column="340" selection-end-line="110" selection-end-column="350" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Modelo/BD/PartesLogisticaBD.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="38" column="89" lean-forward="false" selection-start-line="38" selection-start-column="89" selection-end-line="38" selection-end-column="89" />
         </state>
       </provider>
     </entry>
@@ -1021,14 +922,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Vista/Logistica/A¤adirViaje.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Modelo/Base/TrabajadorAusenciaClass.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1215,10 +1108,59 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Modelo/BD/PartesLogisticaBD.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="15" column="27" lean-forward="false" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
+          <folding>
+            <marker date="1488365433000" expanded="true" signature="373:414" ph="SELECT * FRO... ${self::$tabla}" />
+            <marker date="1488365433000" expanded="true" signature="775:873" ph="SELECT * FRO... ${self::$tabla}" />
+            <marker date="1488365433000" expanded="true" signature="1202:1414" ph="INSERT INTO ${self::$tabla}" />
+            <marker date="1488365433000" expanded="true" signature="1719:1821" ph="SELECT * FRO... ${self::$tabla}" />
+            <marker date="1488365433000" expanded="true" signature="2171:2274" ph="SELECT * FRO... ${self::$tabla}" />
+            <marker date="1488365433000" expanded="true" signature="2610:2720" ph="SELECT idEst... ${self::$tabla}" />
+            <marker date="1488365433000" expanded="true" signature="3526:3585" ph="SELECT * FRO... ${self::$tabla}" />
+            <marker date="1488365433000" expanded="true" signature="3893:3933" ph="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modelo/Base/TrabajadorAusenciaClass.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modelo/Base/TrabajadorClass.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modelo/Base/LogisticaClass.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modelo/Base/AdministracionClass.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Controlador/Administracion/Controlador.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="802">
-          <caret line="564" column="0" lean-forward="false" selection-start-line="564" selection-start-column="0" selection-end-line="564" selection-end-column="0" />
+        <state relative-caret-position="3149">
+          <caret line="565" column="8" lean-forward="true" selection-start-line="565" selection-start-column="8" selection-end-line="565" selection-end-column="8" />
           <folding />
         </state>
       </provider>

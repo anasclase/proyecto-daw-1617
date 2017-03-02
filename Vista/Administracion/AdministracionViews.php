@@ -172,9 +172,11 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                         </div>
                     </div>
                     <div class="form-group">
-                        <div class="col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-2"><!--Ganeko-->
+                        <div class="col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-2">
                             <input class="btn btn-primary" type="submit" name="addTrabajador" value="Añadir">
-                            <input class="btn btn-warning" type="submit" name="volver" value="Volver">
+                        </div>
+                        <div class="col-sm-4 col-md-3">
+                            <input class="btn btn-danger" type="submit" name="volver" value="Volver">
                         </div>
                     </div>
                 </fieldset>
@@ -244,8 +246,8 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                 </div>
                 <form name="deleteTrabajador" method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
 
-                    <div class="col-md-10 col-md-offset-1"><!--Ganeko-->
-                         <input class="btn btn-warning pull-right" type="submit" name="volver" value="Volver">
+                    <div class="col-sm-4 col-md-3">
+                         <input class="btn btn-danger" type="submit" name="volver" value="Volver">
                     </div>
                 </form>
 
@@ -1162,16 +1164,18 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                               action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
                             <tr>
                                 <td><?php echo $horario->getTipo() ?></td>
-
-                                <td><input type="submit" name="eliminarHorario" value="Eliminar"></td>
-                                <td><input type="submit" value="Volver" name="volver"></td>
+								<!-- PABLO cambiar botones por glypicon unico boton volver-->
+                                <td><button type="submit" name="eliminarHorario" value="Eliminar" style="border: none; background: none;"><span class="glyphicon glyphicon-remove" style="color:red; font-size: 1.5em"></span></button></td>
+                                
                             </tr>
+							
                             <input type="hidden" name="id" value="<?php echo $horario->getId(); ?>">
                         </form>
                         <?php
                     }
                     ?>
                 </table>
+				<input type="submit" value="Volver" class='center-block btn btn-warning' name="volver">
                 <?php
             }
             require_once __DIR__ . "/../Plantilla/pie.php";

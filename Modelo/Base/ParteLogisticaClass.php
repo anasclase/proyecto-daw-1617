@@ -116,8 +116,9 @@ class ParteLogistica{
      */
     public function getEstado()
     {
-       if(is_null($this->estado)){
 
+       if(is_null($this->estado)){
+           //echo "<script>alert('null')</script>";
            $this->setEstado(BD\EstadoBD::selectEstadoByParteLogistica($this));
        }
         return $this->estado;

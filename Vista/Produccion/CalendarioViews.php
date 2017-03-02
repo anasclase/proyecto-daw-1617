@@ -83,8 +83,8 @@ public static function generarcalendario(){
                 });
 
                 $('#mask').fadeIn(700)
-                .html(
-                    "<a class='close'><span class='glyphicon glyphicon-remove' aria-hidden='true'></span></a>" +
+                .html( /* CAMBIADO POR PABLO*/
+                    
                     "<div id='nuevo_evento col-xs-12 text-center' rel='"+fecha+"'>" +
                         "<h2>Parte de "+formatDate(fecha)+"</h2>" +
                     "</div>" +
@@ -95,7 +95,7 @@ public static function generarcalendario(){
                                 //"<input type='text' name='evento_titulo' id='evento_titulo' class='required'>" +
                                 //"<input type='button' name='Enviar' value='Guardar' class='enviar'>" +
                                 "<input type='hidden' name='evento_fecha' id='evento_fecha' value='"+fecha+"'>" +
-                            "</form>"+
+                            "</form>" + 
                         "</div>"+
                     "</div>");
                 });
@@ -109,7 +109,7 @@ public static function generarcalendario(){
 
                 var fecha = $(this).attr('rel');
 
-                $('#mask').fadeIn(700).html("<a class='close'><span class='glyphicon glyphicon-remove' aria-hidden='true'></span></a><div id='nuevo_evento' class='window' rel='"+fecha+"'><h2>Parte del "+formatDate(fecha)+"</h2><div id='respuesta_form' class='container-fluid'></div><div id='respuesta' class='container-fluid'></div></div>");
+                $('#mask').fadeIn(700).html("<div id='nuevo_evento' class='window' rel='"+fecha+"'><h2>Parte del "+formatDate(fecha)+"</h2><div id='respuesta_form' class='container-fluid'></div><div id='respuesta' class='container-fluid'></div></div>");
 
                 $.ajax({
                     type: "POST",
@@ -124,7 +124,7 @@ public static function generarcalendario(){
             });
 
             //CERRAR DEL VENTANA
-            $(document).on("click",'.close',function (e)
+            $(document).on("click",'.cerrar',function (e)
             {
                 e.preventDefault();
 

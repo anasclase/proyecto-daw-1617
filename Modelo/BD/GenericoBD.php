@@ -70,7 +70,8 @@ abstract class GenericoBD
                 return new Base\Estado($fila["id"], $fila["tipo"]);
                 break;
             case "Partelogistica":
-                return new Base\ParteLogistica($fila["id"], TrabajadorBD::getTrabajadorByDni($fila['dniTrabajador']), EstadoBD::selectEstadoById($fila["idEstado"]), $fila["nota"], null, $fila['fecha']);
+                //Correccion Aitor I
+                return new Base\ParteLogistica($fila["id"],$fila['fecha'],$fila["nota"],$fila["autopista"], $fila["dieta"], $fila["otroGasto"],EstadoBD::selectEstadoById($fila["idEstado"]), TrabajadorBD::getTrabajadorByDni($fila['dniTrabajador']), null);
                 break;
             case "Centro":
                 return new Base\Centro($fila["id"], $fila["nombre"], $fila["localizacion"], null, null, null, null);
@@ -108,7 +109,7 @@ abstract class GenericoBD
                 return new Base\Produccion($fila['dni'], $fila['nombre'], $fila['apellido1'], $fila['apellido2'], $fila['telefono'], $fila["foto"]);//entroBD::getCentrosById($fila['idCentro'])
                 break;
             case "Ausencias":
-                return new Base\TrabajadorAusencia($fila['id'], $fila['fecha'], $fila['horaInicio'], $fila['horaFin']);
+                return new Base\AusenciaTrabajador($fila['id'], $fila['fecha'], $fila['horaInicio'], $fila['horaFin']);
                 break;
             case "ConvenioAusencias":
                 return new Base\ConvenioAusencia($fila['id'], $fila['fecha']);

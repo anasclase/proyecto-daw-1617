@@ -4,7 +4,7 @@ namespace Modelo\BD;
 
 require_once __DIR__."/GenericoBD.php";
 
-abstract class TrabajadorAusenciaBD extends GenericoBD
+abstract class AusenciaTrabajadorBD extends GenericoBD
 {
 
     public static function getAusenciasByTrabajador($trabajador){

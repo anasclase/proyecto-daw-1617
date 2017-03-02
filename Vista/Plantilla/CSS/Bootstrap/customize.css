@@ -19,12 +19,12 @@ body {
 }
 
 .cuerpo{
-    height:65%;
+
 }
 
 @media (max-width: 800px){
     .cuerpo{
-        height:70%;
+
     }
 }
 
@@ -40,13 +40,13 @@ body {
         margin-top: 70px;
     }
     .cuerpo{
-        height:68%;
+
     }
 }
 
 @media (max-width: 250px){
     .cuerpo{
-        height:90%;
+
     }
 }
 

@@ -17,17 +17,21 @@ abstract class CalendarioGestionarCalendario extends Plantilla\Views
 
     <!-- CREAR CERRAR CALENDARIOS IRUNE SI -->
 
-        <form name="buscar" action="<?php echo parent::getUrlRaiz()?>/Vista/Administracion/Administracion.php?cod=0" method="post">
+        <form name="buscar" action="<?php echo parent::getUrlRaiz()?>/Vista/Administracion/Administracion.php?cod=3" method="post">
 
-
-            <?php $centros = parent::getUrlRaiz()?>/Vista/Administracion/Administracion.php?cod=0";
 
             <h2>Crear un calendario</h2>
             <label>CENTRO: </label>
             <select name="centro">
-                <?php for (var $x=0; $x < count($centros); $x++) { ?>
 
-                <?php } ?>
+                <?php
+                require_once "../../Modelo/BD/CentroBD.php";
+                $centros = \Modelo\BD\CentroBD::getNombreCentro();
+                for($x=0;$x<count($centros) -1;$x++){
+                    echo "<option value='$centros[$x]'>$centros[$x]</option>";
+                }
+                ?>
+
             </select>
             <input type="submit" name="crear" value="Crear">
 

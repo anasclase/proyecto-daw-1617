@@ -15,38 +15,9 @@ require_once __DIR__."/TrabajadorClass.php";
 
 class Gerencia extends Trabajador{
 
-    private $horasConvenio;
-
-
-    public function __construct($dni = null, $nombre = null, $apellido1 = null, $apellido2 = null, $telefono = null, $foto = null, $centro = null,  $trabajadorAusencias = null, $horariosTrabajador = null,$horasConvenio=null)
+    public function __construct($dni = null, $nombre = null, $apellido1 = null, $apellido2 = null, $telefono = null, $foto = null, $centro = null,  $ausenciasTrabajador = null, $horariosTrabajador = null,$horasConvenio=null)
     {
-        parent::__construct($dni , $nombre , $apellido1 , $apellido2 , $telefono , $foto , $centro ,  $trabajadorAusencias , $horariosTrabajador );
-
-        $this->setHorasConvenio($horasConvenio);
+        parent::__construct($dni , $nombre , $apellido1 , $apellido2 , $telefono , $foto , $centro ,  $ausenciasTrabajador , $horariosTrabajador, $horasConvenio);
     }
-
-    /**
-     * @return mixed
-     */
-    public function getHorasConvenio()
-    {
-        if($this->horasConvenio==null){
-            $this->setHorasConvenio(BD\HorasConvenioBD::getHorasConvenioByPerfil($this));
-        }
-        return $this->horasConvenio;
-    }
-
-    /**
-     * @param mixed $horasConvenio
-     */
-    public function setHorasConvenio($horasConvenio)
-    {
-        $this->horasConvenio = $horasConvenio;
-    }
-
-
-
-
-
 
 }

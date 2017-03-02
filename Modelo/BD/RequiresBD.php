@@ -5,7 +5,6 @@ use Modelo\Base;
 require_once __DIR__.'/../Base/AdministracionClass.php';
 require_once __DIR__.'/../Base/AusenciaClass.php';
 require_once __DIR__.'/../Base/CentroClass.php';
-require_once __DIR__.'/../Base/ConvenioAusenciaClass.php';
 require_once __DIR__.'/../Base/EmpresaClass.php';
 require_once __DIR__.'/../Base/EstadoClass.php';
 require_once __DIR__.'/../Base/FranjasClass.php';
@@ -26,7 +25,7 @@ require_once __DIR__.'/../Base/TareaClass.php';
 require_once __DIR__.'/../Base/TiposFranjasClass.php';
 require_once __DIR__.'/../Base/TipoTareaClass.php';
 require_once __DIR__.'/../Base/TrabajadorClass.php';
-require_once __DIR__.'/../Base/TrabajadorAusenciaClass.php';
+require_once __DIR__ . '/../Base/AusenciaTrabajadorClass.php';
 require_once __DIR__.'/../Base/VehiculoClass.php';
 require_once __DIR__.'/../Base/ViajeClass.php';
 

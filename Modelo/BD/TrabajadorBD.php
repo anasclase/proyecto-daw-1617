@@ -65,7 +65,6 @@ abstract class TrabajadorBD extends GenericoBD{
 
         $query = "SELECT * FROM trabajadores WHERE dni = '".$dni."'";
         $rs = mysqli_query($conexion, $query) or die(mysqli_error($conexion));
-
         $trabajador = parent::mapear($rs, $perfil);
 
         parent::desconectar($conexion);

@@ -21,6 +21,10 @@ switch($_GET['cod']) {
     case "5":
         Vista\Administracion\AdministracionViews::editParteProduccion();
         break;
+    case "6":
+        $calendario = \Controlador\Administracion\Controlador::crearCalendario();
+        Modelo\BD\CalendarioBD::crearCalendario($calendario);
+        break;
 
 }
 ?>

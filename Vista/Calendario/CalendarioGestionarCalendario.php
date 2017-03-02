@@ -15,25 +15,12 @@ abstract class CalendarioGestionarCalendario extends Plantilla\Views
 
         <link type="text/css" rel="stylesheet" media="all" href="<?php echo parent::getUrlRaiz()?>/Vista/Plantilla/CSS/Bootstrap/estilos.css">
 
-    <!-- CREAR CERRAR CALENDARIOS IRUNE SI -->
+    <!-- CREAR CERRAR CALENDARIOS IRUNE -->
 
-        <form name="buscar" action="<?php echo parent::getUrlRaiz()?>/Vista/Administracion/Administracion.php?cod=3" method="post">
+        <form name="buscar" action="<?php echo parent::getUrlRaiz()?>/Vista/Administracion/Administracion.php?cod=6" method="post">
 
             <h2>Crear un calendario</h2>
-            <p><label>CENTRO: </label>
-            <select name="centro">
-
-                <?php
-                require_once "../../Modelo/BD/CentroBD.php";
-                $centros = \Modelo\BD\CentroBD::getNombreCentro();
-                echo "<option value=''>-- Selecciona --</option>";
-                for($x=0; $x<count($centros) -1; $x++){
-                    echo "<option value='$centros[$x]'>$centros[$x]</option>";
-                }
-                ?>
-
-            </select></p>
-            <p><label>NUEVO CALENDARIO: </label>
+            <p><label>CALENDARIO: </label>
                 <select name="calendario">
 
                     <?php
@@ -47,8 +34,14 @@ abstract class CalendarioGestionarCalendario extends Plantilla\Views
                     ?>
 
                 </select></p>
+            <p><label>DESCRIPCION: </label>
+                <input type="text" name="descripcion"></p>
 
             <input type="submit" name="crear" value="Crear">
+
+        </form>
+
+        <form name="buscar" action="<?php echo parent::getUrlRaiz()?>/Vista/Administracion/Administracion.php?cod=3" method="post">
 
             <h2>Cerrar un calendario</h2>
             <label>CALENDARIOS: </label><select name="calendarios">  <!--Aitor-->

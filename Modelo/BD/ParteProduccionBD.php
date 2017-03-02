@@ -198,10 +198,10 @@ abstract class ParteProduccionBD extends GenericoBD
         GenericoBD::desconectar($conexion);
     }
 
-    public static function delete($parteProduccion){
+    public static function delete($idParte){
         $conexion = GenericoBD::conectar();
-
-        $query = "DELETE FROM ".self::$tabla." WHERE id = ".$parteProduccion->getId();
+        //Correccion Aitor I(Se pasaba solo el id del parte pero quien hizo esto penso que se pasaba el parte entero)
+        $query = "DELETE FROM " .self::$tabla. " WHERE id = " .$idParte;
 
         $res = mysqli_query($conexion,$query) or die("Error DeleteParteProduccion - ".mysqli_error($conexion));
 

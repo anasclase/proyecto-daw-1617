@@ -148,6 +148,7 @@ use Modelo\Base;
 
                         </div>
                     </div>
+
                         <div class="form-group">
                         <label for="NºAlbaran" class="col-sm-3 control-label">Nº Albaran: </label>
                         <div class="col-sm-9">

@@ -100,7 +100,7 @@ abstract class CentroBD extends GenericoBD{
     }
 
 
-    public static function getNombreCentro(){
+    public static function getNombreCentro(){           //Aitor
 
         $con = parent::conectar();
 

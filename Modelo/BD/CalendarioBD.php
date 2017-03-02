@@ -10,7 +10,7 @@ abstract class CalendarioBD extends GenericoBD   //Aitor
     {
         $con = self::conectar();
 
-        $query = "SELECT id FROM calendario " . " WHERE estado ='Abierto'";
+        $query = "SELECT id FROM calendario WHERE estado ='Abierto'";
 
         $rs = mysqli_query($con, $query) or die("Error getCentrosByEmpresa");
         while ($fila = mysqli_fetch_array($rs)) {

@@ -69,7 +69,7 @@ use Modelo\Base;
                         <div class="col-sm-12 col-xs-offset-1"> 
 						<!--- Cambiar boton GUARDAR POR AÑADIR
 						Pablo --->
-                            <button type="button" name="btnEnviar" class="btn btn-primary enviar">Añadir</button>
+                            <button type="button" name="btnEnviar" class="btn btn-primary enviar" >Añadir</button> <input type='submit' value='Salir' class='cerrar btn btn-warning'>
                         </div>
                         </div>
                     <?php

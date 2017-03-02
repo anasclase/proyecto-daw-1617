@@ -266,6 +266,6 @@ public static function generarcalendario(){
 
 <?php
 require_once __DIR__."/../Plantilla/pie.php";
-}
+    }
 }
 

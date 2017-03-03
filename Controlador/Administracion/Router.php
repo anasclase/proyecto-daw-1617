@@ -182,6 +182,7 @@ if(isset($_POST['abrirParteLogistica'])){
 }
 if(isset($_POST["insertarIncidencia"])){ //David
     Controlador::insertarIncidencia($_POST);
+    header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/insertIncidencia.php");
 
 }
 /*

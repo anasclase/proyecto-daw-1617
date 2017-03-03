@@ -11,21 +11,61 @@ abstract class CalendarioGestionarCalendario extends Plantilla\Views
         parent::setRoot($comprobar);
         require_once __DIR__."/../Plantilla/cabecera.php";
         ?>
-
-
+        <!--Iker seleccion fecha induvidual-->
         <link type="text/css" rel="stylesheet" media="all" href="<?php echo parent::getUrlRaiz()?>/Vista/Plantilla/CSS/Bootstrap/estilos.css">
 
 
         <div class="calendario_ajax">
-            <div class="cal"></div><div id="mask"></div>
+            <div id="diasNacionales"></div>
+            <input type="date" id="calendarioNacionales">
+            <input type="button" value="Guardar" id="botonNacionales" onclick="guardarFecha()">
         </div>
 
-        <script src="<?php echo parent::getUrlRaiz();?>/Vista/Plantilla/JS/jquery-2.2.1.min.js"></script>
+        <script src="<?php echo parent::getUrlRaiz();?>/Vista/Plantilla/JS/jquery-2.2.1.min.js"><br></script>
         <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.12.0/jquery.validate.min.js"></script>
         <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.12.0/localization/messages_es.js "></script>
 
 
         <script>
+            var fechas = [];
+
+            function guardarFecha() {
+                if ($("#diasNacionales").is(':empty')){
+                    $("#diasNacionales").append($('<label id="'+ $("#calendarioNacionales").val() +'">' + $("#calendarioNacionales").val() + '</label>'));
+                    fechas.push($("#calendarioNacionales").val());
+
+                    var v = $("#calendarioNacionales").val().toString();
+                    $('#diasNacionales').append($('<input type="button" onclick="borrarFecha('+ 0 +')" value="X" name="'+v+'">'));
+
+                }else{
+                    var y;
+                    for(y = 0; y < fechas.length && fechas[y] != $("#calendarioNacionales").val(); y++){}
+
+                    if(y == fechas.length){
+                        fechas.push($("#calendarioNacionales").val());
+                        $('#diasNacionales').empty();
+
+                        for(var x = 0; x < fechas.length; x++){
+                            $("#diasNacionales").append($('<label id="' + fechas[x] +'">' + fechas[x] + '</label>'));
+                            $('#diasNacionales').append($('<input type="button" onclick="borrarFecha('+ x +')" value="X" name="' + fechas[x].toString() + '">'));
+                        }
+                    }
+                }
+            }
+
+            function borrarFecha(fecha) {
+                fecha = fechas[fecha];
+                var y;
+                for(y = 0; y < fechas.length && fechas[y] != fecha; y++){}
+
+                fechas.splice(y,1);
+                $('#diasNacionales').empty();
+                for(var x = 0; x < fechas.length; x++){
+                    $("#diasNacionales").append($('<label id="' + fechas[x] +'">' + fechas[x] + '</label>'));
+                    $('#diasNacionales').append($('<input type="button" onclick="borrarFecha('+ x +')" value="X" name="' + fechas[x].toString() + '">'));
+                }
+            }
+            <!--Iker-->
             function generar_calendario(mes,anio)
             {
                 var agenda=$(".cal");

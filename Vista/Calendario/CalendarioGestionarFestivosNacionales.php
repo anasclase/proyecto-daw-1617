@@ -39,6 +39,7 @@ abstract class CalendarioGestionarCalendario extends Plantilla\Views
 
 
         <script>
+
             var fechas = [];
 
             $("input[name='rangoVacaciones']").change(function () {

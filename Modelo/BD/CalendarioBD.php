@@ -1,5 +1,7 @@
 <?php
 
+
+
 namespace Modelo\BD;
 require_once __DIR__."/GenericoBD.php";
 
@@ -21,7 +23,8 @@ abstract class CalendarioBD extends GenericoBD   //Aitor
 
     public static function crearCalendario($calendario)      // IRUNE
     {
-        if(self::comprobarEstadoCalend($calendario)!=true)
+        error_reporting(0);
+        if(self::comprobarEstadoCalend($calendario)!=0)
         {
             return false;
         }
@@ -55,11 +58,8 @@ abstract class CalendarioBD extends GenericoBD   //Aitor
 
         $query="SELECT * FROM calendario WHERE id=".$calendario->getId();
         $rs = mysqli_query($con, $query) or die("Error al comprobar el estado del calendario");
-        if($rs===true){
-            return true;
-        }
-        else
-            return false;
+
+        return $rs;
     }
 }
 

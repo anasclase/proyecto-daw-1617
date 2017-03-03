@@ -577,8 +577,28 @@ abstract class Controlador{
 
     public static function crearObjetoCalendario() {
 
-        $calendario = new \Modelo\Base\Calendario($_POST['calendario'], $_POST['descripcion'], 1);
-        return $calendario;
+        if ($_POST['calendario'] != "" && $_POST['descripcion'] != "") {
+
+            $calendario = new \Modelo\Base\Calendario($_POST['calendario'], $_POST['descripcion'], 1);
+            return $calendario;
+
+        }
+        else {
+            return false;
+        }
+
+    }
+
+    // IRUNE
+
+    public static function cerrarCalendario() {
+
+        if ($_POST['calendario'] != "") {
+            return true;
+        }
+        else {
+            return false;
+        }
 
     }
 

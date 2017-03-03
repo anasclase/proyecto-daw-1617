@@ -21,9 +21,8 @@ abstract class CalendarioBD extends GenericoBD   //Aitor
 
     public static function crearCalendario($calendario)      // IRUNE
     {
-        if(self::comprobarEstadoCalend($calendario)==true)
+        if(self::comprobarEstadoCalend($calendario)!=true)
         {
-            echo "Error, calendario ya creado";
             return false;
         }
 

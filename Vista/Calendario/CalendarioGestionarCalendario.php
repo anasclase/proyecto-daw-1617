@@ -43,7 +43,7 @@ abstract class CalendarioGestionarCalendario extends Plantilla\Views
         <form name="buscar" action="<?php echo parent::getUrlRaiz()?>/Vista/Administracion/Administracion.php?cod=7" method="post"> <!--Aitor-->
 
             <h2>Cerrar un calendario</h2>
-            <label>CALENDARIOS: </label><select name="calendarios">  <!--Aitor-->
+            <label>CALENDARIOS: </label><select name="calendario">  <!--Aitor-->
                 <?php
                 require_once "../../Modelo/BD/CalendarioBD.php";     //Aitor
                 echo "<option value=''>-- Selecciona --</option>";  //Aitor

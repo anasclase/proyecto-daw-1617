@@ -23,13 +23,38 @@ switch($_GET['cod']) {
         Vista\Administracion\AdministracionViews::editParteProduccion();
         break;
     case "6": // IRUNE
+
         $calendario = \Controlador\Administracion\Controlador::crearObjetoCalendario();
-        if (Modelo\BD\CalendarioBD::crearCalendario($calendario))
+
+        if ($calendario != false) {
+
+            if (Modelo\BD\CalendarioBD::crearCalendario($calendario)) {
+                \CalendarioGestionarCalendario::cal(true);
+            }
+            else {
+                echo "<script>alert('El calendario ya existe.');</script>";
+                \CalendarioGestionarCalendario::cal(true);
+            }
+
+        }
+        else {
+            echo "<script>alert('No puede haber campos vacios.');</script>";
             \CalendarioGestionarCalendario::cal(true);
+        }
         break;
     case "7":   //Aitor
-        if(Modelo\BD\CalendarioBD::cerrarCalendario($_POST["calendarios"]))
+
+        if (\Controlador\Administracion\Controlador::cerrarCalendario()) {
+
+            if(Modelo\BD\CalendarioBD::cerrarCalendario($_POST["calendario"]))
+                echo "<script>alert('Calendario cerrado.');</script>";
+                \CalendarioGestionarCalendario::cal(true);
+
+        }
+        else {
+            echo "<script>alert('Tienes que seleccionar un calendario abierto.');</script>";
             \CalendarioGestionarCalendario::cal(true);
+        }
         break;
 
 }

@@ -66,4 +66,14 @@ abstract class ParteProduccionTareaBD extends GenericoBD
     }
 
 
+    //Aitor I
+    public static function ModificarParteTarea($id,$idtarea,$numeroHoras, $paqueteEntrada, $paqueteSalida){
+        $conn = parent::conectar();
+        $query = "update " .self::$tabla . " set idTareas = '$idtarea', numeroHoras = '$numeroHoras', paqueteEntrada = $paqueteEntrada, paqueteSalida = $paqueteSalida where id = $id";
+        mysqli_query($conn, $query) or die(mysqli_error($conn));
+        parent:: desconectar($conn);
+    }
+
+
+
 }

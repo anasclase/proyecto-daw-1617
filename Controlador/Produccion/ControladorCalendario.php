@@ -53,7 +53,11 @@ switch ($_POST["accion"])
 
 					echo "<div class='panel-heading container-fluid'><article class='col-xs-6 text-left'><h4 class='panel-title'><strong>".$tipo->getDescripcion().":</strong> <span class='lead small'>".$tarea->getDescripcion()."</span></h4></article>";
 
-					if(strnatcasecmp($estado->getTipo(),"abierto")==0){ echo "<article class='col-xs-6'><a class='tOp eliminar_tarea' rel='".$fila["id"]."'><span class='glyphicon glyphicon-trash' aria-hidden='true'></span></a><!--<a class='tOp editar_tarea' rel='".$fila["id"]."'><span class='glyphicon glyphicon-pencil' aria-hidden='true'></span></a>--></article>";}
+					if(strnatcasecmp($estado->getTipo(),"abierto")==0){
+
+                        echo "<article class='col-xs-6'><a class='tOp eliminar_tarea' rel='".$fila["id"]."'><span class='glyphicon glyphicon-trash' aria-hidden='true'></span></a><!--<a class='tOp editar_tarea' rel='".$fila["id"]."'><span class='glyphicon glyphicon-pencil' aria-hidden='true'></span></a>-->";
+                        echo "<button name='botonModif' rel='".$fila["id"]."' style = 'background-color:transparent; position:relative; left:120px;' class='botonModif' id='botonModif'><span class=\"glyphicon glyphicon-edit\" style=\" color:blue; font-size: 16px\"></article>";//AITOR I
+					}
 
 					echo '</div><div class="panel-body">';
 
@@ -127,6 +131,7 @@ switch ($_POST["accion"])
 		}else{
 			echo "<div class='panel panel-default'><div class='panel-body'>El Parte no tiene ninguna Tarea.</div></div>";
 			if(strnatcasecmp($estado->getTipo(),"abierto")==0){
+
 				echo "<button type='button' class='btn btn-danger pBorrar' rel='".$parte->getId()."'>Eliminar Parte</button>";
 			}
 		}
@@ -398,5 +403,13 @@ switch ($_POST["accion"])
 
 		break;
 	}
+	//Aitor I
+    case "modificar_tarea":{
+        Modelo\BD\ParteProduccionTareaBD::ModificarParteTarea($_POST["id"], $_POST["tarea"], $_POST["numeroHoras"], $_POST["paqueteEntrada"], $_POST["paqueteSalida"]);
+        break;
+    }
+
+
+
 }
 ?>

@@ -39,7 +39,7 @@ switch ($_POST["accion"])
 			echo "<table class='table table-striped'><tr><th >ID</th><th >HORA INICIO</th><th >HORA FIN</th><th >VEHICULO</th><th >ALBARAN</th><th >ELIMINAR</th><th>MODIFICAR</th></tr>";
 			foreach ($viajes as $viaje) {
 
-				echo "<tr> <td>" . $viaje->getId() . "</td><td>" . $viaje->getHoraInicio() . "</td><td>" . $viaje->getHoraFin() . "</td><td>" . $viaje->getVehiculo()->getMatricula() . "</td><td>" . $viaje->getAlbaran() . "</td>   <td><a href='#' class='eliminar_evento' rel='" . $viaje->getId() . "' title='Eliminar este Evento del " . fecha($_POST["fecha"]) . "'><img src='" . \Vista\Plantilla\Views::getUrlRaiz() . "/Vista/Plantilla/IMG/delete.png'></a></td><td><button name='botonModif' rel='".$viaje->getId()."' class='botonModif' id='botonModif'><span class=\"glyphicon glyphicon-edit\" style=\"color:blue; font-size: 1.5em\">
+				echo "<tr> <td>" . $viaje->getId() . "</td><td>" . $viaje->getHoraInicio() . "</td><td>" . $viaje->getHoraFin() . "</td><td>" . $viaje->getVehiculo()->getMatricula() . "</td><td>" . $viaje->getAlbaran() . "</td>   <td><a href='#' class='eliminar_evento' rel='" . $viaje->getId() . "' title='Eliminar este Evento del " . fecha($_POST["fecha"]) . "'><img src='" . \Vista\Plantilla\Views::getUrlRaiz() . "/Vista/Plantilla/IMG/delete.png'></a></td><td><button name='botonModif' rel='".$viaje->getId()."' class='botonModif' id='botonModif'><span class=\"glyphicon glyphicon-edit\" style=\"background-color:transparent; color:blue; font-size: 1.5em\">
                                     </span></button></td></tr>";//aitor I añadido modif
 			}
 

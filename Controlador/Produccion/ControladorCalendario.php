@@ -56,7 +56,7 @@ switch ($_POST["accion"])
 					if(strnatcasecmp($estado->getTipo(),"abierto")==0){
 
                         echo "<article class='col-xs-6'><a class='tOp eliminar_tarea' rel='".$fila["id"]."'><span class='glyphicon glyphicon-trash' aria-hidden='true'></span></a><!--<a class='tOp editar_tarea' rel='".$fila["id"]."'><span class='glyphicon glyphicon-pencil' aria-hidden='true'></span></a>-->";
-                        echo "<button name='botonModif' rel='".$fila["id"]."' style = 'background-color:transparent; position:relative; left:120px;' class='botonModif' id='botonModif'><span class=\"glyphicon glyphicon-edit\" style=\" color:blue; font-size: 16px\"></article>";//AITOR I
+                        echo "<button name='botonModif' rel='".$fila["id"]."' style = 'background-color:transparent; float:right;' class='botonModif' id='botonModif'><span class=\"glyphicon glyphicon-edit\" style=\" color:blue; font-size: 16px\"></article>";//AITOR I
 					}
 
 					echo '</div><div class="panel-body">';

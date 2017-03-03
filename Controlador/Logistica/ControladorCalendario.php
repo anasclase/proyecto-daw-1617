@@ -45,7 +45,7 @@ switch ($_POST["accion"])
 
 			echo "</table>";
 
-			echo '<button id="cerrarParte" class="btn-warning btn pull-left col-sm-2 cerrarParte">Cerrar Parte</button></div>';
+			echo '<button id="cerrarParte" class="btn-primary btn pull-left col-sm-2 cerrarParte">Cerrar Parte</button></div>';//Aitor I
 		}
 		else{
 			echo "<table class='table table-striped'><tr><th >ID</th><th >HORA INICIO</th><th >HORA FIN</th><th >VEHICULO</th><th >ALBARAN</th></tr>";

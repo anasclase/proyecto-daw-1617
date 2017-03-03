@@ -7,6 +7,7 @@ require_once __DIR__.'/GenericoBD.php';
 use Modelo\Base\Trabajador;
 use Modelo\BD\GenericoBD;
 
+
 abstract class LoginBD extends genericoBD
 {
     private static $tabla = "login";
@@ -58,11 +59,11 @@ abstract class LoginBD extends genericoBD
         parent::desconectar($con);
     }
 
-    public static function add($trabajador, $md5){
+    public static function add($login){
 
         $con = parent::conectar();
 
-        $query = "INSERT INTO  ".self::$tabla."(dniTrabajador, password) VALUES('".$trabajador->getDni()."', '".$md5."')";
+        $query = "INSERT INTO  ".self::$tabla."(dniTrabajador, password) VALUES('".$login->getTrabajador()."', '".$login->getPassword."')";
 
         $rs = mysqli_query($con, $query) or die(mysqli_error($con));
 

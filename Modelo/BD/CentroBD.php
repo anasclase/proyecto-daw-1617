@@ -3,6 +3,8 @@ namespace Modelo\BD;
 
 
 
+use Modelo\Base\Centro;
+
 require_once __DIR__."/GenericoBD.php";
 
 abstract class CentroBD extends GenericoBD{
@@ -92,6 +94,30 @@ abstract class CentroBD extends GenericoBD{
         $rs = mysqli_query($con, $query) or die("Error getAllCentros");
 
         $centros = parent::mapearArray($rs, "Centro");
+
+        parent::desconectar($con);
+
+        return $centros;
+
+    }
+
+    // IRUNE
+
+    public static function cargarCentros() {
+
+        $centros = [];
+
+        $con = parent::conectar();
+
+        $query = "SELECT * FROM ".self::$tabla;
+
+        $rs = mysqli_query($con, $query) or die("Error getAllCentros");
+        $fila = mysqli_fetch_array($rs);
+        while ($fila != null) {
+            $centro = new Centro($fila['id'], $fila['nombre'], $fila['localizacion']);
+            array_push($centros, $centro);
+            $fila = mysqli_fetch_array($rs);
+        }
 
         parent::desconectar($con);
 

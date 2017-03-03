@@ -569,10 +569,19 @@ abstract class Controlador{
 
     // IRUNE
 
-    public static function crearCalendario() {
+    public static function crearObjetoCalendario() {
 
         $calendario = new \Modelo\Base\Calendario($_POST['calendario'], $_POST['descripcion'], 1);
         return $calendario;
+
+    }
+
+    // IRUNE
+
+    public static function crearObjetoCentro() {
+
+        $centro = new Centro($_POST['centro']);
+        return $centro;
 
     }
 }

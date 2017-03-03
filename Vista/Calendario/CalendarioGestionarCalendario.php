@@ -20,11 +20,23 @@ abstract class CalendarioGestionarCalendario extends Plantilla\Views
         <form name="buscar" action="<?php echo parent::getUrlRaiz()?>/Vista/Administracion/Administracion.php?cod=6" method="post">
 
             <h2>Crear un calendario</h2>
+            <p><label>CENTRO: </label>
+                <select name="centro">
+
+                    <?php
+                    require_once "../../Modelo/BD/CentroBD.php";
+                    $centros = Modelo\BD\CentroBD::cargarCentros();
+                    echo "<option value=''>-- Selecciona --</option>";
+                    for($x=0; $x<count($centros); $x++){
+                        echo "<option value='".$centros[$x]->getId()."'>".$centros[$x]->getNombre()."</option>";
+                    }
+                    ?>
+
+                </select></p>
             <p><label>CALENDARIO: </label>
                 <select name="calendario">
 
                     <?php
-                    require_once "../../Modelo/BD/CentroBD.php";
                     $anoActual = date(Y);
                     echo "<option value=''>-- Selecciona --</option>";
                     for($x=0; $x<9; $x++){
@@ -62,8 +74,6 @@ abstract class CalendarioGestionarCalendario extends Plantilla\Views
         <script src="<?php echo parent::getUrlRaiz();?>/Vista/Plantilla/JS/jquery-2.2.1.min.js"></script>
         <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.12.0/jquery.validate.min.js"></script>
         <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.12.0/localization/messages_es.js "></script>
-
-
 
 
         <!-- ESTO NO TE HACE FALTA! -->

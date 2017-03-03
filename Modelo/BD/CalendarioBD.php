@@ -26,13 +26,11 @@ abstract class CalendarioBD extends GenericoBD   //Aitor
 
         $query = "INSERT INTO calendario VALUES ('".$calendario->getId()."', '".$calendario->getDesc()."', '".$calendario->getEstado()."')";
 
-        $rs = mysqli_query($con, $query) or die("Error crearCalendario, el calendario ya existe");
+        $rs = mysqli_query($con, $query) or die("Error crearCalendario");
 
         self::desconectar($con);
 
-        return "Calendario insertado correctamente";
-
-        \CalendarioGestionarCalendario::cal(true);
+        return true;
 
     }
 

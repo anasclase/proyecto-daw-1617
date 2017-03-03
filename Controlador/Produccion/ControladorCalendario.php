@@ -135,6 +135,7 @@ switch ($_POST["accion"])
 				echo "<button type='button' class='btn btn-danger pBorrar' rel='".$parte->getId()."'>Eliminar Parte</button>";
 			}
 		}
+        echo '</div> </div><div><button id="cerrar" class="btn-warning btn pull-right col-sm-2 cerrar">Volver</button></div>';//Aitor I
 
 		break;
 	}

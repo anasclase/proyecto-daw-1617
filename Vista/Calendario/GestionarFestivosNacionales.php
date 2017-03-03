@@ -18,10 +18,10 @@ if ($login->getPassword() == $trabajorPasswordm5){
 else{
     switch($perfil){
         case "Administracion":
-            CalendarioGestionarCalendario::cal(true);
+            CalendarioGestionarFestivosNacionales::cal(true);
             break;
         case "Gerencia":
-            CalendarioGestionarCalendario::cal(true);
+            CalendarioGestionarFestivosNacionales::cal(true);
             break;
         default:
             header("Location: ".\Vista\Plantilla\Views::getUrlRaiz()."/Vista/Login/Login.php");

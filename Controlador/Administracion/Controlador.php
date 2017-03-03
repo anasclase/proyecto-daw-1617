@@ -563,8 +563,14 @@ abstract class Controlador{
     //David
     public static function insertarIncidencia($datos){
 
+        $fecha = getdate();
+        $fecha2 = $fecha["mday"]."/".$fecha["mon"]."/".$fecha["year"];
 
+        $incidencia = new AusenciaTrabajador(null, $fecha2, "00:00", "00:00", $datos["dni"], $datos["motivo"], 2017);
 
+        $prueba = \Modelo\BD\AusenciaTrabajadorBD::setAusencias($incidencia);
+
+        echo $prueba;
     }
 
     // IRUNE

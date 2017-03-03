@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5ca1acb5-411e-4129-befd-8f19de674ea5" name="Default" comment="IRUNE">
+    <list default="true" id="5ca1acb5-411e-4129-befd-8f19de674ea5" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Modelo/BD/CalendarioBD.php" afterPath="$PROJECT_DIR$/Modelo/BD/CalendarioBD.php" />
     </list>
     <ignored path="public.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -630,7 +629,7 @@
       <workItem from="1488365437574" duration="870000" />
       <workItem from="1488439522375" duration="5042000" />
       <workItem from="1488446544369" duration="8563000" />
-      <workItem from="1488525822028" duration="12344000" />
+      <workItem from="1488525822028" duration="12605000" />
     </task>
     <task id="LOCAL-00001" summary="prueba iker">
       <created>1488361626538</created>
@@ -716,11 +715,18 @@
       <option name="project" value="LOCAL" />
       <updated>1488544668051</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="IRUNE crear cal">
+      <created>1488545670406</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1488545670406</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32936000" />
+    <option name="totallyTimeSpent" value="33197000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -774,7 +780,8 @@
     <MESSAGE value="CREAR CERRAR CALENDARIOS IRUNE" />
     <MESSAGE value="IRUNE AÑADIR COMBOS FESTIVOS" />
     <MESSAGE value="IRUNE VALIDACIONES CREAR Y CERRAR CALENDARIO" />
-    <option name="LAST_COMMIT_MESSAGE" value="IRUNE VALIDACIONES CREAR Y CERRAR CALENDARIO" />
+    <MESSAGE value="IRUNE crear cal" />
+    <option name="LAST_COMMIT_MESSAGE" value="IRUNE crear cal" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -242,6 +242,117 @@ public static function generarcalendario(){
                 });
             });
 
+            //Aitor I (hecho a la manera de los creadores del proyecto)
+
+            $(document).on("click",'.botonModif',function (e) {
+                e.preventDefault();
+                var current_p=$(this);
+                var id=$(this).attr("rel");
+
+                $(".cal").fadeOut(500);
+
+                $.ajax({
+                    type: "POST",
+                    url: "<?php echo parent::getUrlRaiz()?>/Vista/Logistica/GeneradorFormsViews.php",
+                    cache: false,
+                    data: {cod:1, id:id} //Aitor
+                }).done(function( respuesta ){
+                    if(respuesta==false){
+                        $("#respuesta_form").html("<div class='alert alert-danger' role='alert'><strong>Error:</strong> La fecha del Parte es Incorrecta.</div>");
+                        $(".formeventos").css("display","none")
+                    }else{
+                        $(".formeventos").html(respuesta);
+                    }
+                });
+
+                $('#mask').fadeIn(1600)
+                    .html(
+                        "<div id='nuevo_evento' class='row' rel='"+id+"'>" +
+                        "<h2 class='col-xs-12 text-center'>Viaje con id "+id+"</h2>" +
+                        "</div>" +
+                        "<div class='row window' rel='"+id+"'>"+
+                        "<div id='respuesta_form' class='col-xs-12 col-md-8 col-md-offset-2'></div>" +
+                        "<div class='col-xs-12 col-md-8 col-md-offset-1'>"+
+                        "<form class='formeventos form-horizontal'>" +
+                        //"<input type='text' name='evento_titulo' id='evento_titulo' class='required'>" +
+                        //"<input type='button' name='Enviar' value='Guardar' class='enviar'>" +
+                        "<input type='hidden' name='evento_fecha' id='evento_fecha' value='"+id+"'>" +
+                        "</form>"+
+                        "</div>"+
+                        "</div>");
+
+            });
+
+
+            $(document).on("click",".modificarLinea", function (e) {
+                e.preventDefault();
+                var current_p=$(this);
+                var id=$(this).attr("rel");
+                var vehiculo=$('#Vehiculo').val();
+                var horaInicio=$('#HorasInicio').val()+":"+$('#MinutosInicio').val()+":00";
+                var horaFin=$('#HorasFin').val()+":"+$('#MinutosFin').val()+":00";
+                var albaran=$('#Albaran').val();
+                var fecha=$('#FechaHoy').val();
+
+                $.ajax({
+                    type: "POST",
+                    url: "<?php echo parent::getUrlRaiz()?>/Controlador/Logistica/ControladorCalendario.php",
+                    cache: false,
+                    data: { id:id, vehiculo:vehiculo,horaInicio:horaInicio,horaFin:horaFin,albaran:albaran,fecha:fecha,accion:'modificar_evento' }
+                }).done(function( respuesta )
+                {
+                    $("#mask").html(respuesta);
+                    setTimeout(function(){
+
+                        $("#mask").fadeOut(500);
+                        $('.cal').fadeIn();
+                        location.reload();
+
+                    },3000);
+
+
+
+                })
+                    .error(function(xhr){alert(xhr.status)});
+
+
+            });
+
+
+
+
+            //
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             $(document).on("click",".anterior,.siguiente,.hoyEnlace",function(e)
             {
                 e.preventDefault();

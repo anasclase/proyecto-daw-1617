@@ -172,5 +172,17 @@ abstract class ViajeBD extends GenericoBD
 
 
     }
+
+
+    //Aitor I
+    public static function ModificarViaje($id,$horaInicio,$horaFin,$albaran,$fechaHoy,$idVehiculo){
+        $conn = parent::conectar();
+        $query = "update " .self::$tabla . " set horaInicio = '$horaInicio', horaFin = '$horaFin', idVehiculo = $idVehiculo, albaran = $albaran where id = $id";
+        mysqli_query($conn, $query) or die(mysqli_error($conn));
+        parent:: desconectar($conn);
+    }
+
+
+
 }
     //POSIBLE GETER BY FECHA QUE ESTA SIN CODIFICAR, VEREMOS MAS ADELANTE SI ES NECESARIO

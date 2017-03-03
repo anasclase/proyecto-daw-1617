@@ -36,10 +36,11 @@ switch ($_POST["accion"])
 		$viajes=Modelo\BD\ViajeBD::getViajeByParte($parte);
 		echo "<div class='table-responsive'>";
 		if($parte->getEstado()->getId()==1) {
-			echo "<table class='table table-striped'><tr><th >ID</th><th >HORA INICIO</th><th >HORA FIN</th><th >VEHICULO</th><th >ALBARAN</th><th >ELIMINAR</th></tr>";
+			echo "<table class='table table-striped'><tr><th >ID</th><th >HORA INICIO</th><th >HORA FIN</th><th >VEHICULO</th><th >ALBARAN</th><th >ELIMINAR</th><th>MODIFICAR</th></tr>";
 			foreach ($viajes as $viaje) {
 
-				echo "<tr> <td>" . $viaje->getId() . "</td><td>" . $viaje->getHoraInicio() . "</td><td>" . $viaje->getHoraFin() . "</td><td>" . $viaje->getVehiculo()->getMatricula() . "</td><td>" . $viaje->getAlbaran() . "</td>   <td><a href='#' class='eliminar_evento' rel='" . $viaje->getId() . "' title='Eliminar este Evento del " . fecha($_POST["fecha"]) . "'><img src='" . \Vista\Plantilla\Views::getUrlRaiz() . "/Vista/Plantilla/IMG/delete.png'></a></td></tr>";
+				echo "<tr> <td>" . $viaje->getId() . "</td><td>" . $viaje->getHoraInicio() . "</td><td>" . $viaje->getHoraFin() . "</td><td>" . $viaje->getVehiculo()->getMatricula() . "</td><td>" . $viaje->getAlbaran() . "</td>   <td><a href='#' class='eliminar_evento' rel='" . $viaje->getId() . "' title='Eliminar este Evento del " . fecha($_POST["fecha"]) . "'><img src='" . \Vista\Plantilla\Views::getUrlRaiz() . "/Vista/Plantilla/IMG/delete.png'></a></td><td><button name='botonModif' rel='".$viaje->getId()."' class='botonModif' id='botonModif'><span class=\"glyphicon glyphicon-edit\" style=\"color:blue; font-size: 1.5em\">
+                                    </span></button></td></tr>";//aitor I añadido modif
 			}
 
 
@@ -264,6 +265,20 @@ switch ($_POST["accion"])
 
 
 		break;
+
+
 	}
+	//Aitor i
+    case "modificar_evento":{
+
+        Modelo\BD\ViajeBD::ModificarViaje($_POST["id"], $_POST["horaInicio"], $_POST["horaFin"], $_POST["albaran"], $_POST["fecha"],$_POST["vehiculo"]);
+
+
+
+
+        break;
+    }
+
+
 }
 ?>

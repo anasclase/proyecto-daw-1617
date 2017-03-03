@@ -183,10 +183,15 @@ switch ($_GET["accion"])
         $empresa = new \Modelo\Base\Centro($idEmpresa);
 
         $query = \Modelo\BD\TrabajadorBD::getTodosTrabajadoresByCentro($empresa);
+        if($query==null){
+            echo null ;
+        }else{
+            for($x=0;$x<count($query);$x++){
+               echo "<option value='$x'>".$query[$x]->getNombre()."</option>";
+            }
+        }
 
-        json_encode($query);
 
-        //if($query) echo "encontrados";else echo "no llega";
         break;
 
     }

@@ -39,7 +39,9 @@ abstract class CalendarioVac extends Plantilla\Views
                     </select>
 
                     <label for="nomTrabajador">Trabajador :</label>
-                    <input type="text" id="nomTrabajador"/>
+                    <select id="trabajador">
+
+                    </select>
                     <?php
 
                     ?>
@@ -303,7 +305,8 @@ abstract class CalendarioVac extends Plantilla\Views
                             data: { idEmpresa : idEmpresa , accion:"buscarTrab"}
                         })
                             .done(function(respuesta) {
-                                //alert("llega");
+
+                                $("#trabajador").html(respuesta);
 
                             })
                             .fail(function() {
@@ -314,7 +317,6 @@ abstract class CalendarioVac extends Plantilla\Views
                         alert(err)
                     }
                 });
-
 
 
 
@@ -335,9 +337,6 @@ abstract class CalendarioVac extends Plantilla\Views
 
                      }
                  });
-
-
-
 
 
             });

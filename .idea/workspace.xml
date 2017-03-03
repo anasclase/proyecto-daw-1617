@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="5ca1acb5-411e-4129-befd-8f19de674ea5" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Modelo/BD/ParteProduccionBD.php" afterPath="$PROJECT_DIR$/Modelo/BD/ParteProduccionBD.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Modelo/BD/PartesLogisticaBD.php" afterPath="$PROJECT_DIR$/Modelo/BD/PartesLogisticaBD.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Vista/Administracion/AdministracionViews.php" afterPath="$PROJECT_DIR$/Vista/Administracion/AdministracionViews.php" />
     </list>
     <ignored path="public.iws" />
@@ -25,11 +27,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AdministracionViews.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AdministracionViews.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Vista/Administracion/AdministracionViews.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2724359">
-              <caret line="1239" column="9" selection-start-line="1239" selection-start-column="9" selection-end-line="1239" selection-end-column="9" />
+            <state vertical-scroll-proportion="-4.7647057">
+              <caret line="2000" column="36" selection-start-line="2000" selection-start-column="36" selection-end-line="2000" selection-end-column="36" />
               <folding>
                 <element signature="e#39#71#0#PHP" expanded="true" />
                 <element signature="e#933#971#0#HTML" expanded="true" />
@@ -52,60 +54,147 @@
                 <element signature="e#4646#4684#0#HTML" expanded="true" />
                 <element signature="e#4924#4962#0#HTML" expanded="true" />
                 <element signature="e#5126#5164#0#HTML" expanded="true" />
-                <element signature="e#12992#13031#0#HTML" expanded="true" />
-                <element signature="e#13161#13196#0#HTML" expanded="true" />
-                <element signature="e#17189#17228#0#HTML" expanded="true" />
-                <element signature="e#17358#17393#0#HTML" expanded="true" />
-                <element signature="e#22440#22479#0#HTML" expanded="true" />
-                <element signature="e#22617#22652#0#HTML" expanded="true" />
-                <element signature="e#30824#30863#0#HTML" expanded="true" />
-                <element signature="e#31001#31036#0#HTML" expanded="true" />
-                <element signature="e#36192#36231#0#HTML" expanded="true" />
-                <element signature="e#36369#36404#0#HTML" expanded="true" />
-                <element signature="e#38999#39038#0#HTML" expanded="true" />
-                <element signature="e#39166#39202#0#HTML" expanded="true" />
-                <element signature="e#41589#41628#0#HTML" expanded="true" />
-                <element signature="e#41756#41792#0#HTML" expanded="true" />
-                <element signature="e#45608#45647#0#HTML" expanded="true" />
-                <element signature="e#45777#45812#0#HTML" expanded="true" />
-                <element signature="e#48305#48343#0#HTML" expanded="true" />
-                <element signature="e#48468#48505#0#HTML" expanded="true" />
-                <element signature="e#54564#54603#0#HTML" expanded="true" />
-                <element signature="e#54645#54680#0#HTML" expanded="true" />
-                <element signature="e#59887#59925#0#HTML" expanded="true" />
-                <element signature="e#59967#60003#0#HTML" expanded="true" />
-                <element signature="e#68374#68412#0#HTML" expanded="true" />
-                <element signature="e#68479#68515#0#HTML" expanded="true" />
-                <element signature="e#68530#68549#0#HTML" expanded="true" />
-                <element signature="e#84926#84955#0#HTML" expanded="true" />
-                <element signature="e#87783#87821#0#HTML" expanded="true" />
-                <element signature="e#87905#87941#0#HTML" expanded="true" />
-                <element signature="e#88116#88154#0#HTML" expanded="true" />
-                <element signature="e#88238#88274#0#HTML" expanded="true" />
-                <element signature="e#88462#88500#0#HTML" expanded="true" />
-                <element signature="e#88634#88671#0#HTML" expanded="true" />
-                <element signature="e#88829#88867#0#HTML" expanded="true" />
-                <element signature="e#88957#88992#0#HTML" expanded="true" />
-                <element signature="e#89181#89219#0#HTML" expanded="true" />
-                <element signature="e#89312#89348#0#HTML" expanded="true" />
-                <element signature="e#91445#91483#0#HTML" expanded="true" />
-                <element signature="e#91567#91603#0#HTML" expanded="true" />
-                <element signature="e#91779#91817#0#HTML" expanded="true" />
-                <element signature="e#91901#91937#0#HTML" expanded="true" />
-                <element signature="e#92127#92165#0#HTML" expanded="true" />
-                <element signature="e#92299#92336#0#HTML" expanded="true" />
-                <element signature="e#92495#92533#0#HTML" expanded="true" />
-                <element signature="e#92623#92658#0#HTML" expanded="true" />
-                <element signature="e#92848#92886#0#HTML" expanded="true" />
-                <element signature="e#92979#93015#0#HTML" expanded="true" />
-                <element signature="e#96569#96607#0#HTML" expanded="true" />
-                <element signature="e#96736#96771#0#HTML" expanded="true" />
-                <element signature="e#98665#98703#0#HTML" expanded="true" />
-                <element signature="e#98743#98780#0#HTML" expanded="true" />
-                <marker date="1488455211000" expanded="true" signature="62718:62729" placeholder="..." />
-                <marker date="1488455211000" expanded="true" signature="66074:66085" placeholder="..." />
-                <marker date="1488455211000" expanded="true" signature="73962:73973" placeholder="..." />
-                <marker date="1488455211000" expanded="true" signature="82698:82709" placeholder="..." />
+                <element signature="e#13305#13344#0#HTML" expanded="true" />
+                <element signature="e#13474#13509#0#HTML" expanded="true" />
+                <element signature="e#17502#17541#0#HTML" expanded="true" />
+                <element signature="e#17671#17706#0#HTML" expanded="true" />
+                <element signature="e#22753#22792#0#HTML" expanded="true" />
+                <element signature="e#22930#22965#0#HTML" expanded="true" />
+                <element signature="e#31137#31176#0#HTML" expanded="true" />
+                <element signature="e#31314#31349#0#HTML" expanded="true" />
+                <element signature="e#36505#36544#0#HTML" expanded="true" />
+                <element signature="e#36682#36717#0#HTML" expanded="true" />
+                <element signature="e#39312#39351#0#HTML" expanded="true" />
+                <element signature="e#39479#39515#0#HTML" expanded="true" />
+                <element signature="e#41902#41941#0#HTML" expanded="true" />
+                <element signature="e#42069#42105#0#HTML" expanded="true" />
+                <element signature="e#45921#45960#0#HTML" expanded="true" />
+                <element signature="e#46090#46125#0#HTML" expanded="true" />
+                <element signature="e#48623#48661#0#HTML" expanded="true" />
+                <element signature="e#48786#48823#0#HTML" expanded="true" />
+                <element signature="e#54882#54921#0#HTML" expanded="true" />
+                <element signature="e#54963#54998#0#HTML" expanded="true" />
+                <element signature="e#60205#60243#0#HTML" expanded="true" />
+                <element signature="e#60285#60321#0#HTML" expanded="true" />
+                <element signature="e#68692#68730#0#HTML" expanded="true" />
+                <element signature="e#68797#68833#0#HTML" expanded="true" />
+                <element signature="e#68848#68867#0#HTML" expanded="true" />
+                <element signature="e#85244#85273#0#HTML" expanded="true" />
+                <element signature="e#88456#88494#0#HTML" expanded="true" />
+                <element signature="e#88578#88614#0#HTML" expanded="true" />
+                <element signature="e#88789#88827#0#HTML" expanded="true" />
+                <element signature="e#88911#88947#0#HTML" expanded="true" />
+                <element signature="e#89135#89173#0#HTML" expanded="true" />
+                <element signature="e#89307#89344#0#HTML" expanded="true" />
+                <element signature="e#89502#89540#0#HTML" expanded="true" />
+                <element signature="e#89630#89665#0#HTML" expanded="true" />
+                <element signature="e#89854#89892#0#HTML" expanded="true" />
+                <element signature="e#89985#90021#0#HTML" expanded="true" />
+                <marker date="1488539653000" expanded="true" signature="8784:9030" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="9525:9898" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="9605:9864" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="10404:10642" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="63036:63047" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="66392:66403" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="74280:74291" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="83016:83027" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="92027:92038" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="92249:92295" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="92249:94032" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="92327:92576" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="92379:92409" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="92416:92567" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="92501:92529" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="92661:92910" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="92713:92743" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="92750:92901" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="92835:92863" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="93005:93279" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="93061:93091" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="93098:93270" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="93233:93262" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="93373:93635" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="93429:93459" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="93466:93626" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="93557:93584" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="93726:93992" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="93782:93812" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="93819:93983" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="93913:93941" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="94985:96217" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="95026:95330" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="95162:95307" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="95371:95668" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="95506:95645" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="95709:95950" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="95793:95927" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="95991:96196" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="96043:96172" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="96742:98020" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="96767:96912" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="97082:97920" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="97225:97787" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="97417:97753" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="97505:97535" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="97536:97715" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="97618:97707" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="97672:97699" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="98620:99254" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="98669:99254" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="98690:98821" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="98990:99254" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="99015:99254" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="99044:99254" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="99120:99254" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="99603:99633" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="99681:99710" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="99928:100132" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="99980:100116" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="100640:101000" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="100731:100919" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="101259:104972" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="101320:104972" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="101376:101580" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="101879:104972" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="101902:103965" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="102384:103939" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="102458:102683" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="102502:102532" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="102539:102674" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="102616:102644" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="102916:103166" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="102964:102994" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="103001:103157" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="103120:103149" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="103252:103486" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="103300:103330" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="103337:103477" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="103420:103447" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="103570:103808" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="103618:103648" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="103655:103799" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="103741:103769" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="106585:109752" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="106641:106958" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="107259:109752" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="107284:109563" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="107985:109537" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="108056:108275" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="108097:108127" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="108134:108266" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="108208:108236" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="108510:108760" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="108558:108588" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="108595:108751" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="108714:108743" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="108847:109081" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="108895:108925" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="108932:109072" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="109015:109042" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="109166:109404" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="109214:109244" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="109251:109395" placeholder="..." />
+                <marker date="1488539653000" expanded="true" signature="109337:109365" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -114,15 +203,15 @@
       <file leaf-file-name="Administracion.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Vista/Administracion/Administracion.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="-7.5">
+              <caret line="12" column="57" selection-start-line="12" selection-start-column="57" selection-end-line="12" selection-end-column="57" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HorarioViews.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Vista/Administracion/HorarioViews.php">
+      <file leaf-file-name="ProduccionClass.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Modelo/Base/ProduccionClass.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-0.0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -131,12 +220,104 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CalendarioViews.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Vista/Administracion/CalendarioViews.php">
+      <file leaf-file-name="ParteLogisticaClass.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Modelo/Base/ParteLogisticaClass.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="40.0">
+            <state vertical-scroll-proportion="-0.0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ParteProduccionBD.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Modelo/BD/ParteProduccionBD.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-28.375">
+              <caret line="218" column="57" selection-start-line="218" selection-start-column="57" selection-end-line="218" selection-end-column="57" />
+              <folding>
+                <marker date="1488539653000" expanded="true" signature="385:427" placeholder="SELECT * FRO..${self::$tabla}..." />
+                <marker date="1488539653000" expanded="true" signature="812:930" placeholder="SELECT * FRO..${self::$tabla}..." />
+                <marker date="1488539653000" expanded="true" signature="1305:1418" placeholder="SELECT * FRO..." />
+                <marker date="1488539653000" expanded="true" signature="1767:1877" placeholder="SELECT * FRO..." />
+                <marker date="1488539653000" expanded="true" signature="2357:2462" placeholder="SELECT * FRO..${self::$tabla}..." />
+                <marker date="1488539653000" expanded="true" signature="2849:2890" placeholder="SELECT * FRO..${self::$tabla}..." />
+                <marker date="1488539653000" expanded="true" signature="3278:3606" placeholder="INSERT INTO ${self::$tabla}..." />
+                <marker date="1488539653000" expanded="true" signature="7039:7081" placeholder="DELETE FROM ..." />
+                <marker date="1488539653000" expanded="true" signature="7475:7549" placeholder="SELECT * FRO..${self::$tabla}..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GenericoBD.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Modelo/BD/GenericoBD.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AusenciaBD.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Modelo/BD/AusenciaBD.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <marker date="1487928228000" expanded="true" signature="249:263" placeholder="SELECT * FRO..${self::$tabla}..." />
+                <marker date="1487928228000" expanded="true" signature="581:623" placeholder="SELECT * FRO..${self::$tabla}..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PartesLogisticaBD.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Modelo/BD/PartesLogisticaBD.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <marker date="1488539653000" expanded="true" signature="373:414" placeholder="SELECT * FRO..${self::$tabla}..." />
+                <marker date="1488539653000" expanded="true" signature="775:873" placeholder="SELECT * FRO..${self::$tabla}..." />
+                <marker date="1488539653000" expanded="true" signature="1202:1414" placeholder="INSERT INTO ..${self::$tabla}..." />
+                <marker date="1488539653000" expanded="true" signature="1719:1836" placeholder="SELECT * FRO..${self::$tabla}..." />
+                <marker date="1488539653000" expanded="true" signature="2186:2289" placeholder="SELECT * FRO..${self::$tabla}..." />
+                <marker date="1488539653000" expanded="true" signature="2625:2735" placeholder="SELECT idEst..${self::$tabla}..." />
+                <marker date="1488539653000" expanded="true" signature="3644:3718" placeholder="SELECT * FRO..${self::$tabla}..." />
+                <marker date="1488539653000" expanded="true" signature="4026:4066" placeholder="DELETE FROM ..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LogisticaClass.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Modelo/Base/LogisticaClass.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EstadoBD.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Modelo/BD/EstadoBD.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-6.25">
+              <caret line="15" column="3" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
+              <folding>
+                <marker date="1487928228000" expanded="true" signature="358:399" placeholder="SELECT * FRO..${self::$tabla}..." />
+                <marker date="1487928228000" expanded="true" signature="718:792" placeholder="SELECT * FRO..${self::$tabla}..." />
+                <marker date="1487928228000" expanded="true" signature="1125:1242" placeholder="SELECT * FRO..${self::$tabla}..." />
+                <marker date="1487928228000" expanded="true" signature="1167:1213" placeholder="SELECT idEst..parteslogistica..." />
+                <marker date="1487928228000" expanded="true" signature="1577:1697" placeholder="SELECT * FRO..${self::$tabla}..." />
+                <marker date="1487928228000" expanded="true" signature="1620:1667" placeholder="SELECT idEst..partesproduccion..." />
+                <marker date="1487928228000" expanded="true" signature="1997:2064" placeholder="INSERT INTO ${self::$tabla}..." />
+                <marker date="1487928228000" expanded="true" signature="2268:2310" placeholder="DELETE FROM ..." />
+                <marker date="1487928228000" expanded="true" signature="2535:2549" placeholder="SELECT * FRO..${self::$tabla}..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -162,7 +343,6 @@
         <option value="$PROJECT_DIR$/Vista/Produccion/GeneradorFormsViews.php" />
         <option value="$PROJECT_DIR$/Modelo/Base/ParteProduccionClass.php" />
         <option value="$PROJECT_DIR$/Modelo/Base/ParteLogisticaClass.php" />
-        <option value="$PROJECT_DIR$/Modelo/BD/PartesLogisticaBD.php" />
         <option value="$PROJECT_DIR$/create_insert.sql" />
         <option value="$PROJECT_DIR$/Modelo/Base/VacacionesTrabajadoresClass.php" />
         <option value="$PROJECT_DIR$/Vista/Plantilla/pie.php" />
@@ -176,6 +356,9 @@
         <option value="$PROJECT_DIR$/Vista/Gerencia/GerenciaViews.php" />
         <option value="$PROJECT_DIR$/Vista/Logistica/CalendarioViews.php" />
         <option value="$PROJECT_DIR$/Controlador/Logistica/ControladorCalendario.php" />
+        <option value="$PROJECT_DIR$/Modelo/BD/GenericoBD.php" />
+        <option value="$PROJECT_DIR$/Modelo/BD/PartesLogisticaBD.php" />
+        <option value="$PROJECT_DIR$/Modelo/BD/ParteProduccionBD.php" />
         <option value="$PROJECT_DIR$/Vista/Administracion/AdministracionViews.php" />
       </list>
     </option>
@@ -196,9 +379,9 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="677" />
+    <option name="x" value="63" />
     <option name="y" value="23" />
-    <option name="width" value="1243" />
+    <option name="width" value="824" />
     <option name="height" value="1057" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -226,71 +409,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="public">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="public">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Vista">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="public">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Vista">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Produccion">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="public">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Vista">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Administracion">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -483,6 +601,153 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="public">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="public">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Vista">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="public">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Vista">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Produccion">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="public">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Vista">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Fotos">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="public">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Vista">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Administracion">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="public">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Modelo">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="BD">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="public">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Modelo">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="public">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Controlador">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="public">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Controlador">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Administracion">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -504,8 +769,9 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Controlador/Administracion/Controlador.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Modelo/BD/LoginBD.php</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/Vista/Administracion/AdministracionViews.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/Vista/Gerencia/GerenciaViews.php</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -760,7 +1026,13 @@
       <option name="project" value="LOCAL" />
       <updated>1488453812003</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Commit Ganeko arreglo botones Gerencia-Administracion">
+      <created>1488455370238</created>
+      <option name="number" value="00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1488455370238</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -777,25 +1049,25 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="677" y="23" width="1243" height="1057" extended-state="0" />
+    <frame x="63" y="23" width="824" height="1057" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17377312" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38106796" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977098" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299595" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299595" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299595" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3299595" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977098" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299595" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39878234" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -826,73 +1098,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Modelo/Base/ViajeClass.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Modelo/Base/TrabajadorClass.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Modelo/Base/VehiculoClass.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.125">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Modelo/Base/FestivosNacionalClass.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Modelo/Base/VacacionesTrabajadoresClass.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#6#85#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Modelo/Base/FestivoClass.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.625">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Vista/VistaProbarRequines.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Vista/Fotos/Default/foto.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Vista/Fotos/77777777A/Dude.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Vista/Fotos/72845480H/Guard.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -921,14 +1126,6 @@
     <entry file="file://$PROJECT_DIR$/Vista/Fotos/11111111B/240607.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Modelo/BD/GenericoBD.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.875">
-          <caret line="61" column="25" selection-start-line="61" selection-start-column="25" selection-end-line="61" selection-end-column="25" />
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Vista/Plantilla/IMG/vtip_arrow.png">
@@ -960,7 +1157,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -968,7 +1164,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="6258" column="16" selection-start-line="6258" selection-start-column="16" selection-end-line="6258" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -976,7 +1171,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -984,7 +1178,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-29.375">
           <caret line="47" column="46" selection-start-line="47" selection-start-column="46" selection-end-line="47" selection-end-column="46" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1000,7 +1193,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1008,7 +1200,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1016,7 +1207,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-19.375">
           <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1024,10 +1214,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-23.75">
           <caret line="55" column="41" selection-start-line="55" selection-start-column="41" selection-end-line="55" selection-end-column="41" />
-          <folding>
-            <marker date="1488453799000" expanded="true" signature="51985:51996" placeholder="..." />
-            <marker date="1488453799000" expanded="true" signature="57469:57480" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1035,7 +1221,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="71.625">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1043,7 +1228,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="4.75">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1051,7 +1235,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1059,7 +1242,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1067,7 +1249,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-25.0">
           <caret line="40" column="7" selection-start-line="40" selection-start-column="7" selection-end-line="40" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1075,7 +1256,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1083,7 +1263,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1091,7 +1270,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1099,7 +1277,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.470588">
           <caret line="24" column="60" selection-start-line="24" selection-start-column="60" selection-end-line="24" selection-end-column="60" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1107,10 +1284,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33333334">
           <caret line="54" column="14" selection-start-line="54" selection-start-column="12" selection-end-line="54" selection-end-column="14" />
-          <folding>
-            <marker date="1488445440000" expanded="true" signature="3303:4012" placeholder="..." />
-            <marker date="1488445440000" expanded="true" signature="3482:3982" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1118,7 +1291,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1126,7 +1298,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33333334">
           <caret line="348" column="34" selection-start-line="348" selection-start-column="32" selection-end-line="348" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1134,7 +1305,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1142,7 +1312,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.9411764">
           <caret line="62" column="18" selection-start-line="62" selection-start-column="16" selection-end-line="62" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1150,11 +1319,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.43234324">
           <caret line="123" column="43" selection-start-line="123" selection-start-column="34" selection-end-line="123" selection-end-column="43" />
-          <folding>
-            <marker date="1488446240000" expanded="true" signature="3450:4141" placeholder="..." />
-            <marker date="1488446240000" expanded="true" signature="3629:4111" placeholder="..." />
-            <marker date="1488446240000" expanded="true" signature="3703:4077" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1162,12 +1326,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1487928228000" expanded="true" signature="542:615" placeholder="select * fro..${$tabla}..." />
-            <marker date="1487928228000" expanded="true" signature="1014:1115" placeholder="insert into ${$tabla}..." />
-            <marker date="1487928228000" expanded="true" signature="1331:1388" placeholder="delete from ..." />
-            <marker date="1487928228000" expanded="true" signature="2627:2778" placeholder="select fecha..${$tabla}..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1175,19 +1333,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.63036305">
           <caret line="65" column="5" selection-start-line="65" selection-start-column="5" selection-end-line="65" selection-end-column="5" />
-          <folding>
-            <marker date="1488448050000" expanded="true" signature="2638:2746" placeholder="insert into parteslogistica..." />
-            <marker date="1488448050000" expanded="true" signature="2962:3016" placeholder="delete from ..." />
-            <marker date="1488448050000" expanded="true" signature="4525:4728" placeholder="select fecha..parteslogistica..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Vista/Administracion/Administracion.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1201,16 +1346,117 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Vista/Administracion/CalendarioViews.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="40.0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Controlador/Administracion/Controlador.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-17.5">
+          <caret line="327" column="51" selection-start-line="327" selection-start-column="51" selection-end-line="327" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modelo/BD/ParteProducionTareaBD.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modelo/BD/EstadoBD.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.25">
+          <caret line="15" column="3" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
+          <folding>
+            <marker date="1487928228000" expanded="true" signature="358:399" placeholder="SELECT * FRO..${self::$tabla}..." />
+            <marker date="1487928228000" expanded="true" signature="718:792" placeholder="SELECT * FRO..${self::$tabla}..." />
+            <marker date="1487928228000" expanded="true" signature="1125:1242" placeholder="SELECT * FRO..${self::$tabla}..." />
+            <marker date="1487928228000" expanded="true" signature="1167:1213" placeholder="SELECT idEst..parteslogistica..." />
+            <marker date="1487928228000" expanded="true" signature="1577:1697" placeholder="SELECT * FRO..${self::$tabla}..." />
+            <marker date="1487928228000" expanded="true" signature="1620:1667" placeholder="SELECT idEst..partesproduccion..." />
+            <marker date="1487928228000" expanded="true" signature="1997:2064" placeholder="INSERT INTO ${self::$tabla}..." />
+            <marker date="1487928228000" expanded="true" signature="2268:2310" placeholder="DELETE FROM ..." />
+            <marker date="1487928228000" expanded="true" signature="2535:2549" placeholder="SELECT * FRO..${self::$tabla}..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modelo/Base/LogisticaClass.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modelo/Base/ProduccionClass.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modelo/Base/ParteLogisticaClass.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modelo/BD/PartesLogisticaBD.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1488539653000" expanded="true" signature="373:414" placeholder="SELECT * FRO..${self::$tabla}..." />
+            <marker date="1488539653000" expanded="true" signature="775:873" placeholder="SELECT * FRO..${self::$tabla}..." />
+            <marker date="1488539653000" expanded="true" signature="1202:1414" placeholder="INSERT INTO ..${self::$tabla}..." />
+            <marker date="1488539653000" expanded="true" signature="1719:1836" placeholder="SELECT * FRO..${self::$tabla}..." />
+            <marker date="1488539653000" expanded="true" signature="2186:2289" placeholder="SELECT * FRO..${self::$tabla}..." />
+            <marker date="1488539653000" expanded="true" signature="2625:2735" placeholder="SELECT idEst..${self::$tabla}..." />
+            <marker date="1488539653000" expanded="true" signature="3644:3718" placeholder="SELECT * FRO..${self::$tabla}..." />
+            <marker date="1488539653000" expanded="true" signature="4026:4066" placeholder="DELETE FROM ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modelo/BD/ParteProduccionBD.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-28.375">
+          <caret line="218" column="57" selection-start-line="218" selection-start-column="57" selection-end-line="218" selection-end-column="57" />
+          <folding>
+            <marker date="1488539653000" expanded="true" signature="385:427" placeholder="SELECT * FRO..${self::$tabla}..." />
+            <marker date="1488539653000" expanded="true" signature="812:930" placeholder="SELECT * FRO..${self::$tabla}..." />
+            <marker date="1488539653000" expanded="true" signature="1305:1418" placeholder="SELECT * FRO..." />
+            <marker date="1488539653000" expanded="true" signature="1767:1877" placeholder="SELECT * FRO..." />
+            <marker date="1488539653000" expanded="true" signature="2357:2462" placeholder="SELECT * FRO..${self::$tabla}..." />
+            <marker date="1488539653000" expanded="true" signature="2849:2890" placeholder="SELECT * FRO..${self::$tabla}..." />
+            <marker date="1488539653000" expanded="true" signature="3278:3606" placeholder="INSERT INTO ${self::$tabla}..." />
+            <marker date="1488539653000" expanded="true" signature="7039:7081" placeholder="DELETE FROM ..." />
+            <marker date="1488539653000" expanded="true" signature="7475:7549" placeholder="SELECT * FRO..${self::$tabla}..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vista/Administracion/Administracion.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.5">
+          <caret line="12" column="57" selection-start-line="12" selection-start-column="57" selection-end-line="12" selection-end-column="57" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Vista/Administracion/AdministracionViews.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2724359">
-          <caret line="1239" column="9" selection-start-line="1239" selection-start-column="9" selection-end-line="1239" selection-end-column="9" />
+        <state vertical-scroll-proportion="-4.7647057">
+          <caret line="2000" column="36" selection-start-line="2000" selection-start-column="36" selection-end-line="2000" selection-end-column="36" />
           <folding>
             <element signature="e#39#71#0#PHP" expanded="true" />
             <element signature="e#933#971#0#HTML" expanded="true" />
@@ -1233,60 +1479,166 @@
             <element signature="e#4646#4684#0#HTML" expanded="true" />
             <element signature="e#4924#4962#0#HTML" expanded="true" />
             <element signature="e#5126#5164#0#HTML" expanded="true" />
-            <element signature="e#12992#13031#0#HTML" expanded="true" />
-            <element signature="e#13161#13196#0#HTML" expanded="true" />
-            <element signature="e#17189#17228#0#HTML" expanded="true" />
-            <element signature="e#17358#17393#0#HTML" expanded="true" />
-            <element signature="e#22440#22479#0#HTML" expanded="true" />
-            <element signature="e#22617#22652#0#HTML" expanded="true" />
-            <element signature="e#30824#30863#0#HTML" expanded="true" />
-            <element signature="e#31001#31036#0#HTML" expanded="true" />
-            <element signature="e#36192#36231#0#HTML" expanded="true" />
-            <element signature="e#36369#36404#0#HTML" expanded="true" />
-            <element signature="e#38999#39038#0#HTML" expanded="true" />
-            <element signature="e#39166#39202#0#HTML" expanded="true" />
-            <element signature="e#41589#41628#0#HTML" expanded="true" />
-            <element signature="e#41756#41792#0#HTML" expanded="true" />
-            <element signature="e#45608#45647#0#HTML" expanded="true" />
-            <element signature="e#45777#45812#0#HTML" expanded="true" />
-            <element signature="e#48305#48343#0#HTML" expanded="true" />
-            <element signature="e#48468#48505#0#HTML" expanded="true" />
-            <element signature="e#54564#54603#0#HTML" expanded="true" />
-            <element signature="e#54645#54680#0#HTML" expanded="true" />
-            <element signature="e#59887#59925#0#HTML" expanded="true" />
-            <element signature="e#59967#60003#0#HTML" expanded="true" />
-            <element signature="e#68374#68412#0#HTML" expanded="true" />
-            <element signature="e#68479#68515#0#HTML" expanded="true" />
-            <element signature="e#68530#68549#0#HTML" expanded="true" />
-            <element signature="e#84926#84955#0#HTML" expanded="true" />
-            <element signature="e#87783#87821#0#HTML" expanded="true" />
-            <element signature="e#87905#87941#0#HTML" expanded="true" />
-            <element signature="e#88116#88154#0#HTML" expanded="true" />
-            <element signature="e#88238#88274#0#HTML" expanded="true" />
-            <element signature="e#88462#88500#0#HTML" expanded="true" />
-            <element signature="e#88634#88671#0#HTML" expanded="true" />
-            <element signature="e#88829#88867#0#HTML" expanded="true" />
-            <element signature="e#88957#88992#0#HTML" expanded="true" />
-            <element signature="e#89181#89219#0#HTML" expanded="true" />
-            <element signature="e#89312#89348#0#HTML" expanded="true" />
-            <element signature="e#91445#91483#0#HTML" expanded="true" />
-            <element signature="e#91567#91603#0#HTML" expanded="true" />
-            <element signature="e#91779#91817#0#HTML" expanded="true" />
-            <element signature="e#91901#91937#0#HTML" expanded="true" />
-            <element signature="e#92127#92165#0#HTML" expanded="true" />
-            <element signature="e#92299#92336#0#HTML" expanded="true" />
-            <element signature="e#92495#92533#0#HTML" expanded="true" />
-            <element signature="e#92623#92658#0#HTML" expanded="true" />
-            <element signature="e#92848#92886#0#HTML" expanded="true" />
-            <element signature="e#92979#93015#0#HTML" expanded="true" />
-            <element signature="e#96569#96607#0#HTML" expanded="true" />
-            <element signature="e#96736#96771#0#HTML" expanded="true" />
-            <element signature="e#98665#98703#0#HTML" expanded="true" />
-            <element signature="e#98743#98780#0#HTML" expanded="true" />
-            <marker date="1488455211000" expanded="true" signature="62718:62729" placeholder="..." />
-            <marker date="1488455211000" expanded="true" signature="66074:66085" placeholder="..." />
-            <marker date="1488455211000" expanded="true" signature="73962:73973" placeholder="..." />
-            <marker date="1488455211000" expanded="true" signature="82698:82709" placeholder="..." />
+            <element signature="e#13305#13344#0#HTML" expanded="true" />
+            <element signature="e#13474#13509#0#HTML" expanded="true" />
+            <element signature="e#17502#17541#0#HTML" expanded="true" />
+            <element signature="e#17671#17706#0#HTML" expanded="true" />
+            <element signature="e#22753#22792#0#HTML" expanded="true" />
+            <element signature="e#22930#22965#0#HTML" expanded="true" />
+            <element signature="e#31137#31176#0#HTML" expanded="true" />
+            <element signature="e#31314#31349#0#HTML" expanded="true" />
+            <element signature="e#36505#36544#0#HTML" expanded="true" />
+            <element signature="e#36682#36717#0#HTML" expanded="true" />
+            <element signature="e#39312#39351#0#HTML" expanded="true" />
+            <element signature="e#39479#39515#0#HTML" expanded="true" />
+            <element signature="e#41902#41941#0#HTML" expanded="true" />
+            <element signature="e#42069#42105#0#HTML" expanded="true" />
+            <element signature="e#45921#45960#0#HTML" expanded="true" />
+            <element signature="e#46090#46125#0#HTML" expanded="true" />
+            <element signature="e#48623#48661#0#HTML" expanded="true" />
+            <element signature="e#48786#48823#0#HTML" expanded="true" />
+            <element signature="e#54882#54921#0#HTML" expanded="true" />
+            <element signature="e#54963#54998#0#HTML" expanded="true" />
+            <element signature="e#60205#60243#0#HTML" expanded="true" />
+            <element signature="e#60285#60321#0#HTML" expanded="true" />
+            <element signature="e#68692#68730#0#HTML" expanded="true" />
+            <element signature="e#68797#68833#0#HTML" expanded="true" />
+            <element signature="e#68848#68867#0#HTML" expanded="true" />
+            <element signature="e#85244#85273#0#HTML" expanded="true" />
+            <element signature="e#88456#88494#0#HTML" expanded="true" />
+            <element signature="e#88578#88614#0#HTML" expanded="true" />
+            <element signature="e#88789#88827#0#HTML" expanded="true" />
+            <element signature="e#88911#88947#0#HTML" expanded="true" />
+            <element signature="e#89135#89173#0#HTML" expanded="true" />
+            <element signature="e#89307#89344#0#HTML" expanded="true" />
+            <element signature="e#89502#89540#0#HTML" expanded="true" />
+            <element signature="e#89630#89665#0#HTML" expanded="true" />
+            <element signature="e#89854#89892#0#HTML" expanded="true" />
+            <element signature="e#89985#90021#0#HTML" expanded="true" />
+            <marker date="1488539653000" expanded="true" signature="8784:9030" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="9525:9898" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="9605:9864" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="10404:10642" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="63036:63047" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="66392:66403" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="74280:74291" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="83016:83027" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="92027:92038" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="92249:92295" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="92249:94032" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="92327:92576" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="92379:92409" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="92416:92567" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="92501:92529" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="92661:92910" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="92713:92743" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="92750:92901" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="92835:92863" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="93005:93279" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="93061:93091" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="93098:93270" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="93233:93262" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="93373:93635" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="93429:93459" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="93466:93626" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="93557:93584" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="93726:93992" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="93782:93812" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="93819:93983" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="93913:93941" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="94985:96217" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="95026:95330" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="95162:95307" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="95371:95668" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="95506:95645" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="95709:95950" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="95793:95927" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="95991:96196" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="96043:96172" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="96742:98020" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="96767:96912" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="97082:97920" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="97225:97787" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="97417:97753" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="97505:97535" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="97536:97715" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="97618:97707" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="97672:97699" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="98620:99254" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="98669:99254" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="98690:98821" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="98990:99254" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="99015:99254" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="99044:99254" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="99120:99254" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="99603:99633" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="99681:99710" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="99928:100132" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="99980:100116" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="100640:101000" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="100731:100919" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="101259:104972" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="101320:104972" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="101376:101580" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="101879:104972" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="101902:103965" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="102384:103939" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="102458:102683" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="102502:102532" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="102539:102674" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="102616:102644" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="102916:103166" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="102964:102994" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="103001:103157" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="103120:103149" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="103252:103486" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="103300:103330" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="103337:103477" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="103420:103447" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="103570:103808" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="103618:103648" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="103655:103799" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="103741:103769" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="106585:109752" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="106641:106958" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="107259:109752" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="107284:109563" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="107985:109537" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="108056:108275" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="108097:108127" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="108134:108266" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="108208:108236" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="108510:108760" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="108558:108588" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="108595:108751" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="108714:108743" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="108847:109081" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="108895:108925" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="108932:109072" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="109015:109042" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="109166:109404" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="109214:109244" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="109251:109395" placeholder="..." />
+            <marker date="1488539653000" expanded="true" signature="109337:109365" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modelo/BD/GenericoBD.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modelo/BD/AusenciaBD.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1487928228000" expanded="true" signature="249:263" placeholder="SELECT * FRO..${self::$tabla}..." />
+            <marker date="1487928228000" expanded="true" signature="581:623" placeholder="SELECT * FRO..${self::$tabla}..." />
           </folding>
         </state>
       </provider>

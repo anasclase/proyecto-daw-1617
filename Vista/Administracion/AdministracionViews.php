@@ -94,7 +94,17 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                         <div class="col-sm-4 col-md-3">
                             <input class="form-control" type="text" name="dni" maxlength="9">
                         </div>
-                    </div>
+                    </div><!--CONTRASEÑA EN CREAR TRABAJADOR PABLO-->
+					<div class="form-group">
+					
+						<label class="control-label col-sm-2 col-md-2">Contraseña</label>
+						<div class="col-sm-4 col-md-3">
+						
+							<input class="form-control" type="password" name="pass" maxlength="15">
+						
+						</div>
+					
+					</div>
                     <div class="form-group">
                         <label class="control-label col-sm-2 col-md-2">Nombre:</label>
                         <div class="col-sm-4 col-md-3">

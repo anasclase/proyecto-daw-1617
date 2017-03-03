@@ -1367,13 +1367,17 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
 
 
 
-            ?>
+            ?><!-- Ganeko -->
+            <form method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
+                <div class="col-xs-12">
+                    <input class="btn btn-warning pull-right" type="submit" name="volver2" value="Volver">
+                </div>
+            </form>
 
-            <a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/Administracion.php?cod=2">Volver</a>
+            <!-- <a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/Administracion.php?cod=2">Volver</a> -->
             </div>
             </div>
             <?php
-            //echo '</div> </div><div><button id="close" class="btn-danger btn pull-right col-sm-2 cerrar">Volver</button></div>';
 
             require_once __DIR__ . "/../Plantilla/pie.php";
         }
@@ -1480,13 +1484,14 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                 <tr><th colspan="5">OBSERVACIONES</th></tr>
                 <tr><td colspan="5"><textarea name="Nota" id="Nota"><?php echo $parte->getNota();?></textarea></td></tr>
                 </table>
-                <button type="submit" name="guardarParteLogistica"
-                   style="border: none; background: none"><span
-                   class="glyphicon glyphicon-floppy-saved" style="color:blue; font-size: 1.5em"></span> <span style="color:blue;">Guardar</span>
-                </button>
+                <!-- Ganeko -->
+                <div>
+                    <input type="button" name="guardarParteProduccion" value="Guardar" class="btn btn-primary">
+                    <input type="button" name="volver2" value="Volver" class="btn btn-warning">
+                </div>
                 </form>
 
-            <a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/Administracion.php?cod=2">Volver</a>
+            <!-- <a href="<?php // echo self::getUrlRaiz()?>/Vista/Administracion/Administracion.php?cod=2">Volver</a> -->
             </div>
             </div>
             <?php
@@ -1931,8 +1936,13 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                                 <td><?php echo $log->getNota(); ?></td>
                                 <td><?php echo $log->getAutopista(); ?></td>
                                 <td><?php echo $log->getDieta(); ?></td>
-                                <td><?php echo $log->getOtroGasto(); ?></td>
-                                <td><?php echo $log->getEstado()->getTipo(); ?></td>
+                                <td><?php echo $log->getOtroGasto(); ?></td><!--Ganeko -->
+                                <td><?php if($log->getEstado()->getTipo() == "Abierto")
+                                {echo '<span style="color: red;">'.$log->getEstado()->getTipo().'</span>';}
+                                elseif($log->getEstado()->getTipo() == "Validado")
+                                {echo '<span style="color: green;">'.$log->getEstado()->getTipo().'</span>';}
+                                else
+                                {echo $log->getEstado()->getTipo();} ?></td>
                                 <td>
                                     <button type="submit" name="listarParteLog"
                                             style="border: none; background: none"><span
@@ -1995,6 +2005,8 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                                 <td><?php echo $prod->getOtroGasto(); ?></td>
                                 <td><?php if($prod->getEstado()->getTipo() == "Abierto")
                                 {echo '<span style="color: red;">'.$prod->getEstado()->getTipo().'</span>';}
+                                elseif($prod->getEstado()->getTipo() == "Validado")
+                                {echo '<span style="color: green;">'.$prod->getEstado()->getTipo().'</span>';}
                                 else
                                 {echo $prod->getEstado()->getTipo();} ?></td> <!--Ganeko -->
                                 <td>
@@ -2237,7 +2249,12 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                         <td><?php echo $log->getTrabajador()->getNombre()." ".$log->getTrabajador()->getApellido1()." ".$log->getTrabajador()->getApellido2(); ?></td>
                         <td><?php echo $log->getFecha(); ?></td>
                         <td><?php echo $log->getNota(); ?></td>
-                        <td><?php echo $log->getEstado()->getTipo(); ?></td>
+                        <td><?php if($log->getEstado()->getTipo() == "Abierto")
+                                {echo '<span style="color: red;">'.$log->getEstado()->getTipo().'</span>';}
+                                elseif($log->getEstado()->getTipo() == "Validado")
+                                {echo '<span style="color: green;">'.$log->getEstado()->getTipo().'</span>';}
+                                else
+                                {echo $log->getEstado()->getTipo();} ?></td>
                         <td>
 
                             <button type="submit" name="listarParteLog"
@@ -2362,7 +2379,12 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                         <td><?php echo $prod->getAutopista(); ?></td>
                         <td><?php echo $prod->getDieta(); ?></td>
                         <td><?php echo $prod->getOtroGasto(); ?></td>
-                        <td><?php echo $prod->getEstado()->getTipo(); ?></td>
+                        <td><?php if($prod->getEstado()->getTipo() == "Abierto")
+                                {echo '<span style="color: red;">'.$prod->getEstado()->getTipo().'</span>';}
+                                elseif($prod->getEstado()->getTipo() == "Validado")
+                                {echo '<span style="color: green;">'.$prod->getEstado()->getTipo().'</span>';}
+                                else
+                                {echo $prod->getEstado()->getTipo();} ?></td> <!--Ganeko -->
                         <td>
                          <button type="submit" name="listarParteProd"
                                  style="border: none; background: none"><span

@@ -16,9 +16,21 @@ abstract class CalendarioGestionarCalendario extends Plantilla\Views
 
 
         <div class="calendario_ajax">
-            <div id="diasNacionales"></div>
-            <input type="date" id="calendarioNacionales">
-            <input type="button" value="Guardar" id="botonNacionales" onclick="guardarFecha()">
+            <form name="rango" >
+                <h4><p>Vacaciones por Rango o dias Sueltos:</p>
+                    <label for="rango"> Rango </label> <input type="radio" name="rangoVacaciones" value="rango"/>
+                    <label for="dSueltos"> D&iacute;as Sueltos </label> <input type="radio" name="rangoVacaciones" value="sueltos"/>
+                </h4><br/>
+                <div style="visibility: hidden"  id="fecha1">
+                    <label id="diasNacionales"></label><br>
+                    <input type="date" id="calendarioNacionales">
+                    <input type="button" value="Guardar" id="botonNacionales" onclick="guardarFecha()">
+                </div>
+                <div style="visibility: hidden"  id="fecha2">
+                    <label for="fInicial"> Desde : </label>  <input type="date" id="fInicial"/>  <label for="fFinal"> Hasta : </label>  <input type="date" id="fFinal"/>
+                </div>
+            </form>
+
         </div>
 
         <script src="<?php echo parent::getUrlRaiz();?>/Vista/Plantilla/JS/jquery-2.2.1.min.js"><br></script>
@@ -28,6 +40,21 @@ abstract class CalendarioGestionarCalendario extends Plantilla\Views
 
         <script>
             var fechas = [];
+
+            $("input[name='rangoVacaciones']").change(function () {
+                if($(this).val()=="rango"){
+                    $("#fecha1").css("display","none");
+                    $("#fecha2").css("display","inline");
+                    $("#fecha2").css("visibility","visible");
+                    fechas = [];
+                    $('#diasNacionales').html("");
+                }else{
+                    $("#fecha1").css("display","inline");
+                    $("#fecha1").css("visibility","visible");
+                    $("#fecha2").css("display","none");
+                }
+
+            });
 
             function guardarFecha() {
                 if ($("#diasNacionales").is(':empty')){

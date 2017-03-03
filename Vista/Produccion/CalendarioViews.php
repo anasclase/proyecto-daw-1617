@@ -250,6 +250,7 @@ public static function generarcalendario(){
 
                 var idParte = $(this).attr("rel");
 
+
                 $.ajax({
                     type: "POST",
                     url: "<?php echo parent::getUrlRaiz()?>/Vista/Produccion/GeneradorFormsViews.php",

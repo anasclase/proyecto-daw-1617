@@ -147,7 +147,7 @@ public static function generarcalendario(){
                         type: "POST",
                         url: "<?php echo parent::getUrlRaiz()?>/Controlador/Logistica/ControladorCalendario.php",
                         cache: false,
-                        data: { fecha:fecha,nota:nota,autopistas:$("#autopistas").val(), otroGastos:$("#otrosGastos").val(), dieta:$("#dietas").val(),accion:"cerrarParte" }
+                        data: { fecha:fecha,nota:nota,autopistas:$("#autopistas").val(), otroGastos:$("#otrosGastos").val(), dieta:$("#dietas").val(),accion:"cerrarParte" }//Aitor I
                     }).done(function( respuesta )
                     {
                         $("#respuesta").html(respuesta);
@@ -253,7 +253,7 @@ public static function generarcalendario(){
         });
     </script>
 
-    <!-- ESTO NO TE HACE FALTA! -->
+    <!-- ESTO NO TE HACE FALTA! ¿EN SERIO NO ME DIGAS? Aitor I-->
     <script type="text/javascript">
         var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
         document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));

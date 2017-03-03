@@ -292,25 +292,30 @@ abstract class CalendarioVac extends Plantilla\Views
                  * Anas
                 **/
                 $( "#nomEmpresa").on("change",function () {
-                    $idEmpresa = $(this).val();
 
-                    $.ajax({
-                        type: "POST",
-                        url: "<?php echo parent::getUrlRaiz()?>/Controlador/Calendario/ControladorCalendario.php",
-                        cache: false,
-                        data: { idempresa: idempresa}
+                    try{
+                        var idEmpresa = $(this).val();
 
-                    }).done(function( respuesta )
-                    {
-                        $("#nomTrabajador").html(respuesta);
+                        var trabajadores = [];
+                        $.ajax({
+                            type: "GET",
+                            url: "<?php echo parent::getUrlRaiz()?>/Controlador/Calendario/ControladorCalendario.php",
+                            data: { idEmpresa : idEmpresa , accion:"buscarTrab"}
+                        })
+                            .done(function(respuesta) {
+                                //alert("llega");
 
-                        },3000);
+                            })
+                            .fail(function() {
+                                alert( "error" );
+                            });
 
-
-
-                    })
-
+                    }catch (err){
+                        alert(err)
+                    }
                 });
+
+
 
 
                 /**

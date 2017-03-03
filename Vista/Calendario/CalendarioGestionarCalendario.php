@@ -38,7 +38,7 @@ abstract class CalendarioGestionarCalendario extends Plantilla\Views
 
                     <?php
                     $anoActual = date(Y);
-                    echo "<option value=''>-- Selecciona --</option>";
+                    echo "<option value=''> -- Selecciona -- </option>";
                     for($x=0; $x<9; $x++){
                         $ano = $anoActual + $x;
                         echo "<option value='$ano'>$ano</option>";

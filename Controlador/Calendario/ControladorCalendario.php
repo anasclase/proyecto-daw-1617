@@ -21,10 +21,6 @@ function buscar_en_array($fecha,$array)
 		if ($array[$e]["fecha"]==$fecha) return true;
 	}
 }
-if(isset($_POST["idempresa"])){
-    header("Location : www.google.es");
-    echo "llega";
-}
 switch ($_GET["accion"])
 {
 	case "listar_evento":
@@ -174,11 +170,25 @@ switch ($_GET["accion"])
 		break;
 	}
 
+    /**
+     * Buscar los trabajadores por id del Centro
+     *
+     * Anas
+     */
+
     case "buscarTrab":
     {
-        header("Location : www.google.es");
-        echo "llega";
+        $idEmpresa = $_GET["idEmpresa"];
+
+        $empresa = new \Modelo\Base\Centro($idEmpresa);
+
+        $query = \Modelo\BD\TrabajadorBD::getTodosTrabajadoresByCentro($empresa);
+
+        json_encode($query);
+
+        //if($query) echo "encontrados";else echo "no llega";
         break;
+
     }
 }
 ?>

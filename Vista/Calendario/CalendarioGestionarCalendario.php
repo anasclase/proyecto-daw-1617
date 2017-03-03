@@ -49,9 +49,10 @@ abstract class CalendarioGestionarCalendario extends Plantilla\Views
                 require_once "../../Modelo/BD/CalendarioBD.php";     //Aitor
                 echo "<option value=''>-- Selecciona --</option>";  //Aitor
                 $id = \Modelo\BD\CalendarioBD::getIdCalendario();    //Aitor
-                for($x=0;$x<count($id) -1;$x++){                    //Aitor
-                    echo "<option value='$id[$x]'>$id[$x]</option>";    //Aitor
-                }
+                while ($rows=mysqli_fetch_array($id)){              //Aitor
+                    echo "<option value='".$rows["id"]."'>".$rows["id"]."</option>";    //Aitor
+                };
+
                 ?>
             </select>
             <input type="submit" name="cerrar" value="Cerrar">

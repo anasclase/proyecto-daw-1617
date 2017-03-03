@@ -13,10 +13,10 @@ abstract class CalendarioBD extends GenericoBD   //Aitor
         $query = "SELECT id FROM calendario WHERE estado =1";
 
         $rs = mysqli_query($con, $query) or die("Error getCentrosByEmpresa");
-        while ($fila = mysqli_fetch_array($rs)) {
+
             self::desconectar($con);
-            return $fila;
-        }
+            return $rs;
+
     }
 
     public static function crearCalendario($calendario)      // IRUNE

@@ -187,7 +187,7 @@ switch ($_GET["accion"])
             echo null ;
         }else{
             for($x=0;$x<count($query);$x++){
-               echo "<option value='$x'>".$query[$x]->getNombre()."</option>";
+               echo "<option value='".$query[$x]->getDni()."'>".$query[$x]->getNombre()."</option>";
             }
         }
 

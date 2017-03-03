@@ -61,7 +61,11 @@ abstract class CalendarioVac extends Plantilla\Views
                     <input type="button" value="Guardar" id="botonNacionales" onclick="guardarFecha()">
                 </div>
                 <div style="visibility: hidden"  id="fecha2">
-                    <label for="fInicial"> Desde : </label>  <input type="date" id="fInicial"/>  <label for="fFinal"> Hasta : </label>  <input type="date" id="fFinal"/>
+                    <label for="fInicial"> Desde : </label>  <input type="date" id="fInicial"/>
+
+                    <label for="fFinal"> Hasta : </label>  <input type="date" id="fFinal"/>
+
+                    <input type="button" value="Seleccionar dias" id="rangoDias" name="rangoDias"/>
                 </div>
             </form>
 
@@ -82,6 +86,20 @@ abstract class CalendarioVac extends Plantilla\Views
 
 
         <script>
+
+
+
+            $("#rangoDias").click(function () {
+                var fInicial = $("#fInicial").val();
+                var fFinal = $("#fFinal").val();
+                //var d1 = fInicial.split("-");
+                var fecha =
+                var dni = $("#trabajador option:selected").val();
+                alert(dni);
+
+            });
+
+
             var fechas = [];
 
             $("input[name='rangoVacaciones']").change(function () {
@@ -356,7 +374,6 @@ abstract class CalendarioVac extends Plantilla\Views
                     try{
                         var idEmpresa = $(this).val();
 
-                        var trabajadores = [];
                         $.ajax({
                             type: "GET",
                             url: "<?php echo parent::getUrlRaiz()?>/Controlador/Calendario/ControladorCalendario.php",

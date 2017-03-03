@@ -4,7 +4,7 @@ require_once __DIR__.'/../../Modelo/BD/GenericoBD.php';;
 require_once __DIR__.'/../Plantilla/Views.php';
 
 use Vista\Plantilla;
-abstract class CalendarioGestionarCalendario extends Plantilla\Views
+abstract class CalendarioGestionarFestivosNacionales extends Plantilla\Views
 {
     public static function cal($comprobar){
         parent::setOn(true);
@@ -16,6 +16,19 @@ abstract class CalendarioGestionarCalendario extends Plantilla\Views
 
 
         <div class="calendario_ajax">
+
+            <h2>Añadir festivos nacionales</h2>
+            <label>CALENDARIOS: </label><select name="calendarios">  <!--Aitor-->
+                <?php
+                require_once "../../Modelo/BD/CalendarioBD.php";     //Aitor
+                echo "<option value=''>-- Selecciona --</option>";  //Aitor
+                $id = \Modelo\BD\CalendarioBD::getIdCalendario();    //Aitor
+                while ($rows=mysqli_fetch_array($id)){              //Aitor
+                    echo "<option value='".$rows["id"]."'>".$rows["id"]."</option>";    //Aitor
+                };
+
+                ?>
+            </select>
             <form name="rango" >
                 <h4><p>Vacaciones por Rango o dias Sueltos:</p>
                     <label for="rango"> Rango </label> <input type="radio" name="rangoVacaciones" value="rango"/>

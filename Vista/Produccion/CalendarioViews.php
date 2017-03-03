@@ -149,7 +149,7 @@ public static function generarcalendario(){
                 if($("#numeroHoras").val()!=""){var nh = parseFloat($("#numeroHoras").val());if(isNaN(nh)){ok=false;}}
                 if($("#paquetesEntrada").val()!=""){var pe = parseInt($("#paquetesEntrada").val());if(isNaN(pe)){ok=false;}}
                 if($("#paquetesSalida").val()!=""){var ps = parseInt($("#paquetesSalida").val());if(isNaN(ps)){ok=false;}}
-
+				if($("#paquetesEntrada").val() > $("#paquetesSalida").val()){ok=false;}
                 if(ok==false){
                     e.preventDefault();
                     $("#respuesta_form").html("<div class='alert alert-danger' role='alert'><strong>Error:</strong> Datos incorrectos.</div>");

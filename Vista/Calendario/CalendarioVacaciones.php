@@ -93,7 +93,7 @@ abstract class CalendarioVac extends Plantilla\Views
 
             $("#rangoDias").click(function () {
 
-                try{/*
+                try{
                     if($("#nomEmpresa").val()!="-1"){
                         var fInicial = $("#fInicial").val();
                         var fFinal = $("#fFinal").val();
@@ -123,10 +123,10 @@ abstract class CalendarioVac extends Plantilla\Views
                             });
                     }else{
                         alert("Selecciona el nombre de la empresa")
-                    }*/
+                    }
 
 
-                    generarRango($("#fInicial").val(),$("#fFinal").val());
+                    //generarRango($("#fInicial").val(),$("#fFinal").val());
 
 
 

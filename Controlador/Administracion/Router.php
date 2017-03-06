@@ -33,12 +33,17 @@ if(isset($_POST['eliminarEmpresa'])){
     //headerLocation a vista Eliminar
     header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/deleteEmpresa.php");
 }
+if(isset($_POST['editarEmpresa'])){
+    Controlador::buscarEmpresaId($_POST);
+    //headerLocation a vista Editar
+    header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/deleteEmpresa.php");
+}
 if(isset($_POST['addEstado'])){
     Controlador::AddEstado($_POST);
     header($gestionListas);
 }
 if(isset($_POST['eliminarEstado'])){
-    echo "hola";    Controlador::deleteEstado($_POST);
+    Controlador::deleteEstado($_POST);
     //headerLocation a vista Eliminar
     header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/deleteEstado.php");
 }

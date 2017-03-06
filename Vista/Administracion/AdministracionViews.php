@@ -338,6 +338,10 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                                             style="border: none; background: none;"><span
                                             class="glyphicon glyphicon-remove"
                                             style="color:red; font-size: 1.5em"></span></button>
+                                    <button type="submit" name="editarEmpresa" value="Editar"
+                                            style="border: none; background: none;"><span
+                                            class="glyphicon glyphicon-pencil"
+                                            style="color:black; font-size: 1.5em"></span></button>
                                     <input type="hidden" name="id" value="<?php echo $empresa->getId(); ?>">
                                 </form>
                             </td>

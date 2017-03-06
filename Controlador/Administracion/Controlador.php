@@ -365,7 +365,12 @@ abstract class Controlador{
     public static function updateValidarParteLogistica($datos){
         BD\PartelogisticaBD::updateValidar($datos['id']);
     }
-
+    public static function buscarEmpresaId($id){
+        BD\EmpresaBD::getEmpresaByID($id);
+    }
+    /*public static function updateEmpresa($datos){
+        BD\EmpresaBD::updateEmpresa($datos['id']);
+    }*/
     public static function guardarParteProduccion($datos)
     {
         $parte = unserialize($_SESSION['parte']);

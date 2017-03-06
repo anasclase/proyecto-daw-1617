@@ -36,11 +36,12 @@ abstract class CalendarioGestionarFestivosNacionales extends Plantilla\Views
                 </h4><br/>
                 <div style="visibility: hidden"  id="fecha1">
                     <label id="diasNacionales"></label><br>
-                    <input type="date" id="calendarioNacionales" onchange="guardarOpcion()">
+                    <input type="date" id="calendarioNacionales" min="<?php echo date('Y-m-d') ?>" onchange="guardarOpcion()">
                     <input type="button" value="Añadir" id="botonNacionales" onclick="guardarFecha()">
                 </div>
                 <div style="visibility: hidden"  id="fecha2">
                     <label for="fInicial"> Desde : </label>  <input type="date" id="fInicial"/>  <label for="fFinal"> Hasta : </label>  <input type="date" id="fFinal"/>
+                    <input type="button" value="Seleccionar dias" id="rangoDias" name="rangoDias"/>
                 </div>
                 <div>
                     <input type="button" value="Guardar" onclick="guardarFechas()">
@@ -100,12 +101,13 @@ abstract class CalendarioGestionarFestivosNacionales extends Plantilla\Views
             }
 
             function borrarFecha(fecha) {
-                fecha = fechas[fecha];
-                var y;
-                for(y = 0; y < fechas.length && fechas[y] != fecha; y++){}
+                for(var x = 0; x < fechas.length; x++){
+                    $("#" + fechas[x] + "").remove();
+                    $("[name='" + fechas[x] + "']").css("display", "none");
+                }
 
-                fechas.splice(y,1);
-                $('#diasNacionales').empty();
+                fechas.splice(fecha,1);
+
                 for(var x = 0; x < fechas.length; x++){
                     $("#diasNacionales").append($('<label id="' + fechas[x] +'">' + fechas[x] + '</label>'));
                     $('#diasNacionales').append($('<input type="button" onclick="borrarFecha('+ x +')" value="X" name="' + fechas[x].toString() + '">'));

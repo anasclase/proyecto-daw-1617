@@ -2,6 +2,8 @@
 error_reporting(0);
 require_once __DIR__.'/../../Modelo/BD/GenericoBD.php';
 require_once __DIR__.'/../../Modelo/BD/CalendarioBD.php';
+require_once __DIR__.'/../../Modelo/Base/VacacionesTrabajadoresClass.php';
+require_once __DIR__.'/../../Modelo/BD/VacacionesTrabajadoresBD.php';
 require_once __DIR__."/../../Vista/Calendario/CalendarioVacaciones.php";
 
 
@@ -22,6 +24,7 @@ function buscar_en_array($fecha,$array)
 		if ($array[$e]["fecha"]==$fecha) return true;
 	}
 }
+
 switch ($_GET["accion"])
 {
 	case "listar_evento":
@@ -188,15 +191,46 @@ switch ($_GET["accion"])
             echo null ;
         }else{
             for($x=0;$x<count($query);$x++){
-                //echo "<option>llega</option>";
                echo "<option value='".$query[$x]->getDni()."'>".$query[$x]->getNombre()."</option>";
             }
         }
-
-
         break;
 
     }
+    /**
+     * Las fechas tienen que estar en DateTime segun la Base de datos  así que las convierto
+     *
+     * Inserto en la Base de Datos las vacaciones
+     *
+     * Anas
+     */
+    case "insertarCal":{
+
+
+
+        $time = strtotime($_GET["horaInicio"]);
+        $fechaInicio = date('Y-m-d H:i:s',$time);
+
+        $time2 = strtotime($_GET["horaFin"]);
+        $fechaFin = date('Y-m-d H:i:s',$time2);
+
+        $time3 = strtotime($_GET["fecha"]);
+        $fecha = date('Y-m-d H:i:s',$time3);
+
+
+        $vacacionesTrab = new \Modelo\Base\VacacionesTrabajadores(null,$_GET["dniTrabajador"],$fecha,$fechaInicio,$fechaFin,$_GET["calendario_id"],$_GET["estado"]);
+
+        $query = \Modelo\BD\VacacionesTrabajadoresBD::insertarVacacionesTrabajadores($vacacionesTrab);
+
+        if($query){
+            echo "llega";
+        }else{
+            echo "no llega";
+        }
+
+        break;
+    }
+
 }
 
 if(isset($_POST["aceptar"])){   //Aitor

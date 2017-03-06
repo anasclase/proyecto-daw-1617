@@ -92,22 +92,27 @@ abstract class CalendarioVac extends Plantilla\Views
                     var fInicial = $("#fInicial").val();
                     var fFinal = $("#fFinal").val();
                     //var d1 = fInicial.split("-");
-                    var hora = "00:00";
-                    var dni = $("#trabajador option:selected").val();
+
+
+
+                    var dniTrabajador = $("#trabajador option:selected").val();
+
                     var d = new Date();
                     var ano = d.getFullYear();
-                    var estado = "S";
+                    var fecha = generarFecha();
 
+                    var horaInicio = fInicial + " 00:00:00";
+                    var horaFin = fFinal + " 23:59:59";
+
+                    var estado = "S";
                     $.ajax({
 
                         type: "GET",
                         url: "<?php echo parent::getUrlRaiz()?>/Controlador/Calendario/ControladorCalendario.php",
-                        data: { dniTrabajador:dni , fecha:ano , horaInicio:hora , horaFin:hora , calendario_id:ano ,estado:estado, accion:"insertarCal"}
-
+                        data: { dniTrabajador:dniTrabajador , fecha:fecha , horaInicio:horaInicio , horaFin:horaFin , calendario_id:ano ,estado:estado, accion:"insertarCal"}
                     })
                         .done(function(respuesta) {
-
-                            $("#trabajador").html(respuesta);
+                            alert(respuesta);
 
                         })
                         .fail(function() {
@@ -121,6 +126,18 @@ abstract class CalendarioVac extends Plantilla\Views
 
 
             var opc = false;
+
+            function generarFecha() {
+
+                var date = new Date();
+
+                var m = date.getUTCMonth() + 1;
+                var d = date.getUTCDate();
+                var y = date.getUTCFullYear();
+
+                return d + "-"+ m + "-"+ y  ;
+
+            }
 
             function guardarOpcion() {
                 opc = true;

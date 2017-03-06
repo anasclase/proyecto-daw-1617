@@ -699,7 +699,7 @@
       <workItem from="1488446544369" duration="8563000" />
       <workItem from="1488525822028" duration="12626000" />
       <workItem from="1488784662834" duration="719000" />
-      <workItem from="1488786662028" duration="9217000" />
+      <workItem from="1488786662028" duration="9251000" />
     </task>
     <task id="LOCAL-00001" summary="prueba iker">
       <created>1488361626538</created>
@@ -820,11 +820,18 @@
       <option name="project" value="LOCAL" />
       <updated>1488797147632</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Ventana para asignar calendarios Aitor">
+      <created>1488797301890</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1488797301890</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43154000" />
+    <option name="totallyTimeSpent" value="43188000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">

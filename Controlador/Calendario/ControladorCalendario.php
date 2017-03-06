@@ -207,12 +207,8 @@ if(isset($_POST["aceptar"])){   //Aitor
     }
     else
     {
-        echo "Asigna un calendario al trabajador con DNI: ".$_POST["trabajador"] . "<form action='ControladorCalendario.php' method='post'><select name='calendario'>";
-        $calendarios=\Modelo\BD\CalendarioBD::getCalendClose();
-        while ($rows=mysqli_fetch_array($calendarios)){
-            echo "<option value='".$rows["id"]."'>".$rows["id"]."</option>";
-        };
-        echo "</select><input type='submit' name='asignarCalend' value='Guardar'/> <input type='submit' name='volver' value='Volver'></form>";
+        require_once __DIR__."/../../Vista/Calendario/AsignarCalendarios.php";
+        AsignarCalendarios::generar($_POST["trabajador"]);
     }
 }
 
@@ -221,7 +217,7 @@ if(isset($_POST["volver"])){    //Aitor
 }
 
 
-if(isset($_POST["asignarCalend"])){
+if(isset($_POST["asignarCalend"])){ //Aitor
 
 }
 ?>

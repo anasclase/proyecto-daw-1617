@@ -1,6 +1,8 @@
 <?php
 namespace Controlador\Administracion;
 
+session_start();
+
 use Modelo\Base\Administracion;
 use Modelo\Base\Centro;
 use Modelo\Base\Empresa;

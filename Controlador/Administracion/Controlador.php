@@ -602,6 +602,17 @@ abstract class Controlador{
 
     }
 
+    public static function comprobarFestivos($calendario) {
+
+        if(BD\CalendarioBD::comprobarFestivos($calendario)){
+            return true;
+        }
+        else {
+            return false;
+        }
+
+    }
+
     // IRUNE
 
     public static function crearObjetoCentro() {

@@ -1,5 +1,5 @@
 <?php
-error_reporting(-1);
+error_reporting(0);
 require_once __DIR__.'/../../Modelo/BD/GenericoBD.php';
 require_once __DIR__.'/../../Modelo/BD/CalendarioBD.php';
 require_once __DIR__."/../../Vista/Calendario/CalendarioVacaciones.php";
@@ -205,5 +205,23 @@ if(isset($_POST["aceptar"])){   //Aitor
         echo "<script>alert('Tienes que elegir a un trabajador.');</script>";
         CalendarioVac::cal(true);
     }
+    else
+    {
+        echo "Asigna un calendario al trabajador con DNI: ".$_POST["trabajador"] . "<form action='ControladorCalendario.php' method='post'><select name='calendario'>";
+        $calendarios=\Modelo\BD\CalendarioBD::getCalendClose();
+        while ($rows=mysqli_fetch_array($calendarios)){
+            echo "<option value='".$rows["id"]."'>".$rows["id"]."</option>";
+        };
+        echo "</select><input type='submit' name='asignarCalend' value='Guardar'/> <input type='submit' name='volver' value='Volver'></form>";
+    }
+}
+
+if(isset($_POST["volver"])){    //Aitor
+    CalendarioVac::cal(true);
+}
+
+
+if(isset($_POST["asignarCalend"])){
+
 }
 ?>

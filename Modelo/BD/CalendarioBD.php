@@ -62,6 +62,35 @@ abstract class CalendarioBD extends GenericoBD   //Aitor
         return $rs->num_rows;
 
     }
+
+
+    public static function getCalendClose(){ //Aitor
+        $con=self::conectar();
+
+        $query="SELECT id FROM calendario WHERE estado=2";
+        $rs = mysqli_query($con, $query) or die("Error al obtener los calendarios");
+        self::desconectar($con);
+        return $rs;
+    }
+
+
+    public static function comprobarFestivos($calend){
+        $con=self::conectar();
+
+        $query="SELECT * FROM festivos WHERE calendario_id=".$calend;
+        $rs = mysqli_query($con, $query) or die("Error al obtener los calendarios");
+        if($rs->num_rows!=0){
+            $query="SELECT * FROM festivosnacional WHERE calendario_id=".$calend;
+            $rs = mysqli_query($con, $query) or die("Error al obtener los calendarios");
+            if($rs->num_rows!=0)
+                return true;
+            else
+                return false;
+        }
+        else
+            return false;
+
+    }
 }
 
 ?>

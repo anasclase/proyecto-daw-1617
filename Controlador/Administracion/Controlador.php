@@ -366,7 +366,8 @@ abstract class Controlador{
         BD\PartelogisticaBD::updateValidar($datos['id']);
     }
     public static function buscarEmpresaId($id){
-        BD\EmpresaBD::getEmpresaByID($id);
+        $empresa =  BD\EmpresaBD::getEmpresaByID($id);
+        return $empresa;
     }
     /*public static function updateEmpresa($datos){
         BD\EmpresaBD::updateEmpresa($datos['id']);

@@ -34,7 +34,8 @@ if(isset($_POST['eliminarEmpresa'])){
     header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/deleteEmpresa.php");
 }
 if(isset($_POST['editarEmpresa'])){
-    Controlador::buscarEmpresaId($_POST);
+    $empresa = Controlador::buscarEmpresaId($_POST);
+    $_SESSION["empresaEdit"] = $empresa;
     //headerLocation a vista Editar
     header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/deleteEmpresa.php");
 }

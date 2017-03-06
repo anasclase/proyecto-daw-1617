@@ -29,7 +29,7 @@ abstract class CalendarioBD extends GenericoBD   //Aitor
             return false;
         }
 
-        else
+        else    // DAVID
         {
             $con = self::conectar();
 

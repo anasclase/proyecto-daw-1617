@@ -134,7 +134,8 @@ public static function generarcalendario(){
             {
                 var fecha = $("#nuevo_evento").attr('rel');
                 e.preventDefault();
-                $('#mask').html("<div id='nueva_nota' class='window' rel='"+fecha+"'><h2>Parte del "+formatDate(fecha)+"</h2><a href='#' class='cerrar' rel='"+fecha+"'>&nbsp;</a><div id='respuesta'></div><div id='respuesta_form'><form><div class='form-group'><label for='Nota' class='col-sm-3 control-label'>Nota: </label><div class='col-sm-9'><textarea rows='15' id='Nota' class='form-control'></textarea><div class='form-group'><button id='aceptar' class='btn-primary btn pull-left col-sm-3 aceptar'>Añadir</button></div></div></div></form></div></div>");
+                //Aitor I
+                $('#mask').html("<div id='nueva_nota' class='window' rel='"+fecha+"'><h2>Parte del "+formatDate(fecha)+"</h2><a href='#' class='cerrar' rel='"+fecha+"'>&nbsp;</a><div id='respuesta'></div><div id='respuesta_form'><form><div class='form-group'><div class='form-group col-sm-4'><label class='col-sm-6 control-label'>Autopista/Peajes:</label>                             <div class='input-group col-sm-3'>                                 <input type='text' class='form-control' name='autopista' id='autopistas' aria-describedby='basic-addon2'>                                 <span class='input-group-addon' id='basic-addon2'>€</span>                             </div>                         </div>                         <div class='form-group col-sm-4'>                             <label class='col-sm-6 control-label'>Dietas:</label>                             <div class='input-group col-sm-3'>                                 <input type='text' class='form-control' name='dieta' id='dietas' aria-describedby='basic-addon2'>                                 <span class='input-group-addon' id='basic-addon2'>€</span></div></div><div class='form-group col-sm-4'><label class='col-sm-6 control-label'>Otros Gastos:</label><div class='input-group col-sm-3'><input type='text' class='form-control' name='otroGastos' id='otrosGastos' aria-describedby='basic-addon2'><span class='input-group-addon' id='basic-addon2'>€</span></div></div>   <label for='Nota' class='col-sm-3 control-label'>Nota: </label><div class='col-sm-9'><textarea rows='15' id='Nota' class='form-control'></textarea><div class='form-group'><button id='aceptar' class='btn-primary btn pull-left col-sm-3 aceptar'>Añadir</button></div></div></div></form></div></div>");
 
 
                 $(document).on("click",'.aceptar',function(f)
@@ -146,7 +147,7 @@ public static function generarcalendario(){
                         type: "POST",
                         url: "<?php echo parent::getUrlRaiz()?>/Controlador/Logistica/ControladorCalendario.php",
                         cache: false,
-                        data: { fecha:fecha,nota:nota,accion:"cerrarParte" }
+                        data: { fecha:fecha,nota:nota,autopistas:$("#autopistas").val(), otroGastos:$("#otrosGastos").val(), dieta:$("#dietas").val(),accion:"cerrarParte" }//Aitor I
                     }).done(function( respuesta )
                     {
                         $("#respuesta").html(respuesta);
@@ -241,6 +242,117 @@ public static function generarcalendario(){
                 });
             });
 
+            //Aitor I (hecho a la manera de los creadores del proyecto)
+
+            $(document).on("click",'.botonModif',function (e) {
+                e.preventDefault();
+                var current_p=$(this);
+                var id=$(this).attr("rel");
+
+                $(".cal").fadeOut(500);
+
+                $.ajax({
+                    type: "POST",
+                    url: "<?php echo parent::getUrlRaiz()?>/Vista/Logistica/GeneradorFormsViews.php",
+                    cache: false,
+                    data: {cod:1, id:id} //Aitor
+                }).done(function( respuesta ){
+                    if(respuesta==false){
+                        $("#respuesta_form").html("<div class='alert alert-danger' role='alert'><strong>Error:</strong> La fecha del Parte es Incorrecta.</div>");
+                        $(".formeventos").css("display","none")
+                    }else{
+                        $(".formeventos").html(respuesta);
+                    }
+                });
+
+                $('#mask').fadeIn(1600)
+                    .html(
+                        "<div id='nuevo_evento' class='row' rel='"+id+"'>" +
+                        "<h2 class='col-xs-12 text-center'>Viaje con id "+id+"</h2>" +
+                        "</div>" +
+                        "<div class='row window' rel='"+id+"'>"+
+                        "<div id='respuesta_form' class='col-xs-12 col-md-8 col-md-offset-2'></div>" +
+                        "<div class='col-xs-12 col-md-8 col-md-offset-1'>"+
+                        "<form class='formeventos form-horizontal'>" +
+                        //"<input type='text' name='evento_titulo' id='evento_titulo' class='required'>" +
+                        //"<input type='button' name='Enviar' value='Guardar' class='enviar'>" +
+                        "<input type='hidden' name='evento_fecha' id='evento_fecha' value='"+id+"'>" +
+                        "</form>"+
+                        "</div>"+
+                        "</div>");
+
+            });
+
+
+            $(document).on("click",".modificarLinea", function (e) {
+                e.preventDefault();
+                var current_p=$(this);
+                var id=$(this).attr("rel");
+                var vehiculo=$('#Vehiculo').val();
+                var horaInicio=$('#HorasInicio').val()+":"+$('#MinutosInicio').val()+":00";
+                var horaFin=$('#HorasFin').val()+":"+$('#MinutosFin').val()+":00";
+                var albaran=$('#Albaran').val();
+                var fecha=$('#FechaHoy').val();
+
+                $.ajax({
+                    type: "POST",
+                    url: "<?php echo parent::getUrlRaiz()?>/Controlador/Logistica/ControladorCalendario.php",
+                    cache: false,
+                    data: { id:id, vehiculo:vehiculo,horaInicio:horaInicio,horaFin:horaFin,albaran:albaran,fecha:fecha,accion:'modificar_evento' }
+                }).done(function( respuesta )
+                {
+                    $("#mask").html(respuesta);
+                    setTimeout(function(){
+
+                        $("#mask").fadeOut(500);
+                        $('.cal').fadeIn();
+                        location.reload();
+
+                    },3000);
+
+
+
+                })
+                    .error(function(xhr){alert(xhr.status)});
+
+
+            });
+
+
+
+
+            //
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             $(document).on("click",".anterior,.siguiente,.hoyEnlace",function(e)
             {
                 e.preventDefault();
@@ -252,7 +364,7 @@ public static function generarcalendario(){
         });
     </script>
 
-    <!-- ESTO NO TE HACE FALTA! -->
+    <!-- ESTO NO TE HACE FALTA! ¿EN SERIO NO ME DIGAS? Aitor I-->
     <script type="text/javascript">
         var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
         document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));

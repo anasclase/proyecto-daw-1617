@@ -309,6 +309,9 @@ if(isset($_POST['dni']) and !isset($_POST['semanas'])) {
 if(isset($_POST['volver'])){
         header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/Administracion.php?cod=1");
 }
+if(isset($_POST['volver2'])){
+    header("Location: ".Views::getUrlRaiz()."/Vista/Calendario/Calendario.php");
+}
 
 
 

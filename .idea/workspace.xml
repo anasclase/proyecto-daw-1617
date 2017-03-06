@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="5ca1acb5-411e-4129-befd-8f19de674ea5" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Modelo/BD/CalendarioBD.php" afterPath="$PROJECT_DIR$/Modelo/BD/CalendarioBD.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Vista/Administracion/Administracion.php" afterPath="$PROJECT_DIR$/Vista/Administracion/Administracion.php" />
     </list>
     <ignored path="public.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -58,9 +60,32 @@
       <file leaf-file-name="Administracion.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Vista/Administracion/Administracion.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="30" column="50" lean-forward="true" selection-start-line="30" selection-start-column="50" selection-end-line="30" selection-end-column="50" />
+            <state relative-caret-position="346">
+              <caret line="34" column="18" lean-forward="true" selection-start-line="34" selection-start-column="18" selection-end-line="35" selection-end-column="75" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Controlador.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Controlador/Administracion/Controlador.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="453">
+              <caret line="588" column="0" lean-forward="true" selection-start-line="588" selection-start-column="0" selection-end-line="588" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CalendarioGestionarCalendariosIndividuales.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Vista/Calendario/CalendarioGestionarCalendariosIndividuales.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+              <folding>
+                <marker date="1488443481000" expanded="true" signature="4947:4953" ph=" " />
+                <marker date="1488443481000" expanded="true" signature="5886:5892" ph=" " />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -68,15 +93,15 @@
       <file leaf-file-name="CalendarioBD.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Modelo/BD/CalendarioBD.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+            <state relative-caret-position="526">
+              <caret line="49" column="32" lean-forward="true" selection-start-line="31" selection-start-column="9" selection-end-line="49" selection-end-column="32" />
               <folding>
-                <marker date="1488545637000" expanded="true" signature="234:274" ph="SELECT id FR... calendario" />
-                <marker date="1488545637000" expanded="true" signature="234:275" ph="SELECT id FR... calendario" />
-                <marker date="1488545637000" expanded="true" signature="717:837" ph="INSERT INTO calendario... " />
-                <marker date="1488545637000" expanded="true" signature="1112:1152" ph="UPDATE calen... " />
-                <marker date="1488545637000" expanded="true" signature="1422:1456" ph="SELECT * FRO... calendario" />
-                <marker date="1488545637000" expanded="true" signature="1596:1601" ph="..." />
+                <marker date="1488787426000" expanded="true" signature="234:274" ph="SELECT id FR... calendario" />
+                <marker date="1488787426000" expanded="true" signature="234:275" ph="SELECT id FR... calendario" />
+                <marker date="1488787426000" expanded="true" signature="689:809" ph="INSERT INTO calendario... " />
+                <marker date="1488787426000" expanded="true" signature="1084:1124" ph="UPDATE calen... " />
+                <marker date="1488787426000" expanded="true" signature="1394:1428" ph="SELECT * FRO... calendario" />
+                <marker date="1488787426000" expanded="true" signature="1578:1583" ph="..." />
               </folding>
             </state>
           </provider>
@@ -125,8 +150,8 @@
         <option value="$PROJECT_DIR$/Vista/Calendario/GestionarFestivosNacionales.php" />
         <option value="$PROJECT_DIR$/Vista/Calendario/CalendarioGestionarFestivosNacionales.php" />
         <option value="$PROJECT_DIR$/Controlador/Administracion/Controlador.php" />
-        <option value="$PROJECT_DIR$/Vista/Administracion/Administracion.php" />
         <option value="$PROJECT_DIR$/Vista/Calendario/CalendarioGestionarCalendario.php" />
+        <option value="$PROJECT_DIR$/Vista/Administracion/Administracion.php" />
         <option value="$PROJECT_DIR$/Modelo/BD/CalendarioBD.php" />
       </list>
     </option>
@@ -631,7 +656,7 @@
       <workItem from="1488439522375" duration="5042000" />
       <workItem from="1488446544369" duration="8563000" />
       <workItem from="1488525822028" duration="12626000" />
-      <workItem from="1488784662834" duration="719000" />
+      <workItem from="1488784662834" duration="2049000" />
     </task>
     <task id="LOCAL-00001" summary="prueba iker">
       <created>1488361626538</created>
@@ -731,11 +756,18 @@
       <option name="project" value="LOCAL" />
       <updated>1488545971811</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="IRUNE">
+      <created>1488786127390</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1488786127390</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33937000" />
+    <option name="totallyTimeSpent" value="35267000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -755,9 +787,9 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977098" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32819384" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32819384" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977098" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977098" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -791,7 +823,8 @@
     <MESSAGE value="IRUNE VALIDACIONES CREAR Y CERRAR CALENDARIO" />
     <MESSAGE value="IRUNE crear cal" />
     <MESSAGE value="IRUNE ultimo commit del viernes 03" />
-    <option name="LAST_COMMIT_MESSAGE" value="IRUNE ultimo commit del viernes 03" />
+    <MESSAGE value="IRUNE" />
+    <option name="LAST_COMMIT_MESSAGE" value="IRUNE" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -800,7 +833,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.idea/vcs.xml" />
     <entry file="file://$PROJECT_DIR$/create_insert.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -812,6 +844,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -820,6 +853,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -848,6 +882,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -954,6 +989,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="735">
           <caret line="63" column="5" lean-forward="false" selection-start-line="63" selection-start-column="5" selection-end-line="63" selection-end-column="5" />
+          <folding>
+            <marker date="1488451597000" expanded="true" signature="249:298" ph="select * fro... ${self::$tabla}" />
+            <marker date="1488451597000" expanded="true" signature="602:643" ph="SELECT * FRO... ${self::$tabla}" />
+            <marker date="1488451597000" expanded="true" signature="951:1045" ph="INSERT INTO ${self::$tabla}... " />
+            <marker date="1488451597000" expanded="true" signature="1259:1299" ph="DELETE FROM " />
+            <marker date="1488451597000" expanded="true" signature="1535:1640" ph="select * fro... ${self::$tabla}" />
+            <marker date="1488451597000" expanded="true" signature="1578:1619" ph="select idEmp... centros" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1031,6 +1074,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="660">
           <caret line="55" column="29" lean-forward="false" selection-start-line="55" selection-start-column="20" selection-end-line="55" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1053,6 +1097,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="17" column="27" lean-forward="false" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
+          <folding>
+            <marker date="1488451213000" expanded="true" signature="62324:62335" ph="..." />
+            <marker date="1488451213000" expanded="true" signature="65680:65691" ph="..." />
+            <marker date="1488451213000" expanded="true" signature="73568:73579" ph="..." />
+            <marker date="1488451213000" expanded="true" signature="82206:82217" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1060,6 +1110,21 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="106">
           <caret line="126" column="0" lean-forward="true" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
+          <folding>
+            <marker date="1488528488000" expanded="true" signature="298:413" ph="SELECT * FRO... ${self::$tabla}" />
+            <marker date="1488528488000" expanded="true" signature="341:412" ph="Select idCen... trabajadores" />
+            <marker date="1488528488000" expanded="true" signature="726:812" ph="SELECT * FRO... ${self::$tabla}" />
+            <marker date="1488528488000" expanded="true" signature="1130:1172" ph="SELECT * FRO... ${self::$tabla}" />
+            <marker date="1488528488000" expanded="true" signature="1526:1632" ph="SELECT * FRO... ${self::$tabla}" />
+            <marker date="1488528488000" expanded="true" signature="1569:1609" ph="select idCen... vehiculos" />
+            <marker date="1488528488000" expanded="true" signature="1931:2067" ph="INSERT INTO ${self::$tabla}... " />
+            <marker date="1488528488000" expanded="true" signature="2268:2314" ph="SELECT * FRO... ${self::$tabla}" />
+            <marker date="1488528488000" expanded="true" signature="2654:2668" ph="SELECT * FRO... ${self::$tabla}" />
+            <marker date="1488528488000" expanded="true" signature="3205:3224" ph="SELECT nombr... ${self::$tabla}" />
+            <marker date="1488528488000" expanded="true" signature="3568:3684" ph="SELECT * FRO... ${self::$tabla}" />
+            <marker date="1488528488000" expanded="true" signature="3611:3656" ph="select idCen... horasconvenios" />
+            <marker date="1488528488000" expanded="true" signature="3993:4032" ph="DELETE FROM " />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1098,13 +1163,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Controlador/Administracion/Controlador.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="505">
-          <caret line="595" column="38" lean-forward="false" selection-start-line="595" selection-start-column="38" selection-end-line="595" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Vista/Plantilla/cabecera.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1665">
@@ -1133,23 +1191,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Vista/Administracion/Administracion.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="50" lean-forward="true" selection-start-line="30" selection-start-column="50" selection-end-line="30" selection-end-column="50" />
+        <state relative-caret-position="346">
+          <caret line="34" column="18" lean-forward="true" selection-start-line="34" selection-start-column="18" selection-end-line="35" selection-end-column="75" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Controlador/Administracion/Controlador.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="453">
+          <caret line="588" column="0" lean-forward="true" selection-start-line="588" selection-start-column="0" selection-end-line="588" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vista/Calendario/CalendarioGestionarCalendariosIndividuales.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding>
+            <marker date="1488443481000" expanded="true" signature="4947:4953" ph=" " />
+            <marker date="1488443481000" expanded="true" signature="5886:5892" ph=" " />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Modelo/BD/CalendarioBD.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+        <state relative-caret-position="526">
+          <caret line="49" column="32" lean-forward="true" selection-start-line="31" selection-start-column="9" selection-end-line="49" selection-end-column="32" />
           <folding>
-            <marker date="1488545637000" expanded="true" signature="234:274" ph="SELECT id FR... calendario" />
-            <marker date="1488545637000" expanded="true" signature="234:275" ph="SELECT id FR... calendario" />
-            <marker date="1488545637000" expanded="true" signature="717:837" ph="INSERT INTO calendario... " />
-            <marker date="1488545637000" expanded="true" signature="1112:1152" ph="UPDATE calen... " />
-            <marker date="1488545637000" expanded="true" signature="1422:1456" ph="SELECT * FRO... calendario" />
-            <marker date="1488545637000" expanded="true" signature="1596:1601" ph="..." />
+            <marker date="1488787426000" expanded="true" signature="234:274" ph="SELECT id FR... calendario" />
+            <marker date="1488787426000" expanded="true" signature="234:275" ph="SELECT id FR... calendario" />
+            <marker date="1488787426000" expanded="true" signature="689:809" ph="INSERT INTO calendario... " />
+            <marker date="1488787426000" expanded="true" signature="1084:1124" ph="UPDATE calen... " />
+            <marker date="1488787426000" expanded="true" signature="1394:1428" ph="SELECT * FRO... calendario" />
+            <marker date="1488787426000" expanded="true" signature="1578:1583" ph="..." />
           </folding>
         </state>
       </provider>

@@ -564,5 +564,10 @@ abstract class Controlador{
         $parte = BD\ParteProduccionBD::getParteById($datos['id']);
 
         $_SESSION['parte'] = serialize($parte);
-    }
+    }/* PABLO */
+	public static function updateHorarioTrabajador($datos){
+		
+		
+		
+	}
 }

@@ -34,8 +34,8 @@
                 <element signature="e#2095#2121#0#HTML" expanded="true" />
                 <element signature="e#2437#2463#0#HTML" expanded="true" />
                 <element signature="e#2866#2892#0#HTML" expanded="true" />
-                <marker date="1488804048000" expanded="true" signature="12746:12752" ph=" " />
-                <marker date="1488804048000" expanded="true" signature="13685:13691" ph=" " />
+                <marker date="1488804048000" expanded="true" signature="12746:12752" ph=" " />
+                <marker date="1488804048000" expanded="true" signature="13685:13691" ph=" " />
 =======
 
                 <element signature="e#13305#13344#0#HTML" expanded="true" />
@@ -134,7 +134,7 @@
                 <marker date="1488804048000" expanded="true" signature="2940:3091" ph="select fecha... ${$tabla}" />
                 <marker date="1488804048000" expanded="true" signature="4230:4238" ph="é" />
                 <marker date="1488804048000" expanded="true" signature="4285:4293" ph="á" />
-                <marker date="1488804048000" expanded="true" signature="5996:6002" ph=" " />
+                <marker date="1488804048000" expanded="true" signature="5996:6002" ph=" " />
                 <marker date="1488804048000" expanded="true" signature="6345:6352" ph="«" />
                 <marker date="1488804048000" expanded="true" signature="6488:6495" ph="»" />
 =======
@@ -1787,7 +1787,7 @@
             <marker date="1488789120000" expanded="true" signature="4969:5172" ph="select fecha... parteslogistica" />
             <marker date="1488789120000" expanded="true" signature="6369:6377" ph="é" />
             <marker date="1488789120000" expanded="true" signature="6427:6435" ph="á" />
-            <marker date="1488789120000" expanded="true" signature="8410:8416" ph=" " />
+            <marker date="1488789120000" expanded="true" signature="8410:8416" ph=" " />
             <marker date="1488789120000" expanded="true" signature="8759:8766" ph="«" />
             <marker date="1488789120000" expanded="true" signature="8902:8909" ph="»" />
           </folding>
@@ -1853,7 +1853,7 @@
             <marker date="1488456345000" expanded="true" signature="10384:10541" ph="select fecha... partesproduccion" />
             <marker date="1488456345000" expanded="true" signature="11672:11680" ph="é" />
             <marker date="1488456345000" expanded="true" signature="11727:11735" ph="á" />
-            <marker date="1488456345000" expanded="true" signature="13913:13919" ph=" " />
+            <marker date="1488456345000" expanded="true" signature="13913:13919" ph=" " />
             <marker date="1488456345000" expanded="true" signature="14289:14666" ph="..." />
 =======
     <entry file="file://G:/datos dependientes/cargarTrabajadores.php">
@@ -1916,8 +1916,8 @@
         <state relative-caret-position="300">
           <caret line="45" column="21" lean-forward="true" selection-start-line="45" selection-start-column="21" selection-end-line="45" selection-end-column="21" />
           <folding>
-            <marker date="1488799479000" expanded="true" signature="9901:9907" ph=" " />
-            <marker date="1488799479000" expanded="true" signature="10840:10846" ph=" " />
+            <marker date="1488799479000" expanded="true" signature="9901:9907" ph=" " />
+            <marker date="1488799479000" expanded="true" signature="10840:10846" ph=" " />
 =======
     <entry file="file://$PROJECT_DIR$/Modelo/BD/AusenciaBD.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -2053,7 +2053,7 @@
             <marker date="1488804048000" expanded="true" signature="2940:3091" ph="select fecha... ${$tabla}" />
             <marker date="1488804048000" expanded="true" signature="4230:4238" ph="é" />
             <marker date="1488804048000" expanded="true" signature="4285:4293" ph="á" />
-            <marker date="1488804048000" expanded="true" signature="5996:6002" ph=" " />
+            <marker date="1488804048000" expanded="true" signature="5996:6002" ph=" " />
             <marker date="1488804048000" expanded="true" signature="6345:6352" ph="«" />
             <marker date="1488804048000" expanded="true" signature="6488:6495" ph="»" />
 =======
@@ -2166,8 +2166,8 @@
             <element signature="e#2095#2121#0#HTML" expanded="true" />
             <element signature="e#2437#2463#0#HTML" expanded="true" />
             <element signature="e#2866#2892#0#HTML" expanded="true" />
-            <marker date="1488804048000" expanded="true" signature="12746:12752" ph=" " />
-            <marker date="1488804048000" expanded="true" signature="13685:13691" ph=" " />
+            <marker date="1488804048000" expanded="true" signature="12746:12752" ph=" " />
+            <marker date="1488804048000" expanded="true" signature="13685:13691" ph=" " />
           </folding>
 =======
     <entry file="file://$PROJECT_DIR$/Controlador/Administracion/Router.php">

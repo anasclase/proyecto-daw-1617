@@ -186,6 +186,10 @@ if(isset($_POST['updateHorarioTrabajador'])){
 	header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/updateHorarioTrabajador.php");
 	
 }
+if(isset($_POST["insertarIncidencia"])){ //David
+    Controlador::insertarIncidencia($_POST);
+
+}
 /*
 if(isset($_POST['dni']) and !isset($_POST['semanas'])) {
     $perfil = Controlador::getPerfilbyDni($_POST['dni']);

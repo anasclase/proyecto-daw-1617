@@ -26,7 +26,6 @@ $perfil = get_class($trabajador);
 
 $perfil = substr($perfil,12);
 
-
 switch($perfil){
     case "Administracion":
         \Vista\Administracion\CalendarioViews::generarcalendario();

@@ -179,6 +179,12 @@ if(isset($_POST['abrirParteLogistica'])){
     Controlador::updateAbrirParteLogistica($_POST);
     header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/Administracion.php?cod=2");
 
+}/* PABLO */
+if(isset($_POST['updateHorarioTrabajador'])){
+	
+	Controlador::updateHorarioTrabajador($_POST);
+	header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/updateHorarioTrabajador.php");
+	
 }
 if(isset($_POST["insertarIncidencia"])){ //David
     Controlador::insertarIncidencia($_POST);

@@ -87,4 +87,12 @@ abstract class TareaBD extends GenericoBD
         return $respuetsa;
 
     }
+
+
+
+
+
+
+
+
 }

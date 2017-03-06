@@ -2481,7 +2481,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                             <tr>
                                 <td><?php echo $horario->getTrabajador()->getDni() ?></td>
                                 <td><?php echo $horario->getNumeroSemana() ?></td>
-                                <td><select class='form-control'><?php foreach ($horarios as $hor){?><option name='heh'><?php echo $hor->getTipo();?></option><?php } ?></select>
+                               <!-- PABLO --> <td><select class='form-control'><?php foreach ($horarios as $hor){?><option name='heh'><?php echo $hor->getTipo();?></option><?php } ?></select>
                             </tr>
                             <input type="hidden" value="<?php echo $horario->getId() ?>" name="id">
                         </form>

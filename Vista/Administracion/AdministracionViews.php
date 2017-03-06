@@ -646,10 +646,10 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                         ?>
                     </table>
                 </div>
-                <form name="deleteEstado" method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
+                <form name="updateFoto" method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
 
-                    <div class="col-md-10 col-md-offset-1"><!--Ganeko-->
-                        <input class="btn btn-warning pull-right" type="submit" name="volver" value="Volver">
+                    <div class="col-md-10 col-md-offset-1 pull-right"><!--  PABLO  -->
+                         <input class="btn btn-warning " type="submit" name="volver" value="Volver">
                     </div>
                 </form>
                 <?php
@@ -998,7 +998,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
         }else {
             ?>
 
-            <h2 class="page-header">Cambio contraseña</h2>
+            <h2 class="page-header">Trabajadores</h2>
             <div class="table-responsive col-md-offset-1 col-md-10">
                 <table class="table table-bordered">
                     <tr>
@@ -1214,8 +1214,20 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                 </div>
                 <div class="form-group">
                     <label class="control-label col-sm-2 col-md-2">Semana: </label>
-                    <div class="col-sm-4 col-md-3" id="semanas">
-
+                    <div class="col-sm-4 col-md-3" id="semanas"> <!-- Pablo -->
+					<select class="form-control" name="semanas"><div style="float: left";>
+						<?php
+							for($x = 1;$x <= 52; $x++){
+								?>
+								
+									
+									
+										<option value="<?php echo $x ?>"><?php echo $x ?> </option>
+									
+									
+								
+								<?php
+							}?></div></select>
                     </div>
                 </div>
 
@@ -1367,17 +1379,13 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
 
 
 
-            ?><!-- Ganeko -->
-            <form method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
-                <div class="col-xs-12">
-                    <input class="btn btn-warning pull-right" type="submit" name="volver2" value="Volver">
-                </div>
-            </form>
+            ?>
 
-            <!-- <a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/Administracion.php?cod=2">Volver</a> -->
+            <a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/Administracion.php?cod=2">Volver</a>
             </div>
             </div>
             <?php
+            //echo '</div> </div><div><button id="close" class="btn-danger btn pull-right col-sm-2 cerrar">Volver</button></div>';
 
             require_once __DIR__ . "/../Plantilla/pie.php";
         }
@@ -1484,14 +1492,13 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                 <tr><th colspan="5">OBSERVACIONES</th></tr>
                 <tr><td colspan="5"><textarea name="Nota" id="Nota"><?php echo $parte->getNota();?></textarea></td></tr>
                 </table>
-                <!-- Ganeko -->
-                <div>
-                    <input type="button" name="guardarParteProduccion" value="Guardar" class="btn btn-primary">
-                    <input type="button" name="volver2" value="Volver" class="btn btn-warning">
-                </div>
+                <button type="submit" name="guardarParteLogistica"
+                   style="border: none; background: none"><span
+                   class="glyphicon glyphicon-floppy-saved" style="color:blue; font-size: 1.5em"></span> <span style="color:blue;">Guardar</span>
+                </button>
                 </form>
 
-            <!-- <a href="<?php // echo self::getUrlRaiz()?>/Vista/Administracion/Administracion.php?cod=2">Volver</a> -->
+            <a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/Administracion.php?cod=2">Volver</a>
             </div>
             </div>
             <?php
@@ -1925,7 +1932,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                 <?php
                 //Correcion/Revision Aitor I
                 foreach ($partesLog as $log) {
-                    //if ($log->getEstado()->getTipo() == "Cerrado") {//Ganeko
+                    if ($log->getEstado()->getTipo() == "Cerrado") {
                         ?>
                         <form method="post"
                               action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
@@ -1936,13 +1943,8 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                                 <td><?php echo $log->getNota(); ?></td>
                                 <td><?php echo $log->getAutopista(); ?></td>
                                 <td><?php echo $log->getDieta(); ?></td>
-                                <td><?php echo $log->getOtroGasto(); ?></td><!--Ganeko -->
-                                <td><?php if($log->getEstado()->getTipo() == "Abierto")
-                                {echo '<span style="color: red;">'.$log->getEstado()->getTipo().'</span>';}
-                                elseif($log->getEstado()->getTipo() == "Validado")
-                                {echo '<span style="color: green;">'.$log->getEstado()->getTipo().'</span>';}
-                                else
-                                {echo $log->getEstado()->getTipo();} ?></td>
+                                <td><?php echo $log->getOtroGasto(); ?></td>
+                                <td><?php echo $log->getEstado()->getTipo(); ?></td>
                                 <td>
                                     <button type="submit" name="listarParteLog"
                                             style="border: none; background: none"><span
@@ -1972,7 +1974,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                             <input type="hidden" name="id" value="<?php echo $log->getId(); ?>">
                         </form>
                         <?php
-                    //}
+                    }
                 }
                 ?>
             </table>
@@ -1991,7 +1993,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                 </tr>
                 <?php
                 foreach ($partesProd as $prod) {
-                    //if ($prod->getEstado()->getTipo() == "Cerrado") {//Ganeko
+                    if ($prod->getEstado()->getTipo() == "Cerrado") {
                         ?>
                         <form method="post"
                               action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
@@ -2003,12 +2005,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                                 <td><?php echo $prod->getAutopista(); ?></td>
                                 <td><?php echo $prod->getDieta(); ?></td>
                                 <td><?php echo $prod->getOtroGasto(); ?></td>
-                                <td><?php if($prod->getEstado()->getTipo() == "Abierto")
-                                {echo '<span style="color: red;">'.$prod->getEstado()->getTipo().'</span>';}
-                                elseif($prod->getEstado()->getTipo() == "Validado")
-                                {echo '<span style="color: green;">'.$prod->getEstado()->getTipo().'</span>';}
-                                else
-                                {echo $prod->getEstado()->getTipo();} ?></td> <!--Ganeko -->
+                                <td><?php echo $prod->getEstado()->getTipo(); ?></td>
                                 <td>
                                 <button type="submit" name="listarParteProd"
                                             style="border: none; background: none"><span
@@ -2039,7 +2036,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                             <input type="hidden" name="id" value="<?php echo $prod->getId(); ?>">
                         </form>
                         <?php
-                    //}
+                    }
                 }
                 ?>
             </table>
@@ -2081,8 +2078,8 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                     </div>
                 </div>
                 <div class="form-group">
-                    <div class="col-sm-4 col-md-3">
-                            <input class="btn btn-danger" type="submit" name="volver" value="Volver">
+                    <div class="col-md-10 col-md-offset-1">
+                            <input class="btn btn-warning pull-right" type="submit" name="volver" value="Volver">
                     </div>
 
                 </div>
@@ -2152,7 +2149,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
 
         ?>
 
-        <h2 class="page-header">Cambio de Foto</h2>
+        <h2 class="page-header">Trabajadores</h2>
         <div class="table-responsive col-md-offset-1 col-md-10">
             <table class="table table-bordered">
                 <tr>
@@ -2177,8 +2174,8 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
         </div>
 
         <form method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
-            <div class="col-md-10 col-md-offset-1"><!-- ganeko -->
-                <input class="btn btn-warning pull-right" type="submit" name="volver" value="Volver">
+            <div class="col-md-10 col-md-offset-1 pull-rigth"> 
+                <input class="btn btn-warning " type="submit" name="volver" value="Volver">
             </div>
         </form>
 
@@ -2241,7 +2238,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
             </tr>
                 <?php
                 foreach ($partes as $log) {
-                    //if ($log->getEstado()->getTipo() == "Cerrado") { //Ganeko
+                    if ($log->getEstado()->getTipo() == "Cerrado") {
 
                         ?>
                         <form method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">                   <tr>
@@ -2249,12 +2246,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                         <td><?php echo $log->getTrabajador()->getNombre()." ".$log->getTrabajador()->getApellido1()." ".$log->getTrabajador()->getApellido2(); ?></td>
                         <td><?php echo $log->getFecha(); ?></td>
                         <td><?php echo $log->getNota(); ?></td>
-                        <td><?php if($log->getEstado()->getTipo() == "Abierto")
-                                {echo '<span style="color: red;">'.$log->getEstado()->getTipo().'</span>';}
-                                elseif($log->getEstado()->getTipo() == "Validado")
-                                {echo '<span style="color: green;">'.$log->getEstado()->getTipo().'</span>';}
-                                else
-                                {echo $log->getEstado()->getTipo();} ?></td>
+                        <td><?php echo $log->getEstado()->getTipo(); ?></td>
                         <td>
 
                             <button type="submit" name="listarParteLog"
@@ -2345,7 +2337,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                     <input type="hidden" name="id" value="<?php echo $log->getId(); ?>">
                 </form>
                         <?php
-                    //}
+                    }
                 }
                 ?>
         </table>
@@ -2367,7 +2359,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
             </tr>
                 <?php
                 foreach ($partes as $prod) {
-                    //if ($prod->getEstado()->getTipo() == "Cerrado") { //Ganeko
+                    if ($prod->getEstado()->getTipo() == "Cerrado") {
 
                         ?>
                         <form method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
@@ -2379,12 +2371,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                         <td><?php echo $prod->getAutopista(); ?></td>
                         <td><?php echo $prod->getDieta(); ?></td>
                         <td><?php echo $prod->getOtroGasto(); ?></td>
-                        <td><?php if($prod->getEstado()->getTipo() == "Abierto")
-                                {echo '<span style="color: red;">'.$prod->getEstado()->getTipo().'</span>';}
-                                elseif($prod->getEstado()->getTipo() == "Validado")
-                                {echo '<span style="color: green;">'.$prod->getEstado()->getTipo().'</span>';}
-                                else
-                                {echo $prod->getEstado()->getTipo();} ?></td> <!--Ganeko -->
+                        <td><?php echo $prod->getEstado()->getTipo(); ?></td>
                         <td>
                          <button type="submit" name="listarParteProd"
                                  style="border: none; background: none"><span
@@ -2463,7 +2450,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                     <input type="hidden" name="id" value="<?php echo $prod->getId(); ?>">
                 </form>
                         <?php
-                    //}
+                    }
                 }
                 ?>
         </table>

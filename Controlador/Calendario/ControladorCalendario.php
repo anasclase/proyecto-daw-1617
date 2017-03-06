@@ -166,5 +166,6 @@ switch ($_GET["accion"])
 			echo "<p class='toggle'>&laquo; <a href='#' rel='$mesanterior' class='anterior'>Mes Anterior</a> - <a href='#' class='siguiente' rel='$messiguiente'>Mes Siguiente</a> &raquo;</p>";
 		break;
 	}
+
 }
 ?>

@@ -53,7 +53,7 @@ abstract class CalendarioGestionarFestivosCentros extends Plantilla\Views
                 </h4><br/>
                 <div style="visibility: hidden"  id="fecha1">
                     <label id="diasNacionales"></label><br>
-                    <input type="date" id="calendarioNacionales">
+                    <input type="date" id="calendarioNacionales" onchange="guardarOpcion()">
                     <input type="button" value="Guardar" id="botonNacionales" onclick="guardarFecha()">
                 </div>
                 <div style="visibility: hidden"  id="fecha2">
@@ -91,6 +91,7 @@ abstract class CalendarioGestionarFestivosCentros extends Plantilla\Views
 
         <!-- ESTO NO TE HACE FALTA! -->
         <script type="text/javascript">
+            var opc = false;
             var fechas = [];
 
             $("input[name='rangoVacaciones']").change(function () {
@@ -109,24 +110,26 @@ abstract class CalendarioGestionarFestivosCentros extends Plantilla\Views
             });
 
             function guardarFecha() {
-                if ($("#diasNacionales").is(':empty')){
-                    $("#diasNacionales").append($('<label id="'+ $("#calendarioNacionales").val() +'">' + $("#calendarioNacionales").val() + '</label>'));
-                    fechas.push($("#calendarioNacionales").val());
-
-                    var v = $("#calendarioNacionales").val().toString();
-                    $('#diasNacionales').append($('<input type="button" onclick="borrarFecha('+ 0 +')" value="X" name="'+v+'">'));
-
-                }else{
-                    var y;
-                    for(y = 0; y < fechas.length && fechas[y] != $("#calendarioNacionales").val(); y++){}
-
-                    if(y == fechas.length){
+                if(opc == true){
+                    if ($("#diasNacionales").is(':empty')){
+                        $("#diasNacionales").append($('<label id="'+ $("#calendarioNacionales").val() +'">' + $("#calendarioNacionales").val() + '</label>'));
                         fechas.push($("#calendarioNacionales").val());
-                        $('#diasNacionales').empty();
 
-                        for(var x = 0; x < fechas.length; x++){
-                            $("#diasNacionales").append($('<label id="' + fechas[x] +'">' + fechas[x] + '</label>'));
-                            $('#diasNacionales').append($('<input type="button" onclick="borrarFecha('+ x +')" value="X" name="' + fechas[x].toString() + '">'));
+                        var v = $("#calendarioNacionales").val().toString();
+                        $('#diasNacionales').append($('<input type="button" onclick="borrarFecha('+ 0 +')" value="X" name="'+v+'">'));
+
+                    }else{
+                        var y;
+                        for(y = 0; y < fechas.length && fechas[y] != $("#calendarioNacionales").val(); y++){}
+
+                        if(y == fechas.length){
+                            fechas.push($("#calendarioNacionales").val());
+                            $('#diasNacionales').empty();
+
+                            for(var x = 0; x < fechas.length; x++){
+                                $("#diasNacionales").append($('<label id="' + fechas[x] +'">' + fechas[x] + '</label>'));
+                                $('#diasNacionales').append($('<input type="button" onclick="borrarFecha('+ x +')" value="X" name="' + fechas[x].toString() + '">'));
+                            }
                         }
                     }
                 }
@@ -143,6 +146,10 @@ abstract class CalendarioGestionarFestivosCentros extends Plantilla\Views
                     $("#diasNacionales").append($('<label id="' + fechas[x] +'">' + fechas[x] + '</label>'));
                     $('#diasNacionales').append($('<input type="button" onclick="borrarFecha('+ x +')" value="X" name="' + fechas[x].toString() + '">'));
                 }
+            }
+
+            function guardarOpcion() {
+                opc = true;
             }
             <!--Iker-->
 

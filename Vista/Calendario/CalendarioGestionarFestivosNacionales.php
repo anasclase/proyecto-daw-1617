@@ -36,7 +36,7 @@ abstract class CalendarioGestionarFestivosNacionales extends Plantilla\Views
                 </h4><br/>
                 <div style="visibility: hidden"  id="fecha1">
                     <label id="diasNacionales"></label><br>
-                    <input type="date" id="calendarioNacionales" onchange="guardarOpcion()" ">
+                    <input type="date" id="calendarioNacionales" onchange="guardarOpcion()">
                     <input type="button" value="Guardar" id="botonNacionales" onclick="guardarFecha()">
                 </div>
                 <div style="visibility: hidden"  id="fecha2">

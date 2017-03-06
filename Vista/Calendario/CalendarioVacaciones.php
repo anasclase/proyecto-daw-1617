@@ -3,6 +3,7 @@
 require_once __DIR__.'/../../Modelo/BD/GenericoBD.php';;
 require_once __DIR__.'/../Plantilla/Views.php';
 require_once __DIR__.'/../../Modelo/BD/EmpresaBD.php';
+
 use Vista\Plantilla;
 abstract class CalendarioVac extends Plantilla\Views
 {
@@ -38,35 +39,17 @@ abstract class CalendarioVac extends Plantilla\Views
                         ?>
                     </select>
 
-
                     <label for="nomTrabajador">Trabajador :</label>
-                    <select id="trabajador">
+                    <select name="trabajador" id="trabajador">
 
                     </select>
+                    <?php
 
+                    ?>
                 </div>
-
+                <input type="submit" name="aceptar" value="Aceptar"/>
             </form>
 
-
-            <form name="rango" >
-                <h4><p>Vacaciones por Rango o dias Sueltos:</p>
-                    <label for="rango"> Rango </label> <input type="radio" name="rangoVacaciones" value="rango"/>
-                    <label for="dSueltos"> D&iacute;as Sueltos </label> <input type="radio" name="rangoVacaciones" value="sueltos"/>
-                </h4><br/>
-                <div style="visibility: hidden"  id="fecha1">
-                    <label id="diasNacionales"></label><br>
-                    <input type="date" id="calendarioNacionales" onchange="guardarOpcion()">
-                    <input type="button" value="Guardar" id="botonNacionales" onclick="guardarFecha()">
-                </div>
-                <div style="visibility: hidden"  id="fecha2">
-                    <label for="fInicial"> Desde : </label>  <input type="date" id="fInicial"/>
-
-                    <label for="fFinal"> Hasta : </label>  <input type="date" id="fFinal"/>
-
-                    <input type="button" value="Seleccionar dias" id="rangoDias" name="rangoDias"/>
-                </div>
-            </form>
 
             <div style='visibility: hidden' class="cal"></div><div id="mask"></div>
         </div>
@@ -87,29 +70,18 @@ abstract class CalendarioVac extends Plantilla\Views
         <script>
 
 
+
             $("#rangoDias").click(function () {
                 var fInicial = $("#fInicial").val();
                 var fFinal = $("#fFinal").val();
                 //var d1 = fInicial.split("-");
-                var hora = "00:00";
+                var fecha =
                 var dni = $("#trabajador option:selected").val();
-
-                var d = new Date();
-                var ano = d.getFullYear();
-
-
-
-
-
+                alert(dni);
 
             });
 
 
-            var opc = false;
-
-            function guardarOpcion() {
-                opc = true;
-            }
             var fechas = [];
 
             $("input[name='rangoVacaciones']").change(function () {
@@ -128,7 +100,6 @@ abstract class CalendarioVac extends Plantilla\Views
             });
 
             function guardarFecha() {
-            if(opc == true){
                 if ($("#diasNacionales").is(':empty')){
                     $("#diasNacionales").append($('<label id="'+ $("#calendarioNacionales").val() +'">' + $("#calendarioNacionales").val() + '</label>'));
                     fechas.push($("#calendarioNacionales").val());
@@ -150,9 +121,6 @@ abstract class CalendarioVac extends Plantilla\Views
                         }
                     }
                 }
-
-            }
-
             }
 
             function borrarFecha(fecha) {
@@ -384,8 +352,8 @@ abstract class CalendarioVac extends Plantilla\Views
                  * Anas
                 **/
                 $( "#nomEmpresa").on("change",function () {
-                    try{
 
+                    try{
                         var idEmpresa = $(this).val();
 
                         $.ajax({

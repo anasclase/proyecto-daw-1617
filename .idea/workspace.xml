@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="5ca1acb5-411e-4129-befd-8f19de674ea5" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Controlador/Calendario/ControladorCalendario.php" afterPath="$PROJECT_DIR$/Controlador/Calendario/ControladorCalendario.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Modelo/BD/CalendarioBD.php" afterPath="$PROJECT_DIR$/Modelo/BD/CalendarioBD.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Vista/Administracion/Administracion.php" afterPath="$PROJECT_DIR$/Vista/Administracion/Administracion.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Vista/Calendario/CalendarioVacaciones.php" afterPath="$PROJECT_DIR$/Vista/Calendario/CalendarioVacaciones.php" />
     </list>
     <ignored path="public.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,33 +26,46 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="cabecera.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Vista/Plantilla/cabecera.php">
+      <file leaf-file-name="GestionarCalendariosIndividuales.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Vista/Calendario/GestionarCalendariosIndividuales.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1665">
-              <caret line="115" column="104" lean-forward="false" selection-start-line="115" selection-start-column="104" selection-end-line="115" selection-end-column="104" />
+            <state relative-caret-position="340">
+              <caret line="20" column="28" lean-forward="false" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GestionarCalendario.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Vista/Calendario/GestionarCalendario.php">
+      <file leaf-file-name="CalendarioVacaciones.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Vista/Calendario/CalendarioVacaciones.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="37" lean-forward="false" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CalendarioGestionarCalendario.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Vista/Calendario/CalendarioGestionarCalendario.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="102" lean-forward="false" selection-start-line="19" selection-start-column="102" selection-end-line="19" selection-end-column="102" />
+            <state relative-caret-position="85">
+              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding>
-                <marker date="1488544645000" expanded="true" signature="739:796" ph="..." />
+                <element signature="e#1839#1865#0#HTML" expanded="true" />
+                <marker date="1488788321915" expanded="true" signature="9301:9307" ph=" " />
+                <marker date="1488788321915" expanded="true" signature="10240:10246" ph=" " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ControladorCalendario.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Controlador/Calendario/ControladorCalendario.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="442">
+              <caret line="201" column="39" lean-forward="false" selection-start-line="201" selection-start-column="39" selection-end-line="201" selection-end-column="39" />
+              <folding>
+                <element signature="e#541#6881#0#PHP" expanded="false" />
+                <marker date="1488788388359" expanded="true" signature="615:688" ph="select * fro... ${$tabla}" />
+                <marker date="1488788388359" expanded="true" signature="1087:1188" ph="insert into ${$tabla}... " />
+                <marker date="1488788388359" expanded="true" signature="1404:1461" ph="delete from " />
+                <marker date="1488788388359" expanded="true" signature="2699:2850" ph="select fecha... ${$tabla}" />
+                <marker date="1488788388359" expanded="true" signature="3989:3997" ph="é" />
+                <marker date="1488788388359" expanded="true" signature="4044:4052" ph="á" />
+                <marker date="1488788388359" expanded="true" signature="5755:5761" ph=" " />
+                <marker date="1488788388359" expanded="true" signature="6104:6111" ph="«" />
+                <marker date="1488788388359" expanded="true" signature="6247:6254" ph="»" />
               </folding>
             </state>
           </provider>
@@ -60,48 +74,23 @@
       <file leaf-file-name="Administracion.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Vista/Administracion/Administracion.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="346">
-              <caret line="34" column="18" lean-forward="true" selection-start-line="34" selection-start-column="18" selection-end-line="35" selection-end-column="75" />
+            <state relative-caret-position="986">
+              <caret line="58" column="14" lean-forward="true" selection-start-line="58" selection-start-column="14" selection-end-line="58" selection-end-column="14" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Controlador.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Controlador/Administracion/Controlador.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="453">
-              <caret line="588" column="0" lean-forward="true" selection-start-line="588" selection-start-column="0" selection-end-line="588" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CalendarioGestionarCalendariosIndividuales.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Vista/Calendario/CalendarioGestionarCalendariosIndividuales.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-              <folding>
-                <marker date="1488443481000" expanded="true" signature="4947:4953" ph=" " />
-                <marker date="1488443481000" expanded="true" signature="5886:5892" ph=" " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CalendarioBD.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CalendarioBD.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Modelo/BD/CalendarioBD.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="526">
-              <caret line="49" column="32" lean-forward="true" selection-start-line="31" selection-start-column="9" selection-end-line="49" selection-end-column="32" />
+            <state relative-caret-position="655">
+              <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
               <folding>
-                <marker date="1488787426000" expanded="true" signature="234:274" ph="SELECT id FR... calendario" />
-                <marker date="1488787426000" expanded="true" signature="234:275" ph="SELECT id FR... calendario" />
-                <marker date="1488787426000" expanded="true" signature="689:809" ph="INSERT INTO calendario... " />
-                <marker date="1488787426000" expanded="true" signature="1084:1124" ph="UPDATE calen... " />
-                <marker date="1488787426000" expanded="true" signature="1394:1428" ph="SELECT * FRO... calendario" />
-                <marker date="1488787426000" expanded="true" signature="1578:1583" ph="..." />
+                <marker date="1488787811792" expanded="true" signature="234:275" ph="SELECT id FR... calendario" />
+                <marker date="1488787811792" expanded="true" signature="717:837" ph="INSERT INTO calendario... " />
+                <marker date="1488787811792" expanded="true" signature="1112:1152" ph="UPDATE calen... " />
+                <marker date="1488787811792" expanded="true" signature="1422:1456" ph="SELECT * FRO... calendario" />
               </folding>
             </state>
           </provider>
@@ -150,9 +139,11 @@
         <option value="$PROJECT_DIR$/Vista/Calendario/GestionarFestivosNacionales.php" />
         <option value="$PROJECT_DIR$/Vista/Calendario/CalendarioGestionarFestivosNacionales.php" />
         <option value="$PROJECT_DIR$/Controlador/Administracion/Controlador.php" />
-        <option value="$PROJECT_DIR$/Vista/Calendario/CalendarioGestionarCalendario.php" />
         <option value="$PROJECT_DIR$/Vista/Administracion/Administracion.php" />
+        <option value="$PROJECT_DIR$/Vista/Calendario/CalendarioGestionarCalendario.php" />
         <option value="$PROJECT_DIR$/Modelo/BD/CalendarioBD.php" />
+        <option value="$PROJECT_DIR$/Vista/Calendario/CalendarioVacaciones.php" />
+        <option value="$PROJECT_DIR$/Controlador/Calendario/ControladorCalendario.php" />
       </list>
     </option>
   </component>
@@ -173,9 +164,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
-    <option name="width" value="1920" />
-    <option name="height" value="977" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectView">
     <navigator currentView="Scope" currentSubView="Project Files" proportions="" version="1">
@@ -192,70 +184,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="public">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="public">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Vista">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="public">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Vista">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Plantilla">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="public">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Vista">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Calendario">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -448,7 +377,70 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="public">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="public">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Vista">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="public">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Vista">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Plantilla">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="public">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Vista">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Calendario">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -470,8 +462,6 @@
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
           <PATH vcs="Git" revision="">$PROJECT_DIR$/Controlador/Calendario/ControladorCalendario.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/Vista/Calendario/CalendarioGestionarFestivosCentros.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/Vista/Calendario/CalendarioGestionarFestivosNacionales.php</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/Vista/Calendario/CalendarioVacaciones.php</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
@@ -656,7 +646,8 @@
       <workItem from="1488439522375" duration="5042000" />
       <workItem from="1488446544369" duration="8563000" />
       <workItem from="1488525822028" duration="12626000" />
-      <workItem from="1488784662834" duration="2049000" />
+      <workItem from="1488784662834" duration="719000" />
+      <workItem from="1488786662028" duration="1726000" />
     </task>
     <task id="LOCAL-00001" summary="prueba iker">
       <created>1488361626538</created>
@@ -756,18 +747,11 @@
       <option name="project" value="LOCAL" />
       <updated>1488545971811</updated>
     </task>
-    <task id="LOCAL-00015" summary="IRUNE">
-      <created>1488786127390</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1488786127390</updated>
-    </task>
-    <option name="localTasksCounter" value="16" />
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35267000" />
+    <option name="totallyTimeSpent" value="35663000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -780,16 +764,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1920" height="977" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16822916" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977098" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32819384" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3273495" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977098" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977098" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -823,8 +807,7 @@
     <MESSAGE value="IRUNE VALIDACIONES CREAR Y CERRAR CALENDARIO" />
     <MESSAGE value="IRUNE crear cal" />
     <MESSAGE value="IRUNE ultimo commit del viernes 03" />
-    <MESSAGE value="IRUNE" />
-    <option name="LAST_COMMIT_MESSAGE" value="IRUNE" />
+    <option name="LAST_COMMIT_MESSAGE" value="IRUNE ultimo commit del viernes 03" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -833,6 +816,7 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/.idea/vcs.xml" />
     <entry file="file://$PROJECT_DIR$/create_insert.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -844,7 +828,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -853,7 +836,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -882,7 +864,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -978,25 +959,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Controlador/Calendario/ControladorCalendario.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-953">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Modelo/BD/EmpresaBD.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="735">
           <caret line="63" column="5" lean-forward="false" selection-start-line="63" selection-start-column="5" selection-end-line="63" selection-end-column="5" />
-          <folding>
-            <marker date="1488451597000" expanded="true" signature="249:298" ph="select * fro... ${self::$tabla}" />
-            <marker date="1488451597000" expanded="true" signature="602:643" ph="SELECT * FRO... ${self::$tabla}" />
-            <marker date="1488451597000" expanded="true" signature="951:1045" ph="INSERT INTO ${self::$tabla}... " />
-            <marker date="1488451597000" expanded="true" signature="1259:1299" ph="DELETE FROM " />
-            <marker date="1488451597000" expanded="true" signature="1535:1640" ph="select * fro... ${self::$tabla}" />
-            <marker date="1488451597000" expanded="true" signature="1578:1619" ph="select idEmp... centros" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1049,13 +1015,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Vista/Calendario/GestionarCalendariosIndividuales.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Vista/Administracion/insertIncidencia.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -1074,7 +1033,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="660">
           <caret line="55" column="29" lean-forward="false" selection-start-line="55" selection-start-column="20" selection-end-line="55" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1097,12 +1055,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="17" column="27" lean-forward="false" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
-          <folding>
-            <marker date="1488451213000" expanded="true" signature="62324:62335" ph="..." />
-            <marker date="1488451213000" expanded="true" signature="65680:65691" ph="..." />
-            <marker date="1488451213000" expanded="true" signature="73568:73579" ph="..." />
-            <marker date="1488451213000" expanded="true" signature="82206:82217" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1110,21 +1062,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="106">
           <caret line="126" column="0" lean-forward="true" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
-          <folding>
-            <marker date="1488528488000" expanded="true" signature="298:413" ph="SELECT * FRO... ${self::$tabla}" />
-            <marker date="1488528488000" expanded="true" signature="341:412" ph="Select idCen... trabajadores" />
-            <marker date="1488528488000" expanded="true" signature="726:812" ph="SELECT * FRO... ${self::$tabla}" />
-            <marker date="1488528488000" expanded="true" signature="1130:1172" ph="SELECT * FRO... ${self::$tabla}" />
-            <marker date="1488528488000" expanded="true" signature="1526:1632" ph="SELECT * FRO... ${self::$tabla}" />
-            <marker date="1488528488000" expanded="true" signature="1569:1609" ph="select idCen... vehiculos" />
-            <marker date="1488528488000" expanded="true" signature="1931:2067" ph="INSERT INTO ${self::$tabla}... " />
-            <marker date="1488528488000" expanded="true" signature="2268:2314" ph="SELECT * FRO... ${self::$tabla}" />
-            <marker date="1488528488000" expanded="true" signature="2654:2668" ph="SELECT * FRO... ${self::$tabla}" />
-            <marker date="1488528488000" expanded="true" signature="3205:3224" ph="SELECT nombr... ${self::$tabla}" />
-            <marker date="1488528488000" expanded="true" signature="3568:3684" ph="SELECT * FRO... ${self::$tabla}" />
-            <marker date="1488528488000" expanded="true" signature="3611:3656" ph="select idCen... horasconvenios" />
-            <marker date="1488528488000" expanded="true" signature="3993:4032" ph="DELETE FROM " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1156,77 +1093,94 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Vista/Calendario/CalendarioVacaciones.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-390">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Vista/Plantilla/cabecera.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1665">
+        <state relative-caret-position="1887">
           <caret line="115" column="104" lean-forward="false" selection-start-line="115" selection-start-column="104" selection-end-line="115" selection-end-column="104" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Vista/Calendario/GestionarCalendario.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="37" lean-forward="false" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Vista/Calendario/CalendarioGestionarCalendario.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="102" lean-forward="false" selection-start-line="19" selection-start-column="102" selection-end-line="19" selection-end-column="102" />
-          <folding>
-            <marker date="1488544645000" expanded="true" signature="739:796" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Vista/Administracion/Administracion.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="34" column="18" lean-forward="true" selection-start-line="34" selection-start-column="18" selection-end-line="35" selection-end-column="75" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Controlador/Administracion/Controlador.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
-          <caret line="588" column="0" lean-forward="true" selection-start-line="588" selection-start-column="0" selection-end-line="588" selection-end-column="0" />
+        <state relative-caret-position="306">
+          <caret line="577" column="27" lean-forward="false" selection-start-line="577" selection-start-column="27" selection-end-line="577" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Vista/Calendario/CalendarioGestionarCalendariosIndividuales.php">
+    <entry file="file://$PROJECT_DIR$/Vista/Calendario/CalendarioGestionarCalendario.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding>
-            <marker date="1488443481000" expanded="true" signature="4947:4953" ph=" " />
-            <marker date="1488443481000" expanded="true" signature="5886:5892" ph=" " />
-          </folding>
+        <state relative-caret-position="-72">
+          <caret line="19" column="99" lean-forward="false" selection-start-line="19" selection-start-column="99" selection-end-line="19" selection-end-column="99" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vista/Calendario/GestionarCalendario.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="37" lean-forward="false" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vista/Calendario/GestionarCalendariosIndividuales.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="28" lean-forward="false" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Modelo/BD/CalendarioBD.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="526">
-          <caret line="49" column="32" lean-forward="true" selection-start-line="31" selection-start-column="9" selection-end-line="49" selection-end-column="32" />
+        <state relative-caret-position="655">
+          <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
           <folding>
-            <marker date="1488787426000" expanded="true" signature="234:274" ph="SELECT id FR... calendario" />
-            <marker date="1488787426000" expanded="true" signature="234:275" ph="SELECT id FR... calendario" />
-            <marker date="1488787426000" expanded="true" signature="689:809" ph="INSERT INTO calendario... " />
-            <marker date="1488787426000" expanded="true" signature="1084:1124" ph="UPDATE calen... " />
-            <marker date="1488787426000" expanded="true" signature="1394:1428" ph="SELECT * FRO... calendario" />
-            <marker date="1488787426000" expanded="true" signature="1578:1583" ph="..." />
+            <marker date="1488787811792" expanded="true" signature="234:275" ph="SELECT id FR... calendario" />
+            <marker date="1488787811792" expanded="true" signature="717:837" ph="INSERT INTO calendario... " />
+            <marker date="1488787811792" expanded="true" signature="1112:1152" ph="UPDATE calen... " />
+            <marker date="1488787811792" expanded="true" signature="1422:1456" ph="SELECT * FRO... calendario" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vista/Administracion/Administracion.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="986">
+          <caret line="58" column="14" lean-forward="true" selection-start-line="58" selection-start-column="14" selection-end-line="58" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vista/Calendario/CalendarioVacaciones.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding>
+            <element signature="e#1839#1865#0#HTML" expanded="true" />
+            <marker date="1488788321915" expanded="true" signature="9301:9307" ph=" " />
+            <marker date="1488788321915" expanded="true" signature="10240:10246" ph=" " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Controlador/Calendario/ControladorCalendario.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="201" column="39" lean-forward="false" selection-start-line="201" selection-start-column="39" selection-end-line="201" selection-end-column="39" />
+          <folding>
+            <element signature="e#541#6881#0#PHP" expanded="false" />
+            <marker date="1488788388359" expanded="true" signature="615:688" ph="select * fro... ${$tabla}" />
+            <marker date="1488788388359" expanded="true" signature="1087:1188" ph="insert into ${$tabla}... " />
+            <marker date="1488788388359" expanded="true" signature="1404:1461" ph="delete from " />
+            <marker date="1488788388359" expanded="true" signature="2699:2850" ph="select fecha... ${$tabla}" />
+            <marker date="1488788388359" expanded="true" signature="3989:3997" ph="é" />
+            <marker date="1488788388359" expanded="true" signature="4044:4052" ph="á" />
+            <marker date="1488788388359" expanded="true" signature="5755:5761" ph=" " />
+            <marker date="1488788388359" expanded="true" signature="6104:6111" ph="«" />
+            <marker date="1488788388359" expanded="true" signature="6247:6254" ph="»" />
           </folding>
         </state>
       </provider>

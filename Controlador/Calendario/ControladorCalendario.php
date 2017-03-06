@@ -2,6 +2,7 @@
 error_reporting(-1);
 require_once __DIR__.'/../../Modelo/BD/GenericoBD.php';
 require_once __DIR__.'/../../Modelo/BD/CalendarioBD.php';
+require_once __DIR__."/../../Vista/Calendario/CalendarioVacaciones.php";
 
 
 function fecha ($valor)
@@ -195,6 +196,14 @@ switch ($_GET["accion"])
 
         break;
 
+    }
+}
+
+if(isset($_POST["aceptar"])){   //Aitor
+    error_reporting(0);
+    if($_POST["trabajador"]==""){
+        echo "<script>alert('Tienes que elegir a un trabajador.');</script>";
+        CalendarioVac::cal(true);
     }
 }
 ?>

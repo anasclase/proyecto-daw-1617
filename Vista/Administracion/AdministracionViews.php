@@ -648,8 +648,8 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                 </div>
                 <form name="updateFoto" method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
 
-                    <div class="col-md-10 col-md-offset-1 pull-right"><!--  PABLO  -->
-                         <input class="btn btn-warning " type="submit" name="volver" value="Volver">
+                    <div class="col-md-10 col-md-offset-1"><!--  PABLO  -->
+                         <input class="btn btn-warning pull-right" type="submit" name="volver" value="Volver">
                     </div>
                 </form>
                 <?php

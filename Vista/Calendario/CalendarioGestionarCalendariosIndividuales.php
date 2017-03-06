@@ -258,6 +258,12 @@ abstract class CalendarioGestionarCalendariosIndividuales extends Plantilla\View
                     generar_calendario(nueva_fecha[1],nueva_fecha[0]);
                 });
 
+                /**
+                 * A la hora de cambiar el nombre de la empresa , que te busque los trabajadores
+                 *
+                 * Anas
+                 **/
+
                 $( "#nomEmpresa").on("change",function () {
                     try{
 

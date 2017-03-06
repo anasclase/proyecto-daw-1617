@@ -1,7 +1,11 @@
 <?php
-error_reporting(-1);
+error_reporting(0);
 require_once __DIR__.'/../../Modelo/BD/GenericoBD.php';
 require_once __DIR__.'/../../Modelo/BD/CalendarioBD.php';
+require_once __DIR__.'/../../Modelo/Base/VacacionesTrabajadoresClass.php';
+require_once __DIR__.'/../../Modelo/BD/VacacionesTrabajadoresBD.php';
+require_once __DIR__."/../../Vista/Calendario/CalendarioVacaciones.php";
+require_once  __DIR__."/../../Vista/Calendario/CalendarioGestionarCalendariosIndividuales.php";
 
 
 function fecha ($valor)
@@ -11,6 +15,7 @@ function fecha ($valor)
 	$fechex = $fecha[2]."/".$fecha[1]."/".$fecha[0];
 	return $fechex;
 }
+
 
 function buscar_en_array($fecha,$array)
 {
@@ -169,6 +174,86 @@ switch ($_GET["accion"])
 
 		break;
 	}
+
+    /**
+     * Buscar los trabajadores por id del Centro
+     *
+     * Anas
+     */
+
+    case "buscarTrab":
+    {
+        $idEmpresa = $_GET["idEmpresa"];
+
+        $empresa = new \Modelo\Base\Centro($idEmpresa);
+
+        $query = \Modelo\BD\TrabajadorBD::getTodosTrabajadoresByCentro($empresa);
+        if($query==null){
+            echo null ;
+        }else{
+            for($x=0;$x<count($query);$x++){
+               echo "<option value='".$query[$x]->getDni()."'>".$query[$x]->getNombre()."</option>";
+            }
+        }
+        break;
+
+    }
+    /**
+     * Las fechas tienen que estar en DateTime segun la Base de datos  así que las convierto
+     *
+     * Inserto en la Base de Datos las vacaciones
+     *
+     * Anas
+     */
+    case "insertarCal":{
+
+
+
+        $time = strtotime($_GET["horaInicio"]);
+        $fechaInicio = date('Y-m-d H:i:s',$time);
+
+        $time2 = strtotime($_GET["horaFin"]);
+        $fechaFin = date('Y-m-d H:i:s',$time2);
+
+        $time3 = strtotime($_GET["fecha"]);
+        $fecha = date('Y-m-d H:i:s',$time3);
+
+
+        $vacacionesTrab = new \Modelo\Base\VacacionesTrabajadores(null,$_GET["dniTrabajador"],$fecha,$fechaInicio,$fechaFin,$_GET["calendario_id"],$_GET["estado"]);
+
+        $query = \Modelo\BD\VacacionesTrabajadoresBD::insertarVacacionesTrabajadores($vacacionesTrab);
+
+        if($query){
+            echo "Insertado";
+        }else{
+            echo "No Insertado";
+        }
+
+        break;
+    }
+
+}
+
+if(isset($_POST["aceptar"])){   //Aitor
+    error_reporting(0);
+    if($_POST["trabajador"]==""){
+        echo "<script>alert('Tienes que elegir a un trabajador.');</script>";
+        CalendarioGestionarCalendariosIndividuales::cal(true);
+    }
+    else
+    {
+        require_once __DIR__."/../../Vista/Calendario/AsignarCalendarios.php";
+        AsignarCalendarios::generar($_POST["trabajador"]);
+    }
+}
+
+if(isset($_POST["volver"])){    //Aitor
+    CalendarioGestionarCalendariosIndividuales::cal(true);
+}
+
+
+if(isset($_POST["asignarCalend"])){ //Aitor
+
 
 }
 ?>

@@ -1,5 +1,9 @@
 <?php
 namespace Controlador\Administracion;
+if(session_status()!=2){
+    session_start();
+}
+
 
 use Modelo\Base\Administracion;
 use Modelo\Base\Centro;
@@ -577,7 +581,62 @@ abstract class Controlador{
     //David
     public static function insertarIncidencia($datos){
 
+        $fecha = getdate();
+        $fecha2 = $fecha["mday"]."/".$fecha["mon"]."/".$fecha["year"];
 
+        $incidencia = new AusenciaTrabajador(null, $fecha2, "00:00", "00:00", $datos["dni"], $datos["motivo"], 2017);
+
+        $prueba = \Modelo\BD\AusenciaTrabajadorBD::setAusencias($incidencia);
+
+        echo $prueba;
+    }
+
+    // IRUNE
+
+    public static function crearObjetoCalendario() {
+
+        if ($_POST['calendario'] != "" && $_POST['descripcion'] != "") {
+
+            $calendario = new \Modelo\Base\Calendario($_POST['calendario'], $_POST['descripcion'], 1);
+            return $calendario;
+
+        }
+        else {
+            return false;
+        }
+
+    }
+
+    // IRUNE
+
+    public static function cerrarCalendario() {
+
+        if ($_POST['calendario'] != "") {
+            return true;
+        }
+        else {
+            return false;
+        }
+
+    }
+
+    public static function comprobarFestivos($calendario) {
+
+        if(BD\CalendarioBD::comprobarFestivos($calendario)){
+            return true;
+        }
+        else {
+            return false;
+        }
+
+    }
+
+    // IRUNE
+
+    public static function crearObjetoCentro() {
+
+        $centro = new Centro($_POST['centro']);
+        return $centro;
 
     }
 

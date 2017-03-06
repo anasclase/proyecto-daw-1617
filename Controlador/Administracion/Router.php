@@ -188,6 +188,7 @@ if(isset($_POST['updateHorarioTrabajador'])){
 }
 if(isset($_POST["insertarIncidencia"])){ //David
     Controlador::insertarIncidencia($_POST);
+    header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/insertIncidencia.php");
 
 }
 /*

@@ -13,7 +13,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Modelo/BD/TrabajadorBD.php" afterPath="$PROJECT_DIR$/Modelo/BD/TrabajadorBD.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Vista/Administracion/deleteHorarioTrabajador.php" afterPath="$PROJECT_DIR$/Vista/Administracion/deleteHorarioTrabajador.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Vista/Administracion/AdministracionViews.php" afterPath="$PROJECT_DIR$/Vista/Administracion/AdministracionViews.php" />
     </list>
     <ignored path="public.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -1222,7 +1221,13 @@
       <option name="project" value="LOCAL" />
       <updated>1488786349979</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Commit Ganeko lunes">
+      <created>1488787565435</created>
+      <option name="number" value="00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1488787565435</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TimeTrackingManager">

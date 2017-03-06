@@ -1280,8 +1280,9 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                             <tr>
                                 <td><?php echo $horario->getTrabajador()->getDni() ?></td>
                                 <td><?php echo $horario->getNumeroSemana() ?></td>
-                                <td><?php echo $horario->getHorario()->getTipo() ?></td>
-                                <td><button type="submit" name="borrarHorarioTrabajador" value="Eliminar" style="border: none; background: none"><span class="glyphicon glyphicon-remove" style="color: red; font-size: 1.5em"></span></button></td>
+                                <td><?php echo $horario->getHorario()->getTipo() ?></td><!-- PABLO -->
+                                <td><button type="submit" name="updateHorarioTrabajador" value="Update" style="border: none; background: none"><span class='glyphicon glyphicon-pencil' style='color:blue; font-size:24px;'></span></button>
+								<button type="submit" name="borrarHorarioTrabajador" value="Eliminar" style="border: none; background: none"><span class="glyphicon glyphicon-remove" style="color: red; font-size: 1.5em"></span></button></td>
 
                             </tr>
                             <input type="hidden" value="<?php echo $horario->getId() ?>" name="id">
@@ -2495,6 +2496,46 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
         }
         require_once __DIR__ . "/../Plantilla/pie.php";
     }
+	public static function updateHorarioTrabajador(){ /*PABLO*/
+		
+			$horarioTrabajador = Administracion\Controlador::getAllHoraioTrabajador();
+			$horarios = Administracion\Controlador::getAllHorarios();
+			
+            require_once __DIR__ . "/../Plantilla/cabecera.php";
+            ?>
+            <div class="table-responsive col-md-offset-1 col-md-10">
+                <table class="table table-bordered">
+                    <tr>
+                        <th>TRABAJADOR</th>
+                        <th>SEMANA</th>
+                        <th>HORARIO</th>
+                    </tr>
+                    <?php
+                    foreach ($horarioTrabajador as $horario) {
+                        ?>
+                        <form method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
+                            <tr>
+                                <td><?php echo $horario->getTrabajador()->getDni() ?></td>
+                                <td><?php echo $horario->getNumeroSemana() ?></td>
+                               <!-- PABLO --> <td><select class='form-control'><?php foreach ($horarios as $hor){?><option name='heh'><?php echo $hor->getTipo();?></option><?php } ?></select>
+                            </tr>
+                            <input type="hidden" value="<?php echo $horario->getId() ?>" name="id">
+                        </form>
+                        <?php
+                    }
+                    ?>
+                </table>
+            </div>
+            <form method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
+                <div class="col-md-10 col-md-offset-1"><!-- Ganeko -->
+                    <input class="btn btn-warning pull-right" type="submit" name="volver" value="Volver">
+                </div>
+            </form>
+			<?php
+		
+		require_once __DIR__ ."/../Plantilla/pie.php";
+		
+	}
 
 
 

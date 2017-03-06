@@ -45,9 +45,27 @@ abstract class CalendarioVac extends Plantilla\Views
                     </select>
 
                 </div>
-                <input type="submit" name="aceptar" value="Aceptar">
             </form>
 
+
+            <form name="rango" >
+                <h4><p>Vacaciones por Rango o dias Sueltos:</p>
+                    <label for="rango"> Rango </label> <input type="radio" name="rangoVacaciones" value="rango"/>
+                    <label for="dSueltos"> D&iacute;as Sueltos </label> <input type="radio" name="rangoVacaciones" value="sueltos"/>
+                </h4><br/>
+                <div style="visibility: hidden"  id="fecha1">
+                    <label id="diasNacionales"></label><br>
+                    <input type="date" id="calendarioNacionales" onchange="guardarOpcion()">
+                    <input type="button" value="Guardar" id="botonNacionales" onclick="guardarFecha()">
+                </div>
+                <div style="visibility: hidden"  id="fecha2">
+                    <label for="fInicial"> Desde : </label>  <input type="date" id="fInicial"/>
+
+                    <label for="fFinal"> Hasta : </label>  <input type="date" id="fFinal"/>
+
+                    <input type="button" value="Seleccionar dias" id="rangoDias" name="rangoDias"/>
+                </div>
+            </form>
 
             <div style='visibility: hidden' class="cal"></div><div id="mask"></div>
         </div>

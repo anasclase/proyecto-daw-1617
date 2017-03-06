@@ -3,7 +3,7 @@ namespace Modelo\BD;
 
 
 
-require_once __DIR__."/CalendarioBD.php";
+require_once __DIR__."/GenericoBD.php";
 
 abstract class CalendarioBD extends GenericoBD{
 

@@ -1,7 +1,9 @@
 <?php
 namespace Controlador\Administracion;
+if(session_status()!=2){
+    session_start();
+}
 
-session_start();
 
 use Modelo\Base\Administracion;
 use Modelo\Base\Centro;

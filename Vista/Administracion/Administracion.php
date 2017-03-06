@@ -29,6 +29,7 @@ switch($_GET['cod']) {
         if ($calendario != false) {
 
             if (Modelo\BD\CalendarioBD::crearCalendario($calendario)) {
+                echo "<script>alert('Nuevo calendario creado.');</script>";
                 \CalendarioGestionarCalendario::cal(true);
             }
             else {

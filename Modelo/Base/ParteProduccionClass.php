@@ -267,7 +267,7 @@ class ParteProduccion
     }
 
     public function remove(){
-        return BD\ParteProduccionBD::delete($this);
+        return BD\ParteProduccionBD::delete($this->getId());//Aitor
     }
 
 }

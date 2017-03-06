@@ -31,7 +31,7 @@ abstract class ParteProduccionBD extends GenericoBD
 
         $conexion = GenericoBD::conectar();
 
-        $select = "SELECT * FROM ".self::$tabla." WHERE dniTrabajador = '".$trabajador->getDni()."' order by dniTrabajador";
+        $select = "SELECT * FROM ".self::$tabla." WHERE dniTrabajador = '".$trabajador->getDni()."' order by idEstado DESC, dniTrabajador";
 
         $resultado = mysqli_query($conexion,$select) or die(mysqli_error($conexion));
 
@@ -216,7 +216,7 @@ abstract class ParteProduccionBD extends GenericoBD
 
         $con = parent::conectar();
 
-        $query = "SELECT * FROM ".self::$tabla." order by fecha,dniTrabajador";
+        $query = "SELECT * FROM ".self::$tabla." order by idEstado DESC, fecha,dniTrabajador";
 
         $rs = mysqli_query($con, $query) or die("Error getAllPartes");
 

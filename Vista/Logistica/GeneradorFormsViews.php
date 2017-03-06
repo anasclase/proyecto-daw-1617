@@ -161,8 +161,15 @@ use Modelo\Base;
 
                                     <div class="col-sm-12 col-xs-offset-1 col-sm-offset-6"> 
 								<!--- Cambiar boton GUARDAR POR AÑADIR
-								Pablo --->
-										<button type="button" name="btnEnviar" class="btn btn-primary enviar">Añadir</button> <input type='submit' value='Salir' class='cerrar btn btn-warning'>
+								Pablo + Aitor (añadir if de posibilidad de modificar linea) --->
+
+										<?php if(!isset($_POST["id"])){ ?><button type="button" name="btnEnviar"  class="btn btn-primary enviar">Añadir</button>
+                                        <?php }else{?><button type="button" name="btnModificarLinea" rel="<?php echo $_POST["id"];?>" class="btn btn-primary modificarLinea">Modificar</button><?php }?>
+
+
+                                        <input type='submit' value='Salir' class='cerrar btn btn-warning'>
+
+
 									</div>
 
                                 </div>
@@ -175,6 +182,7 @@ use Modelo\Base;
                 }else{
                     echo false;
                 }
+
         }
     }else{
         header("Location:".Plantilla\Views::getUrlRaiz()."/Vista/Produccion/Calendario");

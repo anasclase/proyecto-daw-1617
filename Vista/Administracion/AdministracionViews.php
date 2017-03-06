@@ -94,7 +94,17 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                         <div class="col-sm-4 col-md-3">
                             <input class="form-control" type="text" name="dni" maxlength="9">
                         </div>
-                    </div>
+                    </div><!--CONTRASEÑA EN CREAR TRABAJADOR PABLO-->
+					<div class="form-group">
+					
+						<label class="control-label col-sm-2 col-md-2">Contraseña</label>
+						<div class="col-sm-4 col-md-3">
+						
+							<input class="form-control" type="password" name="pass" maxlength="15">
+						
+						</div>
+					
+					</div>
                     <div class="form-group">
                         <label class="control-label col-sm-2 col-md-2">Nombre:</label>
                         <div class="col-sm-4 col-md-3">
@@ -636,10 +646,10 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                         ?>
                     </table>
                 </div>
-                <form name="deleteEstado" method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
+                <form name="updateFoto" method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
 
-                    <div class="col-md-10 col-md-offset-1"><!--Ganeko-->
-                        <input class="btn btn-warning pull-right" type="submit" name="volver" value="Volver">
+                    <div class="col-md-10 col-md-offset-1"><!--  PABLO  -->
+                         <input class="btn btn-warning pull-right" type="submit" name="volver" value="Volver">
                     </div>
                 </form>
                 <?php
@@ -1204,8 +1214,20 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                 </div>
                 <div class="form-group">
                     <label class="control-label col-sm-2 col-md-2">Semana: </label>
-                    <div class="col-sm-4 col-md-3" id="semanas">
-
+                    <div class="col-sm-4 col-md-3" id="semanas"> <!-- Pablo -->
+					<select class="form-control" name="semanas"><div style="float: left";>
+						<?php
+							for($x = 1;$x <= 52; $x++){
+								?>
+								
+									
+									
+										<option value="<?php echo $x ?>"><?php echo $x ?> </option>
+									
+									
+								
+								<?php
+							}?></div></select>
                     </div>
                 </div>
 
@@ -2094,8 +2116,8 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                     </div>
                 </div>
                 <div class="form-group">
-                    <div class="col-sm-4 col-md-3">
-                            <input class="btn btn-danger" type="submit" name="volver" value="Volver">
+                    <div class="col-md-10 col-md-offset-1">
+                            <input class="btn btn-warning pull-right" type="submit" name="volver" value="Volver">
                     </div>
 
                 </div>
@@ -2190,8 +2212,8 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
         </div>
 
         <form method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
-            <div class="col-sm-4 col-md-3">
-                <input class="btn btn-danger" type="submit" name="volver" value="Volver">
+            <div class="col-md-10 col-md-offset-1 pull-rigth"> 
+                <input class="btn btn-warning " type="submit" name="volver" value="Volver">
             </div>
         </form>
 

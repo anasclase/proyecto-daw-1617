@@ -68,8 +68,12 @@ use Modelo\Base;
                         </div><div class="form-group">
                         <div class="col-sm-12 col-xs-offset-1"> 
 						<!--- Cambiar boton GUARDAR POR AÑADIR
-						Pablo --->
-                            <button type="button" name="btnEnviar" class="btn btn-primary enviar" >Añadir</button> <input type='submit' value='Salir' class='cerrar btn btn-warning'>
+						Pablo y Aitor I(lo de modif)--->
+
+                            <?php if(!isset($_POST["id"])){ ?><button type="button" name="btnEnviar"  class="btn btn-primary enviar">Añadir</button>
+                            <?php }else{?><button type="button" name="btnModificarLinea" rel="<?php echo $_POST["id"];?>" class="btn btn-primary modificarTarea">Modificar</button><?php }?>
+                            <input type='submit' value='Salir' class='cerrar btn btn-warning'>
+
                         </div>
                         </div>
                     <?php
@@ -148,7 +152,7 @@ use Modelo\Base;
 
                                 </div>
                             </div>
-                            <div  >
+                            <div>
                                 <label for="horasFin1" class="col-sm-3 control-label">Hora de fin: </label>
                                 <div class="col-sm-1 container">
                                     <select id="horasFin1" data-validetta="required" class="form-control">

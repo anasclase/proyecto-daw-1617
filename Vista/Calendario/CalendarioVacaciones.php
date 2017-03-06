@@ -59,9 +59,9 @@ abstract class CalendarioVac extends Plantilla\Views
                     <input type="button" value="Guardar" id="botonNacionales" onclick="guardarFecha()">
                 </div>
                 <div style="visibility: hidden"  id="fecha2">
-                    <label for="fInicial"> Desde : </label>  <input type="date" id="fInicial"/>
+                    <label for="fInicial"> Desde : </label>  <input type="date" id="fInicial" min="<?php echo date('Y-m-d') ?>" />
 
-                    <label for="fFinal"> Hasta : </label>  <input type="date" id="fFinal"/>
+                    <label for="fFinal"> Hasta : </label>  <input type="date" id="fFinal"  />
 
                     <input type="button" value="Seleccionar dias" id="rangoDias" name="rangoDias"/>
                 </div>
@@ -85,39 +85,51 @@ abstract class CalendarioVac extends Plantilla\Views
 
         <script>
 
+            $("#fInicial").change(function () {
+
+                $("#fFinal").attr("min", $("#fInicial").val());
+
+            });
 
             $("#rangoDias").click(function () {
 
-                try{
-                    var fInicial = $("#fInicial").val();
-                    var fFinal = $("#fFinal").val();
-                    //var d1 = fInicial.split("-");
+                try{/*
+                    if($("#nomEmpresa").val()!="-1"){
+                        var fInicial = $("#fInicial").val();
+                        var fFinal = $("#fFinal").val();
 
+                        var dniTrabajador = $("#trabajador option:selected").val();
 
+                        var d = new Date();
+                        var ano = d.getFullYear();
+                        var fecha = generarFecha();
 
-                    var dniTrabajador = $("#trabajador option:selected").val();
+                        var horaInicio = fInicial + " 00:00:00";
+                        var horaFin = fFinal + " 23:59:59";
 
-                    var d = new Date();
-                    var ano = d.getFullYear();
-                    var fecha = generarFecha();
+                        var estado = "S";
+                        $.ajax({
 
-                    var horaInicio = fInicial + " 00:00:00";
-                    var horaFin = fFinal + " 23:59:59";
-
-                    var estado = "S";
-                    $.ajax({
-
-                        type: "GET",
-                        url: "<?php echo parent::getUrlRaiz()?>/Controlador/Calendario/ControladorCalendario.php",
-                        data: { dniTrabajador:dniTrabajador , fecha:fecha , horaInicio:horaInicio , horaFin:horaFin , calendario_id:ano ,estado:estado, accion:"insertarCal"}
-                    })
-                        .done(function(respuesta) {
-                            alert(respuesta);
-
+                            type: "GET",
+                            url: "<?php echo parent::getUrlRaiz()?>/Controlador/Calendario/ControladorCalendario.php",
+                            data: { dniTrabajador:dniTrabajador , fecha:fecha , horaInicio:horaInicio , horaFin:horaFin , calendario_id:ano ,estado:estado, accion:"insertarCal"}
                         })
-                        .fail(function() {
-                            alert( "error" );
-                        });
+                            .done(function(respuesta) {
+                                alert(respuesta);
+
+                            })
+                            .fail(function() {
+                                alert( "error" );
+                            });
+                    }else{
+                        alert("Selecciona el nombre de la empresa")
+                    }*/
+
+
+                    generarRango($("#fInicial").val(),$("#fFinal").val());
+
+
+
                 }catch (err){
                     alert(err);
                 }
@@ -126,6 +138,30 @@ abstract class CalendarioVac extends Plantilla\Views
 
 
             var opc = false;
+
+            function generarRango(fInicial,fFinal) {
+                var dI = new Date(fInicial);
+                var dF = new Date(fFinal);
+
+                fechas.push(dI);
+                var aux = new Date(dI);
+
+                while (aux<dF){
+
+                    var date = new Date(dI);
+                    date.setDate(aux.getDate()+1);
+                    aux.setDate(aux.getDate()+1);
+                    fechas.push(date);
+
+                }
+
+
+                for(var x = 0; x < fechas.length; x++){
+                    alert(fechas[x]);
+                }
+
+            }
+
 
             function generarFecha() {
 

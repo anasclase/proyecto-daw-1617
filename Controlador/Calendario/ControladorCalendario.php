@@ -224,9 +224,9 @@ switch ($_GET["accion"])
         $query = \Modelo\BD\VacacionesTrabajadoresBD::insertarVacacionesTrabajadores($vacacionesTrab);
 
         if($query){
-            echo "llega";
+            echo "Insertado";
         }else{
-            echo "no llega";
+            echo "No Insertado";
         }
 
         break;

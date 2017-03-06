@@ -1255,6 +1255,52 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
             require_once __DIR__ . "/../Plantilla/pie.php";
         }
 
+        // Función para mostrar filtros de empresa,centro... al mostrar horarios-trabajador a administracion
+        // Ibai
+        public static function filtroHorarioTrabajador(){
+            parent::setOn(true);
+            parent::setRoot(true);
+            require_once __DIR__ . "/../Plantilla/cabecera.php";
+            ?>
+            <script src="<?php echo parent::getUrlRaiz() ?>/Vista/Plantilla/JS/jquery-2.2.1.min.js"></script>
+            <script src="<?php echo parent::getUrlRaiz() ?>/Vista/Administracion/funcionesFiltro.js"></script>
+
+
+                <div class="ins form-inline">
+                <?php echo parent::getUrlRaiz() ?>
+                    <div class="form-group col-xs-6 col-sm-3">
+                      <label class="col-2">Empresa</label>
+                      <div class="col-9" id="divEmpresas">
+                        </div>
+                    </div>
+                    <div class="form-group col-xs-6 col-sm-3">
+                      <label class="col-2">Centro</label>
+                      <div class="col-9">
+                            <select class="form-control" name="centro" id="centro">
+
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group col-xs-6 col-sm-3">
+                      <label class="col-2">Calendario</label>
+                      <div class="col-9">
+                            <select class="form-control" name="calendario" id="calendario">
+
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group col-xs-6 col-sm-3">
+                      <label class="col-2">Mes</label>
+                      <div class="col-9">
+                            <select class="form-control" name="mes" id="mes">
+
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            <?php
+        }
+
         public static function deleteHorarioTrabajador()
         {
             parent::setOn(true);
@@ -1268,6 +1314,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                     <th>TRABAJADOR</th>
                     <th>SEMANA</th>
                     <th>HORARIO</th>
+                    <th>CALENDARIO</th>
                     <th>ACCIÓN</th>
                 </tr>
                 <?php
@@ -1278,7 +1325,12 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                             <td><?php echo $horario->getTrabajador()->getDni() ?></td>
                             <td><?php echo $horario->getNumeroSemana() ?></td>
                             <td><?php echo $horario->getHorario()->getTipo() ?></td>
-                            <td><button type="submit" name="borrarHorarioTrabajador" value="Eliminar" style="border: none; background: none"><span class="glyphicon glyphicon-remove" style="color: red; font-size: 1.5em"></span></button></td>
+                            <td><?php echo $horario->getCalendario()->getId()?></td>
+
+                            <td>
+                            <a href="<?php echo self::getUrlRaiz() ?>/Vista/Administracion/insertHorarioTrabajador.php"><span src="" class="glyphicon glyphicon-pencil" style="font-size: 24px; color: blue;"></span></a>
+                                <button type="submit" name="borrarHorarioTrabajador" value="Eliminar" style="border: none; background: none"><span class="glyphicon glyphicon-remove" style="color: red; font-size: 1.5em"></span></button>
+                            </td>
 
                         </tr>
                         <input type="hidden" value="<?php echo $horario->getId() ?>" name="id">

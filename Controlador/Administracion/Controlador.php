@@ -559,4 +559,10 @@ abstract class Controlador{
 
         $_SESSION['parte'] = serialize($parte);
     }
+    public static function getCentros($e){
+        return BD\CentroBD::getCentrosByEmpresas($e);
+    }
+    public static function getTrabajadores($c){
+        return BD\TrabajadorBD::getTrabajadoresByCentros($c);
+    }
 }

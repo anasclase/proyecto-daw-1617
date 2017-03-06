@@ -178,7 +178,6 @@ if(isset($_POST['abrirParteProduccion'])){
 if(isset($_POST['abrirParteLogistica'])){
     Controlador::updateAbrirParteLogistica($_POST);
     header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/Administracion.php?cod=2");
-
 }
 /*
 if(isset($_POST['dni']) and !isset($_POST['semanas'])) {
@@ -333,7 +332,19 @@ if (isset($_POST["semanas"]))
 
     }
     ?>
-<div><label>Todos</label><input type="checkbox" name="todos" id="todos" onclick="seleccionar()"/></div>
-<?php
+    <div><label>Todos</label><input type="checkbox" name="todos" id="todos" onclick="seleccionar()"/></div>
+    <?php
+}
+if (isset($_POST["empresas"]))
+{
+
+    $empresas = Controlador::getAllEmpresas();
+    $mensaje = '<select class="form-control" name="empresa" id="empresa">';
+
+    for ($x = 0; $x < count($empresas); $x++) {
+        $mensaje.='<option value="'. $empresas[$x]->getId().'">'.$empresas[$x]->getNombre().'</option>';
+    }
+
+    echo $mensaje."</select>";
 }
 ?>

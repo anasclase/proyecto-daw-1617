@@ -38,13 +38,12 @@ abstract class CalendarioVac extends Plantilla\Views
                         ?>
                     </select>
 
+
                     <label for="nomTrabajador">Trabajador :</label>
                     <select id="trabajador">
 
                     </select>
-                    <?php
 
-                    ?>
                 </div>
 
             </form>
@@ -57,7 +56,7 @@ abstract class CalendarioVac extends Plantilla\Views
                 </h4><br/>
                 <div style="visibility: hidden"  id="fecha1">
                     <label id="diasNacionales"></label><br>
-                    <input type="date" id="calendarioNacionales">
+                    <input type="date" id="calendarioNacionales" onchange="guardarOpcion()">
                     <input type="button" value="Guardar" id="botonNacionales" onclick="guardarFecha()">
                 </div>
                 <div style="visibility: hidden"  id="fecha2">
@@ -88,18 +87,29 @@ abstract class CalendarioVac extends Plantilla\Views
         <script>
 
 
-
             $("#rangoDias").click(function () {
                 var fInicial = $("#fInicial").val();
                 var fFinal = $("#fFinal").val();
                 //var d1 = fInicial.split("-");
-                var fecha =
+                var hora = "00:00";
                 var dni = $("#trabajador option:selected").val();
-                alert(dni);
+
+                var d = new Date();
+                var ano = d.getFullYear();
+
+
+
+
+
 
             });
 
 
+            var opc = false;
+
+            function guardarOpcion() {
+                opc = true;
+            }
             var fechas = [];
 
             $("input[name='rangoVacaciones']").change(function () {
@@ -118,6 +128,7 @@ abstract class CalendarioVac extends Plantilla\Views
             });
 
             function guardarFecha() {
+            if(opc == true){
                 if ($("#diasNacionales").is(':empty')){
                     $("#diasNacionales").append($('<label id="'+ $("#calendarioNacionales").val() +'">' + $("#calendarioNacionales").val() + '</label>'));
                     fechas.push($("#calendarioNacionales").val());
@@ -139,6 +150,9 @@ abstract class CalendarioVac extends Plantilla\Views
                         }
                     }
                 }
+
+            }
+
             }
 
             function borrarFecha(fecha) {
@@ -370,8 +384,8 @@ abstract class CalendarioVac extends Plantilla\Views
                  * Anas
                 **/
                 $( "#nomEmpresa").on("change",function () {
-
                     try{
+
                         var idEmpresa = $(this).val();
 
                         $.ajax({

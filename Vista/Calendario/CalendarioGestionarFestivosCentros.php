@@ -147,7 +147,7 @@ abstract class CalendarioGestionarFestivosCentros extends Plantilla\Views
             }
 
             function guardarFechas() {
-                if(fechas.length == 0 || $('#calend').val() == "" || $('#cent').val() == ""){
+                if(fechas.length == 0 || $('#calend').val() == "-- Selecciona --" || $('#cent').val() == "-- Selecciona --"){
                     alert("No puedes dejar los campos sin seleccionar");
                 }else{
                     alert("bien");

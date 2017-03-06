@@ -149,7 +149,7 @@ public static function generarcalendario(){
                 if($("#numeroHoras").val()!=""){var nh = parseFloat($("#numeroHoras").val());if(isNaN(nh)){ok=false;}}
                 if($("#paquetesEntrada").val()!=""){var pe = parseInt($("#paquetesEntrada").val());if(isNaN(pe)){ok=false;}}
                 if($("#paquetesSalida").val()!=""){var ps = parseInt($("#paquetesSalida").val());if(isNaN(ps)){ok=false;}}
-
+				if($("#paquetesEntrada").val() > $("#paquetesSalida").val()){ok=false;}
                 if(ok==false){
                     e.preventDefault();
                     $("#respuesta_form").html("<div class='alert alert-danger' role='alert'><strong>Error:</strong> Datos incorrectos.</div>");
@@ -223,9 +223,9 @@ public static function generarcalendario(){
             //ELIMINAR PARTE
             $(document).on("click",".pBorrar",function(e){
                 e.preventDefault();
-
+				var conf=confirm("¿Desea eliminar el parte?");
                 var idParte = $(this).attr("rel");
-
+				if(conf){
                 $.ajax({
                     type: "POST",
                     url: "<?php echo parent::getUrlRaiz()?>/Controlador/Produccion/ControladorCalendario.php",
@@ -239,7 +239,7 @@ public static function generarcalendario(){
                         $(".close").trigger("click");
                     },2200);
 
-                });
+                });}
 
             });
 
@@ -249,6 +249,7 @@ public static function generarcalendario(){
                 e.preventDefault();
 
                 var idParte = $(this).attr("rel");
+
 
                 $.ajax({
                     type: "POST",
@@ -314,6 +315,93 @@ public static function generarcalendario(){
 
 
         });
+
+        //Aitor I
+        $(document).on("click",'.botonModif',function (e) {
+            e.preventDefault();
+            var current_p=$(this);
+            var id=$(this).attr("rel");
+
+            $(".cal").fadeOut(500);
+
+            $.ajax({
+                type: "POST",
+                url: "<?php echo parent::getUrlRaiz()?>/Vista/Produccion/GeneradorFormsViews.php",
+                cache: false,
+                data: {cod:1, id:id} //Aitor
+            }).done(function( respuesta ){
+                if(respuesta==false){
+                    $("#respuesta_form").html("<div class='alert alert-danger' role='alert'><strong>Error:</strong> La fecha del Parte es Incorrecta.</div>");
+                    $(".formeventos").css("display","none")
+                }else{
+                    $(".formeventos").html(respuesta);
+                }
+            });
+
+            $('#mask').fadeIn(1600)
+                .html(
+                    "<div id='nuevo_evento' class='row' rel='"+id+"'>" +
+                    "<h2 class='col-xs-12 text-center'>Tarea con id "+id+"</h2>" +
+                    "</div>" +
+                    "<div class='row window' rel='"+id+"'>"+
+                    "<div id='respuesta_form' class='col-xs-12 col-md-8 col-md-offset-2'></div>" +
+                    "<div class='col-xs-12 col-md-8 col-md-offset-1'>"+
+                    "<form class='formeventos form-horizontal'>" +
+                    //"<input type='text' name='evento_titulo' id='evento_titulo' class='required'>" +
+                    //"<input type='button' name='Enviar' value='Guardar' class='enviar'>" +
+                    "<input type='hidden' name='evento_fecha' id='evento_fecha' value='"+id+"'>" +
+                    "</form>"+
+                    "</div>"+
+                    "</div>");
+
+        });
+
+
+        //AitorI
+        $(document).on("click",".modificarTarea", function (e) {
+            e.preventDefault();
+            var current_p=$(this);
+            var id=$(this).attr("rel");
+            var tarea = $("#tarea").val();
+            var numeroHoras = $("#numeroHoras").val();
+            var paqueteEntrada = $("#paquetesEntrada").val();
+            var paqueteSalida = $("#paquetesSalida").val();
+            var fecha = $('#fecha').val();
+
+            $.ajax({
+                type: "POST",
+                url: "<?php echo parent::getUrlRaiz()?>/Controlador/Produccion/ControladorCalendario.php",
+                cache: false,
+                data: { id:id, tarea:tarea,numeroHoras:numeroHoras,paqueteEntrada:paqueteEntrada,paqueteSalida:paqueteSalida,fecha:fecha,accion:'modificar_tarea'}
+            }).done(function( respuesta )
+            {
+                $("#mask").html(respuesta);
+                setTimeout(function(){
+
+                    $("#mask").fadeOut(500);
+                    $('.cal').fadeIn();
+                    location.reload();
+
+                },3000);
+
+
+
+            })
+                .error(function(xhr){alert(xhr.status)});
+
+
+        });
+
+
+
+
+
+
+
+
+
+
+
 
 
 

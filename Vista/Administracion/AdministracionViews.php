@@ -1418,8 +1418,8 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
 
 
             ?>
-
-            <a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/Administracion.php?cod=2">Volver</a>
+            <!-- Ganeko -->
+            <a class="btn btn-warning pull-right" href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/Administracion.php?cod=2">Volver</a>
             </div>
             </div>
             <?php

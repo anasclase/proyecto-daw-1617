@@ -389,4 +389,37 @@ abstract class Controlador{
 
     }
 
+    // Alejandra
+
+    public static function getCentros($e){
+        return BD\CentroBD::getCentrosByEmpresas($e);
+    }
+
+    /*public static function getTrabajadores($c){
+        return BD\TrabajadorBD::getTrabajadoresByCentros($c);
+    }*/
+
+    public static function getTrabajadores($arrbi){
+        return BD\TrabajadorBD::getTrabajadoresByCenPer($arrbi);
+    }
+
+    public static function incidencias($v){}
+
+    public static function partesAnuales($v){
+        if($v["opFecha"] == "fecha"){
+            $fecha = $v["fecha"];
+        }else{
+            $fechaIni = $v["fechaIni"];
+            $fechaFin = $v["fechaFin"];
+        }
+    }
+
+    public static function partesMensuales($v){}
+
+    public static function vacacionesAprobadas($v){}
+
+    public static function vacacionesDisfrutadas($v){}
+
+    public static function vacacionesSolicitadas($v){}
+
 }

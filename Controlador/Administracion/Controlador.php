@@ -576,7 +576,7 @@ abstract class Controlador{
 		
 	}
 
-    }
+
 
     //David
     public static function insertarIncidencia($datos){

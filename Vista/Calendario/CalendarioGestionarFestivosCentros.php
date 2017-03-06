@@ -21,12 +21,12 @@ abstract class CalendarioGestionarFestivosCentros extends Plantilla\Views
 
             <h2>Añadir festivos de centro</h2>
             <p><label>CENTRO: </label>
-                <select name="centro">
+                <select name="centro" id="cent">
 
                     <?php
                     require_once "../../Modelo/BD/CentroBD.php";
                     $centros = Modelo\BD\CentroBD::cargarCentros();
-                    echo "<option value=''>-- Selecciona --</option>";
+                    echo "<option name='centros'>-- Selecciona --</option>";
                     for($x=0; $x<count($centros); $x++){
                         echo "<option value='".$centros[$x]->getId()."'>".$centros[$x]->getNombre()."</option>";
                     }
@@ -34,10 +34,10 @@ abstract class CalendarioGestionarFestivosCentros extends Plantilla\Views
 
                 </select></p>
             <p><label>CALENDARIOS: </label>
-                <select name="calendarios">  <!--Aitor-->
+                <select name="calendarios" id="calend">  <!--Aitor-->
                     <?php
                     require_once "../../Modelo/BD/CalendarioBD.php";     //Aitor
-                    echo "<option value=''>-- Selecciona --</option>";  //Aitor
+                    echo "<option name='calendarios'>-- Selecciona --</option>";  //Aitor
                     $id = \Modelo\BD\CalendarioBD::getIdCalendario();    //Aitor
                     while ($rows=mysqli_fetch_array($id)){              //Aitor
                         echo "<option value='".$rows["id"]."'>".$rows["id"]."</option>";    //Aitor
@@ -54,14 +54,15 @@ abstract class CalendarioGestionarFestivosCentros extends Plantilla\Views
                 <div style="visibility: hidden"  id="fecha1">
                     <label id="diasNacionales"></label><br>
                     <input type="date" id="calendarioNacionales" onchange="guardarOpcion()">
-                    <input type="button" value="Guardar" id="botonNacionales" onclick="guardarFecha()">
+                    <input type="button" value="Añadir" id="botonNacionales" onclick="guardarFecha()">
                 </div>
                 <div style="visibility: hidden"  id="fecha2">
                     <label for="fInicial"> Desde : </label>  <input type="date" id="fInicial"/>  <label for="fFinal"> Hasta : </label>  <input type="date" id="fFinal"/>
                 </div>
+                <div>
+                    <input type="button" value="Guardar" onclick="guardarFechas()">
+                </div>
             </form>
-
-            <input type="submit" name="anadir" value="A&ntilde;adir">
 
         </form>
 
@@ -150,6 +151,14 @@ abstract class CalendarioGestionarFestivosCentros extends Plantilla\Views
 
             function guardarOpcion() {
                 opc = true;
+            }
+
+            function guardarFechas() {
+                if(fechas.length == 0 || $('#calend').val() == "" || $('#cent').val() == ""){
+                    alert("No puedes dejar los campos sin seleccionar");
+                }else{
+                    alert("bien");
+                }
             }
             <!--Iker-->
 

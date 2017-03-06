@@ -18,7 +18,7 @@ abstract class CalendarioGestionarFestivosNacionales extends Plantilla\Views
         <div class="calendario_ajax">
 
             <h2>Añadir festivos nacionales</h2>
-            <label>CALENDARIOS: </label><select name="calendarios">  <!--Aitor-->
+            <label>CALENDARIOS: </label><select name="calendarios" id="calend">  <!--Aitor-->
                 <?php
                 require_once "../../Modelo/BD/CalendarioBD.php";     //Aitor
                 echo "<option value=''>-- Selecciona --</option>";  //Aitor
@@ -37,10 +37,13 @@ abstract class CalendarioGestionarFestivosNacionales extends Plantilla\Views
                 <div style="visibility: hidden"  id="fecha1">
                     <label id="diasNacionales"></label><br>
                     <input type="date" id="calendarioNacionales" onchange="guardarOpcion()">
-                    <input type="button" value="Guardar" id="botonNacionales" onclick="guardarFecha()">
+                    <input type="button" value="Añadir" id="botonNacionales" onclick="guardarFecha()">
                 </div>
                 <div style="visibility: hidden"  id="fecha2">
                     <label for="fInicial"> Desde : </label>  <input type="date" id="fInicial"/>  <label for="fFinal"> Hasta : </label>  <input type="date" id="fFinal"/>
+                </div>
+                <div>
+                    <input type="button" value="Guardar" onclick="guardarFechas()">
                 </div>
             </form>
 
@@ -107,12 +110,18 @@ abstract class CalendarioGestionarFestivosNacionales extends Plantilla\Views
                     $("#diasNacionales").append($('<label id="' + fechas[x] +'">' + fechas[x] + '</label>'));
                     $('#diasNacionales').append($('<input type="button" onclick="borrarFecha('+ x +')" value="X" name="' + fechas[x].toString() + '">'));
                 }
-
-
             }
 
             function guardarOpcion() {
                 opc = true;
+            }
+
+            function guardarFechas() {
+                if(fechas.length == 0 || $('#calend').val() == ""){
+                    alert("No puedes dejar los campos sin seleccionar");
+                }else{
+                    alert("bien");
+                }
             }
             <!--Iker-->
             function generar_calendario(mes,anio)

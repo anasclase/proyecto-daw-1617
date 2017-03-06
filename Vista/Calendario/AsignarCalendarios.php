@@ -4,6 +4,11 @@ require_once __DIR__.'/../Plantilla/Views.php';
 use Vista\Plantilla;
 abstract class AsignarCalendarios extends Plantilla\Views{
     public static function generar($trabajador){
+
+        $texto = $trabajador;
+        parent::setOn(true);
+        parent::setRoot(true);
+
         require_once __DIR__."/../Plantilla/cabecera.php";
 
 
@@ -13,7 +18,7 @@ abstract class AsignarCalendarios extends Plantilla\Views{
 
 
         <form style="margin: 10%" action="../../Controlador/Calendario/ControladorCalendario.php" method="post">
-            <p>Asigna un calendario al trabajador con DNI: <?php echo $trabajador ?></p>
+            <p>Asigna un calendario al trabajador con DNI: <?php echo $texto; ?></p>
             <select name="calendario">
                 <?php
                 $calendarios=\Modelo\BD\CalendarioBD::getCalendClose();

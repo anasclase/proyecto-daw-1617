@@ -1329,6 +1329,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
             parent::setOn(true);
             parent::setRoot(true);
             $horarioTrabajador = Administracion\Controlador::getAllHoraioTrabajador();
+			
             require_once __DIR__ . "/../Plantilla/cabecera.php";
             ?>
             <div class="table-responsive col-md-offset-1 col-md-10">
@@ -1561,11 +1562,13 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                 <tr><th colspan="5">OBSERVACIONES</th></tr>
                 <tr><td colspan="5"><textarea name="Nota" id="Nota"><?php echo $parte->getNota();?></textarea></td></tr>
                 </table>
-                <div class="form-group pull-right">
-                    <button type="submit" name="guardarParteLogistica" class="btn btn-primary">Guardar</button>
-                    <a class="btn btn-warning" href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/Administracion.php?cod=2">Volver</a>
-                </div>
+                <button type="submit" name="guardarParteLogistica"
+                   style="border: none; background: none"><span
+                   class="glyphicon glyphicon-floppy-saved" style="color:blue; font-size: 1.5em"></span> <span style="color:blue;">Guardar</span>
+                </button>
                 </form>
+
+            <a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/Administracion.php?cod=2">Volver</a>
             </div>
             </div>
             <?php
@@ -2567,9 +2570,10 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
         require_once __DIR__ . "/../Plantilla/pie.php";
     }
 	public static function updateHorarioTrabajador(){ /*PABLO*/
-            parent::setOn(true);
+		
+			parent::setOn(true);
             parent::setRoot(true);
-	
+			
 			$horarioTrabajador = Administracion\Controlador::getAllHoraioTrabajador();
 			$horarios = Administracion\Controlador::getAllHorarios();
 			
@@ -2581,28 +2585,29 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                         <th>TRABAJADOR</th>
                         <th>SEMANA</th>
                         <th>HORARIO</th>
+						<th>ACCIÓN</th>
                     </tr>
-                    <?php
-                    foreach ($horarioTrabajador as $horario) {
-                        ?>
+                    
                         <form method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
+						
                             <tr>
-                                <td><?php echo $horario->getTrabajador()->getDni() ?></td>
-                                <td><?php echo $horario->getNumeroSemana() ?></td>
-                               <!-- PABLO --> <td><select class='form-control'><?php foreach ($horarios as $hor){?><option name='heh'><?php echo $hor->getTipo();?></option><?php } ?></select>
+							<?php $_SESSION["dniht"]=$horarioTrabajador[$_SESSION["dht_semana"]]->getTrabajador()->getDni(); $_SESSION["semht"]=$horarioTrabajador[$_SESSION["dht_semana"]]->getNumeroSemana();?>
+                                <td><?php echo $horarioTrabajador[$_SESSION["dht_semana"]]->getTrabajador()->getDni(); ?></td>
+                                <td><?php echo $horarioTrabajador[$_SESSION["dht_semana"]]->getNumeroSemana(); ?></td>
+                               <!-- PABLO --> <td><select class='form-control' name="horario"><?php $x=1; foreach ($horarios as $hor){?><option value="<?php echo $x; ?>"><?php echo $hor->getTipo();?></option><?php $x++; } ?></select>
+							    <td><button type="submit" name="updateT3" value="Editar"
+                                            style="border: none; background: none;"><span
+                                            class="glyphicon glyphicon-edit"
+                                            style="color:blue; font-size: 1.5em"></span></td>
                             </tr>
-                            <input type="hidden" value="<?php echo $horario->getId() ?>" name="id">
-                        </form>
-                        <?php
-                    }
-                    ?>
-                </table>
+                            
+                        
+                        </table><div class="col-md-10 col-md-offset-1"><!-- Ganeko -->
+								<input class="btn btn-warning pull-right" type="submit" name="volver" value="Volver">
+								
+							</div></form>
             </div>
-            <form method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
-                <div class="col-md-10 col-md-offset-1"><!-- Ganeko -->
-                    <input class="btn btn-warning pull-right" type="submit" name="volver" value="Volver">
-                </div>
-            </form>
+            
 			<?php
 		
 		require_once __DIR__ ."/../Plantilla/pie.php";

@@ -8,6 +8,8 @@ require_once __DIR__."/../../Vista/Calendario/CalendarioVacaciones.php";
 require_once __DIR__."/../../Vista/Calendario/CalendarioGestionarCalendariosIndividuales.php";
 require_once __DIR__."/../../Vista/Calendario/AsignarCalendarios.php";
 require_once __DIR__."/../../Modelo/BD/FestivoBD.php";
+require_once __DIR__."/../../Modelo/Base/FestivosNacionalClass.php";
+require_once __DIR__."/../../Modelo/BD/FestivoNacionalBD.php";
 require_once __DIR__."/../../Modelo/Base/FestivoClass.php";
 require_once __DIR__."/../../Modelo/BD/FestivoCentroBD.php";
 

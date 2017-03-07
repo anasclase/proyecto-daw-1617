@@ -200,7 +200,7 @@ if(isset($_POST['abrirParteLogistica'])){
 }/* PABLO */
 if(isset($_POST['updateHorarioTrabajador'])){
     $_SESSION["dht_semana"]=$_POST["dht_semana"] + 1;
-	
+	Controlador::updateHorarioTrabajador($_POST);
 	header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/updateHorarioTrabajador.php");
 	
 }

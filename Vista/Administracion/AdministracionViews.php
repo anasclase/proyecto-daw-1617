@@ -2582,36 +2582,42 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
         }
 
     public static function updateCentro(){ /*Ganeko*/
-
+	    parent::setOn(true);
+            parent::setRoot(true);
+			
+		$horarioTrabajador = Administracion\Controlador::getAllHoraioTrabajador();
+		$horarios = Administracion\Controlador::getAllHorarios();
 
                 require_once __DIR__ . "/../Plantilla/cabecera.php";
                 ?>
                 <div class="table-responsive col-md-offset-1 col-md-10">
-                    <table class="table table-bordered">
-                        <tr>
-                            <th>CENTRO</th>
-                            <th>LOCALIZACIÓN</th>
-                            <th>EMPRESA</th>
-                        </tr>
+                <table class="table table-bordered">
+                    <tr>
+                        <th>TRABAJADOR</th>
+                        <th>SEMANA</th>
+                        <th>HORARIO</th>
+						<th>ACCIÓN</th>
+                    </tr>
+                    
                         <form method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
+						
                             <tr>
-                                <?php
-                                $centro = Administracion\Controlador::getCentroId($_SESSION['id']);
-                                ?>
-                                <td><input type="text" name="nombre" value="<?php echo $centro->getNombre(); ?>"></td>
-                                <td><input type="text" name="nif" value="<?php echo $centro->getLocalizacion(); ?>"></td>
-                                <td><input type="text" name="nif" value="<?php echo $centro->getEmpresa()->getNombre(); ?>"></td>
-                                <input type="hidden" name="id" value="<?php echo $_SESSION['id']; ?>">
+							<?php $_SESSION["dniht"]=$horarioTrabajador[$_SESSION["dht_semana"]]->getTrabajador()->getDni(); $_SESSION["semht"]=$horarioTrabajador[$_SESSION["dht_semana"]]->getNumeroSemana();?>
+                                <td><?php echo $horarioTrabajador[$_SESSION["dht_semana"]]->getTrabajador()->getDni(); ?></td>
+                                <td><?php echo $horarioTrabajador[$_SESSION["dht_semana"]]->getNumeroSemana(); ?></td>
+                               <!-- PABLO --> <td><select class='form-control' name="horario"><?php $x=1; foreach ($horarios as $hor){?><option value="<?php echo $x; ?>"><?php echo $hor->getTipo();?></option><?php $x++; } ?></select>
+							    <td><button type="submit" name="updateT3" value="Editar"
+                                            style="border: none; background: none;"><span
+                                            class="glyphicon glyphicon-edit"
+                                            style="color:blue; font-size: 1.5em"></span></td>
                             </tr>
-                    </table>
-                </div>
-                    <div class="col-md-10 col-md-offset-1"><!-- Ganeko -->
-                        <div class="pull-right">
-                            <input class="btn btn-primary" type="submit" name="editarCentro" value="Guardar">
-                            <input class="btn btn-warning" type="submit" name="volver" value="Volver">
-                        </div>
-                    </div>
-                </form>
+                            
+                        
+                        </table><div class="col-md-10 col-md-offset-1"><!-- Ganeko -->
+								<input class="btn btn-warning pull-right" type="submit" name="volver" value="Volver">
+								
+							</div></form>
+            </div>
                 <?php
 
             require_once __DIR__ ."/../Plantilla/pie.php";

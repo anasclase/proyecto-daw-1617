@@ -2706,7 +2706,16 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                                 ?>
                                 <td><input type="text" name="nombre" value="<?php echo $vehiculo->getMatricula(); ?>"></td>
                                 <td><input type="text" name="localizacion" value="<?php echo $vehiculo->getMarca(); ?>"></td>
-                                <td><?php echo $vehiculo->getCentro()->getNombre(); ?></td>
+                                <td><select name="centro">
+                                    <?php
+                                        $centros = Administracion\Controlador::getAllCentros();
+                                        for($x = 0; $x < count($centros); $x++){
+                                            echo "<option value='".$centros[$x]->getId()."'>".$centros[$x]->getNombre()."</option>";
+                                        }
+                                    ?>
+
+                                </select>
+                                </td>
                                 <input type="hidden" name="id" value="<?php echo $_SESSION['id']; ?>">
                             </tr>
                     </table>

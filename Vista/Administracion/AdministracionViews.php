@@ -2531,11 +2531,8 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                                             class="glyphicon glyphicon-edit"
                                             style="color:blue; font-size: 1.5em"></span></td>
                             </tr>
-                            <input type="hidden" value="<?php echo $horario->getId() ?>" name="id">
                         </form>
-                        <?php
-                    }
-                    ?>
+
                 </table>
             </div>
             <form method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
@@ -2548,8 +2545,8 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
 		require_once __DIR__ ."/../Plantilla/pie.php";
 		
 	}
-
-    public static function updateEmpresa(){ /*Ganeko*/
+/*Ganeko*/
+    public static function updateEmpresa(){
 
 
                 require_once __DIR__ . "/../Plantilla/cabecera.php";

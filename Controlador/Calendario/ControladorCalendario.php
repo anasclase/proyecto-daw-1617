@@ -230,6 +230,24 @@ switch ($_GET["accion"])
 
         break;
     }
+
+    case "insertarCalIndiv":{
+
+        $fechas =  $_GET["fechas"];
+        for($x=0;$x<count($fechas);$x++){
+            $vacacionesTrab = new \Modelo\Base\VacacionesTrabajadores(null,$_GET["dniTrabajador"],$fechas[$x]." 00:00:00",$fechas[$x]." 00:00:00",$fechas[$x]." 23:59:59",$_GET["calendario_id"],$_GET["estado"]);
+            $query = \Modelo\BD\VacacionesTrabajadoresBD::insertarVacacionesTrabajadores($vacacionesTrab);
+        }
+        if($query){
+            echo "Insertado";
+
+        }else{
+            echo "No Insertado";
+        }
+
+        break;
+    }
+
     case "festivosNacionales":{
         $fechas = $_GET["fechasEnvio"];
         $calendario = $_GET["calendario"];

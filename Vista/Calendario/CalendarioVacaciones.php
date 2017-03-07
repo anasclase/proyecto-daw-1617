@@ -55,8 +55,9 @@ abstract class CalendarioVac extends Plantilla\Views
                 </h4><br/>
                 <div style="visibility: hidden"  id="fecha1">
                     <label id="diasNacionales"></label><br>
-                    <input type="date" id="calendarioNacionales" onchange="guardarOpcion()">
-                    <input type="button" value="Guardar" id="botonNacionales" onclick="guardarFecha()">
+                    <input type="date" id="calendarioNacionales" onchange="guardarOpcion()" min="<?php echo date('Y-m-d') ?>" >
+                    <input type="button" value="Añadir" id="botonNacionales" onclick="guardarFecha()"><br/>
+                    <input type="button" value="Guardar" onclick="guardarFechas()">
                 </div>
                 <div style="visibility: hidden"  id="fecha2">
                     <label for="fInicial"> Desde : </label>  <input type="date" id="fInicial" min="<?php echo date('Y-m-d') ?>" />
@@ -84,17 +85,23 @@ abstract class CalendarioVac extends Plantilla\Views
 
 
         <script>
+            var fechas = [];
 
-
-
-
+            /**
+             * Para que el minimo del segundo campo de fechas sea igual que el primer campo
+             *
+             * Anas
+            **/
             $("#fInicial").change(function () {
 
                 $("#fFinal").attr("min", $("#fInicial").val());
 
             });
-
-
+            /**
+             * Insertar en la base de datos el rango de fechas
+             *
+             * Anas
+             * **/
 
             $("#rangoDias").click(function () {
                 var fIni = [];
@@ -118,12 +125,12 @@ abstract class CalendarioVac extends Plantilla\Views
                             fFin = generarRango($("#fInicial").val(),$("#fFinal").val(),"fin");
 
 
-                            var estado = "S";
+                            var estado = "A";
 
                             $.ajax({
 
                                 type: "GET",
-                                url: "<?php // echo parent::getUrlRaiz()?>/Controlador/Calendario/ControladorCalendario.php",
+                                url: "<?php echo parent::getUrlRaiz()?>/Controlador/Calendario/ControladorCalendario.php",
                                 data: { dniTrabajador:dniTrabajador , fecha:fecha , horaInicio:fIni , horaFin:fFin , calendario_id:ano ,estado:estado, accion:"insertarCal"}
 
                             })
@@ -144,8 +151,44 @@ abstract class CalendarioVac extends Plantilla\Views
 
             });
 
+            /**
+             * Dias sueltos
+             *
+             * Anas
+             * */
+            function guardarFechas() {
+                if(fechas.length == 0){
+                    alert("No puedes dejar los campos sin seleccionar");
+                }else{
 
-            var opc = false;
+                    var dniTrabajador = $("#trabajador option:selected").val();
+
+                    var d = new Date();
+                    var ano = d.getFullYear();
+
+                    var estado = "A";
+
+                    try{
+                        $.ajax({
+                            type: "GET",
+                            url: "<?php echo parent::getUrlRaiz()?>/Controlador/Calendario/ControladorCalendario.php",
+                            data: {dniTrabajador:dniTrabajador , fechas:fechas , calendario_id:ano ,estado:estado, accion:"insertarCalIndiv"}
+                        })
+                            .done(function(respuesta) {
+                                alert(respuesta);
+
+                            })
+                            .fail(function() {
+                                alert( "error" );
+                            });
+                    }catch(err){
+                        alert(err);
+                    }
+
+                }
+            }
+
+
 
             /**
              * Calcular en rango de fechas y guardarlos en un array , para despues transformarlo en el formato YYYY-MM-DD HH:MM:SS
@@ -207,7 +250,7 @@ abstract class CalendarioVac extends Plantilla\Views
             function guardarOpcion() {
                 opc = true;
             }
-            var fechas = [];
+
 
 
             $("input[name='rangoVacaciones']").change(function () {
@@ -252,6 +295,7 @@ abstract class CalendarioVac extends Plantilla\Views
             }
 
             }
+
 
             function borrarFecha(fecha) {
                 fecha = fechas[fecha];

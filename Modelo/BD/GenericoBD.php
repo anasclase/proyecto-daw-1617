@@ -112,7 +112,7 @@ abstract class GenericoBD
                 return new Base\AusenciaTrabajador($fila['id'], $fila['fecha'], $fila['horaInicio'], $fila['horaFin']);
                 break;
             case "ConvenioAusencias":
-                return new Base\AusenciaTrabajador($fila['id'], $fila['fecha']);
+                return new Base\ConvenioAusencia($fila['id'], $fila['fecha']);
                 break;
             case "HorasConvenio":
                 return new Base\HoraConvenio($fila['id'], $fila['horasAnual'], $fila['denominacion']);

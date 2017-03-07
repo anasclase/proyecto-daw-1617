@@ -3,6 +3,7 @@
 <!--[if IE 7 ]><html class="ie ie7" lang="es"> <![endif]-->
 <!--[if IE 8 ]><html class="ie ie8" lang="es"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!--><html lang="es"> <!--<![endif]-->
+<?php require_once __DIR__.'/../Produccion/CalendarioViews.php'?>
 
 <head>
 
@@ -69,13 +70,12 @@
                 <?php if(!parent::isRoot()){
                     ?>
                     <li><a href="<?php echo parent::getUrlRaiz()?>/Vista/Horario/Horario.php">Horario Semanal</a></li>
-                    <li><a href="<?php echo parent::getUrlRaiz()?>/Vista/Calendario/Calendario.php">Vacaciones/Incidencias</a></li> <!--Cambio David-->
+                    <li><a href="<?php echo parent::getUrlRaiz()?>/Vista/Calendario/Vacaciones.php">Vacaciones/Incidencias</a></li> <!--Cambio David-->
                     <li><a href="<?php echo parent::getUrlRaiz()?>/Vista/Calendario/Calendario.php">Partes</a></li>
                 <?php
                 }
                 ?>
                 <?php
-                /* prueba */
                 if(parent::isRoot()){
                     $trabajador = unserialize($_SESSION['trabajador']);
                     $perfil = get_class($trabajador);
@@ -95,6 +95,30 @@
                     ?>
                     <li><a href="<?php echo parent::getUrlRaiz().$urlListas?>">Gestionar tablas</a></li>
                     <li><a href="<?php echo parent::getUrlRaiz().$urlPartes?>">Gestionar partes</a></li>
+                    <!--
+                        Generar el desplegable para Vacaciones
+                        Anas
+                    -->
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
+                            Vacaciones/Incidencias
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="<?php echo parent::getUrlRaiz()?>/Vista/Calendario/Vacaciones.php"> Vacaciones </a> </li>
+                            <li><a href="<?php echo parent::getUrlRaiz()?>/Vista/Administracion/insertIncidencia.php">Incidencias</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown"> <!--Cambio Aitor-->
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
+                            <span>Gestionar Calendarios</span> <!--Cambio Aitor-->
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="<?php echo parent::getUrlRaiz()?>/Vista/Calendario/GestionarCalendario.php">Gestionar Calendario</a></li>   <!--Cambio Aitor-->
+                            <li><a href="<?php echo parent::getUrlRaiz()?>/Vista/Calendario/GestionarFestivosNacionales.php">Gestionar Festivos Nacionales</a></li>  <!--Cambio Aitor-->
+                            <li><a href="<?php echo parent::getUrlRaiz()?>/Vista/Calendario/GestionarFestivosCentros.php">Gestionar Festivos Centros</a></li>  <!--Cambio Aitor-->
+                            <li><a href="<?php echo parent::getUrlRaiz()?>/Vista/Calendario/GestionarCalendariosIndividuales.php">Gestionar Calendarios Individuales</a></li>  <!--Cambio Aitor-->
+                        </ul>
+                    </li>
                     <?php
                 }
                 ?>

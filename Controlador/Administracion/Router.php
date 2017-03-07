@@ -33,12 +33,18 @@ if(isset($_POST['eliminarEmpresa'])){
     //headerLocation a vista Eliminar
     header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/deleteEmpresa.php");
 }
+if(isset($_POST['editarEmpresa'])){
+    $empresa = Controlador::buscarEmpresaId($_POST);
+    $_SESSION["empresaEdit"] = $empresa;
+    //headerLocation a vista Editar
+    header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/deleteEmpresa.php");
+}
 if(isset($_POST['addEstado'])){
     Controlador::AddEstado($_POST);
     header($gestionListas);
 }
 if(isset($_POST['eliminarEstado'])){
-    echo "hola";    Controlador::deleteEstado($_POST);
+    Controlador::deleteEstado($_POST);
     //headerLocation a vista Eliminar
     header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/deleteEstado.php");
 }
@@ -106,7 +112,7 @@ if(isset($_POST['añadirHorarioTrabajador'])){
     Controlador::addHorarioTrabajador($_POST);
     header($gestionListas);
 }
-if(isset($_POST['aplicarFiltrosHorarioTrabajador'])){
+if(isset($_POST['aplicarFiltrosHorarioTrabajador'])){ //Ibai
     header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/deleteHorarioTrabajador.php");
 }
 if(isset($_POST['borrarHorarioTrabajador'])){
@@ -181,6 +187,17 @@ if(isset($_POST['abrirParteProduccion'])){
 if(isset($_POST['abrirParteLogistica'])){
     Controlador::updateAbrirParteLogistica($_POST);
     header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/Administracion.php?cod=2");
+
+}/* PABLO */
+if(isset($_POST['updateHorarioTrabajador'])){
+	
+	Controlador::updateHorarioTrabajador($_POST);
+	header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/updateHorarioTrabajador.php");
+	
+}
+if(isset($_POST["insertarIncidencia"])){ //David
+    Controlador::insertarIncidencia($_POST);
+
 }
 /*
 if(isset($_POST['dni']) and !isset($_POST['semanas'])) {
@@ -311,9 +328,6 @@ if(isset($_POST['dni']) and !isset($_POST['semanas'])) {
 */
 if(isset($_POST['volver'])){
         header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/Administracion.php?cod=1");
-}
-if(isset($_POST['volver2'])){
-    header("Location: ".Views::getUrlRaiz()."/Vista/Calendario/Calendario.php");
 }
 
 

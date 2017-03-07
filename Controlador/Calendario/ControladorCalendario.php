@@ -53,7 +53,7 @@ switch ($_GET["accion"])
 	case "generar_calendario":
 	{
 		$fecha_calendario=array();
-		if ($_GET["mes"]=="" || $_GET["anio"]=="") 
+		if ($_GET["mes"]=="" || $_GET["anio"]=="")
 		{
 			$fecha_calendario[1]=intval(date("m"));
 			if ($fecha_calendario[1]<10) $fecha_calendario[1]="0".$fecha_calendario[1];
@@ -146,11 +146,11 @@ switch ($_GET["accion"])
 						echo "'>";
 						
 						/* recorremos el array de eventos para mostrar los eventos del d�a de hoy */
-						if ($hayevento>0) echo "<a href='#' data-evento='#evento".$dia_actual."' class='modal' rel='".$fecha_completa."' title='Hay ".$hayevento." eventos'>".$dia."</a>";
-						else echo "$dia";
+						/*if ($hayevento>0) echo "<a href='#' data-evento='#evento".$dia_actual."' class='modal' rel='".$fecha_completa."' title='Hay ".$hayevento." eventos'>".$dia."</a>";
+						else echo "$dia";*/
 						
 						/* agregamos enlace a nuevo evento si la fecha no ha pasado */
-						if (date("Y-m-d")<=$fecha_completa && es_finde($fecha_completa)==false) echo "<a href='#' data-evento='#nuevo_evento' title='Agregar un Evento el ".fecha($fecha_completa)."' class='add agregar_evento' rel='".$fecha_completa."'>&nbsp;</a>";
+						//if (date("Y-m-d")<=$fecha_completa && es_finde($fecha_completa)==false) echo "<a href='#' data-evento='#nuevo_evento' title='Agregar un Evento el ".fecha($fecha_completa)."' class='add agregar_evento' rel='".$fecha_completa."'>&nbsp;</a>";
 						
 						echo "</td>";
 						$dia+=1;
@@ -164,6 +164,9 @@ switch ($_GET["accion"])
 			$mesanterior=date("Y-m-d",mktime(0,0,0,$fecha_calendario[1]-1,01,$fecha_calendario[0]));
 			$messiguiente=date("Y-m-d",mktime(0,0,0,$fecha_calendario[1]+1,01,$fecha_calendario[0]));
 			echo "<p class='toggle'>&laquo; <a href='#' rel='$mesanterior' class='anterior'>Mes Anterior</a> - <a href='#' class='siguiente' rel='$messiguiente'>Mes Siguiente</a> &raquo;</p>";
+
+
+
 		break;
 	}
 

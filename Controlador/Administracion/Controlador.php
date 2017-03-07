@@ -370,7 +370,13 @@ abstract class Controlador{
     public static function updateValidarParteLogistica($datos){
         BD\PartelogisticaBD::updateValidar($datos['id']);
     }
-
+    public static function buscarEmpresaId($id){
+        $empresa =  BD\EmpresaBD::getEmpresaByID($id);
+        return $empresa;
+    }
+    /*public static function updateEmpresa($datos){
+        BD\EmpresaBD::updateEmpresa($datos['id']);
+    }*/
     public static function guardarParteProduccion($datos)
     {
         $parte = unserialize($_SESSION['parte']);
@@ -569,6 +575,10 @@ abstract class Controlador{
         $parte = BD\ParteProduccionBD::getParteById($datos['id']);
 
         $_SESSION['parte'] = serialize($parte);
+
+    }/* PABLO */
+	public static function updateHorarioTrabajador($datos){
+
     }
     public static function getCentros($e = null){
         return BD\CentroBD::getCentrosByEmpresas($e);
@@ -595,13 +605,22 @@ abstract class Controlador{
         return $mensaje;
     }
 
-    public static function rellenarCalendarios(){ //Ibai
+    public static function rellenarCalendarios()
+    { //Ibai
         $calendarios = Controlador::getAllCalendarios();
         $mensaje = '<option value="" disabled  selected="selected">Elige</option>';
 
-        for($x=0;$x<count($calendarios);$x++){
-            $mensaje.='<option value="'. $calendarios[$x]->getId().'">'.$calendarios[$x]->getId().'</option>';
+        for ($x = 0; $x < count($calendarios); $x++) {
+            $mensaje .= '<option value="' . $calendarios[$x]->getId() . '">' . $calendarios[$x]->getId() . '</option>';
         }
         return $mensaje;
     }
+
+    //David
+    public static function insertarIncidencia($datos){
+
+
+
+    }
+
 }

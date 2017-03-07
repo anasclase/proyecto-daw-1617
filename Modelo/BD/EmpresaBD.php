@@ -63,4 +63,15 @@ abstract class EmpresaBD extends GenericoBD{
 
     }
 
+    /*public static function updateEmpresa($empresaId){
+        $con = parent::conectar();
+
+        $query = "UPDATE ".self::$tabla." SET horasAnual =".$horas->getHorasAnual()." WHERE id =".$horas->getId();
+
+        $rs = mysqli_query($con, $query) or die(mysqli_error($con));
+
+        parent::desconectar($con);
+    }*/
+
+
 }

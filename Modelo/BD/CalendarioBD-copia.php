@@ -7,7 +7,7 @@ abstract class CalendarioBD extends GenericoBD{
 
     private static $tabla = "calendario";
 
-    public static function getCalendarioById($id){
+    public static function getCalendarioById($id = null){
         $con = parent::conectar();
 
         if($id==null)
@@ -19,6 +19,7 @@ abstract class CalendarioBD extends GenericoBD{
         $calendario = parent::mapear($rs, "Calendario");
 
         parent::desconectar($con);
+
 
         return $calendario;
     }

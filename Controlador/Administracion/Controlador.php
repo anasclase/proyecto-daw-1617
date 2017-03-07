@@ -580,12 +580,45 @@ abstract class Controlador{
 	public static function updateHorarioTrabajador($datos){
 		BD\HorarioTrabajadorBD::updateHorarioTrabajador($datos["horario"], $_SESSION["dniht"] , $_SESSION["semht"]);
     }
-		
-		
-		
+    public static function getCentros($e = null){
+        return BD\CentroBD::getCentrosByEmpresas($e);
+    }
 
+    public static function getAllCalendarios(){
+        return BD\CalendarioBD::getAll();
+    }
 
-    
+    public static function rellenarEmpresas(){ //Ibai
+        $empresas = Controlador::getAllEmpresas();
+        $mensaje = '<option value="" disabled  selected="selected">Elige</option>';
+
+        for ($x = 0; $x < count($empresas); $x++) {
+            $mensaje.='<option value="'. $empresas[$x]->getId().'">'.$empresas[$x]->getNombre().'</option>';
+        }
+
+        return $mensaje."</select>";
+    }
+
+    public static function rellenarCentros($id = null){ //Ibai
+        $centros = Controlador::getCentros([$id]);
+        $mensaje = '<option value="" disabled  selected="selected">Elige</option>';
+
+        for($x=0;$x<count($centros);$x++){
+            $mensaje.='<option value="'. $centros[$x]->getId().'">'.$centros[$x]->getNombre().'</option>';
+        }
+        return $mensaje;
+    }
+
+    public static function rellenarCalendarios()
+    { //Ibai
+        $calendarios = Controlador::getAllCalendarios();
+        $mensaje = '<option value="" disabled  selected="selected">Elige</option>';
+
+        for ($x = 0; $x < count($calendarios); $x++) {
+            $mensaje .= '<option value="' . $calendarios[$x]->getId() . '">' . $calendarios[$x]->getId() . '</option>';
+        }
+        return $mensaje;
+    }
 
     //David
     public static function insertarIncidencia($datos){

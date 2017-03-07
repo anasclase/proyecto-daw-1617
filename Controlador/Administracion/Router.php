@@ -124,6 +124,9 @@ if(isset($_POST['añadirHorarioTrabajador'])){
     Controlador::addHorarioTrabajador($_POST);
     header($gestionListas);
 }
+if(isset($_POST['aplicarFiltrosHorarioTrabajador'])){ //Ibai
+    header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/deleteHorarioTrabajador.php");
+}
 if(isset($_POST['borrarHorarioTrabajador'])){
     Controlador::DeleteHorarioTrabajador($_POST);
     header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/deleteHorarioTrabajador.php");
@@ -370,5 +373,14 @@ if (isset($_POST["semanas"]))
     ?>
 <div><label>Todos</label><input type="checkbox" name="todos" id="todos" onclick="seleccionar()"/></div>
 <?php
+}
+if (isset($_POST["empresas"])) { //Ibai
+    echo Controlador::rellenarEmpresas();
+}
+if (isset($_POST["centros"])) { //Ibai
+    echo Controlador::rellenarCentros($_POST["centros"]);
+}
+if (isset($_POST["calendarios"])) { //Ibai
+    echo Controlador::rellenarCalendarios();
 }
 ?>

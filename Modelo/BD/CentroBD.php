@@ -176,12 +176,14 @@ abstract class CentroBD extends GenericoBD{
     public static function updateCentro($datos){
         $con = parent::conectar();
 
-        $empresa = new Centro($datos["id"], $datos["nombre"], $datos["nif"], null);
+        $centro = new Centro($datos["id"], $datos["nombre"], $datos["localizacion"], null, null, null, null);
 
-        $query = "UPDATE ".self::$tabla." SET nombre ='".$empresa->getNombre()."', nif ='".$empresa->getNif()."' WHERE id ='".$empresa->getId()."'";
+        $query = "UPDATE ".self::$tabla." SET nombre ='".$centro->getNombre()."', localizacion ='".$centro->getLocalizacion()."' WHERE id ='".$centro->getId()."'";
 
         $rs = mysqli_query($con, $query) or die(mysqli_error($con));
 
         parent::desconectar($con);
     }
+
+
 }

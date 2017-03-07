@@ -374,8 +374,18 @@ abstract class Controlador{
         $centro = BD\CentroBD::getCentrosById($id);
         return $centro;
     }/* Ganeko */
+    public static function getVehiculoId($id){
+        $vehiculo = BD\VehiculoBD::getVehiculosById($id);
+        return $vehiculo;
+    }
     public static function updateEmpresa($datos){
         BD\EmpresaBD::updateEmpresa($datos);
+    }
+    public static function updateCentro($datos){
+        BD\CentroBD::updateCentro($datos);
+    }
+    public static function updateVehiculo($datos){
+        BD\CentroBD::updateVehiculo($datos);
     }
     public static function guardarParteProduccion($datos)
     {

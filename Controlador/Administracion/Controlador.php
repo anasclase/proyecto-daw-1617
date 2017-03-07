@@ -362,8 +362,7 @@ abstract class Controlador{
         AdministracionViews::viewParteProd($parte,$estado);
 
     }
-    public static function updateValidarParteLogistica($datos)
-    {
+    public static function updateValidarParteLogistica($datos){
         BD\PartelogisticaBD::updateValidar($datos['id']);
     }
     /* Ganeko */

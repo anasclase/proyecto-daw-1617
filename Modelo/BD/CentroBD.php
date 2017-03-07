@@ -42,6 +42,35 @@ abstract class CentroBD extends GenericoBD{
         return $centros;
 
     }
+
+    public static function getCentrosByEmpresas($empresas = null){
+
+        $con = parent::conectar();
+
+        if($empresas!=null && $empresas[0]!=""){
+            $query = "SELECT * FROM ".self::$tabla. " WHERE idEmpresa IN (";
+
+            for($i=0; $i<count($empresas); $i++){
+                if($i == 0){
+                    $query .= $empresas[$i];
+                }else{
+                    $query .= ", " . $empresas[$i];
+                }
+            }
+            $query .= ")";
+        }
+        else{
+            $query = "SELECT * FROM ".self::$tabla;
+        }
+        $rs = mysqli_query($con, $query) or die("Error getCentrosByEmpresas");
+        $centros = parent::mapearArray($rs, "Centro");
+
+        parent::desconectar($con);
+
+        return $centros;
+
+    }
+
     public static function getCentrosById($centroId){
 
         $con = parent::conectar();

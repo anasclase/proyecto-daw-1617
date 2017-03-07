@@ -85,50 +85,58 @@ abstract class CalendarioVac extends Plantilla\Views
 
         <script>
 
+
+
+
             $("#fInicial").change(function () {
 
                 $("#fFinal").attr("min", $("#fInicial").val());
 
             });
 
-            $("#rangoDias").click(function () {
 
+
+            $("#rangoDias").click(function () {
+                var fIni = [];
+                var fFin = [];
                 try{
                     if($("#nomEmpresa").val()!="-1"){
-                        var fInicial = $("#fInicial").val();
-                        var fFinal = $("#fFinal").val();
 
-                        var dniTrabajador = $("#trabajador option:selected").val();
 
-                        var d = new Date();
-                        var ano = d.getFullYear();
-                        var fecha = generarFecha();
 
-                        var horaInicio = fInicial + " 00:00:00";
-                        var horaFin = fFinal + " 23:59:59";
+                            var fInicial = $("#fInicial").val();
+                            var fFinal = $("#fFinal").val();
 
-                        var estado = "S";
-                        $.ajax({
+                            var dniTrabajador = $("#trabajador option:selected").val();
 
-                            type: "GET",
-                            url: "<?php echo parent::getUrlRaiz()?>/Controlador/Calendario/ControladorCalendario.php",
-                            data: { dniTrabajador:dniTrabajador , fecha:fecha , horaInicio:horaInicio , horaFin:horaFin , calendario_id:ano ,estado:estado, accion:"insertarCal"}
-                        })
-                            .done(function(respuesta) {
-                                alert(respuesta);
+                            var d = new Date();
+                            var ano = d.getFullYear();
+                            var fecha = generarFecha();
+
+                            fIni = generarRango($("#fInicial").val(),$("#fFinal").val(),"inicio");
+
+                            fFin = generarRango($("#fInicial").val(),$("#fFinal").val(),"fin");
+
+
+                            var estado = "S";
+
+                            $.ajax({
+
+                                type: "GET",
+                                url: "<?php // echo parent::getUrlRaiz()?>/Controlador/Calendario/ControladorCalendario.php",
+                                data: { dniTrabajador:dniTrabajador , fecha:fecha , horaInicio:fIni , horaFin:fFin , calendario_id:ano ,estado:estado, accion:"insertarCal"}
 
                             })
-                            .fail(function() {
-                                alert( "error" );
-                            });
+                                .done(function(respuesta) {
+                                    alert(respuesta);
+
+                                })
+                                .fail(function() {
+                                    alert( "error" );
+                                });
                     }else{
                         alert("Selecciona el nombre de la empresa")
                     }
-
-
-                    //generarRango($("#fInicial").val(),$("#fFinal").val());
-
-
 
                 }catch (err){
                     alert(err);
@@ -139,7 +147,14 @@ abstract class CalendarioVac extends Plantilla\Views
 
             var opc = false;
 
-            function generarRango(fInicial,fFinal) {
+            /**
+             * Calcular en rango de fechas y guardarlos en un array , para despues transformarlo en el formato YYYY-MM-DD HH:MM:SS
+             *
+             *  Anas e Iker
+             **/
+            function generarRango(fInicial,fFinal,tiempo) {
+                var fIni = [];
+                var fFin = [];
                 var dI = new Date(fInicial);
                 var dF = new Date(fFinal);
 
@@ -155,9 +170,23 @@ abstract class CalendarioVac extends Plantilla\Views
 
                 }
 
-
                 for(var x = 0; x < fechas.length; x++){
-                    alert(fechas[x]);
+
+                    var dia = fechas[x].getDate();
+                    var mes = fechas[x].getMonth()+1;
+                    var ano = fechas[x].getFullYear();
+
+                    if(tiempo=="inicio"){
+                        fIni.push(ano+"-"+mes+"-"+dia+" 00:00:00");
+                    }else{
+                        fFin.push(ano+"-"+mes+"-"+dia+" 23:59:59");
+                    }
+                }
+
+                if(tiempo=="inicio"){
+                    return fIni;
+                }else{
+                    return fFin;
                 }
 
             }
@@ -179,6 +208,7 @@ abstract class CalendarioVac extends Plantilla\Views
                 opc = true;
             }
             var fechas = [];
+
 
             $("input[name='rangoVacaciones']").change(function () {
                 if($(this).val()=="rango"){

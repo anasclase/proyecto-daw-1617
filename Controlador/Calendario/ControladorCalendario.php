@@ -203,30 +203,23 @@ switch ($_GET["accion"])
     /**
      * Las fechas tienen que estar en DateTime segun la Base de datos  así que las convierto
      *
+     *
      * Inserto en la Base de Datos las vacaciones
      *
      * Anas
      */
     case "insertarCal":{
 
-
-
-        $time = strtotime($_GET["horaInicio"]);
-        $fechaInicio = date('Y-m-d H:i:s',$time);
-
-        $time2 = strtotime($_GET["horaFin"]);
-        $fechaFin = date('Y-m-d H:i:s',$time2);
-
         $time3 = strtotime($_GET["fecha"]);
         $fecha = date('Y-m-d H:i:s',$time3);
-
-
-        $vacacionesTrab = new \Modelo\Base\VacacionesTrabajadores(null,$_GET["dniTrabajador"],$fecha,$fechaInicio,$fechaFin,$_GET["calendario_id"],$_GET["estado"]);
-
-        $query = \Modelo\BD\VacacionesTrabajadoresBD::insertarVacacionesTrabajadores($vacacionesTrab);
+        for($x=0;$x<count($_GET["horaInicio"]);$x++){
+            $vacacionesTrab = new \Modelo\Base\VacacionesTrabajadores(null,$_GET["dniTrabajador"],$fecha,$_GET["horaInicio"][$x],$_GET["horaFin"][$x],$_GET["calendario_id"],$_GET["estado"]);
+            $query = \Modelo\BD\VacacionesTrabajadoresBD::insertarVacacionesTrabajadores($vacacionesTrab);
+        }
 
         if($query){
             echo "Insertado";
+
         }else{
             echo "No Insertado";
         }

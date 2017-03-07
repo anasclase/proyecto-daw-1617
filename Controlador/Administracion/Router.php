@@ -185,11 +185,9 @@ if(isset($_POST['updateHorarioTrabajador'])){
 	Controlador::updateHorarioTrabajador($_POST);
 	header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/updateHorarioTrabajador.php");
 	
-}
-if(isset($_POST["insertarIncidencia"])){ //David
+}//David
+if(isset($_POST["insertarIncidencia"])){
     Controlador::insertarIncidencia($_POST);
-    header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/insertIncidencia.php");
-
 }
 /*
 if(isset($_POST['dni']) and !isset($_POST['semanas'])) {

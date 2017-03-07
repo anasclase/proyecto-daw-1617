@@ -42,6 +42,7 @@ require_once __DIR__ .'/../../Modelo/Base/HorariosTrabajadoresClass.php';
 require_once __DIR__."/../../Modelo/Base/FestivoClass.php";
 require_once __DIR__."/../../Modelo/Base/ViajeClass.php";
 require_once __DIR__."/../../Vista/Administracion/AdministracionViews.php";
+require_once __DIR__."/../../Vista/Administracion/Incidencias.php";
 
 
 
@@ -576,19 +577,23 @@ abstract class Controlador{
 		
 	}
 
-
-
     //David
     public static function insertarIncidencia($datos){
 
         $fecha = getdate();
-        $fecha2 = $fecha["mday"]."/".$fecha["mon"]."/".$fecha["year"];
+        $fecha2 = date("Y-m-d");
 
-        $incidencia = new AusenciaTrabajador(null, $fecha2, "00:00", "00:00", $datos["dni"], $datos["motivo"], 2017);
+        $incidencia = new AusenciaTrabajador(null, $fecha2, "00:00", "00:00", $datos["dni"], $datos["motivo"], $fecha["year"]);
 
-        $prueba = \Modelo\BD\AusenciaTrabajadorBD::setAusencias($incidencia);
+        $res = \Modelo\BD\AusenciaTrabajadorBD::setAusencias($incidencia);
 
-        echo $prueba;
+        if($res != 1){
+            echo "<script>alert('Error al introducir la incidencia. Es posible que el DNI no sea correcto.')</script>";
+            \Vista\Administracion\Incidencias::mostrar();
+        }else{
+            echo "<script>alert('Incidencia introducida correctamente')</script>";
+            \Vista\Administracion\Incidencias::mostrar();
+        }
     }
 
     // IRUNE

@@ -578,7 +578,7 @@ abstract class Controlador{
 
     }/* PABLO */
 	public static function updateHorarioTrabajador($datos){
-		BD\HorarioTrabajadorBD::updateHorarioTrabajador($datos["horario"], $_SESSION["dniht"] , $_SESSION["semht"]);
+
     }
 		
 		

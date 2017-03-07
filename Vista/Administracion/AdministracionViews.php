@@ -2016,11 +2016,11 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                                 <td><?php echo $prod->getEstado()->getTipo(); ?></td>
                                 <td>
 
-                            <button type="submit" name="listarParteLog"
+                            <button type="submit" name="listarParteProd"
                                     style="border: none; background: none"><span
                                     class="glyphicon glyphicon-list" style="color:blue; font-size: 1.5em">
                             </button>
-                            <button type="submit" name="modificarParteLog"
+                            <button type="submit" name="modificarParteProd"
                                             style="border: none; background: none"><span
                                             class="glyphicon glyphicon-edit" style="color:blue; font-size: 1.5em">
                                     </button>
@@ -2031,11 +2031,11 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                             <?php
                             if ($prod->getEstado()->getTipo() == "Cerrado") {
                                 ?>
-                                <button type="submit" name="abrirParteLogistica"
+                                <button type="submit" name="abrirParteProduccion"
                                                 style="border: none; background: none"><span
                                                 class="glyphicon glyphicon-open-file" style="color:blue; font-size: 1.5em">
                                         </button>
-                                        <button type="submit" name="validarParteLogistica"
+                                        <button type="submit" name="validarParteProduccion"
                                                 style="border: none; background: none"><span
                                                 class="glyphicon glyphicon-ok"
                                                 style="color:green; font-size: 1.5em"></span></button>

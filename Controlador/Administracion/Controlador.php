@@ -573,7 +573,7 @@ abstract class Controlador{
 
     }/* PABLO */
 	public static function updateHorarioTrabajador($datos){
-        
+
     }
 		
 		

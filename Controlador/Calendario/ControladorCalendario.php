@@ -8,8 +8,8 @@ require_once __DIR__."/../../Vista/Calendario/CalendarioVacaciones.php";
 require_once __DIR__."/../../Vista/Calendario/CalendarioGestionarCalendariosIndividuales.php";
 require_once __DIR__."/../../Vista/Calendario/AsignarCalendarios.php";
 require_once __DIR__."/../../Modelo/BD/FestivoBD.php";
-require_once __DIR__."/../../Modelo/Base/FestivosNacionalClass.php";
-require_once __DIR__."/../../Modelo/BD/FestivoNacionalBD.php";
+require_once __DIR__."/../../Modelo/Base/FestivoClass.php";
+require_once __DIR__."/../../Modelo/BD/FestivoCentroBD.php";
 
 
 function fecha ($valor)
@@ -250,7 +250,29 @@ switch ($_GET["accion"])
         }
         break;
     }
+    case "festivosCentros":{
+        $fechas = $_GET["fechasEnvio"];
+        $calendario = $_GET["calendario"];
+        $centro = $_GET["centro"];
+        $contador = 0;
 
+        for($x = 0; $x < count($fechas); $x++){
+            $festivoCentro = new \Modelo\Base\Festivo(null,$fechas[$x],"festivo centro", $centro, $calendario);
+
+            $query = \Modelo\BD\FestivoCentroBD::insertarCentro($festivoCentro);
+
+            if($query){
+                $contador++;
+            }
+        }
+
+        if($contador == count($fechas)){
+            echo "Centros insertados";
+        }else{
+            echo "Centros no insertados";
+        }
+        break;
+    }
 }
 
 if(isset($_POST["aceptar"])){   //Aitor

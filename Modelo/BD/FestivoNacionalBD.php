@@ -15,8 +15,7 @@ abstract class FestivoNacionalBD extends GenericoBD{
 
         $con = parent::conectar();
 
-        $query = "INSERT INTO insertarFestivos(fecha,motivo,calendario_id) VALUES ('".$festivos->getFecha()."','".$festivos->getMotivo()."','".$festivos->getCalendario()."')";
-
+        $query = "INSERT INTO festivosnacional(fecha,motivo,calendario_id) VALUES ('".$festivos->getFecha()."','".$festivos->getMotivo()."','".$festivos->getCalendario()."')";
 
         $rs = mysqli_query($con, $query) or die(mysqli_error($con));
 

@@ -9,6 +9,7 @@ require_once __DIR__."/../../Vista/Calendario/CalendarioGestionarCalendariosIndi
 require_once __DIR__."/../../Vista/Calendario/AsignarCalendarios.php";
 require_once __DIR__."/../../Modelo/BD/FestivoBD.php";
 require_once __DIR__."/../../Modelo/Base/FestivosNacionalClass.php";
+require_once __DIR__."/../../Modelo/BD/FestivoNacionalBD.php";
 
 
 function fecha ($valor)
@@ -234,7 +235,9 @@ switch ($_GET["accion"])
 
         for($x = 0; $x < count($fechas); $x++){
             $festivoNacional = new \Modelo\Base\FestivosNacional(null,$fechas[$x],"festivo nacional",$calendario);
+
             $query = \Modelo\BD\FestivoNacionalBD::insertarFestivos($festivoNacional);
+
             if($query){
                 $contador++;
             }

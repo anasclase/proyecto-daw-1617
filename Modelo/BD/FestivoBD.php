@@ -60,7 +60,7 @@ abstract class FestivoBD extends GenericoBD
         $fila=mysqli_fetch_array($rs);
         $fechasnacionales=array();
         while($fila!=null){
-            array_push($fechasnacionales, $fila);
+            array_push($fechasnacionales, $fila['fecha']);
             $fila=mysqli_fetch_array($rs);
         }
         parent::desconectar($conexion);
@@ -72,12 +72,12 @@ abstract class FestivoBD extends GenericoBD
 
         $conexion = parent::conectar();
 
-        $query="SELECT fecha FROM festivos WHERE calendario_id=".$calendario." AND centro_id=".$idCentro;
+        $query="SELECT fecha FROM festivos WHERE calendario_id=".$calendario." AND centros_id=".$idCentro;
         $rs=mysqli_query($conexion, $query) or die("error add festivocentro");
         $fila=mysqli_fetch_array($rs);
         $fechasnacionales=array();
         while($fila!=null){
-            array_push($fechasnacionales, $fila);
+            array_push($fechasnacionales, $fila['fecha']);
             $fila=mysqli_fetch_array($rs);
         }
         parent::desconectar($conexion);
@@ -88,12 +88,12 @@ abstract class FestivoBD extends GenericoBD
     public static function insertFestivosTrabajador($fechasnacionales, $fechasCentro, $calendario){  //Aitor
         $conexion = parent::conectar();
         for($x=0;$x<count($fechasnacionales);$x++){
-            $query="INSERT INTO vacacionestrabajadores VALUES('".$_SESSION["trabj"]."', '".$fechasnacionales[$x]."', '00:00:00', '00:00:00', ".$calendario.", 'A'";
-            $rs=mysqli_query($conexion, $query) or die("error add vacacionestrabajadores");
+            $query = "INSERT INTO vacacionestrabajadores(dniTrabajador, fecha, horaInicio, horaFin, calendario_id, estado) VALUES ('".$_SESSION["trabj"]."', '".$fechasnacionales[$x]."', '00:00:00', '00:00:00', ".$calendario.", 'A')";
+            $rs=mysqli_query($conexion, $query) or die(mysqli_error($conexion));
         }
         for($x=0;$x<count($fechasCentro);$x++){
-            $query="INSERT INTO vacacionestrabajadores VALUES('".$_SESSION["trabj"]."', '".$fechasCentro[$x]."', '00:00:00', '00:00:00', ".$calendario.", 'A'";
-            $rs=mysqli_query($conexion, $query) or die("error add vacacionestrabajadores");
+            $query="INSERT INTO vacacionestrabajadores(dniTrabajador, fecha, horaInicio, horaFin, calendario_id, estado) VALUES('".$_SESSION["trabj"]."', '".$fechasCentro[$x]."', '00:00:00', '00:00:00', ".$calendario.", 'A')";
+            $rs=mysqli_query($conexion, $query) or die(mysqli_error($conexion));
         }
         parent::desconectar($conexion);
     }

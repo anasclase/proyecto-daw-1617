@@ -40,8 +40,8 @@ abstract class CalendarioGestionarFestivosNacionales extends Plantilla\Views
                     <input type="button" value="Añadir" id="botonNacionales" onclick="guardarFecha()">
                 </div>
                 <div style="visibility: hidden"  id="fecha2">
-                    <label for="fInicial"> Desde : </label>  <input type="date" id="fInicial"/>  <label for="fFinal"> Hasta : </label>  <input type="date" id="fFinal"/>
-                    <input type="button" value="Seleccionar dias" id="rangoDias" name="rangoDias"/>
+                    <label for="fInicial"> Desde : </label>  <input type="date" id="fInicial" min="<?php echo date('Y-m-d') ?>"/>  <label for="fFinal"> Hasta : </label>  <input type="date" id="fFinal"/>
+                    <input type="button" value="Seleccionar dias" id="rangoDias" name="rangoDias" onclick="guardarRango()"/>
                 </div>
                 <div>
                     <input type="button" value="Guardar" onclick="guardarFechas()">
@@ -70,9 +70,35 @@ abstract class CalendarioGestionarFestivosNacionales extends Plantilla\Views
                     $("#fecha1").css("display","inline");
                     $("#fecha1").css("visibility","visible");
                     $("#fecha2").css("display","none");
+                    fechas = [];
                 }
 
             });
+
+            $("#fInicial").change(function () {
+
+                $("#fFinal").attr("min", $("#fInicial").val());
+
+            });
+
+            function guardarRango() {
+
+                var fInicio = new Date($("#fInicial").val());
+                var fFinal =  new Date($("#fFinal").val());
+
+                fechas.push(fInicio);
+                var aux = new Date(fInicio);
+
+                while (aux<fFinal){
+
+                    var date = new Date(fInicio);
+                    date.setDate(aux.getDate()+1);
+                    aux.setDate(aux.getDate()+1);
+                    fechas.push(date);
+                }
+
+                fechas = [];
+            }
 
             function guardarFecha() {
                 if(opc == true){
@@ -184,6 +210,8 @@ abstract class CalendarioGestionarFestivosNacionales extends Plantilla\Views
                             alert( "error" );
                         });
                 }
+
+                fechas = [];
             }
             <!--Iker-->
             function generar_calendario(mes,anio)

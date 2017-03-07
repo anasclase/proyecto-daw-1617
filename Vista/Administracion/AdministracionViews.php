@@ -1936,7 +1936,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                 <?php
                 //Correcion/Revision Aitor I
                 foreach ($partesLog as $log) {
-                    if ($log->getEstado()->getTipo() == "Cerrado" || $log->getEstado()->getTipo() == "Abierto" || $log->getEstado()->getTipo() == "Validado") {
+                    if ($log->getEstado()->getTipo() == "Cerrado") {
                         ?>
                         <form method="post"
                               action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
@@ -1997,7 +1997,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                 </tr>
                 <?php
                 foreach ($partesProd as $prod) {
-                    if ($prod->getEstado()->getTipo() == "Cerrado" || $prod->getEstado()->getTipo() == "Abierto" || $prod->getEstado()->getTipo() == "Validado") {
+                    if ($prod->getEstado()->getTipo() == "Cerrado") {
                         ?>
                         <form method="post"
                               action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
@@ -2479,6 +2479,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                         <th>TRABAJADOR</th>
                         <th>SEMANA</th>
                         <th>HORARIO</th>
+						<th>ACCIÓN</th>
                     </tr>
                     
                         <form method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
@@ -2488,13 +2489,16 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                                 <td><?php echo $horarioTrabajador[$_SESSION["dht_semana"]]->getTrabajador()->getDni(); ?></td>
                                 <td><?php echo $horarioTrabajador[$_SESSION["dht_semana"]]->getNumeroSemana(); ?></td>
                                <!-- PABLO --> <td><select class='form-control' name="horario"><?php $x=1; foreach ($horarios as $hor){?><option value="<?php echo $x; ?>"><?php echo $hor->getTipo();?></option><?php $x++; } ?></select>
-							   
+							    <td><button type="submit" name="updateT3" value="Editar"
+                                            style="border: none; background: none;"><span
+                                            class="glyphicon glyphicon-edit"
+                                            style="color:blue; font-size: 1.5em"></span></td>
                             </tr>
                             
                         
                         </table><div class="col-md-10 col-md-offset-1"><!-- Ganeko -->
 								<input class="btn btn-warning pull-right" type="submit" name="volver" value="Volver">
-								<input class="btn btn-primary pull-left" type="submit" name="updateT3" value="Guardar">
+								
 							</div></form>
             </div>
             

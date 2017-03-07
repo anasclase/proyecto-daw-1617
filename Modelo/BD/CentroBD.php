@@ -167,4 +167,23 @@ abstract class CentroBD extends GenericoBD{
         parent::desconectar($con);
 
     }
+
+    // Alejandra
+
+    public static function getCentrosByEmpresas($empresas){
+        $con = parent::conectar();
+        $query = "SELECT * FROM ".self::$tabla. " WHERE idEmpresa IN (";
+        for($i=0; $i<count($empresas); $i++){
+            if($i == 0){
+                $query .= $empresas[$i];
+            }else{
+                $query .= ", " . $empresas[$i];
+            }
+        }
+        $query .= ")";
+        $rs = mysqli_query($con, $query) or die("Error getCentrosByEmpresas");
+        $centros = parent::mapearArray($rs, "Centro");
+        parent::desconectar($con);
+        return $centros;
+    }
 }

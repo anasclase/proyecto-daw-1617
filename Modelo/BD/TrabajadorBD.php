@@ -228,4 +228,49 @@ abstract class TrabajadorBD extends GenericoBD{
         return $perfil['tipo'];
 
     }
+
+    /* Alejandra */
+
+    public static function getTrabajadoresByCentros($centros){
+        $con = parent::conectar();
+        $query = "SELECT t.dni,t.nombre,t.apellido1,t.apellido2,t.telefono,t.foto,t.idCentro,p.tipo FROM himevico.trabajadores t,himevico.perfiles p WHERE t.idPerfil=p.id AND idCentro IN (";
+        for($i=0; $i<count($centros); $i++){
+            if($i == 0){
+                $query .= $centros[$i];
+            }else{
+                $query .= ", " . $centros[$i];
+            }
+        }
+        $query .= ")";
+        $rs = mysqli_query($con, $query) or die("Error getTrabajadoresByCentros");
+        $trabajadores = parent::mapearArray($rs, null);
+        parent::desconectar($con);
+        return $trabajadores;
+    }
+
+    public static function getTrabajadoresByCenPer($bi){
+        $con = parent::conectar();
+        $query = "SELECT t.dni,t.nombre,t.apellido1,t.apellido2,t.telefono,t.foto,t.idCentro,t.idPerfil,p.tipo FROM himevico.trabajadores t,himevico.perfiles p WHERE t.idPerfil=p.id AND idCentro IN (";
+        for($i=0; $i<count($bi[0]); $i++){
+            if($i == 0){
+                $query .= $bi[0][$i];
+            }else{
+                $query .= ", " . $bi[0][$i];
+            }
+        }
+
+        $query .= ") AND t.idPerfil IN (";
+        for($i=0; $i<count($bi[1]); $i++){
+            if($i == 0){
+                $query .= $bi[1][$i];
+            }else{
+                $query .= ", " . $bi[1][$i];
+            }
+        }
+        $query .= ")";
+        $rs = mysqli_query($con, $query) or die("Error getTrabajadoresByCenPer");
+        $trabajadores = parent::mapearArray($rs, null);
+        parent::desconectar($con);
+        return $trabajadores;
+    }
 }

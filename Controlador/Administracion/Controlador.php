@@ -23,6 +23,7 @@ use Modelo\Base\Trabajador;
 use Modelo\Base\AusenciaTrabajador;
 use Modelo\Base\Vehiculo;
 use Modelo\Base\Viaje;
+use Modelo\Base\Login;
 use Modelo\BD;
 use Vista\Plantilla\Views;
 use Vista\Administracion\AdministracionViews;
@@ -33,6 +34,7 @@ require_once __DIR__ ."/../../Modelo/Base/AdministracionClass.php";
 require_once __DIR__ ."/../../Modelo/Base/ProduccionClass.php";
 require_once __DIR__ ."/../../Modelo/Base/GerenciaClass.php";
 require_once __DIR__ .'/../../Modelo/Base/EstadoClass.php';
+require_once __DIR__ .'/../../Modelo/Base/LoginClass.php';
 require_once __DIR__ .'/../../Modelo/Base/HoraConvenioClass.php';
 require_once __DIR__ .'/../../Modelo/Base/HorariosClass.php';
 require_once __DIR__."/../../Modelo/BD/LoginBD.php";
@@ -59,19 +61,23 @@ abstract class Controlador{
         $datos['nombre'] = str_replace('\' ', '\'', ucwords(str_replace('\'', '\' ', strtolower(($datos['nombre'])))));
         $datos['apellido1'] = str_replace('\' ', '\'', ucwords(str_replace('\'', '\' ', strtolower(($datos['apellido1'])))));
         $datos['apellido2'] = str_replace('\' ', '\'', ucwords(str_replace('\'', '\' ', strtolower(($datos['apellido2'])))));
-
+		$login="";
         switch($perfil){
             case "Logistica":
                 $trabajador= new Logistica($datos["dni"],$datos['nombre'],$datos['apellido1'],$datos['apellido2'],$datos['telefono'],null/*foto*/,$centro,null,null,null,null);
+				$login=new Login(null, $datos["pass"], $trabajador->getDni());
                 break;
             case "Administracion":
                 $trabajador= new Administracion($datos["dni"],$datos['nombre'],$datos['apellido1'],$datos['apellido2'],$datos['telefono'],null/*foto*/,$centro,null,null,null);
+				$login=new Login(null, $datos["pass"], $trabajador->getDni());
                 break;
             case "Gerencia":
                 $trabajador= new Gerencia($datos["dni"],$datos['nombre'],$datos['apellido1'],$datos['apellido2'],$datos['telefono'],null/*foto*/,$centro,null,null,null);
+				$login=new Login(null, $datos["pass"], $trabajador->getDni());
                 break;
             case "Produccion":
                 $trabajador= new Produccion($datos["dni"],$datos['nombre'],$datos['apellido1'],$datos['apellido2'],$datos['telefono'],null/*foto*/,$centro,null,null,null,null);
+				$login=new Login(null, $datos["pass"], $trabajador->getDni());
                 break;
         }
 
@@ -83,9 +89,9 @@ abstract class Controlador{
 
         $trabajador->add();
 
-        $md5 = md5($trabajador->getDni());
+        
 
-        BD\LoginBD::add($trabajador, $md5);
+        BD\LoginBD::add($login);
 
     }
 
@@ -562,7 +568,15 @@ abstract class Controlador{
         $parte = BD\ParteProduccionBD::getParteById($datos['id']);
 
         $_SESSION['parte'] = serialize($parte);
-    }
+
+    }/* PABLO */
+	public static function updateHorarioTrabajador($datos){
+		
+		
+		
+	}
+
+
 
     //David
     public static function insertarIncidencia($datos){
@@ -625,4 +639,5 @@ abstract class Controlador{
         return $centro;
 
     }
+
 }

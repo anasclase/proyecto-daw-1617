@@ -84,17 +84,23 @@
                         case "Administracion":
                             $urlListas = "/Vista/Administracion/Administracion.php?cod=1"; //Para gestionar las tablas
                             $urlPartes = "/Vista/Administracion/Administracion.php?cod=2"; //Para gestionar los partes
+                            // Alejandra
+                            $urlListado = "/Vista/Busqueda/busqueda.php";
                             ?>
                             <?php
                             break;
                         case "Gerencia":
                             $urlListas = "/Vista/Gerencia/Gerencia.php?cod=1";
                             $urlPartes = "/Vista/Gerencia/Gerencia.php?cod=2";
+                            // Alejandra
+                            $urlListado = "/Vista/Busqueda/busqueda.php";
                             break;
                     }
                     ?>
                     <li><a href="<?php echo \Vista\Plantilla\Views::getUrlRaiz().$urlListas?>">Gestionar tablas</a></li>
                     <li><a href="<?php echo \Vista\Plantilla\Views::getUrlRaiz().$urlPartes?>">Gestionar partes</a></li>
+                    <!-- Alejandra -->
+                    <li><a href="<?php echo parent::getUrlRaiz().$urlListado?>">Listados</a></li>
                     <!--
                         Generar el desplegable para Vacaciones
                         Anas

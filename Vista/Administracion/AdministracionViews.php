@@ -338,7 +338,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                                             style="border: none; background: none;"><span
                                             class="glyphicon glyphicon-remove"
                                             style="color:red; font-size: 1.5em"></span></button>
-                                    <button type="submit" name="editarEmpresa" value="Editar"
+                                    <button type="submit" name="vistaEditarEmpresa" value="Editar"
                                             style="border: none; background: none;"><span
                                             class="glyphicon glyphicon-pencil"
                                             style="color:black; font-size: 1.5em"></span></button>
@@ -455,6 +455,10 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                                                 style="border: none; background: none;"><span
                                                 class="glyphicon glyphicon-remove"
                                                 style="color:red; font-size: 1.5em"></span></button>
+                                        <button type="submit" name="vistaEditarCentro" value="Editar"
+                                                style="border: none; background: none;"><span
+                                                class="glyphicon glyphicon-pencil"
+                                                style="color:black; font-size: 1.5em"></span></button>
                                     </td>
                                 </tr>
                                 <input type="hidden" name="id" value="<?php echo $centro->getId(); ?>">
@@ -2602,9 +2606,76 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
 		
 	}
 
+    public static function updateEmpresa(){ /*Ganeko*/
 
 
+                require_once __DIR__ . "/../Plantilla/cabecera.php";
+                ?>
+                <div class="table-responsive col-md-offset-1 col-md-10">
+                    <table class="table table-bordered">
+                        <tr>
+                            <th>EMPRESA</th>
+                            <th>NIF</th>
+                        </tr>
+                        <form method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
+                            <tr>
+                                <?php
+                                $empresa = Administracion\Controlador::buscarEmpresaId($_SESSION['id']);
+                                ?>
+                                <td><input type="text" name="nombre" value="<?php echo $empresa->getNombre(); ?>"></td>
+                                <td><input type="text" name="nif" value="<?php echo $empresa->getNif(); ?>"></td>
+                            </tr>
+                        </form>
 
+                    </table>
+                </div>
+                <form method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
+                    <div class="col-md-10 col-md-offset-1"><!-- Ganeko -->
+                        <input class="btn btn-primary pull-right" type="submit" name="Guardar" value="editarEmpresa">
+                        <input class="btn btn-warning pull-right" type="submit" name="volver" value="Volver">
+                    </div>
+                </form>
+                <?php
+
+            require_once __DIR__ ."/../Plantilla/pie.php";
+
+        }
+
+    public static function updateCentro(){ /*Ganeko*/
+
+
+                require_once __DIR__ . "/../Plantilla/cabecera.php";
+                ?>
+                <div class="table-responsive col-md-offset-1 col-md-10">
+                    <table class="table table-bordered">
+                        <tr>
+                            <th>CENTRO</th>
+                            <th>LOCALIZACIÓN</th>
+                            <th>EMPRESA</th>
+                        </tr>
+                        <form method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
+                            <tr>
+                                <?php
+                                $centro = Administracion\Controlador::getCentroId($_SESSION['id']);
+                                ?>
+                                <td><input type="text" name="nombre" value="<?php echo $centro->getNombre(); ?>"></td>
+                                <td><input type="text" name="nif" value="<?php echo $centro->getLocalizacion(); ?>"></td>
+                                <td><input type="text" name="nif" value="<?php echo $centro->getEmpresa()->getNombre(); ?>"></td>
+                            </tr>
+                        </form>
+
+                    </table>
+                </div>
+                <form method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
+                    <div class="col-md-10 col-md-offset-1"><!-- Ganeko -->
+                        <input class="btn btn-warning pull-right" type="submit" name="volver" value="Volver">
+                    </div>
+                </form>
+                <?php
+
+            require_once __DIR__ ."/../Plantilla/pie.php";
+
+        }
 
 
 

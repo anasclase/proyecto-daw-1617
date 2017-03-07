@@ -2,4 +2,4 @@
 
 require_once __DIR__ . "/AdministracionViews.php";
 
-\Vista\Administracion\AdministracionViews::updateEmpresa();
+\Vista\Administracion\AdministracionViews::updateCentro();

@@ -573,12 +573,14 @@ abstract class Controlador{
 
     }/* PABLO */
 	public static function updateHorarioTrabajador($datos){
-		
-		
-		
-
 
     }
+		
+		
+		
+
+
+    
 
     //David
     public static function insertarIncidencia($datos){

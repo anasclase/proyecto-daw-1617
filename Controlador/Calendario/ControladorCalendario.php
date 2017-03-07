@@ -224,10 +224,10 @@ switch ($_GET["accion"])
         }
 
         if($query){
-            echo "Insertado";
+            echo "Vacaciones solicitadas";
 
         }else{
-            echo "No Insertado";
+            echo "Error al solicitar las vacaciones";
         }
 
         break;
@@ -241,10 +241,10 @@ switch ($_GET["accion"])
             $query = \Modelo\BD\VacacionesTrabajadoresBD::insertarVacacionesTrabajadores($vacacionesTrab);
         }
         if($query){
-            echo "Insertado";
+            echo "Vacaciones solicitadas";
 
         }else{
-            echo "No Insertado";
+            echo "Error al solicitar las vacaciones";
         }
 
         break;

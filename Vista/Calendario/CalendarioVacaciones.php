@@ -144,7 +144,8 @@ abstract class CalendarioVac extends Plantilla\Views
                     }else{
                         alert("Selecciona el nombre de la empresa")
                     }
-
+                    fIni = [];
+                    fFin = [];
                 }catch (err){
                     alert(err);
                 }
@@ -186,6 +187,8 @@ abstract class CalendarioVac extends Plantilla\Views
                     }
 
                 }
+
+                fechas = [];
             }
 
 
@@ -264,6 +267,7 @@ abstract class CalendarioVac extends Plantilla\Views
                     $("#fecha1").css("display","inline");
                     $("#fecha1").css("visibility","visible");
                     $("#fecha2").css("display","none");
+                    fechas = [];
                 }
 
             });

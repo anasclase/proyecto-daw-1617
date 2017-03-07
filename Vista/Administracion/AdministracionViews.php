@@ -1265,7 +1265,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
             <?php
             require_once __DIR__ . "/../Plantilla/pie.php";
         }
-
+//ganeko
         public static function deleteHorarioTrabajador()
         {
             parent::setOn(true);

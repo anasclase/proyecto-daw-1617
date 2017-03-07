@@ -76,41 +76,70 @@ abstract class CalendarioGestionarFestivosNacionales extends Plantilla\Views
 
             function guardarFecha() {
                 if(opc == true){
-                    if ($("#diasNacionales").is(':empty')){
-                        $("#diasNacionales").append($('<label id="'+ $("#calendarioNacionales").val() +'">' + $("#calendarioNacionales").val() + '</label>'));
-                        fechas.push($("#calendarioNacionales").val());
+                    $('#diasNacionales').empty();
+                    var y;
+                    var d = new Date($("#calendarioNacionales").val());
+                    for(y = 0; y < fechas.length && (fechas[y].getDate() != d.getDate() || fechas[y].getMonth() != d.getMonth() || fechas[y].getFullYear() != d.getFullYear()); y++){                    }
 
-                        var v = $("#calendarioNacionales").val().toString();
-                        $('#diasNacionales').append($('<input type="button" onclick="borrarFecha('+ 0 +')" value="X" name="'+v+'">'));
+                    if(y == fechas.length){
+                        var date = new Date($("#calendarioNacionales").val());
+                        fechas.push(date);
+                    }
 
-                    }else{
-                        var y;
-                        for(y = 0; y < fechas.length && fechas[y] != $("#calendarioNacionales").val(); y++){}
-
-                        if(y == fechas.length){
-                            fechas.push($("#calendarioNacionales").val());
-                            $('#diasNacionales').empty();
-
-                            for(var x = 0; x < fechas.length; x++){
-                                $("#diasNacionales").append($('<label id="' + fechas[x] +'">' + fechas[x] + '</label>'));
-                                $('#diasNacionales').append($('<input type="button" onclick="borrarFecha('+ x +')" value="X" name="' + fechas[x].toString() + '">'));
-                            }
+                    for(var x = 0; x < fechas.length; x++){
+                        var dia;
+                        var mes;
+                        var ano;
+                        if(fechas[x].getDate() < 10){
+                            dia = "0" + fechas[x].getDate();
                         }
+                        if(fechas[x].getMonth() < 10){
+                            mes = "0" + (fechas[x].getMonth() + 1);
+                        }
+                        ano = "" + fechas[x].getFullYear();
+
+                        var f = dia + "-" + mes + "-" + ano;
+                        $("#diasNacionales").append($('<label id="' + f +'">' + f + '</label>'));
+                        $('#diasNacionales').append($('<input type="button" onclick="borrarFecha('+ x +')" value="X" name="' + f + '">'));
                     }
                 }
             }
 
             function borrarFecha(fecha) {
                 for(var x = 0; x < fechas.length; x++){
-                    $("#" + fechas[x] + "").remove();
-                    $("[name='" + fechas[x] + "']").css("display", "none");
+                    var dia;
+                    var mes;
+                    var ano;
+                    if(fechas[x].getDate() < 10){
+                        dia = "0" + fechas[x].getDate();
+                    }
+                    if(fechas[x].getMonth() < 10){
+                        mes = "0" + (fechas[x].getMonth() + 1);
+                    }
+                    ano = "" + fechas[x].getFullYear();
+
+                    var f = dia + "-" + mes + "-" + ano;
+                    $("#" + f + "").remove();
+                    $("[name='" + f + "']").css("display", "none");
                 }
 
                 fechas.splice(fecha,1);
 
                 for(var x = 0; x < fechas.length; x++){
-                    $("#diasNacionales").append($('<label id="' + fechas[x] +'">' + fechas[x] + '</label>'));
-                    $('#diasNacionales').append($('<input type="button" onclick="borrarFecha('+ x +')" value="X" name="' + fechas[x].toString() + '">'));
+                    var dia;
+                    var mes;
+                    var ano;
+                    if(fechas[x].getDate() < 10){
+                        dia = "0" + fechas[x].getDate();
+                    }
+                    if(fechas[x].getMonth() < 10){
+                        mes = "0" + (fechas[x].getMonth() + 1);
+                    }
+                    ano = "" + fechas[x].getFullYear();
+
+                    var f = dia + "-" + mes + "-" + ano;
+                    $("#diasNacionales").append($('<label id="' + f +'">' + f + '</label>'));
+                    $('#diasNacionales').append($('<input type="button" onclick="borrarFecha('+ x +')" value="X" name="' + f + '">'));
                 }
             }
 
@@ -122,7 +151,26 @@ abstract class CalendarioGestionarFestivosNacionales extends Plantilla\Views
                 if(fechas.length == 0 || $('#calend').val() == ""){
                     alert("No puedes dejar los campos sin seleccionar");
                 }else{
-                    alert("bien");
+                    var fechasEnvio = [];
+                    for(var x = 0; x < fechas.length; x++){
+                        var f = "" + fechas[x].getFullYear() + "-" + (fechas[x].getMonth() + 1) + "-" + fechas[x].getDate() + " 00:00:00";
+                        fechasEnvio.push(f);
+                    }
+                    var calendario = $('#calend').val();
+
+                    $.ajax({
+
+                        type: "GET",
+                        url: "<?php echo parent::getUrlRaiz()?>/Controlador/Calendario/ControladorCalendario.php",
+                        data: {fechasEnvio:fechasEnvio , calendario:calendario, accion:"festivosNacionales"}
+                    })
+                        .done(function(respuesta) {
+                            alert(respuesta);
+
+                        })
+                        .fail(function() {
+                            alert( "error" );
+                        });
                 }
             }
             <!--Iker-->

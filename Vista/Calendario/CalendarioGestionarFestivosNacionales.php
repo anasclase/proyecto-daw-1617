@@ -38,13 +38,13 @@ abstract class CalendarioGestionarFestivosNacionales extends Plantilla\Views
                     <label id="diasNacionales"></label><br>
                     <input type="date" id="calendarioNacionales" min="<?php echo date('Y-m-d') ?>" onchange="guardarOpcion()">
                     <input type="button" value="Añadir" id="botonNacionales" onclick="guardarFecha()">
+                    <div>
+                        <input type="button" value="Guardar" onclick="guardarFechas()">
+                    </div>
                 </div>
                 <div style="visibility: hidden"  id="fecha2">
                     <label for="fInicial"> Desde : </label>  <input type="date" id="fInicial" min="<?php echo date('Y-m-d') ?>"/>  <label for="fFinal"> Hasta : </label>  <input type="date" id="fFinal"/>
                     <input type="button" value="Seleccionar dias" id="rangoDias" name="rangoDias" onclick="guardarRango()"/>
-                </div>
-                <div>
-                    <input type="button" value="Guardar" onclick="guardarFechas()">
                 </div>
             </form>
 
@@ -97,7 +97,7 @@ abstract class CalendarioGestionarFestivosNacionales extends Plantilla\Views
                     fechas.push(date);
                 }
 
-                fechas = [];
+                guardarFechas();
             }
 
             function guardarFecha() {

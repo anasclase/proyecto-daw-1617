@@ -143,13 +143,7 @@ CREATE TABLE IF NOT EXISTS `himevico`.`festivos` (
     FOREIGN KEY (`centros_id`)
     REFERENCES `himevico`.`centros` (`id`)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_festivos_calendario1`
-    FOREIGN KEY (`calendario_id`)
-    REFERENCES `himevico`.`calendario` (`id`)
-    ON DELETE NO ACTION
     ON UPDATE NO ACTION
-    
 )
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
@@ -454,15 +448,6 @@ CREATE TABLE IF NOT EXISTS `himevico`.`horariotrabajadores` (
     FOREIGN KEY (`dniTrabajador`)
     REFERENCES `himevico`.`trabajadores` (`dni`)
     
-    
-  /* OJO:!! Activar cuando se  programe la parte de calendario*/
-  
-  
-  , CONSTRAINT `fk_horariotrabajadores_calendario1`
-    FOREIGN KEY (`calendario_id`)
-    REFERENCES `himevico`.`calendario` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION
    )
 ENGINE = InnoDB
 AUTO_INCREMENT = 107
@@ -669,12 +654,8 @@ CREATE TABLE IF NOT EXISTS `himevico`.`ausenciastrabajadores` (
     REFERENCES `himevico`.`ausencia` (`id`),
   CONSTRAINT `ta_trabajador_FK`
     FOREIGN KEY (`dniTrabajador`)
-    REFERENCES `himevico`.`trabajadores` (`dni`),
-  CONSTRAINT `fk_ausenciastrabajadores_calendario1`
-    FOREIGN KEY (`calendario_id`)
-    REFERENCES `himevico`.`calendario` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    REFERENCES `himevico`.`trabajadores` (`dni`)
+)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
@@ -749,12 +730,8 @@ CREATE TABLE IF NOT EXISTS `himevico`.`festivosnacional` (
   `motivo` VARCHAR(45) NOT NULL,
   `calendario_id` INT(4) NOT NULL,
   PRIMARY KEY (`id`),
-  INDEX `fk_festivosnacional_calendario1_idx` (`calendario_id` ASC),
-  CONSTRAINT `fk_festivosnacional_calendario1`
-    FOREIGN KEY (`calendario_id`)
-    REFERENCES `himevico`.`calendario` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  INDEX `fk_festivosnacional_calendario1_idx` (`calendario_id` ASC)
+  )
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
@@ -777,12 +754,7 @@ CREATE TABLE IF NOT EXISTS `himevico`.`vacacionestrabajadores` (
   INDEX `fk_ausenciastrabajadores_calendario1_idx` (`calendario_id` ASC),
   CONSTRAINT `ta_trabajador_FK0`
     FOREIGN KEY (`dniTrabajador`)
-    REFERENCES `himevico`.`trabajadores` (`dni`),
-  CONSTRAINT `fk_ausenciastrabajadores_calendario10`
-    FOREIGN KEY (`calendario_id`)
-    REFERENCES `himevico`.`calendario` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    REFERENCES `himevico`.`trabajadores` (`dni`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 

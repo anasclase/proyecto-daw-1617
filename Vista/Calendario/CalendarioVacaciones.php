@@ -13,7 +13,7 @@ abstract class CalendarioVac extends Plantilla\Views
         ?>
 
 
-        <link type="text/css" rel="stylesheet" media="all" href="<?php echo parent::getUrlRaiz()?>/Vista/Plantilla/CSS/Bootstrap/estilos.css">
+        <link type="text/css" rel="stylesheet" media="all" href="<?php echo parent::getUrlRaiz()?>/Vista/Plantilla/CSS/Bootstrap/ProduccionStyle.css">
 
         <?php if ($comprobar){?>
 
@@ -271,7 +271,7 @@ abstract class CalendarioVac extends Plantilla\Views
                 agenda.html("<img src='<?php echo parent::getUrlRaiz()?>/Vista/Plantilla/IMG/loading.gif' alt='Loading'");
                 $.ajax({
                     type: "POST",
-                    url: "<?php echo parent::getUrlRaiz()?>/Controlador/Logistica/ControladorCalendario.php",
+                    url: "<?php echo parent::getUrlRaiz()?>/Controlador/Logistica/ControladorCalendarioVacaciones.php",
                     cache: false,
                     data: { mes:mes,anio:anio,accion:"generar_calendario" }
                 }).done(function( respuesta )

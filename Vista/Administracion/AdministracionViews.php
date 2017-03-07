@@ -5,6 +5,7 @@ use \Controlador\Administracion;
 use Controlador\Login\Controlador;
 use Modelo\BD;
 
+
 require_once __DIR__ . "/../Plantilla/Views.php";
 require_once __DIR__ . "/../../Controlador/Administracion/Controlador.php";
 require_once __DIR__.'/../../Modelo/BD/GenericoBD.php';
@@ -2570,10 +2571,8 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
         require_once __DIR__ . "/../Plantilla/pie.php";
     }
 	public static function updateHorarioTrabajador(){ /*PABLO*/
-		
-			parent::setOn(true);
-            parent::setRoot(true);
-			
+		parent::setOn(true);
+        	parent::setRoot(true);
 			$horarioTrabajador = Administracion\Controlador::getAllHoraioTrabajador();
 			$horarios = Administracion\Controlador::getAllHorarios();
 			
@@ -2589,7 +2588,6 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                     </tr>
                     
                         <form method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
-						
                             <tr>
 							<?php $_SESSION["dniht"]=$horarioTrabajador[$_SESSION["dht_semana"]]->getTrabajador()->getDni(); $_SESSION["semht"]=$horarioTrabajador[$_SESSION["dht_semana"]]->getNumeroSemana();?>
                                 <td><?php echo $horarioTrabajador[$_SESSION["dht_semana"]]->getTrabajador()->getDni(); ?></td>
@@ -2600,22 +2598,21 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                                             class="glyphicon glyphicon-edit"
                                             style="color:blue; font-size: 1.5em"></span></td>
                             </tr>
-                            
-                        
-                        </table><div class="col-md-10 col-md-offset-1"><!-- Ganeko -->
-								<input class="btn btn-warning pull-right" type="submit" name="volver" value="Volver">
-								
-							</div></form>
+                        </form>
+
+                </table>
             </div>
-            
+            <form method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
+                <div class="col-md-10 col-md-offset-1"><!-- Ganeko -->
+                    <input class="btn btn-warning pull-right" type="submit" name="volver" value="Volver">
+                </div>
+            </form>
 			<?php
 		
 		require_once __DIR__ ."/../Plantilla/pie.php";
 		
 	}
-
     public static function updateEmpresa(){ /*Ganeko*/
-
 
                 require_once __DIR__ . "/../Plantilla/cabecera.php";
                 ?>
@@ -2632,15 +2629,15 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                                 ?>
                                 <td><input type="text" name="nombre" value="<?php echo $empresa->getNombre(); ?>"></td>
                                 <td><input type="text" name="nif" value="<?php echo $empresa->getNif(); ?>"></td>
+                                <input type="hidden" name="id" value="<?php echo $_SESSION['id'];?>">
                             </tr>
-                        </form>
-
                     </table>
                 </div>
-                <form method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
                     <div class="col-md-10 col-md-offset-1"><!-- Ganeko -->
-                        <input class="btn btn-primary pull-right" type="submit" name="Guardar" value="editarEmpresa">
-                        <input class="btn btn-warning pull-right" type="submit" name="volver" value="Volver">
+                        <div class="pull-right">
+                            <input class="btn btn-primary" type="submit" name="editarEmpresa" value="Guardar">
+                            <input class="btn btn-warning" type="submit" name="volver" value="Volver">
+                        </div>
                     </div>
                 </form>
                 <?php
@@ -2669,14 +2666,15 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                                 <td><input type="text" name="nombre" value="<?php echo $centro->getNombre(); ?>"></td>
                                 <td><input type="text" name="nif" value="<?php echo $centro->getLocalizacion(); ?>"></td>
                                 <td><input type="text" name="nif" value="<?php echo $centro->getEmpresa()->getNombre(); ?>"></td>
+                                <input type="hidden" name="id" value="<?php echo $_SESSION['id']; ?>">
                             </tr>
-                        </form>
-
                     </table>
                 </div>
-                <form method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
                     <div class="col-md-10 col-md-offset-1"><!-- Ganeko -->
-                        <input class="btn btn-warning pull-right" type="submit" name="volver" value="Volver">
+                        <div class="pull-right">
+                            <input class="btn btn-primary" type="submit" name="editarCentro" value="Guardar">
+                            <input class="btn btn-warning" type="submit" name="volver" value="Volver">
+                        </div>
                     </div>
                 </form>
                 <?php

@@ -3,6 +3,8 @@ namespace Modelo\BD;
 
 
 
+use Modelo\Base\Centro;
+
 require_once __DIR__."/GenericoBD.php";
 
 abstract class CentroBD extends GenericoBD{
@@ -169,5 +171,17 @@ abstract class CentroBD extends GenericoBD{
 
         parent::desconectar($con);
 
+    }
+    //Ganeko
+    public static function updateCentro($datos){
+        $con = parent::conectar();
+
+        $empresa = new Centro($datos["id"], $datos["nombre"], $datos["nif"], null);
+
+        $query = "UPDATE ".self::$tabla." SET nombre ='".$empresa->getNombre()."', nif ='".$empresa->getNif()."' WHERE id ='".$empresa->getId()."'";
+
+        $rs = mysqli_query($con, $query) or die(mysqli_error($con));
+
+        parent::desconectar($con);
     }
 }

@@ -5,11 +5,9 @@
  * Date: 2/3/16
  * Time: 9:44
  */
- /* PABLO */	
-
 
 namespace Controlador\Administracion;
- 
+
 require_once __DIR__."/../../Vista/Plantilla/Views.php";
 
 require_once __DIR__.'/Controlador.php';
@@ -35,12 +33,30 @@ if(isset($_POST['eliminarEmpresa'])){
     //headerLocation a vista Eliminar
     header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/deleteEmpresa.php");
 }
+if(isset($_POST['vistaEditarEmpresa'])){
+    $_SESSION['id'] = $_POST['id'];
+    //headerLocation a vista Editar
+    header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/updateEmpresa.php");
+}
+if(isset($_POST['editarEmpresa'])){
+    Controlador::updateEmpresa($_POST);
+    header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/deleteEmpresa.php");
+}
+if(isset($_POST['vistaEditarCentro'])){
+    $_SESSION['id'] = $_POST['id'];
+    //headerLocation a vista Editar
+    header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/updateCentro.php");
+}
+if(isset($_POST['editarCentro'])){
+    Controlador::updateCentro($_POST);
+    header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/deleteCentro.php");
+}
 if(isset($_POST['addEstado'])){
     Controlador::AddEstado($_POST);
     header($gestionListas);
 }
 if(isset($_POST['eliminarEstado'])){
-    echo "hola";    Controlador::deleteEstado($_POST);
+    Controlador::deleteEstado($_POST);
     //headerLocation a vista Eliminar
     header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/deleteEstado.php");
 }
@@ -183,19 +199,23 @@ if(isset($_POST['abrirParteLogistica'])){
 
 }/* PABLO */
 if(isset($_POST['updateHorarioTrabajador'])){
-	
-	$_SESSION["dht_semana"]=$_POST["dht_semana"] + 1;
+    $_SESSION["dht_semana"]=$_POST["dht_semana"] + 1;
 	
 	header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/updateHorarioTrabajador.php");
 	
 }
+if(isset($_POST["insertarIncidencia"])){ //David
+    Controlador::insertarIncidencia($_POST);
+
+}
 if(isset ($_POST['updateT3'])){
-	
-	Controlador::updateHorarioTrabajador($_POST);
-	header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/Administracion.php?cod=1");
-	
+
+    Controlador::updateHorarioTrabajador($_POST);
+    header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/Administracion.php?cod=1");
+
 }
 /*
+ *
 if(isset($_POST['dni']) and !isset($_POST['semanas'])) {
     $perfil = Controlador::getPerfilbyDni($_POST['dni']);
     $partes = Controlador::getParte($_POST['dni'], $perfil);

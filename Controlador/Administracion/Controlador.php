@@ -365,7 +365,18 @@ abstract class Controlador{
     public static function updateValidarParteLogistica($datos){
         BD\PartelogisticaBD::updateValidar($datos['id']);
     }
-
+    /* Ganeko */
+    public static function buscarEmpresaId($id){
+        $empresa =  BD\EmpresaBD::getEmpresaByID($id);
+        return $empresa;
+    }/* Ganeko */
+    public static function getCentroId($id){
+        $centro = BD\CentroBD::getCentrosById($id);
+        return $centro;
+    }/* Ganeko */
+    public static function updateEmpresa($datos){
+        BD\EmpresaBD::updateEmpresa($datos);
+    }
     public static function guardarParteProduccion($datos)
     {
         $parte = unserialize($_SESSION['parte']);
@@ -564,12 +575,23 @@ abstract class Controlador{
         $parte = BD\ParteProduccionBD::getParteById($datos['id']);
 
         $_SESSION['parte'] = serialize($parte);
+
     }/* PABLO */
 	public static function updateHorarioTrabajador($datos){
-		
-		echo $_SESSION["dniht"] . " dni ";
-		echo $datos["horario"] . " horario ";
 		BD\HorarioTrabajadorBD::updateHorarioTrabajador($datos["horario"], $_SESSION["dniht"] , $_SESSION["semht"]);
+    }
 		
-	}
+		
+		
+
+
+    
+
+    //David
+    public static function insertarIncidencia($datos){
+
+
+
+    }
+
 }

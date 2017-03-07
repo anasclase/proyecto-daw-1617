@@ -210,10 +210,8 @@ switch ($_GET["accion"])
      */
     case "insertarCal":{
 
-        $time3 = strtotime($_GET["fecha"]);
-        $fecha = date('Y-m-d H:i:s',$time3);
         for($x=0;$x<count($_GET["horaInicio"]);$x++){
-            $vacacionesTrab = new \Modelo\Base\VacacionesTrabajadores(null,$_GET["dniTrabajador"],$fecha,$_GET["horaInicio"][$x],$_GET["horaFin"][$x],$_GET["calendario_id"],$_GET["estado"]);
+            $vacacionesTrab = new \Modelo\Base\VacacionesTrabajadores(null,$_GET["dniTrabajador"],$_GET["horaInicio"][$x],$_GET["horaInicio"][$x],$_GET["horaFin"][$x],$_GET["calendario_id"],$_GET["estado"]);
             $query = \Modelo\BD\VacacionesTrabajadoresBD::insertarVacacionesTrabajadores($vacacionesTrab);
         }
 

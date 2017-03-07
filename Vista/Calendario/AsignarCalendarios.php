@@ -18,8 +18,8 @@ abstract class AsignarCalendarios extends Plantilla\Views{
 
 
         <form style="margin: 10%" action="../../Controlador/Calendario/ControladorCalendario.php" method="post">
-            <p>Asigna un calendario al trabajador con DNI: <?php echo $texto; ?></p>
-            <select name="calendario">
+            <p>Asigna un calendario al trabajador con DNI: <strong><?php echo $texto; ?></strong></p>
+            <select style="width: 15%" class="form-control" name="calendario">
                 <?php
                 $calendarios=\Modelo\BD\CalendarioBD::getCalendClose();
                 while ($rows=mysqli_fetch_array($calendarios)){
@@ -27,7 +27,7 @@ abstract class AsignarCalendarios extends Plantilla\Views{
                 };
                 ?>
             </select>
-            <input type='submit' name='asignarCalend' value='Guardar'/> <input type='submit' name='volver' value='Volver'>
+            <input class="btn btn-default" type='submit' name='asignarCalend' value='Guardar'/> <input class="btn btn-default" type='submit' name='volver' value='Volver'>
         </form>
 
         <?php

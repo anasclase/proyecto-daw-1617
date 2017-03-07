@@ -13,7 +13,9 @@ abstract class CalendarioGestionarCalendario extends Plantilla\Views
         ?>
 
 
-        <link type="text/css" rel="stylesheet" media="all" href="<?php echo parent::getUrlRaiz()?>/Vista/Plantilla/CSS/Bootstrap/estilos.css">
+        <link type="text/css" rel="stylesheet" media="all"
+              href="<?php echo parent::getUrlRaiz()?>/Vista/Plantilla/CSS/Bootstrap/estilos.css"
+              xmlns="http://www.w3.org/1999/html">
 
     <!-- IRUNE -->
 
@@ -21,9 +23,8 @@ abstract class CalendarioGestionarCalendario extends Plantilla\Views
 
             <h2>Crear un calendario</h2>
             <p><label>CALENDARIO: </label>
-                <select name="calendario">
-
-                    <?php
+                <div class="form-group">
+                <select style="width: 15%" class="form-control"><?php
                     $anoActual = date(Y);
                     echo "<option value=''> -- Selecciona -- </option>";
                     for($x=0; $x<9; $x++){
@@ -31,19 +32,19 @@ abstract class CalendarioGestionarCalendario extends Plantilla\Views
                         echo "<option value='$ano'>$ano</option>";
                     }
                     ?>
-
-                </select></p>
+                </select>
+                </div></p>
             <label>DESCRIPCION: </label><br>
                 <textarea name="descripcion" placeholder="Introduce la descripción aquí"></textarea><br>
 
-            <input type="submit" name="crear" value="Crear">
+            <input class="btn btn-info" type="submit" name="crear" value="Crear">
 
         </form>
 
         <form name="buscar" action="<?php echo parent::getUrlRaiz()?>/Vista/Administracion/Administracion.php?cod=7" method="post"> <!--Aitor-->
 
             <h2>Cerrar un calendario</h2>
-            <label>CALENDARIOS: </label><select name="calendario">  <!--Aitor-->
+            <label>CALENDARIOS: </label><select style="width: 15%" class="form-control" name="calendario">  <!--Aitor-->
                 <?php
                 require_once "../../Modelo/BD/CalendarioBD.php";     //Aitor
                 echo "<option value=''>-- Selecciona --</option>";  //Aitor
@@ -54,7 +55,7 @@ abstract class CalendarioGestionarCalendario extends Plantilla\Views
 
                 ?>
             </select>
-            <input type="submit" name="cerrar" value="Cerrar">
+            <input class="btn btn-info" type="submit" name="cerrar" value="Cerrar">
 
         </form>
 

@@ -273,4 +273,14 @@ abstract class TrabajadorBD extends GenericoBD{
         parent::desconectar($con);
         return $trabajadores;
     }
+
+
+    public static function getCentroById(){ //Aitor
+        $con = parent::conectar();
+        $query="SELECT idCentro FROM trabajadores WHERE dni='".$_SESSION["trabj"]."'";
+        $rs = mysqli_query($con, $query) or die("Error getCentroById");
+        while($rows=mysqli_fetch_array($rs)){
+            return $rows[0];
+        }
+    }
 }

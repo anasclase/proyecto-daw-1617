@@ -2,10 +2,10 @@
 require_once __DIR__.'/../Plantilla/Views.php';
 
 use Vista\Plantilla;
-abstract class AsignarCalendarios extends Plantilla\Views{
-    public static function generar($trabajador){
+abstract class AsignarCalendarios extends Plantilla\Views{      //Aitor
+    public static function generar(){
 
-        $texto = $trabajador;
+        $texto = $_SESSION["trabj"];
         parent::setOn(true);
         parent::setRoot(true);
 

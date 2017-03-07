@@ -24,7 +24,7 @@ abstract class CalendarioGestionarCalendario extends Plantilla\Views
             <h2>Crear un calendario</h2>
             <p><label>CALENDARIO: </label>
                 <div class="form-group">
-                <select style="width: 15%" class="form-control"><?php
+                <select style="width: 15%" name="calendario" class="form-control"><?php
                     $anoActual = date(Y);
                     echo "<option value=''> -- Selecciona -- </option>";
                     for($x=0; $x<9; $x++){

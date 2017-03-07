@@ -2563,15 +2563,15 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                                 ?>
                                 <td><input type="text" name="nombre" value="<?php echo $empresa->getNombre(); ?>"></td>
                                 <td><input type="text" name="nif" value="<?php echo $empresa->getNif(); ?>"></td>
+                                <input type="hidden" name="id" value="<?php echo $_SESSION['id'];?>">
                             </tr>
-                        </form>
-
                     </table>
                 </div>
-                <form method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
                     <div class="col-md-10 col-md-offset-1"><!-- Ganeko -->
-                        <input class="btn btn-primary pull-right" type="submit" name="Guardar" value="editarEmpresa">
-                        <input class="btn btn-warning pull-right" type="submit" name="volver" value="Volver">
+                        <div class="pull-right">
+                            <input class="btn btn-primary" type="submit" name="editarEmpresa" value="Guardar">
+                            <input class="btn btn-warning" type="submit" name="volver" value="Volver">
+                        </div>
                     </div>
                 </form>
                 <?php
@@ -2600,14 +2600,15 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                                 <td><input type="text" name="nombre" value="<?php echo $centro->getNombre(); ?>"></td>
                                 <td><input type="text" name="nif" value="<?php echo $centro->getLocalizacion(); ?>"></td>
                                 <td><input type="text" name="nif" value="<?php echo $centro->getEmpresa()->getNombre(); ?>"></td>
+                                <input type="hidden" name="id" value="<?php echo $_SESSION['id']; ?>">
                             </tr>
-                        </form>
-
                     </table>
                 </div>
-                <form method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
                     <div class="col-md-10 col-md-offset-1"><!-- Ganeko -->
-                        <input class="btn btn-warning pull-right" type="submit" name="volver" value="Volver">
+                        <div class="pull-right">
+                            <input class="btn btn-primary" type="submit" name="editarCentro" value="Guardar">
+                            <input class="btn btn-warning" type="submit" name="volver" value="Volver">
+                        </div>
                     </div>
                 </form>
                 <?php

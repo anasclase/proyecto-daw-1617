@@ -362,20 +362,22 @@ abstract class Controlador{
         AdministracionViews::viewParteProd($parte,$estado);
 
     }
-    public static function updateValidarParteLogistica($datos){
+    public static function updateValidarParteLogistica($datos)
+    {
         BD\PartelogisticaBD::updateValidar($datos['id']);
     }
+    /* Ganeko */
     public static function buscarEmpresaId($id){
         $empresa =  BD\EmpresaBD::getEmpresaByID($id);
         return $empresa;
-    }
+    }/* Ganeko */
     public static function getCentroId($id){
         $centro = BD\CentroBD::getCentrosById($id);
         return $centro;
+    }/* Ganeko */
+    public static function updateEmpresa($datos){
+        BD\EmpresaBD::updateEmpresa($datos);
     }
-    /*public static function updateEmpresa($datos){
-        BD\EmpresaBD::updateEmpresa($datos['id']);
-    }*/
     public static function guardarParteProduccion($datos)
     {
         $parte = unserialize($_SESSION['parte']);

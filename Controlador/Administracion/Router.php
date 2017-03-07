@@ -39,7 +39,7 @@ if(isset($_POST['vistaEditarEmpresa'])){
     header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/updateEmpresa.php");
 }
 if(isset($_POST['editarEmpresa'])){
-    Controlador::editarEmpresa($_POST);
+    Controlador::updateEmpresa($_POST);
     header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/deleteEmpresa.php");
 }
 if(isset($_POST['vistaEditarCentro'])){
@@ -48,7 +48,8 @@ if(isset($_POST['vistaEditarCentro'])){
     header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/updateCentro.php");
 }
 if(isset($_POST['editarCentro'])){
-
+    Controlador::updateCentro($_POST);
+    header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/deleteCentro.php");
 }
 if(isset($_POST['addEstado'])){
     Controlador::AddEstado($_POST);

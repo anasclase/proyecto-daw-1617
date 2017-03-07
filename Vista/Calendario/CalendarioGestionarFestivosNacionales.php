@@ -92,9 +92,13 @@ abstract class CalendarioGestionarFestivosNacionales extends Plantilla\Views
                         var ano;
                         if(fechas[x].getDate() < 10){
                             dia = "0" + fechas[x].getDate();
+                        }else{
+                            dia = "" + fechas[x].getDate();
                         }
                         if(fechas[x].getMonth() < 10){
                             mes = "0" + (fechas[x].getMonth() + 1);
+                        }else{
+                            dia = "" + (fechas[x].getMonth() + 1);
                         }
                         ano = "" + fechas[x].getFullYear();
 
@@ -112,9 +116,13 @@ abstract class CalendarioGestionarFestivosNacionales extends Plantilla\Views
                     var ano;
                     if(fechas[x].getDate() < 10){
                         dia = "0" + fechas[x].getDate();
+                    }else{
+                        dia = "" + fechas[x].getDate();
                     }
                     if(fechas[x].getMonth() < 10){
                         mes = "0" + (fechas[x].getMonth() + 1);
+                    }else{
+                        dia = "" + (fechas[x].getMonth() + 1);
                     }
                     ano = "" + fechas[x].getFullYear();
 
@@ -131,9 +139,13 @@ abstract class CalendarioGestionarFestivosNacionales extends Plantilla\Views
                     var ano;
                     if(fechas[x].getDate() < 10){
                         dia = "0" + fechas[x].getDate();
+                    }else{
+                        dia = "" + fechas[x].getDate();
                     }
                     if(fechas[x].getMonth() < 10){
                         mes = "0" + (fechas[x].getMonth() + 1);
+                    }else{
+                        dia = "" + (fechas[x].getMonth() + 1);
                     }
                     ano = "" + fechas[x].getFullYear();
 

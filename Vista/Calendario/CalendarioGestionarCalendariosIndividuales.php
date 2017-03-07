@@ -20,7 +20,7 @@ abstract class CalendarioGestionarCalendariosIndividuales extends Plantilla\View
 
             <div id="empresa">
                 <label for="nomEmpresa">Nombre de la empresa :</label>
-                <select id="nomEmpresa">
+                <select style="width: 15%" class="form-control" id="nomEmpresa">
                     <option value="-1" > Seleccionar </option>
                     <?php
                     $empresas = \Modelo\BD\EmpresaBD::getAll();
@@ -34,11 +34,11 @@ abstract class CalendarioGestionarCalendariosIndividuales extends Plantilla\View
 
 
                 <label for="nomTrabajador">Trabajador :</label>
-                <select name="trabajador" id="trabajador">
+                <select style="width: 15%" class="form-control" name="trabajador" id="trabajador">
 
                 </select>
             </div>
-            <input type="submit" name="aceptar" value="Aceptar">
+            <input style="margin-top: 20px;" type="submit" class="btn btn-info" name="aceptar" value="Aceptar">
         </form>
 
         <script src="<?php echo parent::getUrlRaiz();?>/Vista/Plantilla/JS/jquery-2.2.1.min.js"></script>

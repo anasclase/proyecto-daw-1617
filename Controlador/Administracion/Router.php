@@ -66,6 +66,18 @@ if(isset($_POST['editarVehiculo'])){
     Controlador::updateVehiculo($_POST);
     header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/deleteVehiculo.php");
 }
+if(isset($_POST['vistaEditarFoto'])){
+    //Ganeko
+    $_SESSION['dni'] = $_POST['dni'];
+    //headerLocation a vista Editar
+    header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/updateFoto.php");
+}
+if(isset($_POST['vistaEditarPass'])){
+    //Ganeko
+    $_SESSION['dni'] = $_POST['dni'];
+    //headerLocation a vista Editar
+    header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/updatePassword.php");
+}
 if(isset($_POST['addEstado'])){
     Controlador::AddEstado($_POST);
     header($gestionListas);

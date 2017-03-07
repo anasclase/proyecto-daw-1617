@@ -143,6 +143,11 @@ abstract class Controlador{
         BD\TrabajadorBD::updateFotoByTrabajador($trabajador);
     }
 
+    public static function getTrabajadorByDni($dni){
+        $trabajador = BD\TrabajadorBD::getTrabajadorByDni($dni);
+        return $trabajador;
+    }
+
     public static function eliminarDir($carpeta)
     {
         foreach(glob($carpeta . "/*") as $archivos_carpeta)

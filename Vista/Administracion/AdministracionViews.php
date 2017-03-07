@@ -2506,7 +2506,8 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
         require_once __DIR__ . "/../Plantilla/pie.php";
     }
 	public static function updateHorarioTrabajador(){ /*PABLO*/
-		
+		parent::setOn(true);
+        	parent::setRoot(true);
 			$horarioTrabajador = Administracion\Controlador::getAllHoraioTrabajador();
 			$horarios = Administracion\Controlador::getAllHorarios();
 			

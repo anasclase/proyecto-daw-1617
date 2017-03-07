@@ -1936,7 +1936,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                 <?php
                 //Correcion/Revision Aitor I
                 foreach ($partesLog as $log) {
-                    if ($log->getEstado()->getTipo() == "Cerrado") {
+                    if ($log->getEstado()->getTipo() == "Cerrado" || $log->getEstado()->getTipo() == "Abierto" || $log->getEstado()->getTipo() == "Validado") {
                         ?>
                         <form method="post"
                               action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
@@ -1997,7 +1997,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                 </tr>
                 <?php
                 foreach ($partesProd as $prod) {
-                    if ($prod->getEstado()->getTipo() == "Cerrado") {
+                    if ($prod->getEstado()->getTipo() == "Cerrado" || $prod->getEstado()->getTipo() == "Abierto" || $prod->getEstado()->getTipo() == "Validado") {
                         ?>
                         <form method="post"
                               action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">

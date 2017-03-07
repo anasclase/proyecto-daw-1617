@@ -99,4 +99,14 @@ abstract class FestivoBD extends GenericoBD
     }
 
 
+
+    public static function getFestivoByEstado(){    //Aitor
+        $conexion = parent::conectar();
+        $query="SELECT * FROM vacacionestrabajadores WHERE estado='S'";
+        $rs=mysqli_query($conexion, $query) or die(mysqli_error($conexion));
+        parent::desconectar($conexion);
+        return $rs;
+    }
+
+
 }

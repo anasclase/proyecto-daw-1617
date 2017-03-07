@@ -7,7 +7,9 @@ require_once __DIR__.'/../../Modelo/BD/VacacionesTrabajadoresBD.php';
 require_once __DIR__."/../../Vista/Calendario/CalendarioVacaciones.php";
 require_once __DIR__."/../../Vista/Calendario/CalendarioGestionarCalendariosIndividuales.php";
 require_once __DIR__."/../../Vista/Calendario/AsignarCalendarios.php";
+require_once __DIR__."/../../Vista/Administracion/AdministracionViews.php";
 require_once __DIR__."/../../Modelo/BD/FestivoBD.php";
+require_once __DIR__."/../../Modelo/BD/FestivoNacionalBD.php";
 require_once __DIR__."/../../Modelo/Base/FestivosNacionalClass.php";
 require_once __DIR__."/../../Modelo/BD/FestivoNacionalBD.php";
 require_once __DIR__."/../../Modelo/Base/FestivoClass.php";
@@ -295,6 +297,12 @@ switch ($_GET["accion"])
     }
 }
 
+
+if(isset($_POST["vacOpen"])){   //Aitor
+    \Vista\Administracion\AdministracionViews::visualizarVacacionesOpen();
+}
+
+
 if(isset($_POST["aceptar"])){   //Aitor
     error_reporting(0);
     if($_POST["trabajador"]==""){
@@ -326,7 +334,7 @@ if(isset($_POST["asignarCalend"])){ //Aitor
 }
 
 function guardarFestivoNacional($calendario){   //Aitor
-    $fechasnacionales=\Modelo\BD\FestivoBD::getFestivoNacional($calendario);
+    $fechasnacionales=\Modelo\BD\FestivoNacionalBD::getFestivoNacional($calendario);
     $fechasCentro=\Modelo\BD\FestivoBD::getFestivoCentro($calendario);
 
     insertFestivosTrabajador($fechasnacionales, $fechasCentro, $calendario);

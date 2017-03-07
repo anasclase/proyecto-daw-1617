@@ -2142,7 +2142,25 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
             require_once __DIR__ . "/../Plantilla/pie.php";
         }
 
-/*****************************************************/
+
+        public static function visualizarVacacionesOpen()           //Aitor
+        {
+            parent::setOn(true);
+            parent::setRoot(true);
+
+            require_once __DIR__ . "/../Plantilla/cabecera.php";
+
+            echo "<form action='../../Controlador/Administracion/ControladorCalendario.php' method='post'>";
+            echo "<table class='table table-striped'><tr><td>Calendario</td><td>Trabajador</td></tr>";
+            $festivos=BD\FestivoBD::getFestivoByEstado();
+            while($rows=mysqli_fetch_array($festivos)){
+                echo "<tr><td>$rows[calendario_id]</td><td>$rows[dniTrabajador]</td></tr>";
+            }
+            echo "</table></form>";
+            require_once __DIR__ . "/../Plantilla/pie.php";
+        }
+
+    /*****************************************************/
 /* FOTO */
 /*****************************************************/
 

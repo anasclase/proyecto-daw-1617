@@ -38,7 +38,7 @@ abstract class CalendarioGestionarCalendariosIndividuales extends Plantilla\View
 
                 </select>
             </div>
-            <input style="margin-top: 20px;" type="submit" class="btn btn-info" name="aceptar" value="Aceptar">
+            <input style="margin-top: 20px;" type="submit" class="btn btn-default" name="aceptar" value="Aceptar">             <input style="margin-top: 20px;" type="submit" class="btn btn-info" name="vacOpen" value="Vacaciones pendientes de aceptar">
         </form>
 
         <script src="<?php echo parent::getUrlRaiz();?>/Vista/Plantilla/JS/jquery-2.2.1.min.js"></script>

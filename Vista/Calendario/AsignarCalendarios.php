@@ -27,7 +27,7 @@ abstract class AsignarCalendarios extends Plantilla\Views{      //Aitor
                 };
                 ?>
             </select>
-            <input class="btn btn-default" type='submit' name='asignarCalend' value='Guardar'/> <input class="btn btn-default" type='submit' name='volver' value='Volver'>
+            <input class="btn btn-success" type='submit' name='asignarCalend' value='Guardar'/> <input class="btn btn-danger" type='submit' name='volver' value='Volver'>
         </form>
 
         <?php

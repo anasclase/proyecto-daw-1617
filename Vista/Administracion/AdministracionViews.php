@@ -2581,7 +2581,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
 
         }
 
-    public static function updateHorarioTrabajador(){ /*Pablo*/
+    public static function updateCentro(){ /*Ganeko*/
 	    parent::setOn(true);
             parent::setRoot(true);
 			
@@ -2596,7 +2596,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                         <th>TRABAJADOR</th>
                         <th>SEMANA</th>
                         <th>HORARIO</th>
-			<th>ACCIÓN</th>
+						<th>ACCIÓN</th>
                     </tr>
                     
                         <form method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
@@ -2613,7 +2613,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                             </tr>
                             
                         
-                        </table><div class="col-md-10 col-md-offset-1">
+                        </table><div class="col-md-10 col-md-offset-1"><!-- Ganeko -->
 								<input class="btn btn-warning pull-right" type="submit" name="volver" value="Volver">
 								
 							</div></form>

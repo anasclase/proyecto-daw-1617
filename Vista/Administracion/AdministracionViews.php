@@ -2570,6 +2570,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                 </div>
                 <form method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
                     <div class="col-md-10 col-md-offset-1"><!-- Ganeko -->
+                        <input class="btn btn-primary pull-right" type="submit" name="Guardar" value="editarEmpresa">
                         <input class="btn btn-warning pull-right" type="submit" name="volver" value="Volver">
                     </div>
                 </form>

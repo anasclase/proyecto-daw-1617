@@ -338,7 +338,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                                             style="border: none; background: none;"><span
                                             class="glyphicon glyphicon-remove"
                                             style="color:red; font-size: 1.5em"></span></button>
-                                    <button type="submit" name="editarEmpresa" value="Editar"
+                                    <button type="submit" name="vistaEditarEmpresa" value="Editar"
                                             style="border: none; background: none;"><span
                                             class="glyphicon glyphicon-pencil"
                                             style="color:black; font-size: 1.5em"></span></button>
@@ -2541,7 +2541,39 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
 		
 	}
 
+    public static function updateEmpresa(){ /*Ganeko*/
 
+
+                require_once __DIR__ . "/../Plantilla/cabecera.php";
+                ?>
+                <div class="table-responsive col-md-offset-1 col-md-10">
+                    <table class="table table-bordered">
+                        <tr>
+                            <th>TRABAJADOR</th>
+                            <th>SEMANA</th>
+                        </tr>
+                        <form method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
+                            <tr>
+                                <?php
+                                $empresa = Administracion\Controlador::buscarEmpresaId($_SESSION['id']);
+                                ?>
+                                <td><input type="text" name="nombre" value="<?php echo $empresa->getNombre(); ?>"></td>
+                                <td><input type="text" name="nif" value="<?php echo $empresa->getNif(); ?>"></td>
+                            </tr>
+                        </form>
+
+                    </table>
+                </div>
+                <form method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
+                    <div class="col-md-10 col-md-offset-1"><!-- Ganeko -->
+                        <input class="btn btn-warning pull-right" type="submit" name="volver" value="Volver">
+                    </div>
+                </form>
+                <?php
+
+            require_once __DIR__ ."/../Plantilla/pie.php";
+
+        }
 
 
 

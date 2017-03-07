@@ -38,6 +38,17 @@ if(isset($_POST['vistaEditarEmpresa'])){
     //headerLocation a vista Editar
     header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/updateEmpresa.php");
 }
+if(isset($_POST['editarEmpresa'])){
+
+}
+if(isset($_POST['vistaEditarCentro'])){
+    $_SESSION['id'] = $_POST['id'];
+    //headerLocation a vista Editar
+    header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/updateCentro.php");
+}
+if(isset($_POST['editarEmpresa'])){
+
+}
 if(isset($_POST['addEstado'])){
     Controlador::AddEstado($_POST);
     header($gestionListas);

@@ -369,6 +369,10 @@ abstract class Controlador{
         $empresa =  BD\EmpresaBD::getEmpresaByID($id);
         return $empresa;
     }
+    public static function getCentroId($id){
+        $centro = BD\CentroBD::getCentrosById($id);
+        return $centro;
+    }
     /*public static function updateEmpresa($datos){
         BD\EmpresaBD::updateEmpresa($datos['id']);
     }*/

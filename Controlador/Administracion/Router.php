@@ -106,6 +106,9 @@ if(isset($_POST['añadirHorarioTrabajador'])){
     Controlador::addHorarioTrabajador($_POST);
     header($gestionListas);
 }
+if(isset($_POST['aplicarFiltrosHorarioTrabajador'])){
+    header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/deleteHorarioTrabajador.php");
+}
 if(isset($_POST['borrarHorarioTrabajador'])){
     Controlador::DeleteHorarioTrabajador($_POST);
     header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/deleteHorarioTrabajador.php");
@@ -316,8 +319,7 @@ if(isset($_POST['volver2'])){
 
 
 /***********/
-if (isset($_POST["semanas"]))
-{
+if (isset($_POST["semanas"])) {
 
     $trabajador = BD\TrabajadorBD::getTrabajadorByDni($_POST["dni"]);
 
@@ -338,16 +340,13 @@ if (isset($_POST["semanas"]))
     <div><label>Todos</label><input type="checkbox" name="todos" id="todos" onclick="seleccionar()"/></div>
     <?php
 }
-if (isset($_POST["empresas"]))
-{
-
-    $empresas = Controlador::getAllEmpresas();
-    $mensaje = '<select class="form-control" name="empresa" id="empresa">';
-
-    for ($x = 0; $x < count($empresas); $x++) {
-        $mensaje.='<option value="'. $empresas[$x]->getId().'">'.$empresas[$x]->getNombre().'</option>';
-    }
-
-    echo $mensaje."</select>";
+if (isset($_POST["empresas"])) { //Ibai
+    echo Controlador::rellenarEmpresas();
+}
+if (isset($_POST["centros"])) { //Ibai
+    echo Controlador::rellenarCentros($_POST["centros"]);
+}
+if (isset($_POST["calendarios"])) { //Ibai
+    echo Controlador::rellenarCalendarios();
 }
 ?>

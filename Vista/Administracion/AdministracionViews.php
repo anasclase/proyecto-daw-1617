@@ -59,7 +59,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
             </h3>
             <h3 class="page-header">Horario-Trabajador
                 <a href="<?php echo self::getUrlRaiz() ?>/Vista/Administracion/insertHorarioTrabajador.php"><span src="" class="glyphicon glyphicon-plus" style="font-size: 24px; color: green;"></span></a>
-                <a href="<?php echo self::getUrlRaiz() ?>/Vista/Administracion/deleteHorarioTrabajador.php"><span class="glyphicon glyphicon-eye-open" style="font-size: 24px; color: black;"></span></a>
+                <a href="<?php echo self::getUrlRaiz() ?>/Vista/Administracion/filtroHorarioTrabajador.php"><span class="glyphicon glyphicon-eye-open" style="font-size: 24px; color: black;"></span></a>
             </h3>
 
 
@@ -1258,32 +1258,31 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
             require_once __DIR__ . "/../Plantilla/pie.php";
         }
 
-<<<<<<< HEAD
         // Función para mostrar filtros de empresa,centro... al mostrar horarios-trabajador a administracion
         // Ibai
-=======
->>>>>>> origin/master
         public static function filtroHorarioTrabajador(){
             parent::setOn(true);
             parent::setRoot(true);
             require_once __DIR__ . "/../Plantilla/cabecera.php";
             ?>
-<<<<<<< HEAD
             <script src="<?php echo parent::getUrlRaiz() ?>/Vista/Plantilla/JS/jquery-2.2.1.min.js"></script>
             <script src="<?php echo parent::getUrlRaiz() ?>/Vista/Administracion/funcionesFiltro.js"></script>
 
 
+                <form id="formulario" method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
                 <div class="ins form-inline">
-                <?php echo parent::getUrlRaiz() ?>
                     <div class="form-group col-xs-6 col-sm-3">
-                      <label class="col-2">Empresa</label>
-                      <div class="col-9" id="divEmpresas">
+                        <label class="col-2">Empresa</label>
+                        <div class="col-9" id="divEmpresas">
+                            <select class="form-control" name="empresa" id="selectEmpresa">
+
+                            </select>
                         </div>
                     </div>
                     <div class="form-group col-xs-6 col-sm-3">
                       <label class="col-2">Centro</label>
                       <div class="col-9">
-                            <select class="form-control" name="centro" id="centro">
+                            <select class="form-control" name="centro" id="selectCentro">
 
                             </select>
                         </div>
@@ -1291,7 +1290,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                     <div class="form-group col-xs-6 col-sm-3">
                       <label class="col-2">Calendario</label>
                       <div class="col-9">
-                            <select class="form-control" name="calendario" id="calendario">
+                            <select class="form-control" name="calendario" id="selectCalendario">
 
                             </select>
                         </div>
@@ -1299,16 +1298,22 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                     <div class="form-group col-xs-6 col-sm-3">
                       <label class="col-2">Mes</label>
                       <div class="col-9">
-                            <select class="form-control" name="mes" id="mes">
+                            <select class="form-control" name="mes" id="selectMes">
 
                             </select>
                         </div>
                     </div>
+                    <div class="form-group container text-center" style="margin-top:20px;">
+                        <div class="">
+                            <button class="btn btn-primary"  type="submit" name="aplicarFiltrosHorarioTrabajador" id="aplicarFiltros">Buscar</button>
+                            <button class="btn btn-danger"  type="button" id="resetFiltros">Reset</button>
+                            <input class="btn btn-warning" type="submit" name="volver" value="Volver">
+                        </div>
+                    </div>
                 </div>
-=======
-
->>>>>>> origin/master
+                </form>
             <?php
+            require_once __DIR__ . "/../Plantilla/pie.php";
         }
 
         public static function deleteHorarioTrabajador()
@@ -1319,34 +1324,12 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
             require_once __DIR__ . "/../Plantilla/cabecera.php";
             ?>
             <div class="table-responsive col-md-offset-1 col-md-10">
-                <table class="table table-bordered">
-                    <tr>
-                        <th>TRABAJADOR</th>
-                        <th>SEMANA</th>
-                        <th>HORARIO</th>
-                        <th>ACCIÓN</th>
-                    </tr>
-                    <?php
-                    foreach ($horarioTrabajador as $horario) {
-                        ?>
-                        <form method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
-                            <tr>
-                                <td><?php echo $horario->getTrabajador()->getDni() ?></td>
-                                <td><?php echo $horario->getNumeroSemana() ?></td>
-                                <td><?php echo $horario->getHorario()->getTipo() ?></td>
-                                <td><button type="submit" name="borrarHorarioTrabajador" value="Eliminar" style="border: none; background: none"><span class="glyphicon glyphicon-remove" style="color: red; font-size: 1.5em"></span></button></td>
-
-<<<<<<< HEAD
             <table class="table table-bordered">
                 <tr>
                     <th>TRABAJADOR</th>
                     <th>SEMANA</th>
                     <th>HORARIO</th>
-<<<<<<< HEAD
                     <th>CALENDARIO</th>
-=======
-                    <th>Calendario</th>
->>>>>>> origin/master
                     <th>ACCIÓN</th>
                 </tr>
                 <?php
@@ -1358,16 +1341,10 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                             <td><?php echo $horario->getNumeroSemana() ?></td>
                             <td><?php echo $horario->getHorario()->getTipo() ?></td>
                             <td><?php echo $horario->getCalendario()->getId()?></td>
-<<<<<<< HEAD
-
                             <td>
                             <a href="<?php echo self::getUrlRaiz() ?>/Vista/Administracion/insertHorarioTrabajador.php"><span src="" class="glyphicon glyphicon-pencil" style="font-size: 24px; color: blue;"></span></a>
                                 <button type="submit" name="borrarHorarioTrabajador" value="Eliminar" style="border: none; background: none"><span class="glyphicon glyphicon-remove" style="color: red; font-size: 1.5em"></span></button>
                             </td>
-=======
-                            <td><button type="submit" name="borrarHorarioTrabajador" value="Eliminar" style="border: none; background: none"><span class="glyphicon glyphicon-remove" style="color: red; font-size: 1.5em"></span></button></td>
->>>>>>> origin/master
-
                         </tr>
                         <input type="hidden" value="<?php echo $horario->getId() ?>" name="id">
                     </form>
@@ -1375,16 +1352,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                 }
                 ?>
             </table>
-=======
-                            </tr>
-                            <input type="hidden" value="<?php echo $horario->getId() ?>" name="id">
-                        </form>
-                        <?php
-                    }
-                    ?>
-                </table>
             </div>
->>>>>>> origin/master
             <form method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
                 <div class="col-md-10 col-md-offset-1"><!-- Ganeko -->
                     <input class="btn btn-warning pull-right" type="submit" name="volver" value="Volver">

@@ -31,6 +31,7 @@ require_once __DIR__ ."/../../Modelo/Base/ProduccionClass.php";
 require_once __DIR__ ."/../../Modelo/Base/GerenciaClass.php";
 require_once __DIR__ .'/../../Modelo/Base/EstadoClass.php';
 require_once __DIR__ .'/../../Modelo/Base/LoginClass.php';
+require_once __DIR__ .'/../../Modelo/Base/CalendarioClass.php';
 require_once __DIR__ .'/../../Modelo/Base/HoraConvenioClass.php';
 require_once __DIR__ .'/../../Modelo/Base/HorariosClass.php';
 require_once __DIR__."/../../Modelo/BD/LoginBD.php";
@@ -177,6 +178,10 @@ abstract class Controlador{
 
     public static function getAllEmpresas(){
         return BD\EmpresaBD::getAll();
+    }
+
+    public static function getAllCalendarios(){
+        return BD\CalendarioBD::getAll();
     }
 
     public static function getAllPerfiles(){
@@ -565,10 +570,38 @@ abstract class Controlador{
 
         $_SESSION['parte'] = serialize($parte);
     }
-    public static function getCentros($e){
+    public static function getCentros($e = null){
         return BD\CentroBD::getCentrosByEmpresas($e);
     }
-    public static function getTrabajadores($c){
-        return BD\TrabajadorBD::getTrabajadoresByCentros($c);
+
+    public static function rellenarEmpresas(){ //Ibai
+        $empresas = Controlador::getAllEmpresas();
+        $mensaje = '<option value="" disabled  selected="selected">Elige</option>';
+
+        for ($x = 0; $x < count($empresas); $x++) {
+            $mensaje.='<option value="'. $empresas[$x]->getId().'">'.$empresas[$x]->getNombre().'</option>';
+        }
+
+        return $mensaje."</select>";
+    }
+
+    public static function rellenarCentros($id = null){ //Ibai
+        $centros = Controlador::getCentros([$id]);
+        $mensaje = '<option value="" disabled  selected="selected">Elige</option>';
+
+        for($x=0;$x<count($centros);$x++){
+            $mensaje.='<option value="'. $centros[$x]->getId().'">'.$centros[$x]->getNombre().'</option>';
+        }
+        return $mensaje;
+    }
+
+    public static function rellenarCalendarios(){ //Ibai
+        $calendarios = Controlador::getAllCalendarios();
+        $mensaje = '<option value="" disabled  selected="selected">Elige</option>';
+
+        for($x=0;$x<count($calendarios);$x++){
+            $mensaje.='<option value="'. $calendarios[$x]->getId().'">'.$calendarios[$x]->getId().'</option>';
+        }
+        return $mensaje;
     }
 }

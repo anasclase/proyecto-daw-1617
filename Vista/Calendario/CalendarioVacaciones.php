@@ -43,9 +43,8 @@ abstract class CalendarioVac extends Plantilla\Views
                     <select name="trabajador" id="trabajador">
 
                     </select>
-
+                    <label for="FechaSolic">Fecha :</label><label name="vacOpen" id="vacOpen"></label>
                 </div>
-                <label name="vacOpen" id="vacOpen"></label>
             </form>
 
 
@@ -572,6 +571,7 @@ abstract class CalendarioVac extends Plantilla\Views
                                 .done(function (respuesta) {
 
                                     $("#trabajador").html(respuesta);
+                                    cargarFechas($("#trabajador option:selected").val());
 
                                 })
                                 .fail(function () {
@@ -581,12 +581,17 @@ abstract class CalendarioVac extends Plantilla\Views
                         } catch (err) {
                             alert(err)
                         }
+
                     });
 
 
                     $("#trabajador").on("change", function () { //Aitor
+                        cargarFechas($("#trabajador option:selected").val());
+                    });
+
+                    function cargarFechas(nombre) {
                         try {
-                            var trabajador = $(this).val();
+                            var trabajador = nombre;
 
                             $.ajax({
                                 type: "GET",
@@ -604,7 +609,7 @@ abstract class CalendarioVac extends Plantilla\Views
                         } catch (err) {
                             alert(err)
                         }
-                    });
+                    }
 
 
                     /**

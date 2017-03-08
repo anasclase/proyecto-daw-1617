@@ -299,20 +299,20 @@ switch ($_GET["accion"])
         break;
     }
 
-    case "buscarCalend":{
+    case "buscarCalend":{   //Aitor
         $trabajador = $_GET["trabajador"];
-        $idEmpresa = $_GET["idEmpresa"];
 
-        $empresa = new \Modelo\Base\Centro($idEmpresa);
-
-        $query = \Modelo\BD\TrabajadorBD::getTodosTrabajadoresByCentro($empresa);
+        $oTrabajador = new \Modelo\Base\Trabajador($trabajador);
+        $query = \Modelo\BD\FestivoBD::getFestivoByEstado($oTrabajador);
+        $resultado="";
         if($query==null){
             echo null ;
         }else{
             for($x=0;$x<count($query);$x++){
-                echo "<option value='".$query[$x]->getDni()."'>".$query[$x]->getNombre()."</option>";
+                $resultado=$resultado. $query[$x]->getFecha();
             }
         }
+        echo $resultado;
         break;
     }
     case "editarCalendario":{
@@ -331,11 +331,6 @@ switch ($_GET["accion"])
         }
         break;
     }
-}
-
-
-if(isset($_POST["vacOpen"])){   //Aitor
-    \Vista\Administracion\AdministracionViews::visualizarVacacionesOpen();
 }
 
 

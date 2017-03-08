@@ -2,8 +2,11 @@
 
 namespace Modelo\BD;
 
+use Modelo\Base\VacacionesTrabajadores;
+
 require_once __DIR__."/GenericoBD.php";
 require_once __DIR__."/TrabajadorBD.php";
+require_once __DIR__."/.././Base/VacacionesTrabajadoresClass.php";
 
 abstract class FestivoBD extends GenericoBD
 {
@@ -100,12 +103,17 @@ abstract class FestivoBD extends GenericoBD
 
 
 
-    public static function getFestivoByEstado(){    //Aitor
+    public static function getFestivoByEstado($trabajador){    //Aitor
         $conexion = parent::conectar();
-        $query="SELECT * FROM vacacionestrabajadores WHERE estado='S'";
+        $festivos=[];
+        $query="SELECT fecha FROM vacacionestrabajadores WHERE estado='S' AND dniTrabajador='".$trabajador->getDni()."'";
         $rs=mysqli_query($conexion, $query) or die(mysqli_error($conexion));
+        while ($rows=mysqli_fetch_array($rs)){
+            $vacacion=new VacacionesTrabajadores(null, null, $rows["fecha"],null, null, null, null);
+            array_push($festivos, $vacacion);
+        }
         parent::desconectar($conexion);
-        return $rs;
+        return $festivos;
     }
 
 

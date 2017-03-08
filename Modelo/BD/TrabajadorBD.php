@@ -295,4 +295,14 @@ abstract class TrabajadorBD extends GenericoBD{
             return $rows[0];
         }
     }
+
+
+    public  static function getDniFromNombre($nombre){ //Aitor
+        $con = parent::conectar();
+        $query="SELECT dni FROM trabajadores WHERE nombre='".$nombre."'";
+        $rs = mysqli_query($con, $query) or die("Error getDni");
+        while($rows=mysqli_fetch_array($rs)){
+            return $rows[0];
+        }
+    }
 }

@@ -28,9 +28,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                 <a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/insertTrabajador.php"><span class="glyphicon glyphicon-plus" style="font-size: 24px; color: green;"></span></a>
                 <a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/deleteTrabajador.php"><span class="glyphicon glyphicon-eye-open" style="font-size: 24px; color: black;"></span></a>
             </h3>
-            <h3 class="page-header">Contraseñas
-                <a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/updatePassword.php"><span class="glyphicon glyphicon-pencil" style="font-size: 24px;"></span></a><br/>
-            </h3><h3 class="page-header">Empresa
+            <h3 class="page-header">Empresa
                 <a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/insertEmpresa.php"><span src="" class="glyphicon glyphicon-plus" style="font-size: 24px; color: green;"></span></a>
                 <a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/deleteEmpresa.php"><span class="glyphicon glyphicon-eye-open" style="font-size: 24px; color: black;"></span></a>
             </h3>

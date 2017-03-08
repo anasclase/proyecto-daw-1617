@@ -151,7 +151,8 @@ if(isset($_POST['añadirHorarioTrabajador'])){
     Controlador::addHorarioTrabajador($_POST);
     header($gestionListas);
 }
-if(isset($_POST['aplicarFiltrosHorarioTrabajador'])){ //Ibai
+if(isset($_POST['mostrarHorarioTrabajador'])){ //Ibai
+    $_SESSION["filtrosHorarios"] = $_POST;
     header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/deleteHorarioTrabajador.php");
 }
 if(isset($_POST['borrarHorarioTrabajador'])){

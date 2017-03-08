@@ -324,9 +324,12 @@ abstract class Controlador{
 
     }
 
-    public static function getAllHoraioTrabajador(){
-    return BD\HorarioTrabajadorBD::getAll();
-}
+    public static function getAllHorarioTrabajador(){
+        return BD\HorarioTrabajadorBD::getAll();
+    }
+    public static function getAllHorarioTrabajadorFiltrado($filtros){
+        return BD\HorarioTrabajadorBD::getAllFiltrado($filtros);
+    }
     public static function getHorarioTrabajador($trabajador){
         return BD\HorarioTrabajadorBD::getAll($trabajador);
     }

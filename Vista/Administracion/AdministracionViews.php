@@ -1300,7 +1300,6 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
             require_once __DIR__ . "/../Plantilla/cabecera.php";
             ?>
             <script src="<?php echo parent::getUrlRaiz() ?>/Vista/Plantilla/JS/jquery-2.2.1.min.js"></script>
-            <script src="<?php echo parent::getUrlRaiz() ?>/Vista/Administracion/funcionesFiltro.js"></script>
 
 
                 <form id="formulario" method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
@@ -1339,7 +1338,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                     </div>
                     <div class="form-group container text-center" style="margin-top:20px;">
                         <div class="">
-                            <button class="btn btn-primary"  type="submit" name="aplicarFiltrosHorarioTrabajador" id="aplicarFiltros">Buscar</button>
+                            <button class="btn btn-primary"  type="submit" name="mostrarHorarioTrabajador" id="aplicarFiltros">Buscar</button>
                             <button class="btn btn-danger"  type="button" id="resetFiltros">Reset</button>
                             <input class="btn btn-warning" type="submit" name="volver" value="Volver">
                         </div>
@@ -1354,8 +1353,8 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
         {
             parent::setOn(true);
             parent::setRoot(true);
-            $horarioTrabajador = Administracion\Controlador::getAllHoraioTrabajador();
-			
+            $horarioTrabajador = Administracion\Controlador::getAllHorarioTrabajadorFiltrado($_SESSION["filtrosHorarios"]);
+
             require_once __DIR__ . "/../Plantilla/cabecera.php";
             ?>
             <div class="table-responsive col-md-offset-1 col-md-10">
@@ -2580,7 +2579,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
 	public static function updateHorarioTrabajador(){ /*PABLO*/
 		parent::setOn(true);
         	parent::setRoot(true);
-			$horarioTrabajador = Administracion\Controlador::getAllHoraioTrabajador();
+			$horarioTrabajador = Administracion\Controlador::getAllHorarioTrabajador();
 			$horarios = Administracion\Controlador::getAllHorarios();
 			
             require_once __DIR__ . "/../Plantilla/cabecera.php";
@@ -2591,6 +2590,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                         <th>TRABAJADOR</th>
                         <th>SEMANA</th>
                         <th>HORARIO</th>
+						<th>CALENDARIO</th> <!--Ibai-->
 						<th>ACCIÓN</th>
                     </tr>
                     
@@ -2600,6 +2600,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                                 <td><?php echo $horarioTrabajador[$_SESSION["dht_semana"]]->getTrabajador()->getDni(); ?></td>
                                 <td><?php echo $horarioTrabajador[$_SESSION["dht_semana"]]->getNumeroSemana(); ?></td>
                                <!-- PABLO --> <td><select class='form-control' name="horario"><?php $x=1; foreach ($horarios as $hor){?><option value="<?php echo $x; ?>"><?php echo $hor->getTipo();?></option><?php $x++; } ?></select>
+                                <td><?php echo $horarioTrabajador[$_SESSION["dht_semana"]]->getCalendario()->getId()?></td>
 							    <td><button type="submit" name="updateT3" value="Editar"
                                             style="border: none; background: none;"><span
                                             class="glyphicon glyphicon-edit"

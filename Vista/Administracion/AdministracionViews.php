@@ -289,13 +289,13 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                     <div class="form-group">
                         <label class="control-label col-sm-2 col-md-2">Nombre:</label>
                         <div class="col-sm-4 col-md-3">
-                            <input class="form-control" type="text" name="nombre">
+                            <input class="form-control" type="text" name="nombre" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-2 col-md-2">NIF:</label>
                         <div class="col-sm-4 col-md-3">
-                            <input class="form-control" type="text" name="nif" maxlength="9">
+                            <input class="form-control" type="text" name="nif" maxlength="9" required>
                         </div>
                     </div>
                     <div class="form-group"><!--Ganeko-->

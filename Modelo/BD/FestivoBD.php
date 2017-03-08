@@ -120,7 +120,7 @@ abstract class FestivoBD extends GenericoBD
     public static function getVacacionesDisfrutadas($trabajador){    // IRUNE
         $conexion = parent::conectar();
         $festivos=[];
-        $query="SELECT fecha FROM vacacionestrabajadores WHERE estado='D' AND dniTrabajador='".$trabajador->getDni()."'";
+        $query="SELECT fecha FROM vacacionestrabajadores WHERE estado='S' AND dniTrabajador='".$trabajador->getDni()."'";
         $rs=mysqli_query($conexion, $query) or die(mysqli_error($conexion));
         while ($rows=mysqli_fetch_array($rs)){
             $vacacion=new VacacionesTrabajadores(null, null, $rows["fecha"],null, null, null, null);

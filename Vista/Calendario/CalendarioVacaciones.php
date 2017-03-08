@@ -66,7 +66,9 @@ abstract class CalendarioVac extends Plantilla\Views
 
                     <input type="button" value="Seleccionar dias" id="rangoDias" name="rangoDias"/>
                 </div>
-                <input type="button" value="Aceptar" onclick="fEditarVacaciones('A')"><input type="button" value="Rechazar" onclick="fEditarVacaciones('R')">
+                <input type="button" value="Aceptar" onclick="fEditarVacaciones('A')">
+                <input type="button" value="Rechazar" onclick="fEditarVacaciones('R')"><br>
+                <label for="fechaDisfrutadas">Vacaciones disfrutadas:</label><label name="vacacionesDisfrutadas" id="vacacionesDisfrutadas"></label>
             </form>
 
             <div style='visibility: hidden' class="cal"></div><div id="mask"></div>
@@ -601,6 +603,33 @@ abstract class CalendarioVac extends Plantilla\Views
                                 .done(function (respuesta) {
 
                                     $("#vacOpen").html(respuesta);
+
+                                })
+                                .fail(function () {
+                                    alert("error");
+                                });
+                        } catch (err) {
+                            alert(err)
+                        }
+                    }
+
+
+                    $("#trabajador").on("change", function () { // IRUNE
+                        cargarDisfrutadas($("#trabajador option:selected").val());
+                    });
+
+                    function cargarDisfrutadas(nombre) {
+                        try {
+                            var trabajador = nombre;
+
+                            $.ajax({
+                                type: "GET",
+                                url: "<?php echo parent::getUrlRaiz()?>/Controlador/Calendario/ControladorCalendario.php",
+                                data: {trabajador: trabajador, accion: "buscarDisfrutadas"}
+                            })
+                                .done(function (respuesta) {
+
+                                    $("#vacacionesDisfrutadas").html(respuesta);
 
                                 })
                                 .fail(function () {

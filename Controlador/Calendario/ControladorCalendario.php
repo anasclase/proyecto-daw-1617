@@ -316,22 +316,40 @@ switch ($_GET["accion"])
         echo $resultado;
         break;
     }
-    case "editarCalendario":{
+    case "editarCalendario": {
         $valor = $_GET["valor"];
         $trabajador = $_GET["trabajador"];
 
         $empresa = new \Modelo\Base\Centro($idEmpresa);
 
-        $query = \Modelo\BD\TrabajadorBD::editarCalendario($trabajador,$valor);
+        $query = \Modelo\BD\TrabajadorBD::editarCalendario($trabajador, $valor);
 
         if ($valor == "A") {
             echo "Vacaciones aceptadas";
-        }
-        else {
+        } else {
             echo "Vacaciones rechazadas";
         }
         break;
     }
+
+    case "buscarDisfrutadas":{   // IRUNE
+        $trabajador = $_GET["trabajador"];
+
+        $oTrabajador = new \Modelo\Base\Trabajador($trabajador);
+        $query = \Modelo\BD\FestivoBD::getVacacionesDisfrutadas($oTrabajador);
+        $resultado="";
+        if($query==null){
+            echo null ;
+        }else{
+            for($x=0;$x<count($query);$x++){
+                $fecha = substr($query[$x]->getFecha(), -19, 10);
+                $resultado=$resultado. " " .$fecha;
+            }
+        }
+        echo $resultado;
+        break;
+    }
+
 }
 
 

@@ -25,8 +25,8 @@ abstract class CalendarioVac extends Plantilla\Views
             <form name="trabajador" method="post" action="../../Controlador/Calendario/ControladorCalendario.php">
 
                 <div id="empresa">
-                    <label class="col-md-6 col-sm-6 col-xs-6" for="nomEmpresa">Nombre de la empresa :</label>
-                    <select style="width: 15%" class="form-control col-md-6 col-sm-6 col-xs-6" id="nomEmpresa">
+                    <label for="nomEmpresa">Nombre de la empresa :</label>
+                    <select id="nomEmpresa">
                         <option value="-1" > Seleccionar </option>
                         <?php
                         $empresas = \Modelo\BD\EmpresaBD::getAll();
@@ -39,16 +39,16 @@ abstract class CalendarioVac extends Plantilla\Views
                     </select>
 
 
-                    <label class="col-md-6 col-sm-6 col-xs-6" for=nomTrabajador">Trabajador :</label>
-                    <select style="width: 15%" class="form-control col-md-6 col-sm-6 col-xs-6" name="trabajador" id="trabajador">
+                    <label for="nomTrabajador">Trabajador :</label>
+                    <select name="trabajador" id="trabajador">
 
                     </select>
-                    <label class="col-md-6 col-sm-6 col-xs-6" for="FechaSolic">Fecha :</label><label class="col-md-6" name="vacOpen" id="vacOpen"></label>
+                    <label for="FechaSolic">Vacaciones solicitadas : </label><label name="vacOpen" id="vacOpen"></label>
                 </div>
             </form>
 
 
-            <form name="rango" class="col-md-12 col-sm-12 col-xs-12">
+            <form name="rango" >
                 <h4><p>Vacaciones por Rango o dias Sueltos:</p>
                     <label for="rango"> Rango </label> <input type="radio" name="rangoVacaciones" value="rango"/>
                     <label for="dSueltos"> D&iacute;as Sueltos </label> <input type="radio" name="rangoVacaciones" value="sueltos"/>
@@ -66,9 +66,7 @@ abstract class CalendarioVac extends Plantilla\Views
 
                     <input type="button" value="Seleccionar dias" id="rangoDias" name="rangoDias"/>
                 </div>
-                <p><input class="btn btn-default" type="button" value="Aceptar" onclick="fEditarVacaciones('A')">&nbsp;<input class="btn btn-default" type="button" value="Rechazar" onclick="fEditarVacaciones('R')"></p>
-
-                <label for="fechaDisfrutadas">Vacaciones disfrutadas:</label><label name="vacacionesDisfrutadas" id="vacacionesDisfrutadas"></label>
+                <input type="button" value="Aceptar" onclick="fEditarVacaciones('A')"><input type="button" value="Rechazar" onclick="fEditarVacaciones('R')">
             </form>
 
             <div style='visibility: hidden' class="cal"></div><div id="mask"></div>
@@ -253,26 +251,32 @@ abstract class CalendarioVac extends Plantilla\Views
                 }
 
                 function fEditarVacaciones(valor) {
-                    if ($("#nomEmpresa").val() != "-1") {
-                        var trabajador = $("#trabajador option:selected").val();
-                        try {
-                            $.ajax({
-                                type: "GET",
-                                url: "<?php echo parent::getUrlRaiz()?>/Controlador/Calendario/ControladorCalendario.php",
-                                data: {trabajador: trabajador, valor: valor, accion: "editarCalendario"}
-                            })
-                                .done(function (respuesta) {
-                                    alert(respuesta);
+                    if($("#vacOpen").html() != ""){
+                        if ($("#nomEmpresa").val() != "-1") {
+                            var trabajador = $("#trabajador option:selected").val();
+                            try {
+                                $.ajax({
+                                    type: "GET",
+                                    url: "<?php echo parent::getUrlRaiz()?>/Controlador/Calendario/ControladorCalendario.php",
+                                    data: {trabajador: trabajador, valor: valor, accion: "editarCalendario"}
                                 })
-                                .fail(function () {
-                                    alert("error");
-                                });
-                        } catch (err) {
-                            alert(err);
+                                    .done(function (respuesta) {
+                                        alert(respuesta);
+                                        $("#vacOpen").html("");
+                                    })
+                                    .fail(function () {
+                                        alert("error");
+                                    });
+                            } catch (err) {
+                                alert(err);
+                            }
+                        } else {
+                            alert("No puedes dejar el trabajor sin seleccionar");
                         }
-                    } else {
-                        alert("No puedes dejar el trabajor sin seleccionar");
+                    }else{
+                        alert("No hay vacaciones solicitadas");
                     }
+
                 }
 
                 function generarFecha() {
@@ -603,33 +607,6 @@ abstract class CalendarioVac extends Plantilla\Views
                                 .done(function (respuesta) {
 
                                     $("#vacOpen").html(respuesta);
-
-                                })
-                                .fail(function () {
-                                    alert("error");
-                                });
-                        } catch (err) {
-                            alert(err)
-                        }
-                    }
-
-
-                    $("#trabajador").on("change", function () { // IRUNE
-                        cargarDisfrutadas($("#trabajador option:selected").val());
-                    });
-
-                    function cargarDisfrutadas(nombre) {
-                        try {
-                            var trabajador = nombre;
-
-                            $.ajax({
-                                type: "GET",
-                                url: "<?php echo parent::getUrlRaiz()?>/Controlador/Calendario/ControladorCalendario.php",
-                                data: {trabajador: trabajador, accion: "buscarDisfrutadas"}
-                            })
-                                .done(function (respuesta) {
-
-                                    $("#vacacionesDisfrutadas").html(respuesta);
 
                                 })
                                 .fail(function () {

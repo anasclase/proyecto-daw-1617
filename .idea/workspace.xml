@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5ca1acb5-411e-4129-befd-8f19de674ea5" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Controlador/Calendario/ControladorCalendario.php" afterPath="$PROJECT_DIR$/Controlador/Calendario/ControladorCalendario.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Vista/Calendario/CalendarioGestionarCalendariosIndividuales.php" afterPath="$PROJECT_DIR$/Vista/Calendario/CalendarioGestionarCalendariosIndividuales.php" />
     </list>
     <ignored path="public.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -480,13 +478,7 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/public.iml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/Controlador/Calendario/ControladorCalendario.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/Modelo/BD/TrabajadorBD.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/Vista/Administracion/AdministracionViews.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/Vista/Calendario/CalendarioGestionarCalendariosIndividuales.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/Vista/Calendario/CalendarioVacaciones.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Controlador/Logistica/ControladorCalendarioVacaciones.php</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -672,7 +664,7 @@
       <workItem from="1488525822028" duration="12626000" />
       <workItem from="1488784662834" duration="10719000" />
       <workItem from="1488871676027" duration="8539000" />
-      <workItem from="1488958249662" duration="1181000" />
+      <workItem from="1488958249662" duration="1251000" />
     </task>
     <task id="LOCAL-00001" summary="prueba iker">
       <created>1488361626538</created>
@@ -835,11 +827,18 @@
       <option name="project" value="LOCAL" />
       <updated>1488886520296</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="IRUNE">
+      <created>1488962331606</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1488962331606</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53657000" />
+    <option name="totallyTimeSpent" value="53727000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -895,10 +894,10 @@
     <MESSAGE value="IRUNE VALIDACIONES CREAR Y CERRAR CALENDARIO" />
     <MESSAGE value="IRUNE crear cal" />
     <MESSAGE value="IRUNE ultimo commit del viernes 03" />
-    <MESSAGE value="IRUNE" />
     <MESSAGE value="asignar calendarios individuales&#10;IRUNE AITOR DAVID" />
     <MESSAGE value="commit de arreglo iker&#10;IRUNE" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit de arreglo iker&#10;IRUNE" />
+    <MESSAGE value="IRUNE" />
+    <option name="LAST_COMMIT_MESSAGE" value="IRUNE" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

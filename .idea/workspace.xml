@@ -3,11 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5ca1acb5-411e-4129-befd-8f19de674ea5" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Controlador/Calendario/ControladorCalendario.php" afterPath="$PROJECT_DIR$/Controlador/Calendario/ControladorCalendario.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Modelo/BD/FestivoBD.php" afterPath="$PROJECT_DIR$/Modelo/BD/FestivoBD.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Modelo/BD/TrabajadorBD.php" afterPath="$PROJECT_DIR$/Modelo/BD/TrabajadorBD.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Modelo/Base/TrabajadorClass.php" afterPath="$PROJECT_DIR$/Modelo/Base/TrabajadorClass.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Vista/Calendario/CalendarioVacaciones.php" afterPath="$PROJECT_DIR$/Vista/Calendario/CalendarioVacaciones.php" />
     </list>
     <ignored path="public.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -115,8 +110,8 @@
       <file leaf-file-name="CalendarioVacaciones.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Vista/Calendario/CalendarioVacaciones.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="485">
-              <caret line="591" column="51" lean-forward="false" selection-start-line="591" selection-start-column="51" selection-end-line="591" selection-end-column="51" />
+            <state relative-caret-position="638">
+              <caret line="600" column="60" lean-forward="true" selection-start-line="600" selection-start-column="60" selection-end-line="600" selection-end-column="60" />
               <folding>
                 <element signature="e#3257#3283#0#HTML" expanded="true" />
                 <marker date="1488965026868" expanded="true" signature="18368:18374" ph=" " />
@@ -744,7 +739,7 @@
       <workItem from="1488784937684" duration="3500000" />
       <workItem from="1488871333090" duration="5163000" />
       <workItem from="1488879809573" duration="7297000" />
-      <workItem from="1488957893087" duration="7151000" />
+      <workItem from="1488957893087" duration="8079000" />
     </task>
     <task id="LOCAL-00001" summary="prueba iker">
       <created>1488361626538</created>
@@ -816,11 +811,18 @@
       <option name="project" value="LOCAL" />
       <updated>1488959920029</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="listar solicitud vacaciones Aitor">
+      <created>1488965144352</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1488965144352</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46388000" />
+    <option name="totallyTimeSpent" value="47316000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -878,7 +880,8 @@
     <MESSAGE value="." />
     <MESSAGE value="Visualizar solicitud de vacaciones" />
     <MESSAGE value="botones" />
-    <option name="LAST_COMMIT_MESSAGE" value="botones" />
+    <MESSAGE value="listar solicitud vacaciones Aitor" />
+    <option name="LAST_COMMIT_MESSAGE" value="listar solicitud vacaciones Aitor" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1043,6 +1046,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1323,8 +1327,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Vista/Calendario/CalendarioVacaciones.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="485">
-          <caret line="591" column="51" lean-forward="false" selection-start-line="591" selection-start-column="51" selection-end-line="591" selection-end-column="51" />
+        <state relative-caret-position="638">
+          <caret line="600" column="60" lean-forward="true" selection-start-line="600" selection-start-column="60" selection-end-line="600" selection-end-column="60" />
           <folding>
             <element signature="e#3257#3283#0#HTML" expanded="true" />
             <marker date="1488965026868" expanded="true" signature="18368:18374" ph=" " />

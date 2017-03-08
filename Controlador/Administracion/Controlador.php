@@ -61,19 +61,19 @@ abstract class Controlador{
         switch($perfil){
             case "Logistica":
                 $trabajador= new Logistica($datos["dni"],$datos['nombre'],$datos['apellido1'],$datos['apellido2'],$datos['telefono'],null/*foto*/,$centro,null,null,null,null);
-				$login=new Login(null, $datos["pass"], $trabajador->getDni());
+				$login=new Login(null, md5($datos["pass"]), $trabajador->getDni());
                 break;
             case "Administracion":
                 $trabajador= new Administracion($datos["dni"],$datos['nombre'],$datos['apellido1'],$datos['apellido2'],$datos['telefono'],null/*foto*/,$centro,null,null,null);
-				$login=new Login(null, $datos["pass"], $trabajador->getDni());
+				$login=new Login(null, md5($datos["pass"]), $trabajador->getDni());
                 break;
             case "Gerencia":
                 $trabajador= new Gerencia($datos["dni"],$datos['nombre'],$datos['apellido1'],$datos['apellido2'],$datos['telefono'],null/*foto*/,$centro,null,null,null);
-				$login=new Login(null, $datos["pass"], $trabajador->getDni());
+				$login=new Login(null, md5($datos["pass"]), $trabajador->getDni());
                 break;
             case "Produccion":
                 $trabajador= new Produccion($datos["dni"],$datos['nombre'],$datos['apellido1'],$datos['apellido2'],$datos['telefono'],null/*foto*/,$centro,null,null,null,null);
-				$login=new Login(null, $datos["pass"], $trabajador->getDni());
+				$login=new Login(null, md5($datos["pass"]), $trabajador->getDni());
                 break;
         }
 

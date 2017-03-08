@@ -43,12 +43,12 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
             <h3 class="page-header">Convenio
                 <a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/insertHorasConvenio.php"><span src="" class="glyphicon glyphicon-plus" style="font-size: 24px; color: green;"></span></a>
                 <a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/deleteHorasConvenio.php"><span class="glyphicon glyphicon-eye-open" style="font-size: 24px; color: black;"></span></a>
-                <a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/updateHorasConvenio.php"><span class="glyphicon glyphicon-pencil" style="font-size: 24px;"></span></a>
+                
             </h3>
             <h3 class="page-header">Tipo Franja
                 <a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/insertTipoFranja.php"><span src="" class="glyphicon glyphicon-plus" style="font-size: 24px; color: green;"></span></a>
                 <a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/deleteTipoFranja.php"><span class="glyphicon glyphicon-eye-open" style="font-size: 24px; color: black;"></span></a>
-                <a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/updateTipoFranja.php"><span class="glyphicon glyphicon-pencil" style="font-size: 24px;"></span></a>
+                
             </h3>
             <h3 class="page-header">Horario
                 <a href="<?php echo self::getUrlRaiz() ?>/Vista/Administracion/insertHorario.php"><span src="" class="glyphicon glyphicon-plus" style="font-size: 24px; color: green;"></span></a>
@@ -766,6 +766,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                                                 style="border: none; background: none;"><span
                                                 class="glyphicon glyphicon-remove"
                                                 style="color:red; font-size: 1.5em"></span></button>
+										<a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/updateHorasConvenio.php"><span class="glyphicon glyphicon-pencil" style="color:black; font-size: 24px;"></span></a>		
                                         <input type="hidden" name="id" value="<?php echo $horaconvenio->getId(); ?>">
                                     </form>
                                 </td>
@@ -977,6 +978,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                                             value="Eliminar" style="border: none; background: none;"><span
                                             class="glyphicon glyphicon-remove"
                                             style="color:red; font-size: 1.5em"></span></button>
+									<a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/updateTipoFranja.php"><span class="glyphicon glyphicon-pencil" style="color: black; font-size: 24px;"></span></a>		
                                     <input type="hidden" name="id" value="<?php echo $tipo->getId(); ?>">
                                 </form>
                             </td>

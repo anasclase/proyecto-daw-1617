@@ -314,7 +314,7 @@ use Modelo\Base;
 
                         </div>
                         <div class="form-group col-sm-4">
-                            <label class="col-sm-6 control-label">Autopista/Peajes:</label>
+                            <label class="col-sm-6 control-label">Autopista:</label>
                             <div class="input-group col-sm-3">
                                 <input type="text" class="form-control" name="autopista" id="autopistas" aria-describedby="basic-addon2">
                                 <span class="input-group-addon" id="basic-addon2">€</span>

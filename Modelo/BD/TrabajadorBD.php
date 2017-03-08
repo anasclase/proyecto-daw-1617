@@ -19,7 +19,6 @@ abstract class TrabajadorBD extends GenericoBD{
     public static function editarCalendario($trabajador,$valor){
         $con = parent::conectar();
 
-        $valor = strtoupper($valor);
         $query = "UPDATE vacacionestrabajadores SET estado = ".$valor." WHERE dniTrabajador = ".$trabajador;
 
         $rs = mysqli_query($con, $query) or die("Error getTrabajadoresByCentro");

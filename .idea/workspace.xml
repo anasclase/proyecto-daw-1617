@@ -3,6 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="5ca1acb5-411e-4129-befd-8f19de674ea5" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+<<<<<<< Updated upstream
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Modelo/BD/TrabajadorBD.php" afterPath="$PROJECT_DIR$/Modelo/BD/TrabajadorBD.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Vista/Calendario/CalendarioVacaciones.php" afterPath="$PROJECT_DIR$/Vista/Calendario/CalendarioVacaciones.php" />
+>>>>>>> Stashed changes
     </list>
     <ignored path="public.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,19 +31,40 @@
       <file leaf-file-name="cabecera.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Vista/Plantilla/cabecera.php">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
             <state relative-caret-position="527">
               <caret line="123" column="124" lean-forward="false" selection-start-line="123" selection-start-column="124" selection-end-line="123" selection-end-column="124" />
               <folding />
+=======
+            <state relative-caret-position="17">
+              <caret line="42" column="26" selection-start-line="42" selection-start-column="26" selection-end-line="42" selection-end-column="26" />
+              <folding>
+                <marker date="1488888130374" expanded="true" signature="13095:13101" ph=" " />
+                <marker date="1488888130374" expanded="true" signature="14034:14040" ph=" " />
+              </folding>
+>>>>>>> Stashed changes
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< Updated upstream
       <file leaf-file-name="GestionarFestivosCentros.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Vista/Calendario/GestionarFestivosCentros.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="345">
               <caret line="23" column="50" lean-forward="false" selection-start-line="23" selection-start-column="50" selection-end-line="23" selection-end-column="50" />
               <folding />
+=======
+      <file leaf-file-name="CalendarioVacaciones.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Vista/Calendario/CalendarioVacaciones.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="260" column="85" selection-start-line="260" selection-start-column="76" selection-end-line="260" selection-end-column="85" />
+              <folding>
+                <marker date="1488963610946" expanded="true" signature="18326:18332" ph=" " />
+                <marker date="1488963610946" expanded="true" signature="19300:19306" ph=" " />
+              </folding>
+>>>>>>> Stashed changes
             </state>
           </provider>
         </entry>
@@ -46,19 +72,66 @@
       <file leaf-file-name="CalendarioGestionarFestivosCentros.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Vista/Calendario/CalendarioGestionarFestivosCentros.php">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
             <state relative-caret-position="285">
               <caret line="19" column="131" lean-forward="false" selection-start-line="19" selection-start-column="131" selection-end-line="21" selection-end-column="46" />
               <folding />
+=======
+            <state relative-caret-position="206">
+              <caret line="315" column="29" selection-start-line="315" selection-start-column="29" selection-end-line="315" selection-end-column="29" />
+              <folding>
+                <marker date="1488961762081" expanded="true" signature="1436:1509" ph="select * fro... ${$tabla}" />
+                <marker date="1488961762081" expanded="true" signature="1908:2009" ph="insert into ${$tabla}... " />
+                <marker date="1488961762081" expanded="true" signature="2225:2282" ph="delete from " />
+                <marker date="1488961762081" expanded="true" signature="3511:3662" ph="select fecha... ${$tabla}" />
+                <marker date="1488961762081" expanded="true" signature="4785:4793" ph="é" />
+                <marker date="1488961762081" expanded="true" signature="4840:4848" ph="á" />
+                <marker date="1488961762081" expanded="true" signature="6504:6510" ph=" " />
+                <marker date="1488961762081" expanded="true" signature="6850:6857" ph="«" />
+                <marker date="1488961762081" expanded="true" signature="6993:7000" ph="»" />
+              </folding>
+>>>>>>> Stashed changes
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< Updated upstream
       <file leaf-file-name="GestionarCalendariosIndividuales.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Vista/Calendario/GestionarCalendariosIndividuales.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="300">
               <caret line="20" column="58" lean-forward="false" selection-start-line="20" selection-start-column="58" selection-end-line="20" selection-end-column="58" />
               <folding />
+=======
+      <file leaf-file-name="TrabajadorBD.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Modelo/BD/TrabajadorBD.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+              <folding>
+                <marker date="1488962741851" expanded="true" signature="489:578" ph="UPDATE vacac... " />
+                <marker date="1488962741851" expanded="true" signature="495:578" ph="SELECT * FRO... ${self::$tabla}" />
+                <marker date="1488962741851" expanded="true" signature="882:930" ph="SELECT * FRO... ${self::$tabla}" />
+                <marker date="1488962741851" expanded="true" signature="1288:1332" ph="SELECT * FRO... trabajadores" />
+                <marker date="1488962741851" expanded="true" signature="2978:3017" ph="SELECT * FRO... trabajadores" />
+                <marker date="1488962741851" expanded="true" signature="3400:3666" ph="SELECT t.dni... ${self::$tabla}" />
+                <marker date="1488962741851" expanded="true" signature="3549:3604" ph="select dniTr... horariotrabajadores" />
+                <marker date="1488962741851" expanded="true" signature="4079:4174" ph="SELECT tipo perfiles" />
+                <marker date="1488962741851" expanded="true" signature="4117:4173" ph="SELECT idPer... trabajadores" />
+                <marker date="1488962741851" expanded="true" signature="4367:4416" ph="SELECT * FRO... trabajadores" />
+                <marker date="1488962741851" expanded="true" signature="4858:4910" ph="SELECT id FR... perfiles" />
+                <marker date="1488962741851" expanded="true" signature="5100:5377" ph="INSERT INTO ${self::$tabla}... " />
+                <marker date="1488962741851" expanded="true" signature="6048:6101" ph="DELETE FROM " />
+                <marker date="1488962741851" expanded="true" signature="6311:6353" ph="SELECT id,ti... perfiles" />
+                <marker date="1488962741851" expanded="true" signature="6747:6915" ph="SELECT t.dni... ${self::$tabla}" />
+                <marker date="1488962741851" expanded="true" signature="7237:7274" ph="SELECT tipo perfiles" />
+                <marker date="1488962741851" expanded="true" signature="7957:8069" ph="SELECT tipo perfiles" />
+                <marker date="1488962741851" expanded="true" signature="7995:8068" ph="SELECT idPer... trabajadores" />
+                <marker date="1488962741851" expanded="true" signature="8412:8582" ph="SELECT t.dni... trabajadores" />
+                <marker date="1488962741851" expanded="true" signature="9129:9310" ph="SELECT t.dni... trabajadores" />
+                <marker date="1488962741851" expanded="true" signature="10082:10150" ph="SELECT idCen... trabajadores" />
+              </folding>
+>>>>>>> Stashed changes
             </state>
           </provider>
         </entry>
@@ -115,6 +188,7 @@
         <option value="$PROJECT_DIR$/Modelo/BD/CentroBD.php" />
         <option value="$PROJECT_DIR$/Vista/Calendario/GestionarFestivosCentros.php" />
         <option value="$PROJECT_DIR$/Vista/Calendario/CalendarioGestionarFestivosCentros.php" />
+<<<<<<< Updated upstream
         <option value="$PROJECT_DIR$/Vista/Calendario/GestionarFestivosNacionales.php" />
         <option value="$PROJECT_DIR$/Vista/Calendario/CalendarioGestionarFestivosNacionales.php" />
         <option value="$PROJECT_DIR$/Controlador/Administracion/Controlador.php" />
@@ -129,6 +203,11 @@
         <option value="$PROJECT_DIR$/Modelo/BD/FestivoCentroBD.php" />
         <option value="$PROJECT_DIR$/Controlador/Calendario/ControladorCalendario.php" />
         <option value="$PROJECT_DIR$/Vista/Calendario/CalendarioGestionarCalendariosIndividuales.php" />
+=======
+        <option value="$PROJECT_DIR$/Controlador/Calendario/ControladorCalendario.php" />
+        <option value="$PROJECT_DIR$/Modelo/BD/TrabajadorBD.php" />
+        <option value="$PROJECT_DIR$/Vista/Calendario/CalendarioVacaciones.php" />
+>>>>>>> Stashed changes
       </list>
     </option>
   </component>
@@ -642,7 +721,20 @@
       <option name="number" value="00008" />
       <option name="presentableId" value="LOCAL-00008" />
       <option name="project" value="LOCAL" />
+<<<<<<< Updated upstream
       <updated>1488533681265</updated>
+=======
+      <updated>1488879331207</updated>
+    </task>
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5ca1acb5-411e-4129-befd-8f19de674ea5" name="Default" comment="" />
+      <created>1488880873673</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1488880873673</updated>
+      <workItem from="1488880896877" duration="6647000" />
+      <workItem from="1488959523258" duration="4096000" />
+>>>>>>> Stashed changes
     </task>
     <task id="LOCAL-00009" summary="CREAR CERRAR CALENDARIOS IRUNE">
       <created>1488539566851</created>
@@ -763,6 +855,7 @@
       <option name="project" value="LOCAL" />
       <updated>1488962349509</updated>
     </task>
+<<<<<<< Updated upstream
     <option name="localTasksCounter" value="26" />
     <servers />
   </component>
@@ -781,6 +874,23 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="977" extended-state="6" />
+=======
+    <task id="LOCAL-00016" summary="añadido boton aceptar y rechazar vacaciones">
+      <created>1488962278014</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1488962278014</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="37979000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+>>>>>>> Stashed changes
     <editor active="false" />
     <layout>
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16822916" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -817,6 +927,7 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+<<<<<<< Updated upstream
     <MESSAGE value="prueba iker" />
     <MESSAGE value="CREAR CERRAR CALENDARIOS IRUNE" />
     <MESSAGE value="IRUNE AÑADIR COMBOS FESTIVOS" />
@@ -827,6 +938,22 @@
     <MESSAGE value="commit de arreglo iker&#10;IRUNE" />
     <MESSAGE value="IRUNE" />
     <option name="LAST_COMMIT_MESSAGE" value="IRUNE" />
+=======
+    <MESSAGE value="Fusion boton fecha rango e individual" />
+    <MESSAGE value="correccion boton fecha individual" />
+    <MESSAGE value="correccion boton fecha individual 2" />
+    <MESSAGE value="validaciones" />
+    <MESSAGE value="festivos y centros" />
+    <MESSAGE value="festivosNacionalesBD" />
+    <MESSAGE value="festivosNacionales" />
+    <MESSAGE value="correccion festivonacionalBD" />
+    <MESSAGE value="hecho centrosBD" />
+    <MESSAGE value="arreglado controladorCalendario" />
+    <MESSAGE value="acabado festivosNacional y festivosCentros" />
+    <MESSAGE value="añadido boton aceptar y rechazar vacaciones" />
+    <option name="LAST_COMMIT_MESSAGE" value="añadido boton aceptar y rechazar vacaciones" />
+    <option name="PRESELECT_EXISTING_CHANGELIST" value="false" />
+>>>>>>> Stashed changes
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1105,15 +1232,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Vista/Calendario/CalendarioGestionarCalendario.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state relative-caret-position="61">
           <caret line="21" column="100" lean-forward="false" selection-start-line="21" selection-start-column="100" selection-end-line="21" selection-end-column="100" />
+=======
+        <state relative-caret-position="102">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="52" selection-end-column="1" />
+          <folding>
+            <element signature="e#112#3611#0#PHP" expanded="false" />
+            <marker date="1488887889887" expanded="true" signature="255:269" ph="SELECT * FRO... ${self::$tabla}" />
+            <marker date="1488887889887" expanded="true" signature="606:646" ph="DELETE FROM " />
+            <marker date="1488887889887" expanded="true" signature="879:975" ph="INSERT INTO ${self::$tabla}... " />
+          </folding>
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Vista/Administracion/Administracion.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state relative-caret-position="346">
           <caret line="34" column="18" lean-forward="false" selection-start-line="34" selection-start-column="18" selection-end-line="36" selection-end-column="58" />
+=======
+        <state relative-caret-position="34">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="28" selection-end-column="1" />
+          <folding>
+            <marker date="1488799260766" expanded="true" signature="279:616" ph="INSERT INTO vacacionestrabajadores... " />
+          </folding>
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
@@ -1147,6 +1293,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Modelo/BD/FestivoBD.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state relative-caret-position="242">
           <caret line="67" column="5" lean-forward="false" selection-start-line="67" selection-start-column="5" selection-end-line="67" selection-end-column="5" />
           <folding>
@@ -1158,12 +1305,19 @@
             <marker date="1488887923000" expanded="true" signature="2575:2784" ph="INSERT INTO vacacionestrabajadores... " />
             <marker date="1488887923000" expanded="true" signature="2946:3149" ph="INSERT INTO vacacionestrabajadores... " />
             <marker date="1488887923000" expanded="true" signature="2946:3150" ph="INSERT INTO vacacionestrabajadores... " />
+=======
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1488887889893" expanded="true" signature="316:471" ph="INSERT INTO insertarFestivos... " />
+>>>>>>> Stashed changes
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Modelo/BD/FestivoCentroBD.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state relative-caret-position="375">
           <caret line="30" column="1" lean-forward="true" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
           <folding>
@@ -1177,6 +1331,14 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+=======
+        <state relative-caret-position="510">
+          <caret line="30" column="1" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
+          <folding>
+            <element signature="e#6#87#0#PHP" expanded="true" />
+            <marker date="1488886591344" expanded="true" signature="310:489" ph="INSERT INTO festivos... " />
+          </folding>
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
@@ -1188,16 +1350,58 @@
         </state>
       </provider>
     </entry>
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/Vista/Calendario/GestionarFestivosCentros.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="23" column="50" lean-forward="false" selection-start-line="23" selection-start-column="50" selection-end-line="23" selection-end-column="50" />
           <folding />
+=======
+    <entry file="file://$PROJECT_DIR$/Vista/Calendario/CalendarioGestionarFestivosNacionales.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="42" column="26" selection-start-line="42" selection-start-column="26" selection-end-line="42" selection-end-column="26" />
+          <folding>
+            <marker date="1488888130374" expanded="true" signature="13095:13101" ph=" " />
+            <marker date="1488888130374" expanded="true" signature="14034:14040" ph=" " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modelo/BD/TrabajadorBD.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding>
+            <marker date="1488962741851" expanded="true" signature="489:578" ph="UPDATE vacac... " />
+            <marker date="1488962741851" expanded="true" signature="495:578" ph="SELECT * FRO... ${self::$tabla}" />
+            <marker date="1488962741851" expanded="true" signature="882:930" ph="SELECT * FRO... ${self::$tabla}" />
+            <marker date="1488962741851" expanded="true" signature="1288:1332" ph="SELECT * FRO... trabajadores" />
+            <marker date="1488962741851" expanded="true" signature="2978:3017" ph="SELECT * FRO... trabajadores" />
+            <marker date="1488962741851" expanded="true" signature="3400:3666" ph="SELECT t.dni... ${self::$tabla}" />
+            <marker date="1488962741851" expanded="true" signature="3549:3604" ph="select dniTr... horariotrabajadores" />
+            <marker date="1488962741851" expanded="true" signature="4079:4174" ph="SELECT tipo perfiles" />
+            <marker date="1488962741851" expanded="true" signature="4117:4173" ph="SELECT idPer... trabajadores" />
+            <marker date="1488962741851" expanded="true" signature="4367:4416" ph="SELECT * FRO... trabajadores" />
+            <marker date="1488962741851" expanded="true" signature="4858:4910" ph="SELECT id FR... perfiles" />
+            <marker date="1488962741851" expanded="true" signature="5100:5377" ph="INSERT INTO ${self::$tabla}... " />
+            <marker date="1488962741851" expanded="true" signature="6048:6101" ph="DELETE FROM " />
+            <marker date="1488962741851" expanded="true" signature="6311:6353" ph="SELECT id,ti... perfiles" />
+            <marker date="1488962741851" expanded="true" signature="6747:6915" ph="SELECT t.dni... ${self::$tabla}" />
+            <marker date="1488962741851" expanded="true" signature="7237:7274" ph="SELECT tipo perfiles" />
+            <marker date="1488962741851" expanded="true" signature="7957:8069" ph="SELECT tipo perfiles" />
+            <marker date="1488962741851" expanded="true" signature="7995:8068" ph="SELECT idPer... trabajadores" />
+            <marker date="1488962741851" expanded="true" signature="8412:8582" ph="SELECT t.dni... trabajadores" />
+            <marker date="1488962741851" expanded="true" signature="9129:9310" ph="SELECT t.dni... trabajadores" />
+            <marker date="1488962741851" expanded="true" signature="10082:10150" ph="SELECT idCen... trabajadores" />
+          </folding>
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Vista/Calendario/CalendarioGestionarFestivosCentros.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state relative-caret-position="285">
           <caret line="19" column="131" lean-forward="false" selection-start-line="19" selection-start-column="131" selection-end-line="21" selection-end-column="46" />
           <folding />
@@ -1219,6 +1423,31 @@
           <folding>
             <marker date="1488962272000" expanded="true" signature="5992:5998" ph=" " />
             <marker date="1488962272000" expanded="true" signature="6931:6937" ph=" " />
+=======
+        <state relative-caret-position="206">
+          <caret line="315" column="29" selection-start-line="315" selection-start-column="29" selection-end-line="315" selection-end-column="29" />
+          <folding>
+            <marker date="1488961762081" expanded="true" signature="1436:1509" ph="select * fro... ${$tabla}" />
+            <marker date="1488961762081" expanded="true" signature="1908:2009" ph="insert into ${$tabla}... " />
+            <marker date="1488961762081" expanded="true" signature="2225:2282" ph="delete from " />
+            <marker date="1488961762081" expanded="true" signature="3511:3662" ph="select fecha... ${$tabla}" />
+            <marker date="1488961762081" expanded="true" signature="4785:4793" ph="é" />
+            <marker date="1488961762081" expanded="true" signature="4840:4848" ph="á" />
+            <marker date="1488961762081" expanded="true" signature="6504:6510" ph=" " />
+            <marker date="1488961762081" expanded="true" signature="6850:6857" ph="«" />
+            <marker date="1488961762081" expanded="true" signature="6993:7000" ph="»" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vista/Calendario/CalendarioVacaciones.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="260" column="85" selection-start-line="260" selection-start-column="76" selection-end-line="260" selection-end-column="85" />
+          <folding>
+            <marker date="1488963610946" expanded="true" signature="18326:18332" ph=" " />
+            <marker date="1488963610946" expanded="true" signature="19300:19306" ph=" " />
+>>>>>>> Stashed changes
           </folding>
         </state>
       </provider>

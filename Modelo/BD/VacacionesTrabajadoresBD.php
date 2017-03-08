@@ -25,5 +25,4 @@ abstract class VacacionesTrabajadoresBD extends GenericoBD{
 
 
     }
-
 }

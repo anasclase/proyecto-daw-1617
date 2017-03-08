@@ -18,6 +18,8 @@ abstract class CalendarioGestionarCalendariosIndividuales extends Plantilla\View
 
         <form name="trabajador" method="post" action="../../Controlador/Calendario/ControladorCalendario.php">
 
+            <h2>Crear calendarios individuales</h2>
+
             <div id="empresa">
                 <label for="nomEmpresa">Nombre de la empresa :</label>
                 <select style="width: 15%" class="form-control" id="nomEmpresa">

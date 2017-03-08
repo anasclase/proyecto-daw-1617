@@ -135,13 +135,14 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                     <div class="form-group">
                         <label class="control-label col-sm-2 col-md-2">Empresa:</label>
                         <div class="col-sm-4 col-md-3">
-                            <select class="form-control" name="empresa">
+                            <select class="form-control" name="empresa" onchange="SincronizarCentrosConEmpresasALaFormaGuarra()">
                                 <?php
                                 foreach($empresas as $empresa){
 
                                     ?>
-                                    <option value="<?php echo $empresa->getId(); ?>"><?php echo $empresa->getNombre(); ?></option>
+                                    <option rel="<?php echo $empresa->getId(); ?>" value="<?php echo $empresa->getId(); ?>"><?php echo $empresa->getNombre(); ?></option>
                                     <?php
+
                                 }
                                 ?>
                             </select>
@@ -155,13 +156,39 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                                 foreach($empresas as $empresa) {
                                     foreach($empresa->getCentros() as $centro){
                                         ?>
-                                        <option value="<?php echo $centro->getId(); ?>"><?php echo $centro->getNombre(); ?></option>
+                                        <option rel="<?php echo $empresa->getId(); ?>" value="<?php echo $centro->getId(); ?>"><?php echo $centro->getNombre(); ?></option>
                                         <?php
                                     }
                                 }
                                 ?>
                             </select>
                         </div>
+                       <script>
+                           //Funcion que muestra las option de los centros sincronizadamente a lo guarro Aitor I
+
+                        function SincronizarCentrosConEmpresasALaFormaGuarra() {
+                            valor_act = document.getElementsByName("empresa")[0].value;
+                            OcultarYMostrar(valor_act);
+                            }
+
+                        function OcultarYMostrar(id) {
+                            nodos = document.getElementsByName("centro")[0].children;
+                            for(var x = 0; x < nodos.length; x++){
+                             if(nodos[x].getAttribute("rel") == id){
+                                 nodos[x].style.display = "block";
+                                 nodos[x].setAttribute("selected","selected");
+                            }
+                            else{
+                                 nodos[x].style.display= "none";
+                                 nodos[x].removeAttribute("selected");
+                                }
+                            }
+                        }
+
+                        SincronizarCentrosConEmpresasALaFormaGuarra();
+                    </script>
+
+
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-2 col-md-2">Perfil:</label>

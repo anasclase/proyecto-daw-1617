@@ -1,5 +1,6 @@
 <?php
 error_reporting(0);
+require_once __DIR__."/../../Modelo/Base/TrabajadorClass.php";
 require_once __DIR__.'/../../Modelo/BD/GenericoBD.php';
 require_once __DIR__.'/../../Modelo/BD/CalendarioBD.php';
 require_once __DIR__.'/../../Modelo/Base/VacacionesTrabajadoresClass.php';
@@ -292,6 +293,23 @@ switch ($_GET["accion"])
             echo "Centros insertados";
         }else{
             echo "Centros no insertados";
+        }
+        break;
+    }
+
+    case "buscarCalend":{
+        $trabajador = $_GET["trabajador"];
+        $idEmpresa = $_GET["idEmpresa"];
+
+        $empresa = new \Modelo\Base\Centro($idEmpresa);
+
+        $query = \Modelo\BD\TrabajadorBD::getTodosTrabajadoresByCentro($empresa);
+        if($query==null){
+            echo null ;
+        }else{
+            for($x=0;$x<count($query);$x++){
+                echo "<option value='".$query[$x]->getDni()."'>".$query[$x]->getNombre()."</option>";
+            }
         }
         break;
     }

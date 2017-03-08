@@ -45,6 +45,7 @@ abstract class CalendarioVac extends Plantilla\Views
                     </select>
 
                 </div>
+                <label name="vacOpen" id="vacOpen"></label>
             </form>
 
 
@@ -66,6 +67,7 @@ abstract class CalendarioVac extends Plantilla\Views
 
                     <input type="button" value="Seleccionar dias" id="rangoDias" name="rangoDias"/>
                 </div>
+                <input type="button" value="Aceptar" onclick="fAceptarVacaciones()"><input type="button" value="Rechazar" onclick="fRechazarVacaciones()">
             </form>
 
             <div style='visibility: hidden' class="cal"></div><div id="mask"></div>
@@ -548,6 +550,29 @@ abstract class CalendarioVac extends Plantilla\Views
                                 alert( "error" );
                             });
 
+                    }catch (err){
+                        alert(err)
+                    }
+                });
+
+
+                $("#trabajador").on("change", function () { //Aitor
+                    try{
+                        var trabajador=$(this).val();
+
+                        $.ajax({
+                            type: "GET",
+                            url: "<?php echo parent::getUrlRaiz()?>/Controlador/Calendario/ControladorCalendario.php",
+                            data: { trabajador : trabajador , accion:"buscarCalend"}
+                        })
+                            .done(function(respuesta) {
+
+                                $("#vacOpen").html(respuesta);
+
+                            })
+                            .fail(function() {
+                                alert( "error" );
+                            });
                     }catch (err){
                         alert(err)
                     }

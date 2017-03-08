@@ -2151,10 +2151,10 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
             require_once __DIR__ . "/../Plantilla/cabecera.php";
 
             echo "<form action='../../Controlador/Administracion/ControladorCalendario.php' method='post'>";
-            echo "<table class='table table-striped'><tr><td>Calendario</td><td>Trabajador</td></tr>";
+            echo "<table class='table table-striped'><tr><td>Calendario</td><td>Trabajador</td><td>Fecha</td></tr>";
             $festivos=BD\FestivoBD::getFestivoByEstado();
             while($rows=mysqli_fetch_array($festivos)){
-                echo "<tr><td>$rows[calendario_id]</td><td>$rows[dniTrabajador]</td></tr>";
+                echo "<tr><td>$rows[calendario_id]</td><td>$rows[dniTrabajador]</td><td>$rows[fecha]</td></tr>";
             }
             echo "</table></form>";
             require_once __DIR__ . "/../Plantilla/pie.php";

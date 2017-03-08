@@ -167,9 +167,8 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                            //Funcion que muestra las option de los centros sincronizadamente a lo guarro Aitor I
 
                         function SincronizarCentrosConEmpresasALaFormaGuarra() {
-                            valor_act = document.getElementsByName("empresa")[0].value;
-                            OcultarYMostrar(valor_act);
-                            }
+                            OcultarYMostrar(document.getElementsByName("empresa")[0].value;);
+                        }
 
                         function OcultarYMostrar(id) {
                             nodos = document.getElementsByName("centro")[0].children;

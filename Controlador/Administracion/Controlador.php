@@ -385,7 +385,11 @@ abstract class Controlador{
     public static function getVehiculoId($id){
         $vehiculo = BD\VehiculoBD::getVehiculosById($id);
         return $vehiculo;
-    }
+    }/* Ganeko */
+    public static function getFranjaById($id){
+        $franja = BD\TipoFranjaBD::getTipoFranjaById($id);
+        return $franja;
+    }/* Ganeko */
     public static function updateEmpresa($datos){
         BD\EmpresaBD::updateEmpresa($datos);
     }

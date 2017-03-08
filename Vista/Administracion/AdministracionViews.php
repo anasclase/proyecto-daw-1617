@@ -792,7 +792,6 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                                                 style="border: none; background: none;"><span
                                                 class="glyphicon glyphicon-remove"
                                                 style="color:red; font-size: 1.5em"></span></button>
-										<a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/updateHorasConvenio.php"><span class="glyphicon glyphicon-pencil" style="color:black; font-size: 24px;"></span></a>		
                                         <input type="hidden" name="id" value="<?php echo $horaconvenio->getId(); ?>">
                                     </form>
                                 </td>
@@ -805,7 +804,10 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                 <form name="deleteEstado" method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
 
                     <div class="col-md-10 col-md-offset-1"><!--Ganeko-->
-                        <input class="btn btn-warning pull-right" type="submit" name="volver" value="Volver">
+                        <div class="pull-right">
+                            <input class="btn btn-primary" type="submit" name="vistaEditarConvenio" value="Editar">
+                            <input class="btn btn-warning" type="submit" name="volver" value="Volver">
+                        </div>
                     </div>
                 </form>
                 <?php
@@ -887,12 +889,12 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
         parent::setRoot(true);
 
         require_once __DIR__ . "/../Plantilla/cabecera.php";
-        $tipos = Administracion\Controlador::getAllTiposFranjas();
-        if(is_null($tipos)){
-            echo "No hay tipos de franja";
+        $franjas = Administracion\Controlador::getAllTiposFranjas();
+        if(is_null($franjas)){
+            echo "no hay horas";
         }else {
             ?>
-            <h2 class="page-header">Tipo de Franjas</h2>
+            <h2 class="page-header">Update de Franjas</h2>
             <div class="table-responsive col-md-offset-1 col-md-10">
                 <table class="table table-bordered">
                     <tr>
@@ -902,11 +904,11 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                         <th>ACCIÓN</th>
                     </tr>
                     <?php
-                    foreach ($tipos as $tipo) {
+                    foreach ($franjas as $franja) {
                         ?>
                         <tr>
-                            <td><?php echo $tipo->getTipo(); ?></td>
-                            <td><?php echo $tipo->getPrecio(); ?></td>
+                            <td><?php echo $franja->getTipo(); ?></td>
+                            <td><?php echo $franja->getPrecio(); ?></td>
                             <form name="deleteEstado" method="post"
                                   action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
                                 <td><input type="text" name="nuevo" size="5" placeholder="00.00"></td>
@@ -915,13 +917,13 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                                             style="border: none; background: none;"><span
                                             class="glyphicon glyphicon-edit"
                                             style="color:blue; font-size: 1.5em"></span></button>
-                                    <input type="hidden" name="id" value="<?php echo $tipo->getId(); ?>">
+                                    <input type="hidden" name="id" value="<?php echo $franja->getId(); ?>">
                                 </td>
                             </form>
                         </tr>
                         <?php
-                    }
-                    ?>
+                        }
+                        ?>
                 </table>
             </div>
             <form name="deleteEstado" method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
@@ -1004,7 +1006,6 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                                             value="Eliminar" style="border: none; background: none;"><span
                                             class="glyphicon glyphicon-remove"
                                             style="color:red; font-size: 1.5em"></span></button>
-									<a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/updateTipoFranja.php"><span class="glyphicon glyphicon-pencil" style="color: black; font-size: 24px;"></span></a>		
                                     <input type="hidden" name="id" value="<?php echo $tipo->getId(); ?>">
                                 </form>
                             </td>
@@ -1017,7 +1018,10 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
             <form name="deleteEstado" method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
 
                 <div class="col-md-10 col-md-offset-1">
-                    <input class="btn btn-warning pull-right" type="submit" name="volver" value="Volver">
+                    <div class="pull-right">
+                        <input class="btn btn-primary" type="submit" name="vistaUpdateTipoFranja" value="Editar">
+                        <input class="btn btn-warning" type="submit" name="volver" value="Volver">
+                    </div>
                 </div>
             </form>
             <?php

@@ -47,7 +47,6 @@ if(isset($_POST['editarEmpresa'])){
 if(isset($_POST['vistaEditarCentro'])){
     //Ganeko
     $_SESSION['id'] = $_POST['id'];
-    //headerLocation a vista Editar
     header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/updateCentro.php");
 }
 if(isset($_POST['editarCentro'])){
@@ -58,7 +57,6 @@ if(isset($_POST['editarCentro'])){
 if(isset($_POST['vistaEditarVehiculo'])){
     //Ganeko
     $_SESSION['id'] = $_POST['id'];
-    //headerLocation a vista Editar
     header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/updateVehiculo.php");
 }
 if(isset($_POST['editarVehiculo'])){
@@ -69,14 +67,16 @@ if(isset($_POST['editarVehiculo'])){
 if(isset($_POST['vistaEditarFoto'])){
     //Ganeko
     $_SESSION['dni'] = $_POST['dni'];
-    //headerLocation a vista Editar
     header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/updateFoto.php");
 }
 if(isset($_POST['vistaEditarPass'])){
     //Ganeko
     $_SESSION['dni'] = $_POST['dni'];
-    //headerLocation a vista Editar
     header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/updatePassword.php");
+}
+if(isset($_POST['vistaEditarConvenio'])){
+    //Ganeko
+    header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/updateConvenio.php");
 }
 if(isset($_POST['addEstado'])){
     Controlador::AddEstado($_POST);
@@ -131,9 +131,12 @@ if(isset($_POST['eliminarHorario'])){
     header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/deleteHorario.php");
 
 }
+if(isset($_POST['vistaUpdateTipoFranja'])){
+    header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/updateTipoFranja.php");
+}
 if(isset($_POST['updateTipoFranja'])){
     Controlador::UpdateTipoFranja($_POST);
-    header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/updateTipoFranja.php");
+    header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/deleteTipoFranja.php");
 }
 if(isset($_POST['addTipoFranja'])){
     Controlador::addTipoFranja($_POST);

@@ -627,7 +627,11 @@ abstract class CalendarioVac extends Plantilla\Views
                     });
 
                     function cargarDisfrutadas(nombre) {
+
                         try {
+                            var f = new Date();
+                            actualizarEstado(f);
+
                             var trabajador = nombre;
 
                             $.ajax({
@@ -667,6 +671,38 @@ abstract class CalendarioVac extends Plantilla\Views
                         }
                     });
 
+                    function actualizarEstado(fecha) {
+                        var dia;
+                        var mes;
+                        var ano;
+                        if(fecha.getDate() < 10){
+                            dia = "0" + fecha.getDate();
+                        }else{
+                            dia = "" + fecha.getDate();
+                        }
+                        if(fecha.getMonth() < 10){
+                            mes = "0" + (fecha.getMonth() + 1);
+                        }else{
+                            dia = "" + (fecha.getMonth() + 1);
+                        }
+                        ano = "" + fecha.getFullYear();
+
+                        var f = dia + "-" + mes + "-" + ano;
+
+                        $.ajax({
+                            type: "GET",
+                            url: "<?php echo parent::getUrlRaiz()?>/Controlador/Calendario/ControladorCalendario.php",
+                            data: {fecha: f, trabajador: $("#trabajador option:selected").val() , accion: "actualizarEstado"}
+                        })
+                            .done(function (respuesta) {
+
+                                $("#vacacionesDisfrutadas").html(respuesta);
+
+                            })
+                            .fail(function () {
+                                alert("error");
+                            });
+                    }
 
                 });
         </script>

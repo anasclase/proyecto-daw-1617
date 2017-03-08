@@ -104,4 +104,16 @@ abstract class VehiculoBD extends GenericoBD{
 
          return $vehiculos;
      }
+    //Ganeko
+    public static function updateVehiculo($datos){
+        $con = parent::conectar();
+
+        $vehiculo = new Vehiculo($datos['id'], $datos['matricula'], $datos['marca'], null, null);
+
+        $query = "UPDATE ".self::$tabla." SET nombre ='".$centro->getNombre()."', localizacion ='".$centro->getLocalizacion()."' WHERE id ='".$centro->getId()."'";
+
+        $rs = mysqli_query($con, $query) or die(mysqli_error($con));
+
+        parent::desconectar($con);
+    }
 }

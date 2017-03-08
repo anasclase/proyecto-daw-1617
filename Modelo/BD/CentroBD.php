@@ -42,6 +42,35 @@ abstract class CentroBD extends GenericoBD{
         return $centros;
 
     }
+
+    public static function getCentrosByEmpresas($empresas = null){
+
+        $con = parent::conectar();
+
+        if($empresas!=null && $empresas[0]!=""){
+            $query = "SELECT * FROM ".self::$tabla. " WHERE idEmpresa IN (";
+
+            for($i=0; $i<count($empresas); $i++){
+                if($i == 0){
+                    $query .= $empresas[$i];
+                }else{
+                    $query .= ", " . $empresas[$i];
+                }
+            }
+            $query .= ")";
+        }
+        else{
+            $query = "SELECT * FROM ".self::$tabla;
+        }
+        $rs = mysqli_query($con, $query) or die("Error getCentrosByEmpresas");
+        $centros = parent::mapearArray($rs, "Centro");
+
+        parent::desconectar($con);
+
+        return $centros;
+
+    }
+
     public static function getCentrosById($centroId){
 
         $con = parent::conectar();
@@ -168,6 +197,7 @@ abstract class CentroBD extends GenericoBD{
 
     }
 
+
     // Alejandra
 
     public static function getCentrosByEmpresas($empresas){
@@ -186,4 +216,20 @@ abstract class CentroBD extends GenericoBD{
         parent::desconectar($con);
         return $centros;
     }
+
+    //Ganeko
+    public static function updateCentro($datos){
+        $con = parent::conectar();
+
+        $centro = new Centro($datos["id"], $datos["nombre"], $datos["localizacion"], null, null, null, null);
+
+        $query = "UPDATE ".self::$tabla." SET nombre ='".$centro->getNombre()."', localizacion ='".$centro->getLocalizacion()."' WHERE id ='".$centro->getId()."'";
+
+        $rs = mysqli_query($con, $query) or die(mysqli_error($con));
+
+        parent::desconectar($con);
+    }
+
+
+
 }

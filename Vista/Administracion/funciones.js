@@ -1,7 +1,7 @@
 /**
  * Created by 2gdwes10 on 7/3/16.
  */
-var url="http://192.168.33.10/himevico/ProyectoFinal15-16/";
+var url="http://192.168.33.10/";
 
 $(document).ready(function(){
 
@@ -10,7 +10,7 @@ $(document).ready(function(){
         var dni = $('[name="dni"]').val().toUpperCase();
         $.ajax({
             type: "POST",
-            url: url+"Controlador/Administracion/Router.php",
+            url: url+"himevico/ProyectoFinal15-16/Controlador/Administracion/Router.php",
             cache: false,
             data: { dni:dni }
         }).done(function( respuesta )
@@ -22,7 +22,7 @@ $(document).ready(function(){
         var dni = $('[name="dni"]').val().toUpperCase();
         $.ajax({
             type: "POST",
-            url: url+"Controlador/Gerencia/Router.php",
+            url: url+"himevico/ProyectoFinal15-16/Controlador/Gerencia/Router.php",
             cache: false,
             data: { dni:dni }
         }).done(function( respuesta )
@@ -37,7 +37,7 @@ $(document).ready(function(){
         $.ajax
         ({
             type: "POST",
-            url: url+"Controlador/Administracion/Router.php",
+            url: url+"himevico/ProyectoFinal15-16/Controlador/Administracion/Router.php",
             data: {dni:dni,semanas:true},
             cache: false,
             success: function (html) {

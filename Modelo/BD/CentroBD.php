@@ -130,8 +130,32 @@ abstract class CentroBD extends GenericoBD{
 
     }
 
+    // IRUNE
 
-    public static function getNombreCentro(){
+    public static function cargarCentros() {
+
+        $centros = [];
+
+        $con = parent::conectar();
+
+        $query = "SELECT * FROM ".self::$tabla;
+
+        $rs = mysqli_query($con, $query) or die("Error getAllCentros");
+        $fila = mysqli_fetch_array($rs);
+        while ($fila != null) {
+            $centro = new Centro($fila['id'], $fila['nombre'], $fila['localizacion']);
+            array_push($centros, $centro);
+            $fila = mysqli_fetch_array($rs);
+        }
+
+        parent::desconectar($con);
+
+        return $centros;
+
+    }
+
+
+    public static function getNombreCentro(){           //Aitor
 
         $con = parent::conectar();
 
@@ -172,6 +196,27 @@ abstract class CentroBD extends GenericoBD{
         parent::desconectar($con);
 
     }
+
+
+    // Alejandra
+
+    public static function getCentrosByEmpresas($empresas){
+        $con = parent::conectar();
+        $query = "SELECT * FROM ".self::$tabla. " WHERE idEmpresa IN (";
+        for($i=0; $i<count($empresas); $i++){
+            if($i == 0){
+                $query .= $empresas[$i];
+            }else{
+                $query .= ", " . $empresas[$i];
+            }
+        }
+        $query .= ")";
+        $rs = mysqli_query($con, $query) or die("Error getCentrosByEmpresas");
+        $centros = parent::mapearArray($rs, "Centro");
+        parent::desconectar($con);
+        return $centros;
+    }
+
     //Ganeko
     public static function updateCentro($datos){
         $con = parent::conectar();
@@ -184,6 +229,7 @@ abstract class CentroBD extends GenericoBD{
 
         parent::desconectar($con);
     }
+
 
 
 }

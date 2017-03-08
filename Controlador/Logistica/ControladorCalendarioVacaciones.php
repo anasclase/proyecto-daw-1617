@@ -245,7 +245,7 @@ switch ($_POST["accion"])
 
                 <label for="fFinal"> Hasta : </label>  <input type="date" id="fFinal"  />
 
-                <input type="button" value="Seleccionar dias" id="rangoDias" name="rangoDias"/>
+                <input type="button" value="Seleccionar dias" id="rangoDias" name="rangoDias" onclick="guardarRango()"/>
             </div>
             <br><input type="hidden" id='dni' value="<?php $dni = unserialize($_SESSION["trabajador"])->getDni(); echo $dni ?> ">
         </form>
@@ -308,15 +308,7 @@ switch ($_POST["accion"])
 <script>
 
 
-    var fechas = [];
-
-    $("#fInicial").change(function () {
-
-        $("#fFinal").attr("min", $("#fInicial").val());
-
-    });
-
-
+/*
     $("#rangoDias").click(function () {
         var fIni = [];
         var fFin = [];
@@ -344,7 +336,7 @@ switch ($_POST["accion"])
                 $.ajax({
 
                     type: "GET",
-                    url: "<?php //echo parent::getUrlRaiz()?>/Controlador/Calendario/ControladorCalendario.php",
+                    url: "/Controlador/Calendario/ControladorCalendario.php",
                     data: { dniTrabajador:dni , fecha:fecha , horaInicio:fIni , horaFin:fFin , calendario_id:ano ,estado:estado, accion:"insertarCal"}
 
                 })
@@ -364,160 +356,9 @@ switch ($_POST["accion"])
             alert(err);
         }
 
-    });
-
-
+    });*/
     var opc = false;
-
-    /**
-     * Calcular en rango de fechas y guardarlos en un array , para despues transformarlo en el formato YYYY-MM-DD HH:MM:SS
-     *
-     *  Anas e Iker
-     **/
-
-    /**
-     * Dias sueltos
-     *
-     * Anas
-     * */
-    function guardarFechas() {
-        if(fechas.length == 0){
-            alert("No puedes dejar los campos sin seleccionar");
-        }else{
-
-            var dni = $("#dni").val();
-
-            var d = new Date();
-            var ano = d.getFullYear();
-
-            var estado = "S";
-
-            try{
-                $.ajax({
-                    type: "GET",
-                    url: "<?php //echo parent::getUrlRaiz()?>/Controlador/Calendario/ControladorCalendario.php",
-                    data: {dniTrabajador:dni , fechas:fechas , calendario_id:ano ,estado:estado, accion:"insertarCalIndiv"}
-                })
-                    .done(function(respuesta) {
-                        alert(respuesta);
-
-                    })
-                    .fail(function() {
-                        alert( "error" );
-                    });
-            }catch(err){
-                alert(err);
-            }
-
-        }
-
-        fechas = [];
-    }
-
-
-
-    /**
-     * Calcular en rango de fechas y guardarlos en un array , para despues transformarlo en el formato YYYY-MM-DD HH:MM:SS
-     *
-     *  Anas e Iker
-     **/
-    function generarRango(fInicial,fFinal,tiempo) {
-        var fIni = [];
-        var fFin = [];
-        var dI = new Date(fInicial);
-        var dF = new Date(fFinal);
-
-        fechas.push(dI);
-        var aux = new Date(dI);
-
-        while (aux<dF){
-
-            var date = new Date(dI);
-            date.setDate(aux.getDate()+1);
-            aux.setDate(aux.getDate()+1);
-            fechas.push(date);
-
-        }
-
-        for(var x = 0; x < fechas.length; x++){
-
-            var dia = fechas[x].getDate();
-            var mes = fechas[x].getMonth()+1;
-            var ano = fechas[x].getFullYear();
-
-            if(tiempo=="inicio"){
-                fIni.push(ano+"-"+mes+"-"+dia+" 00:00:00");
-            }else{
-                fFin.push(ano+"-"+mes+"-"+dia+" 23:59:59");
-            }
-        }
-
-        if(tiempo=="inicio"){
-            return fIni;
-        }else{
-            return fFin;
-        }
-
-    }
-
-
-    /*
-    function generarRango(fInicial,fFinal,tiempo) {
-        var fIni = [];
-        var fFin = [];
-        var dI = new Date(fInicial);
-        var dF = new Date(fFinal);
-
-        fechas.push(dI);
-        var aux = new Date(dI);
-
-        while (aux<dF){
-
-            var date = new Date(dI);
-            date.setDate(aux.getDate()+1);
-            aux.setDate(aux.getDate()+1);
-            fechas.push(date);
-
-        }
-
-        for(var x = 0; x < fechas.length; x++){
-
-            var dia = fechas[x].getDate();
-            var mes = fechas[x].getMonth()+1;
-            var ano = fechas[x].getFullYear();
-
-            if(tiempo=="inicio"){
-                fIni.push(ano+"-"+mes+"-"+dia+" 00:00:00");
-            }else{
-                fFin.push(ano+"-"+mes+"-"+dia+" 23:59:59");
-            }
-        }
-
-        if(tiempo=="inicio"){
-            return fIni;
-        }else{
-            return fFin;
-        }
-
-    }
-*/
-
-    function generarFecha() {
-
-        var date = new Date();
-
-        var m = date.getUTCMonth() + 1;
-        var d = date.getUTCDate();
-        var y = date.getUTCFullYear();
-
-        return d + "-"+ m + "-"+ y  ;
-
-    }
-
-    function guardarOpcion() {
-        opc = true;
-    }
-
+    var fechas = [];
 
     $("input[name='rangoVacaciones']").change(function () {
         if($(this).val()=="rango"){
@@ -535,45 +376,161 @@ switch ($_POST["accion"])
 
     });
 
-    function guardarFecha() {
-        if(opc == true){
-            if ($("#diasNacionales").is(':empty')){
-                $("#diasNacionales").append($('<label id="'+ $("#calendarioNacionales").val() +'">' + $("#calendarioNacionales").val() + '</label>'));
-                fechas.push($("#calendarioNacionales").val());
+    $("#fInicial").change(function () {
 
-                var v = $("#calendarioNacionales").val().toString();
-                $('#diasNacionales').append($('<input type="button" onclick="borrarFecha('+ 0 +')" value="X" name="'+v+'">'));
+        $("#fFinal").attr("min", $("#fInicial").val());
 
-            }else{
-                var y;
-                for(y = 0; y < fechas.length && fechas[y] != $("#calendarioNacionales").val(); y++){}
+    });
 
-                if(y == fechas.length){
-                    fechas.push($("#calendarioNacionales").val());
-                    $('#diasNacionales').empty();
+    function guardarRango() {
 
-                    for(var x = 0; x < fechas.length; x++){
-                        $("#diasNacionales").append($('<label id="' + fechas[x] +'">' + fechas[x] + '</label>'));
-                        $('#diasNacionales').append($('<input type="button" onclick="borrarFecha('+ x +')" value="X" name="' + fechas[x].toString() + '">'));
-                    }
-                }
-            }
+        var fInicio = new Date($("#fInicial").val());
+        var fFinal =  new Date($("#fFinal").val());
 
+        fechas.push(fInicio);
+        var aux = new Date(fInicio);
+
+        while (aux<fFinal){
+
+            var date = new Date(fInicio);
+            date.setDate(aux.getDate()+1);
+            aux.setDate(aux.getDate()+1);
+            fechas.push(date);
         }
 
+        guardarFechas();
+    }
+
+    function guardarFecha() {
+        if(opc == true){
+            $('#diasNacionales').empty();
+            var y;
+            var d = new Date($("#calendarioNacionales").val());
+            for(y = 0; y < fechas.length && (fechas[y].getDate() != d.getDate() || fechas[y].getMonth() != d.getMonth() || fechas[y].getFullYear() != d.getFullYear()); y++){                    }
+
+            if(y == fechas.length){
+                var date = new Date($("#calendarioNacionales").val());
+                fechas.push(date);
+            }
+
+            for(var x = 0; x < fechas.length; x++){
+                var dia;
+                var mes;
+                var ano;
+                if(fechas[x].getDate() < 10){
+                    dia = "0" + fechas[x].getDate();
+                }else{
+                    dia = "" + fechas[x].getDate();
+                }
+                if(fechas[x].getMonth() < 10){
+                    mes = "0" + (fechas[x].getMonth() + 1);
+                }else{
+                    dia = "" + (fechas[x].getMonth() + 1);
+                }
+                ano = "" + fechas[x].getFullYear();
+
+                var f = dia + "-" + mes + "-" + ano;
+                $("#diasNacionales").append($('<label id="' + f +'">' + f + '</label>'));
+                $('#diasNacionales').append($('<input type="button" onclick="borrarFecha('+ x +')" value="X" name="' + f + '">'));
+            }
+        }
     }
 
     function borrarFecha(fecha) {
-        fecha = fechas[fecha];
-        var y;
-        for (y = 0; y < fechas.length && fechas[y] != fecha; y++) {
+        for(var x = 0; x < fechas.length; x++){
+            var dia;
+            var mes;
+            var ano;
+            if(fechas[x].getDate() < 10){
+                dia = "0" + fechas[x].getDate();
+            }else{
+                dia = "" + fechas[x].getDate();
+            }
+            if(fechas[x].getMonth() < 10){
+                mes = "0" + (fechas[x].getMonth() + 1);
+            }else{
+                dia = "" + (fechas[x].getMonth() + 1);
+            }
+            ano = "" + fechas[x].getFullYear();
+
+            var f = dia + "-" + mes + "-" + ano;
+            $("#" + f + "").remove();
+            $("[name='" + f + "']").css("display", "none");
         }
 
-        fechas.splice(y, 1);
-        $('#diasNacionales').empty();
-        for (var x = 0; x < fechas.length; x++) {
-            $("#diasNacionales").append($('<label id="' + fechas[x] + '">' + fechas[x] + '</label>'));
-            $('#diasNacionales').append($('<input type="button" onclick="borrarFecha(' + x + ')" value="X" name="' + fechas[x].toString() + '">'));
+        fechas.splice(fecha,1);
+
+        for(var x = 0; x < fechas.length; x++){
+            var dia;
+            var mes;
+            var ano;
+            if(fechas[x].getDate() < 10){
+                dia = "0" + fechas[x].getDate();
+            }else{
+                dia = "" + fechas[x].getDate();
+            }
+            if(fechas[x].getMonth() < 10){
+                mes = "0" + (fechas[x].getMonth() + 1);
+            }else{
+                dia = "" + (fechas[x].getMonth() + 1);
+            }
+            ano = "" + fechas[x].getFullYear();
+
+            var f = dia + "-" + mes + "-" + ano;
+            $("#diasNacionales").append($('<label id="' + f +'">' + f + '</label>'));
+            $('#diasNacionales').append($('<input type="button" onclick="borrarFecha('+ x +')" value="X" name="' + f + '">'));
+        }
+    }
+
+    function guardarOpcion() {
+        opc = true;
+    }
+
+    function guardarFechas() {
+        var fIni = [];
+        var fFin = [];
+        try{
+            if($("#nomEmpresa").val()!="-1"){
+
+                var dni = $("#dni").val();
+
+                var fInicial = $("#fInicial").val();
+                var fFinal = $("#fFinal").val();
+
+                var dniTrabajador = $("#trabajador option:selected").val();
+
+                var d = new Date();
+                var ano = d.getFullYear();
+                var fecha = generarFecha();
+
+                fIni = generarRango($("#fInicial").val(),$("#fFinal").val(),"inicio");
+
+                fFin = generarRango($("#fInicial").val(),$("#fFinal").val(),"fin");
+
+
+                var estado = "S";
+
+                $.ajax({
+
+                    type: "GET",
+                    url: "/Controlador/Calendario/ControladorCalendario.php",
+                    data: { dniTrabajador:dni , fecha:fecha , horaInicio:fIni , horaFin:fFin , calendario_id:ano ,estado:estado, accion:"insertarCal"}
+
+                })
+                    .done(function(respuesta) {
+                        alert(respuesta);
+
+                    })
+                    .fail(function() {
+                        alert( "error" );
+                    });
+            }else{
+                alert("Selecciona el nombre de la empresa")
+            }
+            fIni = [];
+            fFin = [];
+        }catch (err){
+            alert(err);
         }
     }
     </script>

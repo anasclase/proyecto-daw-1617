@@ -221,7 +221,7 @@ switch ($_GET["accion"])
         $fecha = date('Y-m-d H:i:s',$time3);
 
 
-        for($x=0;$x<count($_GET["horaInicio"]);$x++){
+        for($x=0;$x<count($_GET["horaInicio"])-1;$x++){
             $vacacionesTrab = new \Modelo\Base\VacacionesTrabajadores(null,$_GET["dniTrabajador"],$_GET["horaInicio"][$x],$_GET["horaInicio"][$x],$_GET["horaFin"][$x],$_GET["calendario_id"],$_GET["estado"]);
             $query = \Modelo\BD\VacacionesTrabajadoresBD::insertarVacacionesTrabajadores($vacacionesTrab);
         }

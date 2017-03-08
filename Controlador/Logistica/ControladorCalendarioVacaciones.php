@@ -245,7 +245,7 @@ switch ($_POST["accion"])
 
                 <label for="fFinal"> Hasta : </label>  <input type="date" id="fFinal"  />
 
-                <input type="button" value="Seleccionar dias" id="rangoDias" name="rangoDias" onclick="guardarRango()"/>
+                <input type="button" value="Seleccionar dias" id="rangoDias" name="rangoDias"/>
             </div>
             <br><input type="hidden" id='dni' value="<?php $dni = unserialize($_SESSION["trabajador"])->getDni(); echo $dni ?> ">
         </form>
@@ -308,7 +308,7 @@ switch ($_POST["accion"])
 <script>
 
 
-/*
+
     $("#rangoDias").click(function () {
         var fIni = [];
         var fFin = [];
@@ -356,7 +356,8 @@ switch ($_POST["accion"])
             alert(err);
         }
 
-    });*/
+    });
+
     var opc = false;
     var fechas = [];
 
@@ -381,7 +382,7 @@ switch ($_POST["accion"])
         $("#fFinal").attr("min", $("#fInicial").val());
 
     });
-
+/*
     function guardarRango() {
 
         var fInicio = new Date($("#fInicial").val());
@@ -400,7 +401,7 @@ switch ($_POST["accion"])
 
         guardarFechas();
     }
-
+*/
     function guardarFecha() {
         if(opc == true){
             $('#diasNacionales').empty();
@@ -497,8 +498,6 @@ switch ($_POST["accion"])
                 var fInicial = $("#fInicial").val();
                 var fFinal = $("#fFinal").val();
 
-                var dniTrabajador = $("#trabajador option:selected").val();
-
                 var d = new Date();
                 var ano = d.getFullYear();
                 var fecha = generarFecha();
@@ -507,6 +506,7 @@ switch ($_POST["accion"])
 
                 fFin = generarRango($("#fInicial").val(),$("#fFinal").val(),"fin");
 
+                fIni.splice(fIni.length -1, 1);
 
                 var estado = "S";
 
@@ -529,6 +529,7 @@ switch ($_POST["accion"])
             }
             fIni = [];
             fFin = [];
+            fechas = [];
         }catch (err){
             alert(err);
         }

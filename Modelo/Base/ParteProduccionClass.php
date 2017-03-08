@@ -27,6 +27,7 @@ class ParteProduccion
     private $autopista;
     private $dieta;
     private $otroGasto;
+    private $horasextra;
     //objeto Produccion
     private $trabajador;
     //array de PartesProduccionTareas
@@ -41,7 +42,7 @@ class ParteProduccion
      * @param $fecha
      * @param $trabajador
      */
-    public function __construct($id=null, $estado=null, $fecha=null, $incidencia = null,$autopista=null,$dieta=null,$otroGasto = null,$trabajador=null,$parteProduccionTareas = null,$horariosPartes=null)
+    public function __construct($id=null, $estado=null, $fecha=null, $incidencia = null,$autopista=null,$dieta=null,$otroGasto = null,$trabajador=null,$parteProduccionTareas = null,$horariosPartes=null, $horasextra=null)
     {
         $this->setId($id);
         $this->setEstado($estado);
@@ -50,6 +51,7 @@ class ParteProduccion
         $this->setAutopista($autopista);
         $this->setDieta($dieta);
         $this->setOtroGasto($otroGasto);
+        $this->setHorasExtra($horasextra);
 
         if(!is_null($trabajador)){
             $this->setTrabajador($trabajador);
@@ -252,6 +254,18 @@ class ParteProduccion
     public function setOtroGasto($otroGasto)
     {
         $this->otroGasto = $otroGasto;
+    }
+    public function getHorasExtra()
+    {
+        return $this->horasextra;
+    }
+
+    /**
+     * @param null $horasextra
+     */
+    public function setHorasExtra($horasextra)
+    {
+        $this->horasextra = $horasextra;
     }
 
     public function save(){

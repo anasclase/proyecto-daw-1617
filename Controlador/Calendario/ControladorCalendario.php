@@ -309,7 +309,8 @@ switch ($_GET["accion"])
             echo null ;
         }else{
             for($x=0;$x<count($query);$x++){
-                $resultado=$resultado. $query[$x]->getFecha();
+                $fecha = substr($query[$x]->getFecha(), -19, 10);
+                $resultado=$resultado. " " .$fecha;
             }
         }
         echo $resultado;

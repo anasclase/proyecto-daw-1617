@@ -43,7 +43,7 @@ abstract class CalendarioVac extends Plantilla\Views
                     <select name="trabajador" id="trabajador">
 
                     </select>
-                    <label for="FechaSolic">Fecha :</label><label name="vacOpen" id="vacOpen"></label>
+                    <label for="FechaSolic">Vacaciones solicitadas :</label><label name="vacOpen" id="vacOpen"></label>
                 </div>
             </form>
 

@@ -313,6 +313,21 @@ switch ($_GET["accion"])
         }
         break;
     }
+    case "editarCalendario":{
+        $valor = $_GET["valor"];
+        $trabajador = $_GET["trabajador"];
+
+        $empresa = new \Modelo\Base\Centro($idEmpresa);
+
+        $query = \Modelo\BD\TrabajadorBD::editarCalendario($trabajador,$valor);
+        if($query){
+            echo "Edicion correcta";
+
+        }else{
+            echo "Edicion fallida";
+        }
+        break;
+    }
 }
 
 

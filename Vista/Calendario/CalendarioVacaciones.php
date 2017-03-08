@@ -67,7 +67,7 @@ abstract class CalendarioVac extends Plantilla\Views
 
                     <input type="button" value="Seleccionar dias" id="rangoDias" name="rangoDias"/>
                 </div>
-                <input type="button" value="Aceptar" onclick="fAceptarVacaciones()"><input type="button" value="Rechazar" onclick="fRechazarVacaciones()">
+                <input type="button" value="Aceptar" onclick="fEditarVacaciones('a')"><input type="button" value="Rechazar" onclick="fEditarVacaciones('r')">
             </form>
 
             <div style='visibility: hidden' class="cal"></div><div id="mask"></div>
@@ -239,6 +239,23 @@ abstract class CalendarioVac extends Plantilla\Views
 
             }
 
+            function fEditarVacaciones(valor) {
+                if($("#nomEmpresa").val()!="-1"){
+                    var trabajador = $("#trabajador option:selected").val();
+                    agenda.html("<img src='<?php echo parent::getUrlRaiz()?>/Vista/Plantilla/IMG/loading.gif' alt='Loading'");
+                    $.ajax({
+                        type: "POST",
+                        url: "<?php echo parent::getUrlRaiz()?>/Controlador/Logistica/ControladorCalendarioVacaciones.php",
+                        cache: false,
+                        data: { trabajador:trabajador, valor:valor, "editarCalendario" }
+                    }).done(function( respuesta )
+                    {
+                        agenda.html(respuesta);
+                    });
+                }else{
+                    alert("No puedes dejar el trabajor sin seleccionar");
+                }
+            }
 
             function generarFecha() {
 

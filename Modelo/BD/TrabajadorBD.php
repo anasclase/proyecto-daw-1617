@@ -16,6 +16,19 @@ abstract class TrabajadorBD extends GenericoBD{
 
     private static $tabla = "trabajadores";
 
+    public static function editarCalendario($trabajador,$valor){
+        $con = parent::conectar();
+
+        $valor = strtoupper($valor);
+        $query = "UPDATE vacacionestrabajadores SET estado = ".$valor." WHERE dniTrabajador = ".$trabajador;
+
+        $rs = mysqli_query($con, $query) or die("Error getTrabajadoresByCentro");
+
+        $trabajadores = parent::mapear($rs, "Trabajador");
+
+        parent::desconectar($con);
+    }
+
     public static function getTrabajadoresByCentro($centro){
 
         $con = parent::conectar();

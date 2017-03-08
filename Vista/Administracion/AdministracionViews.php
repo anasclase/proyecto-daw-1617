@@ -1007,8 +1007,6 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
         parent::setOn(true);
         parent::setRoot(true);
 
-        $trabajador = Administracion\Controlador::getTrabajadorByDni($_SESSION["dni"]);
-
         require_once __DIR__ . "/../Plantilla/cabecera.php";
             ?>
 
@@ -1023,7 +1021,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                     <form name="updatePassword" method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
                         <tr>
                             <td>
-                                <input type="text" disabled class="form-control" name="trabajador" value="<?php echo $trabajador->getDni(); ?>">
+                                <input type="text" class="form-control" name="trabajador" value="<?php echo $_SESSION["dni"]; ?>">
 
                             </td>
                             <td><input class="form-control" type="password" name="password"/></td>
@@ -2219,11 +2217,9 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
 /*****************************************************/
 
     public static function updateFoto(){
-
+        //Ganeko
         parent::setOn(true);
         parent::setRoot(true);
-
-        $trabajador = Administracion\Controlador::getTrabajadorByDni($_SESSION["dni"]);
 
         require_once __DIR__ . "/../Plantilla/cabecera.php";
 
@@ -2240,7 +2236,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                 <form name="updatePassword" method="post" enctype="multipart/form-data" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
                     <tr>
                         <td>
-                            <input disabled type="text" class="form-control" name="trabajador" value="<?php echo $trabajador->getDni(); ?>">
+                            <input type="text" class="form-control" name="trabajador" value="<?php echo $_SESSION["dni"]; ?>">
 
                         </td>
                         <td><input class="form-control" type="file" name="foto"/></td>

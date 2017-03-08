@@ -42,8 +42,9 @@ abstract class CalendarioVac extends Plantilla\Views
                     <label for="nomTrabajador">Trabajador :</label>
                     <select name="trabajador" id="trabajador">
 
-                    </select>
-                    <label for="FechaSolic">Vacaciones solicitadas : </label><label name="vacOpen" id="vacOpen"></label>
+                    </select><br>
+                    <label for="FechaSolic">Vacaciones solicitadas : &nbsp;</label><br>
+                    <label name="vacOpen" id="vacOpen"></label>
                 </div>
             </form>
 
@@ -66,9 +67,9 @@ abstract class CalendarioVac extends Plantilla\Views
 
                     <input type="button" value="Seleccionar dias" id="rangoDias" name="rangoDias"/>
                 </div>
-                <input type="button" value="Aceptar" onclick="fEditarVacaciones('A')"><input type="button" value="Rechazar" onclick="fEditarVacaciones('R')">
+                <input type="button" value="Aceptar" onclick="fEditarVacaciones('A')"><input type="button" value="Rechazar" onclick="fEditarVacaciones('R')"><br>
 
-                <label for="fechaDisfrutadas">Vacaciones disfrutadas:</label><label name="vacacionesDisfrutadas" id="vacacionesDisfrutadas"></label>
+                <label for="fechaDisfrutadas">Vacaciones disfrutadas:</label><br><label name="vacacionesDisfrutadas" id="vacacionesDisfrutadas"></label>
             </form>
 
             <div style='visibility: hidden' class="cal"></div><div id="mask"></div>

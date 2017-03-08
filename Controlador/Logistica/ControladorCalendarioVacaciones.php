@@ -308,6 +308,8 @@ switch ($_POST["accion"])
 <script>
 
 
+    var fechas = [];
+
     $("#fInicial").change(function () {
 
         $("#fFinal").attr("min", $("#fInicial").val());
@@ -515,7 +517,6 @@ switch ($_POST["accion"])
     function guardarOpcion() {
         opc = true;
     }
-    var fechas = [];
 
 
     $("input[name='rangoVacaciones']").change(function () {
@@ -565,13 +566,14 @@ switch ($_POST["accion"])
     function borrarFecha(fecha) {
         fecha = fechas[fecha];
         var y;
-        for(y = 0; y < fechas.length && fechas[y] != fecha; y++){}
+        for (y = 0; y < fechas.length && fechas[y] != fecha; y++) {
+        }
 
-        fechas.splice(y,1);
+        fechas.splice(y, 1);
         $('#diasNacionales').empty();
-        for(var x = 0; x < fechas.length; x++){
-            $("#diasNacionales").append($('<label id="' + fechas[x] +'">' + fechas[x] + '</label>'));
-            $('#diasNacionales').append($('<input type="button" onclick="borrarFecha('+ x +')" value="X" name="' + fechas[x].toString() + '">'));
+        for (var x = 0; x < fechas.length; x++) {
+            $("#diasNacionales").append($('<label id="' + fechas[x] + '">' + fechas[x] + '</label>'));
+            $('#diasNacionales').append($('<input type="button" onclick="borrarFecha(' + x + ')" value="X" name="' + fechas[x].toString() + '">'));
         }
     }
     </script>

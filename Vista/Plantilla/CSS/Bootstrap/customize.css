@@ -80,3 +80,19 @@ tr:nth-child(even) {
 .diaS{
     background: rgba(255, 182, 193, 0.23);
 }
+
+.calendario td.A{
+    background-color: #e6ffe6;
+}
+
+.calendario td.S{
+    background-color: #ccffff;
+}
+
+.calendario td.R{
+    background-color: #ffcccc;
+}
+
+.calendario td.D{
+    background-color: #ffffcc;
+}

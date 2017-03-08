@@ -15,6 +15,7 @@ require_once __DIR__."/../../Modelo/Base/VehiculoClass.php";
 require_once __DIR__."/../../Modelo/Base/ParteLogisticaClass.php";
 require_once __DIR__."/../../Modelo/Base/ViajeClass.php";
 require_once __DIR__."/../../Vista/Plantilla/Views.php";
+require_once __DIR__."/../../Modelo/BD/VacacionesTrabajadoresBD.php";
 
 function fecha ($valor)
 {
@@ -203,13 +204,23 @@ switch ($_POST["accion"])
                     /* si es hoy coloreamos la celda */
                     if (date("Y-m-d")==$fecha_completa) echo " hoy";
 
+                    /**
+                     * Comprobar si el dia es festivo
+                     */
+                    $fechaCompleta = $fecha_completa." 00:00:00";
+                    $estado = Modelo\BD\VacacionesTrabajadoresBD::buscarFestivosDia(unserialize($_SESSION["trabajador"])->getDni(),$fechaCompleta);
+                    if($estado){
+                        echo " ".$estado;
+                        /*
+                        switch ($estado){
+                            case "A":
+                                echo "<div style='color: green'> $dia</div>";
+                        }
+                        echo "<div style='color: red'> $dia</div>";
+                        */
+                    }
                     echo "'>";
-
-                    /* recorremos el array de eventos para mostrar los eventos del d�a de hoy */
-                    if ($hayevento>0) {
-                        echo "<a href='#' data-evento='#evento" . $dia_actual . "' class='mod' rel='" . $fecha_completa . "' title='Hay un Parte' ";if (date("Y-m-d")==$fecha_completa) echo " style='font-weight:500;'";echo ">" . $dia . "</a>";
-                    }else echo "$dia";
-
+                    echo "<div> $dia</div>";
                     echo "</td>";
                     $dia+=1;
                 }

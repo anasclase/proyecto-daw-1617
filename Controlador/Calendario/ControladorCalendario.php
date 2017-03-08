@@ -322,11 +322,12 @@ switch ($_GET["accion"])
         $empresa = new \Modelo\Base\Centro($idEmpresa);
 
         $query = \Modelo\BD\TrabajadorBD::editarCalendario($trabajador,$valor);
-        if($query){
-            echo "Edicion correcta";
 
-        }else{
-            echo "Edicion fallida";
+        if ($valor == "A") {
+            echo "Vacaciones aceptadas";
+        }
+        else {
+            echo "Vacaciones rechazadas";
         }
         break;
     }

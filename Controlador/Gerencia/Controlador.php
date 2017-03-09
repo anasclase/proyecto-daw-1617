@@ -133,6 +133,11 @@ abstract class Controlador{
         BD\TrabajadorBD::updateFotoByTrabajador($trabajador);
     }
 
+    public static function getTrabajadorByDni($dni){
+        $trabajador = BD\TrabajadorBD::getTrabajadorByDni($dni);
+        return $trabajador;
+    }
+
     public static function eliminarDir($carpeta)
     {
         foreach(glob($carpeta . "/*") as $archivos_carpeta)
@@ -343,7 +348,39 @@ abstract class Controlador{
         GerenciaViews::viewParteProd($parte,$estado);
 
     }
-
+    public static function updateValidarParteLogistica($datos){
+        BD\PartelogisticaBD::updateValidar($datos['id']);
+    }
+    /* Ganeko */
+    public static function buscarEmpresaId($id){
+        $empresa =  BD\EmpresaBD::getEmpresaByID($id);
+        return $empresa;
+    }/* Ganeko */
+    public static function getCentroId($id){
+        $centro = BD\CentroBD::getCentrosById($id);
+        return $centro;
+    }/* Ganeko */
+    public static function getVehiculoId($id){
+        $vehiculo = BD\VehiculoBD::getVehiculosById($id);
+        return $vehiculo;
+    }/* Ganeko */
+    public static function getFranjaById($id){
+        $franja = BD\TipoFranjaBD::getTipoFranjaById($id);
+        return $franja;
+    }/* Ganeko */
+    public static function updateEmpresa($datos){
+        BD\EmpresaBD::updateEmpresa($datos);
+    }
+    public static function updateCentro($datos){
+        BD\CentroBD::updateCentro($datos);
+    }
+    public static function updateVehiculo($datos){
+        BD\VehiculoBD::updateVehiculo($datos);
+    }
+    public static function guardarParteProduccion($datos)
+    {
+        $parte = unserialize($_SESSION['parte']);
+    }
     public static function updateFinalizarParteLogistica($datos){
         BD\PartelogisticaBD::saveHorasExtra($datos['id'],$datos['horas']);
         BD\PartelogisticaBD::updateFinalizar($datos['id']);

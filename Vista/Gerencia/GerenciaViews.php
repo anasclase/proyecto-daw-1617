@@ -1836,5 +1836,122 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
 
                 }
 
+                public static function updateEmpresa(){ /*Ganeko*/
+
+                require_once __DIR__ . "/../Plantilla/cabecera.php";
+                ?>
+                <div class="table-responsive col-md-offset-1 col-md-10">
+                    <table class="table table-bordered">
+                        <tr>
+                            <th>EMPRESA</th>
+                            <th>NIF</th>
+                        </tr>
+                        <form method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Gerencia/Router.php">
+                            <tr>
+                                <?php
+                                $empresa = Gerencia\Controlador::buscarEmpresaId($_SESSION['id']);
+                                ?>
+                                <td><input type="text" name="nombre" value="<?php echo $empresa->getNombre(); ?>"></td>
+                                <td><input type="text" name="nif" value="<?php echo $empresa->getNif(); ?>"></td>
+                                <input type="hidden" name="id" value="<?php echo $_SESSION['id'];?>">
+                            </tr>
+                    </table>
+                </div>
+                    <div class="col-md-10 col-md-offset-1"><!-- Ganeko -->
+                        <div class="pull-right">
+                            <input class="btn btn-primary" type="submit" name="editarEmpresa" value="Guardar">
+                            <input class="btn btn-warning" type="submit" name="volver" value="Volver">
+                        </div>
+                    </div>
+                </form>
+                <?php
+
+            require_once __DIR__ ."/../Plantilla/pie.php";
+
+        }
+
+    public static function updateCentro(){ /*Ganeko*/
+
+
+                require_once __DIR__ . "/../Plantilla/cabecera.php";
+                ?>
+                <div class="table-responsive col-md-offset-1 col-md-10">
+                    <table class="table table-bordered">
+                        <tr>
+                            <th>CENTRO</th>
+                            <th>LOCALIZACIÓN</th>
+                            <th>EMPRESA</th>
+                        </tr>
+                        <form method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Gerencia/Router.php">
+                            <tr>
+                                <?php
+                                $centro = Gerencia\Controlador::getCentroId($_SESSION['id']);
+                                ?>
+                                <td><input type="text" name="nombre" value="<?php echo $centro->getNombre(); ?>"></td>
+                                <td><input type="text" name="localizacion" value="<?php echo $centro->getLocalizacion(); ?>"></td>
+                                <td><?php echo $centro->getEmpresa()->getNombre(); ?></td>
+                                <input type="hidden" name="id" value="<?php echo $_SESSION['id']; ?>">
+                            </tr>
+                    </table>
+                </div>
+                    <div class="col-md-10 col-md-offset-1"><!-- Ganeko -->
+                        <div class="pull-right">
+                            <input class="btn btn-primary" type="submit" name="editarCentro" value="Guardar">
+                            <input class="btn btn-warning" type="submit" name="volver" value="Volver">
+                        </div>
+                    </div>
+                </form>
+                <?php
+
+            require_once __DIR__ ."/../Plantilla/pie.php";
+
+        }
+
+        public static function updateVehiculo(){ /*Ganeko*/
+
+
+                require_once __DIR__ . "/../Plantilla/cabecera.php";
+                ?>
+                <div class="table-responsive col-md-offset-1 col-md-10">
+                    <table class="table table-bordered">
+                        <tr>
+                            <th>MATRICULA</th>
+                            <th>MARCA</th>
+                            <th>CENTRO</th>
+                        </tr>
+                        <form method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Gerencia/Router.php">
+                            <tr>
+                                <?php
+                                $vehiculo = Gerencia\Controlador::getVehiculoId($_SESSION['id']);
+                                ?>
+                                <td><input type="text" name="matricula" value="<?php echo $vehiculo->getMatricula(); ?>"></td>
+                                <td><input type="text" name="marca" value="<?php echo $vehiculo->getMarca(); ?>"></td>
+                                <td><select name="centro">
+                                    <?php
+                                        $centros = Gerencia\Controlador::getAllCentros();
+                                        for($x = 0; $x < count($centros); $x++){
+                                            echo "<option value='".$centros[$x]->getId()."'>".$centros[$x]->getNombre()."</option>";
+                                        }
+                                    ?>
+
+                                </select>
+                                </td>
+                                <input type="hidden" name="id" value="<?php echo $_SESSION['id']; ?>">
+                            </tr>
+                    </table>
+                </div>
+                    <div class="col-md-10 col-md-offset-1"><!-- Ganeko -->
+                        <div class="pull-right">
+                            <input class="btn btn-primary" type="submit" name="editarVehiculo" value="Guardar">
+                            <input class="btn btn-warning" type="submit" name="volver" value="Volver">
+                        </div>
+                    </div>
+                </form>
+                <?php
+
+            require_once __DIR__ ."/../Plantilla/pie.php";
+
+        }
+
 }
 

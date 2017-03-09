@@ -2755,7 +2755,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                 </div>
                     <div class="col-md-10 col-md-offset-1"><!-- Ganeko -->
                         <div class="pull-right">
-                            <input class="btn btn-primary" type="submit" name="editarCentro" value="Guardar">
+                            <input class="btn btn-primary" type="submit" name="editarVehiculo" value="Guardar">
                             <input class="btn btn-warning" type="submit" name="volver" value="Volver">
                         </div>
                     </div>

@@ -36,46 +36,46 @@ if(isset($_POST['vistaEditarEmpresa'])){
     //Ganeko
     $_SESSION['id'] = $_POST['id'];
     //headerLocation a vista Editar
-    header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/updateEmpresa.php");
+    header("Location: ".Views::getUrlRaiz()."/Vista/Gerencia/updateEmpresa.php");
 }
 if(isset($_POST['editarEmpresa'])){
     //Ganeko
     Controlador::updateEmpresa($_POST);
-    header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/deleteEmpresa.php");
+    header("Location: ".Views::getUrlRaiz()."/Vista/Gerencia/deleteEmpresa.php");
 }
 if(isset($_POST['vistaEditarCentro'])){
     //Ganeko
     $_SESSION['id'] = $_POST['id'];
-    header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/updateCentro.php");
+    header("Location: ".Views::getUrlRaiz()."/Vista/Gerencia/updateCentro.php");
 }
 if(isset($_POST['editarCentro'])){
     //Ganeko
     Controlador::updateCentro($_POST);
-    header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/deleteCentro.php");
+    header("Location: ".Views::getUrlRaiz()."/Vista/Gerencia/deleteCentro.php");
 }
 if(isset($_POST['vistaEditarVehiculo'])){
     //Ganeko
     $_SESSION['id'] = $_POST['id'];
-    header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/updateVehiculo.php");
+    header("Location: ".Views::getUrlRaiz()."/Vista/Gerencia/updateVehiculo.php");
 }
 if(isset($_POST['editarVehiculo'])){
     //Ganeko
     Controlador::updateVehiculo($_POST);
-    header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/deleteVehiculo.php");
+    header("Location: ".Views::getUrlRaiz()."/Vista/Gerencia/deleteVehiculo.php");
 }
 if(isset($_POST['vistaEditarFoto'])){
     //Ganeko
     $_SESSION['dni'] = $_POST['dni'];
-    header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/updateFoto.php");
+    header("Location: ".Views::getUrlRaiz()."/Vista/Gerencia/updateFoto.php");
 }
 if(isset($_POST['vistaEditarPass'])){
     //Ganeko
     $_SESSION['dni'] = $_POST['dni'];
-    header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/updatePassword.php");
+    header("Location: ".Views::getUrlRaiz()."/Vista/Gerencia/updatePassword.php");
 }
 if(isset($_POST['vistaEditarConvenio'])){
     //Ganeko
-    header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/updateConvenio.php");
+    header("Location: ".Views::getUrlRaiz()."/Vista/Gerencia/updateConvenio.php");
 }
 if(isset($_POST['addEstado'])){
     Controlador::AddEstado($_POST);

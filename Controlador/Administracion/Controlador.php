@@ -199,10 +199,10 @@ abstract class Controlador{
     public static function deleteVehiculo($datos){
         BD\VehiculoBD::deletteVehiculo($datos["id"]);
     }
-     public static function AddEstado($datos){
-         $estado= new Estado(null,$datos["tipo"]);
-         BD\EstadoBD::add($estado);
-     }
+    public static function AddEstado($datos){
+        $estado= new Estado(null,$datos["tipo"]);
+        BD\EstadoBD::add($estado);
+    }
     public static function DeleteEstado($datos){
         BD\EstadoBD::delete($datos["id"]);
     }
@@ -397,7 +397,7 @@ abstract class Controlador{
         BD\CentroBD::updateCentro($datos);
     }
     public static function updateVehiculo($datos){
-        BD\CentroBD::updateVehiculo($datos);
+        BD\VehiculoBD::updateVehiculo($datos);
     }
     public static function guardarParteProduccion($datos)
     {

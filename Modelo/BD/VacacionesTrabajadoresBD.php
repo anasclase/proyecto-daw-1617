@@ -50,4 +50,35 @@ abstract class VacacionesTrabajadoresBD extends GenericoBD{
 
     }
 
+    public static function seleccionarVacaciones($vacaciones){
+        $con = parent::conectar();
+
+        $query = "SELECT * FROM vacacionestrabajadores WHERE dniTrabajador = '".$vacaciones->getDniTrabajador()."' and fecha = '".$vacaciones->getFecha()."' ";
+        $rs = mysqli_query($con, $query) or die(mysqli_error($con));
+
+        if(mysqli_affected_rows($con) >0){
+            parent::desconectar($con);
+            $fila = mysqli_fetch_array($rs);
+            return $fila["estado"];
+        }else{
+            parent::desconectar($con);
+            return false;
+        }
+    }
+
+    public static function updateVacaciones($dni,$fecha,$estado){
+        $con = parent::conectar();
+
+        $query = "UPDATE vacacionestrabajadores SET estado = '".$estado."' WHERE dniTrabajador = '".$dni."' AND fecha = '".$fecha."'";
+        $rs = mysqli_query($con, $query) or die(mysqli_error($con));
+
+        if($query){
+            parent::desconectar($con);
+            return true;
+        }else{
+            parent::desconectar($con);
+            return false;
+        }
+    }
+
 }

@@ -1625,13 +1625,12 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                 <tr><th colspan="5">OBSERVACIONES</th></tr>
                 <tr><td colspan="5"><textarea name="Nota" id="Nota"><?php echo $parte->getNota();?></textarea></td></tr>
                 </table>
-                <button type="submit" name="guardarParteLogistica"
-                   style="border: none; background: none"><span
-                   class="glyphicon glyphicon-floppy-saved" style="color:blue; font-size: 1.5em"></span> <span style="color:blue;">Guardar</span>
-                </button>
+                    <!-- Ibai -->
+                    <div class="form-group text-center" style="margin-top:20px;">
+                        <button class="btn btn-primary" type="submit" name="guardarParteLogistica">Guardar</button>
+                        <a class="btn btn-warning" href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/Administracion.php?cod=2">Volver</a>
+                    </div>
                 </form>
-
-            <a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/Administracion.php?cod=2">Volver</a>
             </div>
             </div>
             <?php

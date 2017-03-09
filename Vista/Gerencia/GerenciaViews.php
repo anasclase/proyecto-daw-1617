@@ -764,16 +764,12 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
                                       action="<?php echo self::getUrlRaiz() ?>/Controlador/Gerencia/Router.php">
                                     <input type="text" name="nuevo" size="5" placeholder="1200">
                                     <input type="hidden" name="id" value="<?php echo $hora->getId(); ?>">
-                                </form>
                             </td>
                             <td>
-                                <form name="deleteEstado" method="post"
-                                      action="<?php echo self::getUrlRaiz() ?>/Controlador/Gerencia/Router.php">
                                     <button type="submit" name="updateHorasConvenio" value="Editar"
                                             style="border: none; background: none;"><span
                                             class="glyphicon glyphicon-edit"
                                             style="color:blue; font-size: 1.5em"></span></button>
-                                    <input type="hidden" name="id" value="<?php echo $hora->getId(); ?>">
                                 </form>
                             </td>
                         </tr>

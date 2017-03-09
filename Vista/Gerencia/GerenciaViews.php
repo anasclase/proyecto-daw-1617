@@ -800,12 +800,10 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
         parent::setRoot(true);
 
         require_once __DIR__ . "/../Plantilla/cabecera.php";
-        $tipos = Gerencia\Controlador::getAllTiposFranjas();
-        if (is_null($tipos)) {
-            echo "No hay tipos de franja";
-        } else {
+        $id = $_SESSION['id'];
+        $tipo = Gerencia\Controlador::getFranjaById($id);
             ?>
-            <h2 class="page-header">Tipo de Franjas</h2>
+            <h2 class="page-header">Tipo de Franjas 2</h2>
             <div class="table-responsive col-md-offset-1 col-md-10">
                 <table class="table table-bordered">
                     <tr>
@@ -814,9 +812,6 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
                         <th>NUEVO PRECIO</th>
                         <th>ACCIÓN</th>
                     </tr>
-                    <?php
-                    foreach ($tipos as $tipo) {
-                        ?>
                         <tr>
                             <td><?php echo $tipo->getTipo(); ?></td>
                             <td><?php echo $tipo->getPrecio(); ?></td>
@@ -832,9 +827,6 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
                                 </td>
                             </form>
                         </tr>
-                        <?php
-                    }
-                    ?>
                 </table>
             </div>
             <form name="deleteEstado" method="post"
@@ -846,8 +838,8 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
             <?php
             require_once __DIR__ . "/../Plantilla/pie.php";
 
-        }
     }
+
 
     public static function insertTipoFranja(){
 
@@ -919,6 +911,10 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
                                             value="Eliminar" style="border: none; background: none;"><span
                                             class="glyphicon glyphicon-remove"
                                             style="color:red; font-size: 1.5em"></span></button>
+                                    <button class="btn btn-primary" type="submit" name="vistaUpdateTipoFranja"
+                                            value="Editar" style="border: none; background: none;"><span
+                                            class="glyphicon glyphicon-pencil"
+                                            style="color:black; font-size: 1.5em"></span></button>
                                     <input type="hidden" name="id" value="<?php echo $tipo->getId(); ?>">
                                 </form>
                             </td>
@@ -932,7 +928,6 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
                   action="<?php echo self::getUrlRaiz() ?>/Controlador/Gerencia/Router.php">
                 <div class="col-md-10 col-md-offset-1"><!-- Ganeko -->
                     <div class="pull-right">
-                        <input class="btn btn-primary" type="submit" name="vistaUpdateTipoFranja" value="Editar">
                         <input class="btn btn-warning pull-right" type="submit" name="volver" value="Volver">
                     </div>
                 </div>

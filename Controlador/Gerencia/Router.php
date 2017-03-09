@@ -124,10 +124,6 @@ if(isset($_POST['eliminarCentro'])){
     header("Location: ".Views::getUrlRaiz()."/Vista/Gerencia/deleteCentro.php");
 }
 
-if(isset($_POST['updateTipoFranja'])){
-    Controlador::UpdateTipoFranja($_POST);
-    header("Location: ".Views::getUrlRaiz()."/Vista/Gerencia/updateTipoFranja.php");
-}
 if(isset($_POST['addTipoFranja'])){
     Controlador::addTipoFranja($_POST);
     header($gestionListas);
@@ -139,6 +135,7 @@ if(isset($_POST['updateTipoFranja'])){
     Controlador::UpdateTipoFranja($_POST);
     header("Location: ".Views::getUrlRaiz()."/Vista/Gerencia/deleteTipoFranja.php");
 }
+
 if(isset($_POST['deleteTipoFranja'])){
     Controlador::DeleteTipoFranja($_POST);
     header("Location: ".Views::getUrlRaiz()."/Vista/Gerencia/deleteTipoFranja.php");

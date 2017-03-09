@@ -89,7 +89,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                     <div class="form-group">
                         <label class="control-label col-sm-2 col-md-2">DNI:</label>
                         <div class="col-sm-4 col-md-3">
-                            <input class="form-control" type="text" name="dni" maxlength="9">
+                            <input class="form-control" type="text" name="dni" maxlength="9" required>
                         </div>
                     </div><!--CONTRASEÑA EN CREAR TRABAJADOR PABLO-->
 					<div class="form-group">
@@ -97,7 +97,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
 						<label class="control-label col-sm-2 col-md-2">Contraseña</label>
 						<div class="col-sm-4 col-md-3">
 						
-							<input class="form-control" type="password" name="pass" maxlength="15">
+							<input class="form-control" type="password" name="pass" maxlength="15" required>
 						
 						</div>
 					
@@ -105,13 +105,13 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                     <div class="form-group">
                         <label class="control-label col-sm-2 col-md-2">Nombre:</label>
                         <div class="col-sm-4 col-md-3">
-                            <input class="form-control" type="text" name="nombre">
+                            <input class="form-control" type="text" name="nombre" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-2 col-md-2">Apellido 1:</label>
                         <div class="col-sm-4 col-md-3">
-                            <input class="form-control" type="text" name="apellido1">
+                            <input class="form-control" type="text" name="apellido1" required>
                         </div>
                     </div>
                     <div class="form-group">
@@ -129,7 +129,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                     <div class="form-group">
                         <label class="control-label col-sm-2 col-md-2">Teléfono:</label>
                         <div class="col-sm-4 col-md-3">
-                            <input class="form-control" type="text" name="telefono">
+                            <input class="form-control" type="text" name="telefono" required>
                         </div>
                     </div>
                     <div class="form-group">

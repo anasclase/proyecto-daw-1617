@@ -1636,7 +1636,6 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
     require_once __DIR__ . "/../Plantilla/pie.php";
     }
 
-
     public static function updateFoto(){
         //Ganeko
         parent::setOn(true);

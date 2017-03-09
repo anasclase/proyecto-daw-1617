@@ -177,4 +177,60 @@ abstract class PartelogisticaBD extends GenericoBD{
 
     }
 
+    // Alejandra
+
+    public static function getPartes($ano, $fi, $ff, $emp, $cen, $tra, $est){
+        $con = parent::conectar();
+        if($ano != ""){
+            $query = "SELECT e.nombre as 'empresa', c.nombre as 'centro', t.nombre, t.apellido1, t.apellido2, p.* FROM " .self::$tabla. " p, trabajadores t, centros c, empresas e WHERE p.dniTrabajador=t.dni AND  t.idCentro=c.id AND c.idEmpresa=e.id AND YEAR(p.fecha)='$ano'";
+        }else{
+            $query = "SELECT e.nombre as 'empresa', c.nombre as 'centro', t.nombre, t.apellido1, t.apellido2, p.* FROM " .self::$tabla. " p, trabajadores t, centros c, empresas e WHERE p.dniTrabajador=t.dni AND  t.idCentro=c.id AND c.idEmpresa=e.id AND YEAR(p.fecha) BETWEEN '$fi' AND '$ff'";
+        }
+        if($emp != "" && count($emp) != 0){
+            for($i=0; $i<count($emp); $i++){
+                if($i == 0){
+                    $query .= " AND e.id IN (".$emp[$i]->getId();
+                }else{
+                    $query .= ", " . $emp[$i]->getId();
+                }
+            }
+            $query .= ")";
+            if($cen != "" && count($cen) != 0){
+                for($i=0; $i<count($cen); $i++){
+                    if($i == 0){
+                        $query .= " AND c.id IN (".$cen[$i]->getId();
+                    }else{
+                        $query .= ", " . $cen[$i]->getId();
+                    }
+                }
+                $query .= ")";
+                if($tra != "" && count($tra) != 0){
+                    for($i=0; $i<count($tra); $i++){
+                        if($i == 0){
+                            $query .= " AND t.dni IN (".$tra[$i]->getDni();
+                        }else{
+                            $query .= ", " . $tra[$i]->getDni();
+                        }
+                    }
+                    $query .= ")";
+                    if($est != "" && count($est) != 0){
+                        for($i=0; $i<count($est); $i++){
+                            if($i == 0){
+                                $query .= " AND p.idEstado IN (".$est[$i]->getId();
+                            }else{
+                                $query .= ", " . $est[$i]->getId();
+                            }
+                        }
+                        $query .= ")";
+                    }
+                }
+            }
+        }
+        $query .= " ORDER BY e.nombre";
+        $rs = mysqli_query($con ,$query) or die(mysqli_error($con));
+        $respuesta = parent::mapear($rs,"Parteslogistica");
+        parent::desconectar($con);
+        return $respuesta;
+    }
+
 }

@@ -5,6 +5,7 @@ use \Controlador\Administracion;
 use Controlador\Login\Controlador;
 use Modelo\BD;
 
+
 require_once __DIR__ . "/../Plantilla/Views.php";
 require_once __DIR__ . "/../../Controlador/Administracion/Controlador.php";
 require_once __DIR__.'/../../Modelo/BD/GenericoBD.php';
@@ -27,11 +28,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                 <a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/insertTrabajador.php"><span class="glyphicon glyphicon-plus" style="font-size: 24px; color: green;"></span></a>
                 <a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/deleteTrabajador.php"><span class="glyphicon glyphicon-eye-open" style="font-size: 24px; color: black;"></span></a>
             </h3>
-            <h3 class="page-header">Contraseñas
-                <a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/updatePassword.php"><span class="glyphicon glyphicon-pencil" style="font-size: 24px;"></span></a><br/>
-            </h3><h3 class="page-header">Fotos
-                <a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/updateFoto.php"><span class="glyphicon glyphicon-pencil" style="font-size: 24px;"></span></a>
-            </h3><h3 class="page-header">Empresa
+            <h3 class="page-header">Empresa
                 <a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/insertEmpresa.php"><span src="" class="glyphicon glyphicon-plus" style="font-size: 24px; color: green;"></span></a>
                 <a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/deleteEmpresa.php"><span class="glyphicon glyphicon-eye-open" style="font-size: 24px; color: black;"></span></a>
             </h3>
@@ -46,12 +43,12 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
             <h3 class="page-header">Convenio
                 <a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/insertHorasConvenio.php"><span src="" class="glyphicon glyphicon-plus" style="font-size: 24px; color: green;"></span></a>
                 <a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/deleteHorasConvenio.php"><span class="glyphicon glyphicon-eye-open" style="font-size: 24px; color: black;"></span></a>
-                <a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/updateHorasConvenio.php"><span class="glyphicon glyphicon-pencil" style="font-size: 24px;"></span></a>
+                
             </h3>
             <h3 class="page-header">Tipo Franja
                 <a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/insertTipoFranja.php"><span src="" class="glyphicon glyphicon-plus" style="font-size: 24px; color: green;"></span></a>
                 <a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/deleteTipoFranja.php"><span class="glyphicon glyphicon-eye-open" style="font-size: 24px; color: black;"></span></a>
-                <a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/updateTipoFranja.php"><span class="glyphicon glyphicon-pencil" style="font-size: 24px;"></span></a>
+                
             </h3>
             <h3 class="page-header">Horario
                 <a href="<?php echo self::getUrlRaiz() ?>/Vista/Administracion/insertHorario.php"><span src="" class="glyphicon glyphicon-plus" style="font-size: 24px; color: green;"></span></a>
@@ -59,7 +56,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
             </h3>
             <h3 class="page-header">Horario-Trabajador
                 <a href="<?php echo self::getUrlRaiz() ?>/Vista/Administracion/insertHorarioTrabajador.php"><span src="" class="glyphicon glyphicon-plus" style="font-size: 24px; color: green;"></span></a>
-                <a href="<?php echo self::getUrlRaiz() ?>/Vista/Administracion/deleteHorarioTrabajador.php"><span class="glyphicon glyphicon-eye-open" style="font-size: 24px; color: black;"></span></a>
+                <a href="<?php echo self::getUrlRaiz() ?>/Vista/Administracion/filtroHorarioTrabajador.php"><span class="glyphicon glyphicon-eye-open" style="font-size: 24px; color: black;"></span></a>
             </h3>
 
 
@@ -92,7 +89,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                     <div class="form-group">
                         <label class="control-label col-sm-2 col-md-2">DNI:</label>
                         <div class="col-sm-4 col-md-3">
-                            <input class="form-control" type="text" name="dni" maxlength="9">
+                            <input class="form-control" type="text" name="dni" maxlength="9" required>
                         </div>
                     </div><!--CONTRASEÑA EN CREAR TRABAJADOR PABLO-->
 					<div class="form-group">
@@ -100,7 +97,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
 						<label class="control-label col-sm-2 col-md-2">Contraseña</label>
 						<div class="col-sm-4 col-md-3">
 						
-							<input class="form-control" type="password" name="pass" maxlength="15">
+							<input class="form-control" type="password" name="pass" maxlength="15" required>
 						
 						</div>
 					
@@ -108,13 +105,13 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                     <div class="form-group">
                         <label class="control-label col-sm-2 col-md-2">Nombre:</label>
                         <div class="col-sm-4 col-md-3">
-                            <input class="form-control" type="text" name="nombre">
+                            <input class="form-control" type="text" name="nombre" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-2 col-md-2">Apellido 1:</label>
                         <div class="col-sm-4 col-md-3">
-                            <input class="form-control" type="text" name="apellido1">
+                            <input class="form-control" type="text" name="apellido1" required>
                         </div>
                     </div>
                     <div class="form-group">
@@ -132,19 +129,20 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                     <div class="form-group">
                         <label class="control-label col-sm-2 col-md-2">Teléfono:</label>
                         <div class="col-sm-4 col-md-3">
-                            <input class="form-control" type="text" name="telefono">
+                            <input class="form-control" type="text" name="telefono" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-2 col-md-2">Empresa:</label>
                         <div class="col-sm-4 col-md-3">
-                            <select class="form-control" name="empresa">
+                            <select class="form-control" name="empresa" onchange="SincronizarCentrosConEmpresasALaFormaGuarra()">
                                 <?php
                                 foreach($empresas as $empresa){
 
                                     ?>
-                                    <option value="<?php echo $empresa->getId(); ?>"><?php echo $empresa->getNombre(); ?></option>
+                                    <option rel="<?php echo $empresa->getId(); ?>" value="<?php echo $empresa->getId(); ?>"><?php echo $empresa->getNombre(); ?></option>
                                     <?php
+
                                 }
                                 ?>
                             </select>
@@ -158,13 +156,38 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                                 foreach($empresas as $empresa) {
                                     foreach($empresa->getCentros() as $centro){
                                         ?>
-                                        <option value="<?php echo $centro->getId(); ?>"><?php echo $centro->getNombre(); ?></option>
+                                        <option rel="<?php echo $empresa->getId(); ?>" value="<?php echo $centro->getId(); ?>"><?php echo $centro->getNombre(); ?></option>
                                         <?php
                                     }
                                 }
                                 ?>
                             </select>
                         </div>
+                       <script>
+                           //Funcion que muestra las option de los centros sincronizadamente a lo guarro Aitor I
+
+                        function SincronizarCentrosConEmpresasALaFormaGuarra() {
+                            OcultarYMostrar(document.getElementsByName("empresa")[0].value);
+                        }
+
+                        function OcultarYMostrar(id) {
+                            nodos = document.getElementsByName("centro")[0].children;
+                            for(var x = 0; x < nodos.length; x++){
+                             if(nodos[x].getAttribute("rel") == id){
+                                 nodos[x].style.display = "block";
+                                 nodos[x].setAttribute("selected","selected");
+                            }
+                            else{
+                                 nodos[x].style.display= "none";
+                                 nodos[x].removeAttribute("selected");
+                                }
+                            }
+                        }
+
+                        SincronizarCentrosConEmpresasALaFormaGuarra();
+                    </script>
+
+
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-2 col-md-2">Perfil:</label>
@@ -180,14 +203,14 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                             </select>
                         </div>
                     </div>
-                    <div class="form-group"><!-- Ganeko -->
+                    
+                </fieldset>
+            </form><form class="form-horizontal" name="atras" method="post" action="<?php echo self::getUrlRaiz()?>/Controlador/Administracion/Router.php"<div class="form-group"><!--Ganeko-->
                         <div class="col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-2">
                             <input class="btn btn-primary" type="submit" name="addTrabajador" value="Añadir">
                             <input class="btn btn-warning" type="submit" name="volver" value="Volver">
                         </div>
-                    </div>
-                </fieldset>
-            </form>
+                    </div></form>
         </div>
         <?php
 
@@ -238,6 +261,14 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                                             style="border: none; background: none;"><span
                                             class="glyphicon glyphicon-remove"
                                             style="color:red; font-size: 1.5em"></span></button>
+                                    <!-- Ganeko --> <button type="submit" name="vistaEditarFoto" value="Foto"
+                                            style="border: none; background: none;"><span
+                                            class="glyphicon glyphicon-picture"
+                                            style="color:deepskyblue; font-size: 1.5em"></span></button>
+                                            <button type="submit" name="vistaEditarPass" value="Pass"
+                                            style="border: none; background: none;"><span
+                                            class="glyphicon glyphicon-pencil"
+                                            style="color:black; font-size: 1.5em"></span></button>
                                     <input type="hidden" name="dni" value="<?php echo $trabajador->getDni(); ?>">
                                 </form>
                             </td>
@@ -282,13 +313,13 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                     <div class="form-group">
                         <label class="control-label col-sm-2 col-md-2">Nombre:</label>
                         <div class="col-sm-4 col-md-3">
-                            <input class="form-control" type="text" name="nombre">
+                            <input class="form-control" type="text" name="nombre" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-2 col-md-2">NIF:</label>
                         <div class="col-sm-4 col-md-3">
-                            <input class="form-control" type="text" name="nif" maxlength="9">
+                            <input class="form-control" type="text" name="nif" maxlength="9" required>
                         </div>
                     </div>
                     <div class="form-group"><!--Ganeko-->
@@ -298,7 +329,12 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                         </div>
                     </div>
                 </fieldset>
-            </form>
+            </form><form class="form-horizontal" name="atras" method="post" action="<?php echo self::getUrlRaiz()?>/Controlador/Administracion/Router.php"<div class="form-group"><!--Ganeko-->
+                        <div class="col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-2">
+                            <input class="btn btn-primary" type="submit" name="addEmpresa" value="Añadir">
+                            <input class="btn btn-warning" type="submit" name="volver" value="Volver">
+                        </div>
+                    </div></form>
         </div>
         <?php
         require_once __DIR__ . "/../Plantilla/pie.php";
@@ -338,6 +374,10 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                                             style="border: none; background: none;"><span
                                             class="glyphicon glyphicon-remove"
                                             style="color:red; font-size: 1.5em"></span></button>
+                                    <button type="submit" name="vistaEditarEmpresa" value="Editar"
+                                            style="border: none; background: none;"><span
+                                            class="glyphicon glyphicon-pencil"
+                                            style="color:black; font-size: 1.5em"></span></button>
                                     <input type="hidden" name="id" value="<?php echo $empresa->getId(); ?>">
                                 </form>
                             </td>
@@ -380,13 +420,13 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                     <div class="form-group">
                         <label class="control-label col-sm-2 col-md-2">Nombre:</label>
                         <div class="col-sm-4 col-md-3">
-                            <input class="form-control" type="text" name="nombre">
+                            <input class="form-control" type="text" name="nombre" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-2 col-md-2">Localización:</label>
                         <div class="col-sm-4 col-md-3">
-                            <input class="form-control" type="text" name="localizacion">
+                            <input class="form-control" type="text" name="localizacion" required>
                         </div>
                     </div>
                     <div class="form-group">
@@ -403,14 +443,14 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                             </select>
                         </div>
                     </div>
-                    <div class="form-group"><!--Ganeko-->
+                    
+                </fieldset>
+            </form><form class="form-horizontal" name="atras" method="post" action="<?php echo self::getUrlRaiz()?>/Controlador/Administracion/Router.php"<div class="form-group"><!--Ganeko-->
                         <div class="col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-2">
                             <input class="btn btn-primary" type="submit" name="addCentro" value="Añadir">
                             <input class="btn btn-warning" type="submit" name="volver" value="Volver">
                         </div>
-                    </div>
-                </fieldset>
-            </form>
+                    </div></form>
         </div>
         <?php
         require_once __DIR__ . "/../Plantilla/pie.php";
@@ -451,6 +491,10 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                                                 style="border: none; background: none;"><span
                                                 class="glyphicon glyphicon-remove"
                                                 style="color:red; font-size: 1.5em"></span></button>
+                                        <button type="submit" name="vistaEditarCentro" value="Editar"
+                                                style="border: none; background: none;"><span
+                                                class="glyphicon glyphicon-pencil"
+                                                style="color:black; font-size: 1.5em"></span></button>
                                     </td>
                                 </tr>
                                 <input type="hidden" name="id" value="<?php echo $centro->getId(); ?>">
@@ -538,6 +582,12 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                     ?>
             </table>
         </div>
+        <form name="deleteEstado" method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Gerencia/Router.php">
+            <div class="col-md-10 col-md-offset-1"><!-- Ganeko -->
+                <input class="btn btn-warning pull-right" type="submit" name="volver" value="Volver">
+            </div>
+        </form>
+
         <?php
         require_once __DIR__ . "/../Plantilla/pie.php";
 
@@ -579,13 +629,13 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                         <div class="form-group">
                             <label class="control-label col-sm-2 col-md-2">Matrícula:</label>
                             <div class="col-sm-4 col-md-3">
-                                <input class="form-control" type="text" name="matricula">
+                                <input class="form-control" type="text" name="matricula" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-sm-2 col-md-2">Marca:</label>
                             <div class="col-sm-4 col-md-3">
-                                <input class="form-control" type="text" name="marca">
+                                <input class="form-control" type="text" name="marca" required>
                             </div>
                         </div>
                         <div class="form-group"><!--Ganeko-->
@@ -595,7 +645,12 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                             </div>
                         </div>
                     </fieldset>
-                </form>
+                </form><form class="form-horizontal" name="atras" method="post" action="<?php echo self::getUrlRaiz()?>/Controlador/Administracion/Router.php"<div class="form-group"><!--Ganeko-->
+                        <div class="col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-2">
+                            <input class="btn btn-primary" type="submit" name="addVehiculo" value="Añadir">
+                            <input class="btn btn-warning" type="submit" name="volver" value="Volver">
+                        </div>
+                    </div></form>
             </div>
             <?php
 
@@ -637,6 +692,10 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                                                 value="Eliminar" style="border: none; background: none;"><span
                                                 class="glyphicon glyphicon-remove"
                                                 style="color:red; font-size: 1.5em"></span></button>
+                                        <button class="btn btn-primary" type="submit" name="vistaEditarVehiculo"
+                                                value="Editar" style="border: none; background: none;"><span
+                                                class="glyphicon glyphicon-pencil"
+                                                style="color:black; font-size: 1.5em"></span></button>
                                         <input type="hidden" name="id" value="<?php echo $vehiculo->getId(); ?>">
                                     </form>
                                 </td>
@@ -648,8 +707,8 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                 </div>
                 <form name="updateFoto" method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
 
-                    <div class="col-md-10 col-md-offset-1 pull-right"><!--  PABLO  -->
-                         <input class="btn btn-warning " type="submit" name="volver" value="Volver">
+                    <div class="col-md-10 col-md-offset-1"><!--  PABLO  -->
+                         <input class="btn btn-warning pull-right" type="submit" name="volver" value="Volver">
                     </div>
                 </form>
                 <?php
@@ -692,13 +751,13 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                     <div class="form-group">
                         <label class="control-label col-sm-2 col-md-2">Número de horas al año:</label>
                         <div class="col-sm-4 col-md-3">
-                            <input class="form-control" type="number" name="horasAnual">
+                            <input class="form-control" type="number" name="horasAnual" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-2 col-md-2">Denominación:</label>
                         <div class="col-sm-4 col-md-3">
-                            <input class="form-control" type="text" name="denominacion">
+                            <input class="form-control" type="text" name="denominacion" required>
                         </div>
                     </div>
                     <div class="form-group"><!--Ganeko-->
@@ -708,7 +767,12 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                         </div>
                     </div>
                 </fieldset>
-            </form>
+            </form><form class="form-horizontal" name="atras" method="post" action="<?php echo self::getUrlRaiz()?>/Controlador/Administracion/Router.php"<div class="form-group"><!--Ganeko-->
+                        <div class="col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-2">
+                            <input class="btn btn-primary" type="submit" name="addHorasConvenio" value="Añadir">
+                            <input class="btn btn-warning" type="submit" name="volver" value="Volver">
+                        </div>
+                    </div></form>
         </div>
         <?php
         require_once __DIR__ . "/../Plantilla/pie.php";
@@ -749,6 +813,10 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                                                 style="border: none; background: none;"><span
                                                 class="glyphicon glyphicon-remove"
                                                 style="color:red; font-size: 1.5em"></span></button>
+					<button type="submit" name="vistaEditarConvenio" value="Editar"
+                                                style="border: none; background: none;"><span
+                                                class="glyphicon glyphicon-pencil"
+                                                style="color:black; font-size: 1.5em"></span></button>	
                                         <input type="hidden" name="id" value="<?php echo $horaconvenio->getId(); ?>">
                                     </form>
                                 </td>
@@ -761,7 +829,10 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                 <form name="deleteEstado" method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
 
                     <div class="col-md-10 col-md-offset-1"><!--Ganeko-->
-                        <input class="btn btn-warning pull-right" type="submit" name="volver" value="Volver">
+                        <div class="pull-right">
+                            
+                            <input class="btn btn-warning" type="submit" name="volver" value="Volver">
+                        </div>
                     </div>
                 </form>
                 <?php
@@ -776,10 +847,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
         parent::setRoot(true);
 
         require_once __DIR__ . "/../Plantilla/cabecera.php";
-        $horas = Administracion\Controlador::getAllHorasConvenio();
-        if(is_null($horas)){
-            echo "no hay horas";
-        }else {
+        $hora = Administracion\Controlador::getConvenioById($_SESSION['id']);
             ?>
             <h2 class="page-header">Convenios</h2>
             <div class="table-responsive col-md-offset-1 col-md-10">
@@ -791,9 +859,6 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                         <th>NUEVAS HORAS</th>
                         <th>ACCIÓN</th>
                     </tr>
-                    <?php
-                    foreach ($horas as $hora) {
-                        ?>
                         <tr>
                             <td><?php echo $hora->getDenominacion(); ?></td>
                             <td><?php echo $hora->getHorasAnual(); ?></td>
@@ -816,9 +881,6 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                             </td>
                             </form>
                         </tr>
-                        <?php
-                    }
-                    ?>
                 </table>
             </div>
             <form name="deleteEstado" method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
@@ -828,10 +890,9 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                 </div>
             </form>
             <?php
-        }
-        require_once __DIR__ . "/../Plantilla/pie.php";
-
+            require_once __DIR__ . "/../Plantilla/pie.php";
     }
+
 
 /*****************************************************/
 /* TIPO FRANJA */
@@ -843,12 +904,12 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
         parent::setRoot(true);
 
         require_once __DIR__ . "/../Plantilla/cabecera.php";
-        $tipos = Administracion\Controlador::getAllTiposFranjas();
-        if(is_null($tipos)){
-            echo "No hay tipos de franja";
+        $franjas = Administracion\Controlador::getAllTiposFranjas();
+        if(is_null($franjas)){
+            echo "no hay horas";
         }else {
             ?>
-            <h2 class="page-header">Tipo de Franjas</h2>
+            <h2 class="page-header">Update de Franjas</h2>
             <div class="table-responsive col-md-offset-1 col-md-10">
                 <table class="table table-bordered">
                     <tr>
@@ -858,11 +919,11 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                         <th>ACCIÓN</th>
                     </tr>
                     <?php
-                    foreach ($tipos as $tipo) {
+                    foreach ($franjas as $franja) {
                         ?>
                         <tr>
-                            <td><?php echo $tipo->getTipo(); ?></td>
-                            <td><?php echo $tipo->getPrecio(); ?></td>
+                            <td><?php echo $franja->getTipo(); ?></td>
+                            <td><?php echo $franja->getPrecio(); ?></td>
                             <form name="deleteEstado" method="post"
                                   action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
                                 <td><input type="text" name="nuevo" size="5" placeholder="00.00"></td>
@@ -871,13 +932,13 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                                             style="border: none; background: none;"><span
                                             class="glyphicon glyphicon-edit"
                                             style="color:blue; font-size: 1.5em"></span></button>
-                                    <input type="hidden" name="id" value="<?php echo $tipo->getId(); ?>">
+                                    <input type="hidden" name="id" value="<?php echo $franja->getId(); ?>">
                                 </td>
                             </form>
                         </tr>
                         <?php
-                    }
-                    ?>
+                        }
+                        ?>
                 </table>
             </div>
             <form name="deleteEstado" method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
@@ -906,13 +967,13 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                     <div class="form-group">
                         <label class="control-label col-sm-2 col-md-2">Tipo de Horario:</label>
                         <div class="col-sm-4 col-md-3">
-                            <input class="form-control" type="text" name="tipo" placeholder="Mañana, tarde, noche...">
+                            <input class="form-control" type="text" name="tipo" placeholder="Mañana, tarde, noche..." required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-2 col-md-2">Precio:</label>
                         <div class="col-sm-4 col-md-3">
-                            <input class="form-control" type="text" name="precio">
+                            <input class="form-control" type="text" name="precio" required>
                         </div>
                     </div>
                     <div class="form-group"><!--Ganeko-->
@@ -922,7 +983,12 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                         </div>
                     </div>
                 </fieldset>
-            </form>
+            </form><form class="form-horizontal" name="atras" method="post" action="<?php echo self::getUrlRaiz()?>/Controlador/Administracion/Router.php"<div class="form-group"><!--Ganeko-->
+                        <div class="col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-2">
+                            <input class="btn btn-primary" type="submit" name="addTipoFranja" value="Añadir">
+                            <input class="btn btn-warning" type="submit" name="volver" value="Volver">
+                        </div>
+                    </div></form>
         </div>
         <?php
         require_once __DIR__ . "/../Plantilla/pie.php";
@@ -972,7 +1038,10 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
             <form name="deleteEstado" method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
 
                 <div class="col-md-10 col-md-offset-1">
-                    <input class="btn btn-warning pull-right" type="submit" name="volver" value="Volver">
+                    <div class="pull-right">
+                        <input class="btn btn-primary" type="submit" name="vistaUpdateTipoFranja" value="Editar">
+                        <input class="btn btn-warning" type="submit" name="volver" value="Volver">
+                    </div>
                 </div>
             </form>
             <?php
@@ -990,12 +1059,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
         parent::setOn(true);
         parent::setRoot(true);
 
-        $trabajadores = Administracion\Controlador::getAllTrabajadores();
-
         require_once __DIR__ . "/../Plantilla/cabecera.php";
-        if(is_null($trabajadores)){
-            echo "no hay trabajadores";
-        }else {
             ?>
 
             <h2 class="page-header">Trabajadores</h2>
@@ -1009,11 +1073,8 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                     <form name="updatePassword" method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
                         <tr>
                             <td>
-                                <select class="form-control" name="trabajador">
-                                    <?php foreach ($trabajadores as $trabajador) {
-                                        echo "<option value='" . $trabajador->getDni() . "'>" . $trabajador->getDni() . "</option>";
-                                    } ?>
-                                </select>
+                                <input type="text" class="form-control" name="trabajador" value="<?php echo $_SESSION["dni"]; ?>">
+
                             </td>
                             <td><input class="form-control" type="password" name="password"/></td>
                             <td>
@@ -1061,9 +1122,6 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                         </tr>
                         <input type="hidden" name="id" value="<?php echo $hora->getId(); ?>">
                     </form>
-                    <?php
-                }
-                ?>
             </table>
             <?php
         }
@@ -1089,7 +1147,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                 <div class="form-group">
                     <label class="control-label col-sm-2 col-md-2">Nombre horario:</label>
                     <div class="col-sm-4 col-md-3">
-                        <input class="form-control" type="text" name="horario">
+                        <input class="form-control" type="text" name="horario" required>
                     </div>
                 </div>
                 <div class="form-group">
@@ -1127,7 +1185,12 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                     </div>
                 </div>
 
-            </form>
+            </form><form class="form-horizontal" name="atras" method="post" action="<?php echo self::getUrlRaiz()?>/Controlador/Administracion/Router.php"<div class="form-group"><!--Ganeko-->
+                        <div class="col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-2">
+                            <input class="btn btn-primary" type="submit" name="addHorario" value="Añadir">
+                            <input class="btn btn-warning" type="submit" name="volver" value="Volver">
+                        </div>
+                    </div></form>
 
             <?php
 
@@ -1252,8 +1315,70 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                         <input class="btn btn-warning" type="submit" name="volver" value="Volver">
                     </div>
                 </div>
-            </form>
+            </form><form class="form-horizontal" name="atras" method="post" action="<?php echo self::getUrlRaiz()?>/Controlador/Administracion/Router.php"<div class="form-group"><!--Ganeko-->
+                        <div class="col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-2">
+                            <input class="btn btn-primary" type="submit" name="añadirHorarioTrabajador" value="Añadir">
+                            <input class="btn btn-warning" type="submit" name="volver" value="Volver">
+                        </div>
+                    </div></form>
 
+            <?php
+            require_once __DIR__ . "/../Plantilla/pie.php";
+        }
+
+        // Función para mostrar filtros de empresa,centro... al mostrar horarios-trabajador a administracion
+        // Ibai
+        public static function filtroHorarioTrabajador(){
+            parent::setOn(true);
+            parent::setRoot(true);
+            require_once __DIR__ . "/../Plantilla/cabecera.php";
+            ?>
+            <script src="<?php echo parent::getUrlRaiz() ?>/Vista/Plantilla/JS/jquery-2.2.1.min.js"></script>
+
+
+                <form id="formulario" method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
+                <div class="ins form-inline">
+                    <div class="form-group col-xs-6 col-sm-3">
+                        <label class="col-2">Empresa</label>
+                        <div class="col-9" id="divEmpresas">
+                            <select class="form-control" name="empresa" id="selectEmpresa">
+
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group col-xs-6 col-sm-3">
+                      <label class="col-2">Centro</label>
+                      <div class="col-9">
+                            <select class="form-control" name="centro" id="selectCentro">
+
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group col-xs-6 col-sm-3">
+                      <label class="col-2">Calendario</label>
+                      <div class="col-9">
+                            <select class="form-control" name="calendario" id="selectCalendario">
+
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group col-xs-6 col-sm-3">
+                      <label class="col-2">Mes</label>
+                      <div class="col-9">
+                            <select class="form-control" name="mes" id="selectMes">
+
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group container text-center" style="margin-top:20px;">
+                        <div class="">
+                            <button class="btn btn-primary"  type="submit" name="mostrarHorarioTrabajador" id="aplicarFiltros">Buscar</button>
+                            <button class="btn btn-danger"  type="button" id="resetFiltros">Reset</button>
+                            <input class="btn btn-warning" type="submit" name="volver" value="Volver">
+                        </div>
+                    </div>
+                </div>
+                </form>
             <?php
             require_once __DIR__ . "/../Plantilla/pie.php";
         }
@@ -1262,7 +1387,8 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
         {
             parent::setOn(true);
             parent::setRoot(true);
-            $horarioTrabajador = Administracion\Controlador::getAllHoraioTrabajador();
+            $horarioTrabajador = Administracion\Controlador::getAllHorarioTrabajadorFiltrado($_SESSION["filtrosHorarios"]);
+
             require_once __DIR__ . "/../Plantilla/cabecera.php";
             ?>
             <div class="table-responsive col-md-offset-1 col-md-10">
@@ -1271,21 +1397,28 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                         <th>TRABAJADOR</th>
                         <th>SEMANA</th>
                         <th>HORARIO</th>
+                        <th>CALENDARIO</th> <!--Ibai-->
                         <th>ACCIÓN</th>
                     </tr>
                     <?php
-                    foreach ($horarioTrabajador as $horario) {
+                    for($x = 0 ; $x<count($horarioTrabajador); $x++) { /* PABLO */
                         ?>
                         <form method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
-                            <tr>
-                                <td><?php echo $horario->getTrabajador()->getDni() ?></td>
-                                <td><?php echo $horario->getNumeroSemana() ?></td>
-                                <td><?php echo $horario->getHorario()->getTipo() ?></td><!-- PABLO -->
+                            <?php
+                                echo Administracion\Controlador::incidenciasHorarioTrabajador($horarioTrabajador[$x]->getTrabajador()->getDni(), $horarioTrabajador[$x]->getNumeroSemana(), $horarioTrabajador[$x]->getCalendario()->getId()) ?
+                                    "<tr style='background-color:lightcoral'>":
+                                    "<tr>";
+                             ?>
+                                <td><?php echo $horarioTrabajador[$x]->getTrabajador()->getDni() ?></td>
+                                <td><?php echo $horarioTrabajador[$x]->getNumeroSemana() ?></td>
+                                <td><?php echo $horarioTrabajador[$x]->getHorario()->getTipo() ?></td><!-- PABLO -->
+                                <td><?php echo $horarioTrabajador[$x]->getCalendario()->getId()?></td>
+								<input type='hidden' value='<?php echo $x ?>' name='dht_semana'>
                                 <td><button type="submit" name="updateHorarioTrabajador" value="Update" style="border: none; background: none"><span class='glyphicon glyphicon-pencil' style='color:blue; font-size:24px;'></span></button>
 								<button type="submit" name="borrarHorarioTrabajador" value="Eliminar" style="border: none; background: none"><span class="glyphicon glyphicon-remove" style="color: red; font-size: 1.5em"></span></button></td>
 
                             </tr>
-                            <input type="hidden" value="<?php echo $horario->getId() ?>" name="id">
+                            <input type="hidden" value="<?php echo $horarioTrabajador[$x]->getId() ?>" name="id">
                         </form>
                         <?php
                     }
@@ -1492,10 +1625,11 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                 <tr><th colspan="5">OBSERVACIONES</th></tr>
                 <tr><td colspan="5"><textarea name="Nota" id="Nota"><?php echo $parte->getNota();?></textarea></td></tr>
                 </table>
-                <div class="form-group pull-right">
-                    <button type="submit" name="guardarParteLogistica" class="btn btn-primary">Guardar</button>
-                    <a class="btn btn-warning" href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/Administracion.php?cod=2">Volver</a>
-                </div>
+                    <!-- Ibai -->
+                    <div class="form-group text-center" style="margin-top:20px;">
+                        <button class="btn btn-primary" type="submit" name="guardarParteLogistica">Guardar</button>
+                        <a class="btn btn-warning" href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/Administracion.php?cod=2">Volver</a>
+                    </div>
                 </form>
             </div>
             </div>
@@ -1879,7 +2013,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
 				echo "<button type='button' class='btn btn-danger pBorrar' rel='".$parte->getId()."'>Eliminar Parte</button>";
 			}/*CAMBIAR BOTONES PABLO*/
 		}?>
-            <div class="pull-right">
+            <div class="text-center">
                 <button type="submit" name="guardarParteProduccion"  class="btn btn-primary">Guardar</button>
 				<a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/Administracion.php?cod=2" style='text-decoration:none;'><button type="button" class="btn btn-warning cerrar">Volver</button></a>&nbsp;&nbsp;
 
@@ -1949,6 +2083,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                                             style="border: none; background: none"><span
                                             class="glyphicon glyphicon-list" style="color:blue; font-size: 1.5em">
                                     </button>
+                                    <?php if($log->getEstado()->getTipo() != "Finalizado"){?>
                                     <button type="submit" name="modificarParteLog"
                                             style="border: none; background: none"><span
                                             class="glyphicon glyphicon-edit" style="color:blue; font-size: 1.5em">
@@ -1957,6 +2092,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                                             style="border: none; background: none"><span
                                             class="glyphicon glyphicon-remove" style="color:red; font-size: 1.5em">
                                     </button>
+                                    <?php }?>
                             <?php
                             if ($log->getEstado()->getTipo() == "Cerrado") {
                                 ?>
@@ -2012,11 +2148,12 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                                 <td><?php echo $prod->getEstado()->getTipo(); ?></td>
                                 <td>
 
-                            <button type="submit" name="listarParteLog"
+                            <button type="submit" name="listarParteProd"
                                     style="border: none; background: none"><span
                                     class="glyphicon glyphicon-list" style="color:blue; font-size: 1.5em">
                             </button>
-                            <button type="submit" name="modificarParteLog"
+                            <?php if($prod->getEstado()->getTipo() != "Finalizado"){?>
+                            <button type="submit" name="modificarParteProd"
                                             style="border: none; background: none"><span
                                             class="glyphicon glyphicon-edit" style="color:blue; font-size: 1.5em">
                                     </button>
@@ -2024,14 +2161,15 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                                         style="border: none; background: none"><span
                                         class="glyphicon glyphicon-remove" style="color:red; font-size: 1.5em">
                             </button>
+                            <?php }?>
                             <?php
                             if ($prod->getEstado()->getTipo() == "Cerrado") {
                                 ?>
-                                <button type="submit" name="abrirParteLogistica"
+                                <button type="submit" name="abrirParteProduccion"
                                                 style="border: none; background: none"><span
                                                 class="glyphicon glyphicon-open-file" style="color:blue; font-size: 1.5em">
                                         </button>
-                                        <button type="submit" name="validarParteLogistica"
+                                        <button type="submit" name="validarParteProduccion"
                                                 style="border: none; background: none"><span
                                                 class="glyphicon glyphicon-ok"
                                                 style="color:green; font-size: 1.5em"></span></button>
@@ -2142,34 +2280,14 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
             require_once __DIR__ . "/../Plantilla/pie.php";
         }
 
-
-        public static function visualizarVacacionesOpen()           //Aitor
-        {
-            parent::setOn(true);
-            parent::setRoot(true);
-
-            require_once __DIR__ . "/../Plantilla/cabecera.php";
-
-            echo "<form action='../../Controlador/Administracion/ControladorCalendario.php' method='post'>";
-            echo "<table class='table table-striped'><tr><td>Calendario</td><td>Trabajador</td><td>Fecha</td></tr>";
-            $festivos=BD\FestivoBD::getFestivoByEstado();
-            while($rows=mysqli_fetch_array($festivos)){
-                echo "<tr><td>$rows[calendario_id]</td><td>$rows[dniTrabajador]</td><td>$rows[fecha]</td></tr>";
-            }
-            echo "</table></form>";
-            require_once __DIR__ . "/../Plantilla/pie.php";
-        }
-
-    /*****************************************************/
+/*****************************************************/
 /* FOTO */
 /*****************************************************/
 
     public static function updateFoto(){
-
+        //Ganeko
         parent::setOn(true);
         parent::setRoot(true);
-
-        $trabajadores = Administracion\Controlador::getAllTrabajadores();
 
         require_once __DIR__ . "/../Plantilla/cabecera.php";
 
@@ -2186,11 +2304,8 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                 <form name="updatePassword" method="post" enctype="multipart/form-data" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
                     <tr>
                         <td>
-                            <select class="form-control" name="trabajador">
-                                <?php foreach($trabajadores as $trabajador){
-                                    echo "<option value='".$trabajador->getDni()."'>".$trabajador->getDni()."</option>";
-                                } ?>
-                            </select>
+                            <input type="text" class="form-control" name="trabajador" value="<?php echo $_SESSION["dni"]; ?>">
+
                         </td>
                         <td><input class="form-control" type="file" name="foto"/></td>
                         <td><button type="submit" name="updateFoto" value="Cambiar" style="border: none; background: none"><span class="glyphicon glyphicon-edit" style="color: blue; font-size: 1.5em"></span></button></td>
@@ -2200,8 +2315,9 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
         </div>
 
         <form method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
-            <div class="col-md-10 col-md-offset-1 pull-rigth"> 
-                <input class="btn btn-warning " type="submit" name="volver" value="Volver">
+            <div class="col-md-10 col-md-offset-1 pull-rigth">
+                <!--Ibai-->
+                <input class="btn btn-warning pull-right" type="submit" name="volver" value="Volver">
             </div>
         </form>
 
@@ -2210,19 +2326,6 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
         require_once __DIR__ . "/../Plantilla/pie.php";
 
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 //Arreglo de filtros ventana admin Aitor I(copy paste de gerencia....)
@@ -2266,54 +2369,57 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                 foreach ($partes as $log) {
 
 
+
                         ?>
                         <form method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">                   <tr>
                         <td><?php echo $log->getTrabajador()->getDni(); ?></td>
-                        <td><?php echo $log->getTrabajador()->getNombre()." ".$log->getTrabajador()->getApellido1()." ".$log->getTrabajador()->getApellido2(); ?></td>
+                        <td><?php echo $log->getTrabajador()->getNombre() . " " . $log->getTrabajador()->getApellido1() . " " . $log->getTrabajador()->getApellido2(); ?></td>
                         <td><?php echo $log->getFecha(); ?></td>
                         <td><?php echo $log->getNota(); ?></td>
                         <td><?php echo $log->getEstado()->getTipo(); ?></td>
                         <td>
 
-                            <button type="submit" name="listarParteLog"
-                                    style="border: none; background: none"><span
-                                    class="glyphicon glyphicon-list" style="color:blue; font-size: 1.5em">
+                        <button type="submit" name="listarParteLog"
+                                style="border: none; background: none"><span
+                                class="glyphicon glyphicon-list" style="color:blue; font-size: 1.5em">
                             </button>
-                            <button type="submit" name="modificarParteLog"
-                                            style="border: none; background: none"><span
-                                            class="glyphicon glyphicon-edit" style="color:blue; font-size: 1.5em">
+                            <?php if($log->getEstado()->getTipo() != "Finalizado"){?>
+                        <button type="submit" name="modificarParteLog"
+                                style="border: none; background: none"><span
+                                class="glyphicon glyphicon-edit" style="color:blue; font-size: 1.5em">
                                     </button>
-                                    <button type="submit" name="eliminarParteProduccion"
-                                        style="border: none; background: none"><span
-                                        class="glyphicon glyphicon-remove" style="color:red; font-size: 1.5em">
+                        <button type="submit" name="eliminarParteLogistica"
+                                style="border: none; background: none"><span
+                                class="glyphicon glyphicon-remove" style="color:red; font-size: 1.5em">
                             </button>
+                            <?php } /*Aitor I (Todo los if de este tipo)*/?>
                             <?php
-                            if ($log->getEstado()->getTipo() == "Cerrado") {
-                                ?>
-                                <button type="submit" name="abrirParteLogistica"
-                                                style="border: none; background: none"><span
-                                                class="glyphicon glyphicon-open-file" style="color:blue; font-size: 1.5em">
-                                        </button>
-                                        <button type="submit" name="validarParteLogistica"
-                                                style="border: none; background: none"><span
-                                                class="glyphicon glyphicon-ok"
-                                                style="color:green; font-size: 1.5em"></span></button>
-                                <?php
-                            }
+                        if ($log->getEstado()->getTipo() == "Cerrado") {
                             ?>
+                            <button type="submit" name="abrirParteLogistica"
+                                    style="border: none; background: none"><span
+                                    class="glyphicon glyphicon-open-file" style="color:blue; font-size: 1.5em">
+                                        </button>
+                            <button type="submit" name="validarParteLogistica"
+                                    style="border: none; background: none"><span
+                                    class="glyphicon glyphicon-ok"
+                                    style="color:green; font-size: 1.5em"></span></button>
+                            <?php
+                        }
+                        ?>
 
                             <?php
-                            if ($log->getEstado()->getTipo() == "Validado") {
-                                ?>
-                                <button type="submit" name="finalizarParteProduccion"
-                                        style="border: none; background: none"><span
-                                        class="glyphicon glyphicon-ok"
-                                        style="color:green; font-size: 1.5em"></span></button>
+                        if ($log->getEstado()->getTipo() == "Validado") {
+                            ?>
+                            <button type="submit" name="finalizarParteLogistica"
+                                    style="border: none; background: none"><span
+                                    class="glyphicon glyphicon-ok"
+                                    style="color:green; font-size: 1.5em"></span></button>
 
-                                <?php
+                            <?php
 
 
-                            }
+                        }
 
 
                             ?>
@@ -2402,6 +2508,8 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                 <?php //ganeko
                 foreach ($partes as $prod) {
 
+
+
                         ?>
                         <form method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
                     <tr>
@@ -2418,7 +2526,8 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                                  style="border: none; background: none"><span
                                  class="glyphicon glyphicon-list" style="color:blue; font-size: 1.5em">
                             </button>
-                            <button type="submit" name="modificarParteLog"
+                            <?php if($prod->getEstado()->getTipo()!= "Finalizado"){ /*Aitor I (Todo los if de este tipo)*/?>
+                            <button type="submit" name="modificarParteProd"
                                             style="border: none; background: none"><span
                                             class="glyphicon glyphicon-edit" style="color:blue; font-size: 1.5em">
                                     </button>
@@ -2426,14 +2535,15 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                                         style="border: none; background: none"><span
                                         class="glyphicon glyphicon-remove" style="color:red; font-size: 1.5em">
                             </button>
+                            <?php }?>
                             <?php
                             if ($prod->getEstado()->getTipo() == "Cerrado") {
                                 ?>
-                                <button type="submit" name="abrirParteLogistica"
+                                <button type="submit" name="abrirParteProduccion"
                                                 style="border: none; background: none"><span
                                                 class="glyphicon glyphicon-open-file" style="color:blue; font-size: 1.5em">
                                         </button>
-                                        <button type="submit" name="validarParteLogistica"
+                                        <button type="submit" name="validarParteProduccion"
                                                 style="border: none; background: none"><span
                                                 class="glyphicon glyphicon-ok"
                                                 style="color:green; font-size: 1.5em"></span></button>
@@ -2515,8 +2625,9 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
         require_once __DIR__ . "/../Plantilla/pie.php";
     }
 	public static function updateHorarioTrabajador(){ /*PABLO*/
-		
-			$horarioTrabajador = Administracion\Controlador::getAllHoraioTrabajador();
+		parent::setOn(true);
+        	parent::setRoot(true);
+			$horarioTrabajador = Administracion\Controlador::getAllHorarioTrabajador();
 			$horarios = Administracion\Controlador::getAllHorarios();
 			
             require_once __DIR__ . "/../Plantilla/cabecera.php";
@@ -2527,21 +2638,24 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                         <th>TRABAJADOR</th>
                         <th>SEMANA</th>
                         <th>HORARIO</th>
+						<th>CALENDARIO</th> <!--Ibai-->
+						<th>ACCIÓN</th>
                     </tr>
-                    <?php
-                    foreach ($horarioTrabajador as $horario) {
-                        ?>
+                    
                         <form method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
                             <tr>
-                                <td><?php echo $horario->getTrabajador()->getDni() ?></td>
-                                <td><?php echo $horario->getNumeroSemana() ?></td>
-                               <!-- PABLO --> <td><select class='form-control'><?php foreach ($horarios as $hor){?><option name='heh'><?php echo $hor->getTipo();?></option><?php } ?></select>
+							<?php $_SESSION["dniht"]=$horarioTrabajador[$_SESSION["dht_semana"]]->getTrabajador()->getDni(); $_SESSION["semht"]=$horarioTrabajador[$_SESSION["dht_semana"]]->getNumeroSemana();?>
+                                <td><?php echo $horarioTrabajador[$_SESSION["dht_semana"]]->getTrabajador()->getDni(); ?></td>
+                                <td><?php echo $horarioTrabajador[$_SESSION["dht_semana"]]->getNumeroSemana(); ?></td>
+                               <!-- PABLO --> <td><select class='form-control' name="horario"><?php $x=1; foreach ($horarios as $hor){?><option value="<?php echo $x; ?>"><?php echo $hor->getTipo();?></option><?php $x++; } ?></select>
+                                <td><?php echo $horarioTrabajador[$_SESSION["dht_semana"]]->getCalendario()->getId()?></td>
+							    <td><button type="submit" name="updateT3" value="Editar"
+                                            style="border: none; background: none;"><span
+                                            class="glyphicon glyphicon-edit"
+                                            style="color:blue; font-size: 1.5em"></span></td>
                             </tr>
-                            <input type="hidden" value="<?php echo $horario->getId() ?>" name="id">
                         </form>
-                        <?php
-                    }
-                    ?>
+
                 </table>
             </div>
             <form method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
@@ -2554,12 +2668,122 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
 		require_once __DIR__ ."/../Plantilla/pie.php";
 		
 	}
+    public static function updateEmpresa(){ /*Ganeko*/
+
+                require_once __DIR__ . "/../Plantilla/cabecera.php";
+                ?>
+                <div class="table-responsive col-md-offset-1 col-md-10">
+                    <table class="table table-bordered">
+                        <tr>
+                            <th>EMPRESA</th>
+                            <th>NIF</th>
+                        </tr>
+                        <form method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
+                            <tr>
+                                <?php
+                                $empresa = Administracion\Controlador::buscarEmpresaId($_SESSION['id']);
+                                ?>
+                                <td><input type="text" name="nombre" value="<?php echo $empresa->getNombre(); ?>"></td>
+                                <td><input type="text" name="nif" value="<?php echo $empresa->getNif(); ?>"></td>
+                                <input type="hidden" name="id" value="<?php echo $_SESSION['id'];?>">
+                            </tr>
+                    </table>
+                </div>
+                    <div class="col-md-10 col-md-offset-1"><!-- Ganeko -->
+                        <div class="pull-right">
+                            <input class="btn btn-primary" type="submit" name="editarEmpresa" value="Guardar">
+                            <input class="btn btn-warning" type="submit" name="volver" value="Volver">
+                        </div>
+                    </div>
+                </form>
+                <?php
+
+            require_once __DIR__ ."/../Plantilla/pie.php";
+
+        }
+
+    public static function updateCentro(){ /*Ganeko*/
 
 
+                require_once __DIR__ . "/../Plantilla/cabecera.php";
+                ?>
+                <div class="table-responsive col-md-offset-1 col-md-10">
+                    <table class="table table-bordered">
+                        <tr>
+                            <th>CENTRO</th>
+                            <th>LOCALIZACIÓN</th>
+                            <th>EMPRESA</th>
+                        </tr>
+                        <form method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
+                            <tr>
+                                <?php
+                                $centro = Administracion\Controlador::getCentroId($_SESSION['id']);
+                                ?>
+                                <td><input type="text" name="nombre" value="<?php echo $centro->getNombre(); ?>"></td>
+                                <td><input type="text" name="localizacion" value="<?php echo $centro->getLocalizacion(); ?>"></td>
+                                <td><?php echo $centro->getEmpresa()->getNombre(); ?></td>
+                                <input type="hidden" name="id" value="<?php echo $_SESSION['id']; ?>">
+                            </tr>
+                    </table>
+                </div>
+                    <div class="col-md-10 col-md-offset-1"><!-- Ganeko -->
+                        <div class="pull-right">
+                            <input class="btn btn-primary" type="submit" name="editarCentro" value="Guardar">
+                            <input class="btn btn-warning" type="submit" name="volver" value="Volver">
+                        </div>
+                    </div>
+                </form>
+                <?php
+
+            require_once __DIR__ ."/../Plantilla/pie.php";
+
+        }
+
+        public static function updateVehiculo(){ /*Ganeko*/
 
 
+                require_once __DIR__ . "/../Plantilla/cabecera.php";
+                ?>
+                <div class="table-responsive col-md-offset-1 col-md-10">
+                    <table class="table table-bordered">
+                        <tr>
+                            <th>MATRICULA</th>
+                            <th>MARCA</th>
+                            <th>CENTRO</th>
+                        </tr>
+                        <form method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
+                            <tr>
+                                <?php
+                                $vehiculo = Administracion\Controlador::getVehiculoId($_SESSION['id']);
+                                ?>
+                                <td><input type="text" name="nombre" value="<?php echo $vehiculo->getMatricula(); ?>"></td>
+                                <td><input type="text" name="localizacion" value="<?php echo $vehiculo->getMarca(); ?>"></td>
+                                <td><select name="centro">
+                                    <?php
+                                        $centros = Administracion\Controlador::getAllCentros();
+                                        for($x = 0; $x < count($centros); $x++){
+                                            echo "<option value='".$centros[$x]->getId()."'>".$centros[$x]->getNombre()."</option>";
+                                        }
+                                    ?>
 
+                                </select>
+                                </td>
+                                <input type="hidden" name="id" value="<?php echo $_SESSION['id']; ?>">
+                            </tr>
+                    </table>
+                </div>
+                    <div class="col-md-10 col-md-offset-1"><!-- Ganeko -->
+                        <div class="pull-right">
+                            <input class="btn btn-primary" type="submit" name="editarVehiculo" value="Guardar">
+                            <input class="btn btn-warning" type="submit" name="volver" value="Volver">
+                        </div>
+                    </div>
+                </form>
+                <?php
 
+            require_once __DIR__ ."/../Plantilla/pie.php";
+
+        }
 
 
 

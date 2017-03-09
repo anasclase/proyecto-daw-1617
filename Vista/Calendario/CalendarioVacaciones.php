@@ -395,6 +395,8 @@ abstract class CalendarioVac extends Plantilla\Views
 
                 $(document).ready(function () { //AÑADIR EL VIAJE RECOGIENDO FORMULARIO
 
+                    var f = new Date();
+                    actualizarEstado(f);
                     /* GENERAMOS CALENDARIO CON FECHA DE HOY */
                     generar_calendario("<?php if (isset($_GET["mes"])) echo $_GET["mes"]; ?>", "<?php if (isset($_GET["anio"])) echo $_GET["anio"]; ?>");
 
@@ -610,8 +612,9 @@ abstract class CalendarioVac extends Plantilla\Views
                     });
 
 
-                    $("#trabajador").on("change", function () { //Aitor
+                    $("#trabajador").on("change", function () { //Aitor IRUNE
                         cargarFechas($("#trabajador option:selected").val());
+                        cargarDisfrutadas($("#trabajador option:selected").val());
                     });
 
                     function cargarFechas(nombre) {
@@ -636,16 +639,9 @@ abstract class CalendarioVac extends Plantilla\Views
                         }
                     }
 
-                    $("#trabajador").on("change", function () { // IRUNE
-
-                        cargarDisfrutadas($("#trabajador option:selected").val());
-                    });
-
                     function cargarDisfrutadas(nombre) {
 
                         try {
-                            var f = new Date();
-                            actualizarEstado(f);
 
                             var trabajador = nombre;
 
@@ -686,34 +682,13 @@ abstract class CalendarioVac extends Plantilla\Views
                         }
                     });
 
-                    function actualizarEstado(fecha) {
-                        var dia;
-                        var mes;
-                        var ano;
-                        if(fecha.getDate() < 10){
-                            dia = "0" + fecha.getDate();
-                        }else{
-                            dia = "" + fecha.getDate();
-                        }
-                        if(fecha.getMonth() < 10){
-                            mes = "0" + (fecha.getMonth() + 1);
-                        }else{
-                            dia = "" + (fecha.getMonth() + 1);
-                        }
-                        ano = "" + fecha.getFullYear();
-
-                        var f = dia + "-" + mes + "-" + ano;
+                    function actualizarEstado() {
 
                         $.ajax({
                             type: "GET",
                             url: "<?php echo parent::getUrlRaiz()?>/Controlador/Calendario/ControladorCalendario.php",
-                            data: {fecha: f, trabajador: $("#trabajador option:selected").val() , accion: "actualizarEstado"}
+                            data: {trabajador: $("#trabajador option:selected").val() , accion: "actualizarEstado"}
                         })
-                            .done(function (respuesta) {
-
-                                $("#vacacionesDisfrutadas").html(respuesta);
-
-                            })
                             .fail(function () {
                                 alert("error");
                             });

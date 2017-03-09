@@ -131,7 +131,7 @@ abstract class FestivoBD extends GenericoBD
     }
 
 
-    public static function asignarDisfrutados($fecha,$trabajador) {
+    public static function asignarDisfrutados($trabajador) {
 
         $conexion = parent::conectar();
         $query = "UPDATE vacacionestrabajadores SET estado = 'D' WHERE dniTrabajador = '".$trabajador."' AND estado = 'A' and fecha < now()";

@@ -50,6 +50,9 @@ abstract class CalendarioVac extends Plantilla\Views
 
 
             <form name="rango" >
+                <input type="button" value="Aceptar" onclick="fEditarVacaciones('A')">
+                <input type="button" value="Rechazar" onclick="fEditarVacaciones('R')"><br>
+
                 <h4><p>Vacaciones por Rango o dias Sueltos:</p>
                     <label for="rango"> Rango </label> <input type="radio" name="rangoVacaciones" value="rango"/>
                     <label for="dSueltos"> D&iacute;as Sueltos </label> <input type="radio" name="rangoVacaciones" value="sueltos"/>
@@ -67,7 +70,6 @@ abstract class CalendarioVac extends Plantilla\Views
 
                     <input type="button" value="Seleccionar dias" id="rangoDias" name="rangoDias"/>
                 </div>
-                <input type="button" value="Aceptar" onclick="fEditarVacaciones('A')"><input type="button" value="Rechazar" onclick="fEditarVacaciones('R')"><br>
 
                 <label for="fechaDisfrutadas">Vacaciones disfrutadas:</label><br><label name="vacacionesDisfrutadas" id="vacacionesDisfrutadas"></label>
             </form>

@@ -241,9 +241,12 @@ switch ($_POST["accion"])
 ?>
 
         <form name="rango" >
-            <h4><p>Vacaciones por Rango o dias Sueltos:</p>
-                <label for="rango"> Rango </label> <input type="radio" name="rangoVacaciones" value="rango"/>
-                <label for="dSueltos"> D&iacute;as Sueltos </label> <input type="radio" name="rangoVacaciones" value="sueltos"/>
+            <h2>Solicitud de vacaciones:</h2>
+            <h4><br>
+                <div class="form-group">
+                    <label style="font-weight: normal" for="rango"> Rango </label> <input type="radio" id="rango" name="rangoVacaciones" value="rango"/> &nbsp; &nbsp;
+                    <label style="font-weight: normal" for="dSueltos"> D&iacute;as Sueltos </label> <input type="radio" id="dSueltos" name="rangoVacaciones" value="sueltos"/>
+                </div>
             </h4><br/>
             <div style="visibility: hidden"  id="fecha1">
                 <label id="diasNacionales"></label><br>

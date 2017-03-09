@@ -42,7 +42,7 @@
         <div class="navbar-header"><!--Para añadir el icono de menú-->
             <?php
             if(\Vista\Plantilla\Views::isOn()){?>
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-1">
+            <button type="button" class="navbar-toggle collapsed visible-sm visible-xs" data-toggle="collapse" data-target="#navbar-1">
                 <span class="sr-only">Desplegar / Ocultar Menú</span>
                 <span class="icon-bar"></span><!--Cada span es una rayita en el icon de menú-->
                 <span class="icon-bar"></span>

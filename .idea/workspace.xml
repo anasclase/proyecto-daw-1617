@@ -2,144 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5ca1acb5-411e-4129-befd-8f19de674ea5" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Administracion/Administracion.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Administracion/AdministracionViews.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Administracion/Calendario.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Administracion/CalendarioViews.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Administracion/HorarioViews.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Administracion/Incidencias.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Administracion/deleteCentro.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Administracion/deleteEmpresa.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Administracion/deleteEstado.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Administracion/deleteFestivo.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Administracion/deleteHorario.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Administracion/deleteHorarioTrabajador.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Administracion/deleteHorasConvenio.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Administracion/deleteTipoFranja.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Administracion/deleteTrabajador.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Administracion/deleteVehiculo.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Administracion/funciones.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Administracion/insertCentro.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Administracion/insertEmpresa.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Administracion/insertEstado.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Administracion/insertFestivo.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Administracion/insertHorario.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Administracion/insertHorarioTrabajador.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Administracion/insertHorasConvenio.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Administracion/insertIncidencia.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Administracion/insertTipoFranja.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Administracion/insertTrabajador.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Administracion/insertVehiculo.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Administracion/updateFoto.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Administracion/updateHorarioTrabajador.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Administracion/updateHorasConvenio.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Administracion/updatePassword.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Administracion/updateTipoFranja.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Calendario/Calendario.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Calendario/CalendarioGestionarCalendario.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Calendario/CalendarioGestionarCalendariosIndividuales.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Calendario/CalendarioGestionarFestivosCentros.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Calendario/CalendarioGestionarFestivosNacionales.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Calendario/CalendarioIncidencias.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Calendario/CalendarioVacaciones.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Calendario/CalendarioViews.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Calendario/GestionarCalendario.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Calendario/GestionarCalendariosIndividuales.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Calendario/GestionarFestivosCentros.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Calendario/GestionarFestivosNacionales.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Calendario/Incidencias.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Calendario/Vacaciones.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Fotos/11111111B/240607.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Fotos/22222222A/Guard-B.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Fotos/26256438Y/Dude.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Fotos/72827654V/IMAGEN-DE-PERFIL-FACEBOOK-619x346.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Fotos/72845480H/Guard.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Fotos/77777777A/Dude.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Fotos/77777777B/Dude.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Fotos/Default/foto.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Gerencia/CalendarioViews.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Gerencia/Gerencia.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Gerencia/GerenciaViews.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Gerencia/HorarioViews.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Gerencia/deleteCentro.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Gerencia/deleteEmpresa.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Gerencia/deleteEstado.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Gerencia/deleteHorasConvenio.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Gerencia/deleteTipoFranja.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Gerencia/deleteTrabajador.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Gerencia/deleteVehiculo.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Gerencia/insertCentro.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Gerencia/insertEmpresa.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Gerencia/insertEstado.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Gerencia/insertHorasConvenio.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Gerencia/insertTipoFranja.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Gerencia/insertTrabajador.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Gerencia/insertVehiculo.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Gerencia/updateHorasConvenio.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Gerencia/updateTipoFranja.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Horario/Horario.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Login/CambiarPassword.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Login/Funciones.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Login/Login.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Login/LoginViews.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Login/Perfil.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Logistica/A¤adirViaje.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Logistica/CalendarioViews.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Logistica/Funciones.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Logistica/GeneradorFormsViews.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Logistica/HorarioViews.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Logistica/LogisticaViews.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Plantilla/CSS/Bootstrap/ProduccionStyle.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Plantilla/CSS/Bootstrap/bootstrap-theme.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Plantilla/CSS/Bootstrap/bootstrap-theme.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Plantilla/CSS/Bootstrap/bootstrap-theme.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Plantilla/CSS/Bootstrap/bootstrap-theme.min.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Plantilla/CSS/Bootstrap/bootstrap.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Plantilla/CSS/Bootstrap/bootstrap.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Plantilla/CSS/Bootstrap/bootstrap.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Plantilla/CSS/Bootstrap/bootstrap.min.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Plantilla/CSS/Bootstrap/customize.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Plantilla/CSS/Bootstrap/estilos.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Plantilla/CSS/fonts/glyphicons-halflings-regular.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Plantilla/CSS/fonts/glyphicons-halflings-regular.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Plantilla/CSS/fonts/glyphicons-halflings-regular.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Plantilla/CSS/fonts/glyphicons-halflings-regular.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Plantilla/CSS/fonts/glyphicons-halflings-regular.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Plantilla/IMG/add.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Plantilla/IMG/delete.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Plantilla/IMG/himevico.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Plantilla/IMG/loading.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Plantilla/IMG/vtip_arrow.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Plantilla/JS/bootstrap.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Plantilla/JS/bootstrap.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Plantilla/JS/jquery-1.12.1.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Plantilla/JS/jquery-2.2.1.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Plantilla/JS/jshash-2.2/md5-min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Plantilla/JS/jshash-2.2/md5.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Plantilla/JS/jshash-2.2/ripemd160-min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Plantilla/JS/jshash-2.2/ripemd160.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Plantilla/JS/jshash-2.2/sha1-min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Plantilla/JS/jshash-2.2/sha1.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Plantilla/JS/jshash-2.2/sha256-min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Plantilla/JS/jshash-2.2/sha256.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Plantilla/JS/jshash-2.2/sha512-min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Plantilla/JS/jshash-2.2/sha512.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Plantilla/JS/jshash-2.2/test-min.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Plantilla/JS/jshash-2.2/test.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Plantilla/JS/validetta-v1.0.1-dist/validetta.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Plantilla/JS/validetta-v1.0.1-dist/validetta.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Plantilla/JS/validetta-v1.0.1-dist/validetta.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Plantilla/JS/validetta-v1.0.1-dist/validetta.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Plantilla/JS/validetta-v1.0.1-dist/validettaLang-es-ES.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Plantilla/Views.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Plantilla/cabecera.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Plantilla/pie.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Produccion/CalendarioViews.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Produccion/Funciones.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Produccion/GeneradorFormsViews.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/Produccion/HorarioViews.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Vista/VistaProbarRequines.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/esquema_bd.pdf" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="public.iws" />
@@ -164,8 +26,8 @@
       <file leaf-file-name="Router.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Controlador/Administracion/Router.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="615">
+              <caret line="47" column="5" lean-forward="true" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -269,9 +131,9 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="58" />
+    <option name="x" value="57" />
     <option name="y" value="23" />
-    <option name="width" value="1862" />
+    <option name="width" value="1863" />
     <option name="height" value="1057" />
   </component>
   <component name="ProjectLevelVcsManager">
@@ -293,88 +155,6 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="public">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="public">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Controlador">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="public">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Controlador">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Logistica">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="public">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Controlador">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Login">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="public">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Controlador">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Gerencia">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -567,6 +347,88 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="public">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="public">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Controlador">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="public">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Controlador">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Logistica">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="public">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Controlador">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Login">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="public">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Controlador">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Gerencia">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -675,7 +537,8 @@
       <workItem from="1489060614050" duration="15000" />
       <workItem from="1489060704534" duration="212000" />
       <workItem from="1489060959794" duration="422000" />
-      <workItem from="1489061511655" duration="4000" />
+      <workItem from="1489061511655" duration="112000" />
+      <workItem from="1489061681042" duration="1000" />
     </task>
     <task id="LOCAL-00001" summary="prueba iker">
       <created>1488361626538</created>
@@ -971,11 +834,18 @@
       <option name="project" value="LOCAL" />
       <updated>1489061080356</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="llAh si si">
+      <created>1489061523005</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1489061523005</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73965000" />
+    <option name="totallyTimeSpent" value="74074000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -988,10 +858,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="58" y="23" width="1862" height="1057" extended-state="6" />
+    <frame x="57" y="23" width="1863" height="1057" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2207304" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3542673" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977098" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1182,7 +1052,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="21" column="132" lean-forward="true" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="132" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1221,8 +1090,8 @@
     <entry file="file://$PROJECT_DIR$/Vista/Calendario/CalendarioVacaciones.php" />
     <entry file="file://$PROJECT_DIR$/Controlador/Administracion/Router.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="615">
+          <caret line="47" column="5" lean-forward="true" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
           <folding />
         </state>
       </provider>

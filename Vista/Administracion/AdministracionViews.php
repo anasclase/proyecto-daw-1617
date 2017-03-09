@@ -577,6 +577,12 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                     ?>
             </table>
         </div>
+        <form name="deleteEstado" method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Gerencia/Router.php">
+            <div class="col-md-10 col-md-offset-1"><!-- Ganeko -->
+                <input class="btn btn-warning pull-right" type="submit" name="volver" value="Volver">
+            </div>
+        </form>
+
         <?php
         require_once __DIR__ . "/../Plantilla/pie.php";
 

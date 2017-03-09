@@ -203,14 +203,14 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                             </select>
                         </div>
                     </div>
-                    <div class="form-group"><!-- Ganeko -->
+                    
+                </fieldset>
+            </form><form class="form-horizontal" name="atras" method="post" action="<?php echo self::getUrlRaiz()?>/Controlador/Administracion/Router.php"<div class="form-group"><!--Ganeko-->
                         <div class="col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-2">
                             <input class="btn btn-primary" type="submit" name="addTrabajador" value="Añadir">
                             <input class="btn btn-warning" type="submit" name="volver" value="Volver">
                         </div>
-                    </div>
-                </fieldset>
-            </form>
+                    </div></form>
         </div>
         <?php
 
@@ -329,7 +329,12 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                         </div>
                     </div>
                 </fieldset>
-            </form>
+            </form><form class="form-horizontal" name="atras" method="post" action="<?php echo self::getUrlRaiz()?>/Controlador/Administracion/Router.php"<div class="form-group"><!--Ganeko-->
+                        <div class="col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-2">
+                            <input class="btn btn-primary" type="submit" name="addEmpresa" value="Añadir">
+                            <input class="btn btn-warning" type="submit" name="volver" value="Volver">
+                        </div>
+                    </div></form>
         </div>
         <?php
         require_once __DIR__ . "/../Plantilla/pie.php";
@@ -438,14 +443,14 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                             </select>
                         </div>
                     </div>
-                    <div class="form-group"><!--Ganeko-->
+                    
+                </fieldset>
+            </form><form class="form-horizontal" name="atras" method="post" action="<?php echo self::getUrlRaiz()?>/Controlador/Administracion/Router.php"<div class="form-group"><!--Ganeko-->
                         <div class="col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-2">
                             <input class="btn btn-primary" type="submit" name="addCentro" value="Añadir">
                             <input class="btn btn-warning" type="submit" name="volver" value="Volver">
                         </div>
-                    </div>
-                </fieldset>
-            </form>
+                    </div></form>
         </div>
         <?php
         require_once __DIR__ . "/../Plantilla/pie.php";
@@ -640,7 +645,12 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                             </div>
                         </div>
                     </fieldset>
-                </form>
+                </form><form class="form-horizontal" name="atras" method="post" action="<?php echo self::getUrlRaiz()?>/Controlador/Administracion/Router.php"<div class="form-group"><!--Ganeko-->
+                        <div class="col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-2">
+                            <input class="btn btn-primary" type="submit" name="addVehiculo" value="Añadir">
+                            <input class="btn btn-warning" type="submit" name="volver" value="Volver">
+                        </div>
+                    </div></form>
             </div>
             <?php
 
@@ -757,7 +767,12 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                         </div>
                     </div>
                 </fieldset>
-            </form>
+            </form><form class="form-horizontal" name="atras" method="post" action="<?php echo self::getUrlRaiz()?>/Controlador/Administracion/Router.php"<div class="form-group"><!--Ganeko-->
+                        <div class="col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-2">
+                            <input class="btn btn-primary" type="submit" name="addHorasConvenio" value="Añadir">
+                            <input class="btn btn-warning" type="submit" name="volver" value="Volver">
+                        </div>
+                    </div></form>
         </div>
         <?php
         require_once __DIR__ . "/../Plantilla/pie.php";
@@ -968,7 +983,12 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                         </div>
                     </div>
                 </fieldset>
-            </form>
+            </form><form class="form-horizontal" name="atras" method="post" action="<?php echo self::getUrlRaiz()?>/Controlador/Administracion/Router.php"<div class="form-group"><!--Ganeko-->
+                        <div class="col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-2">
+                            <input class="btn btn-primary" type="submit" name="addTipoFranja" value="Añadir">
+                            <input class="btn btn-warning" type="submit" name="volver" value="Volver">
+                        </div>
+                    </div></form>
         </div>
         <?php
         require_once __DIR__ . "/../Plantilla/pie.php";
@@ -1165,7 +1185,12 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                     </div>
                 </div>
 
-            </form>
+            </form><form class="form-horizontal" name="atras" method="post" action="<?php echo self::getUrlRaiz()?>/Controlador/Administracion/Router.php"<div class="form-group"><!--Ganeko-->
+                        <div class="col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-2">
+                            <input class="btn btn-primary" type="submit" name="addHorario" value="Añadir">
+                            <input class="btn btn-warning" type="submit" name="volver" value="Volver">
+                        </div>
+                    </div></form>
 
             <?php
 
@@ -1290,7 +1315,12 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                         <input class="btn btn-warning" type="submit" name="volver" value="Volver">
                     </div>
                 </div>
-            </form>
+            </form><form class="form-horizontal" name="atras" method="post" action="<?php echo self::getUrlRaiz()?>/Controlador/Administracion/Router.php"<div class="form-group"><!--Ganeko-->
+                        <div class="col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-2">
+                            <input class="btn btn-primary" type="submit" name="añadirHorarioTrabajador" value="Añadir">
+                            <input class="btn btn-warning" type="submit" name="volver" value="Volver">
+                        </div>
+                    </div></form>
 
             <?php
             require_once __DIR__ . "/../Plantilla/pie.php";

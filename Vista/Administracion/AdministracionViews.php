@@ -415,13 +415,13 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                     <div class="form-group">
                         <label class="control-label col-sm-2 col-md-2">Nombre:</label>
                         <div class="col-sm-4 col-md-3">
-                            <input class="form-control" type="text" name="nombre">
+                            <input class="form-control" type="text" name="nombre" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-2 col-md-2">Localización:</label>
                         <div class="col-sm-4 col-md-3">
-                            <input class="form-control" type="text" name="localizacion">
+                            <input class="form-control" type="text" name="localizacion" required>
                         </div>
                     </div>
                     <div class="form-group">
@@ -741,13 +741,13 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                     <div class="form-group">
                         <label class="control-label col-sm-2 col-md-2">Número de horas al año:</label>
                         <div class="col-sm-4 col-md-3">
-                            <input class="form-control" type="number" name="horasAnual">
+                            <input class="form-control" type="number" name="horasAnual" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-2 col-md-2">Denominación:</label>
                         <div class="col-sm-4 col-md-3">
-                            <input class="form-control" type="text" name="denominacion">
+                            <input class="form-control" type="text" name="denominacion" required>
                         </div>
                     </div>
                     <div class="form-group"><!--Ganeko-->

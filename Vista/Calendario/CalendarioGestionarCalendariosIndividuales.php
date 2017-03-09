@@ -4,7 +4,7 @@ require_once __DIR__.'/../../Modelo/BD/GenericoBD.php';;
 require_once __DIR__.'/../Plantilla/Views.php';
 
 use Vista\Plantilla;
-abstract class CalendarioGestionarCalendariosIndividuales extends Plantilla\Views
+abstract class CalendarioGestionarCalendario extends Plantilla\Views
 {
     public static function cal($comprobar){
         parent::setOn(true);
@@ -16,30 +16,9 @@ abstract class CalendarioGestionarCalendariosIndividuales extends Plantilla\View
         <link type="text/css" rel="stylesheet" media="all" href="<?php echo parent::getUrlRaiz()?>/Vista/Plantilla/CSS/Bootstrap/estilos.css">
 
 
-        <form name="trabajador" method="post" action="../../Controlador/Calendario/ControladorCalendario.php">
-
-            <div id="empresa">
-                <label for="nomEmpresa">Nombre de la empresa :</label>
-                <select id="nomEmpresa">
-                    <option value="-1" > Seleccionar </option>
-                    <?php
-                    $empresas = \Modelo\BD\EmpresaBD::getAll();
-                    foreach($empresas as $empresa){
-                        ?>
-                        <option value="<?php echo $empresa->getId(); ?>"><?php echo $empresa->getNombre(); ?></option>
-                        <?php
-                    }
-                    ?>
-                </select>
-
-
-                <label for="nomTrabajador">Trabajador :</label>
-                <select name="trabajador" id="trabajador">
-
-                </select>
-            </div>
-            <input type="submit" name="aceptar" value="Aceptar">
-        </form>
+        <div class="calendario_ajax">
+            <div class="cal"></div><div id="mask"></div>
+        </div>
 
         <script src="<?php echo parent::getUrlRaiz();?>/Vista/Plantilla/JS/jquery-2.2.1.min.js"></script>
         <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.12.0/jquery.validate.min.js"></script>
@@ -256,38 +235,6 @@ abstract class CalendarioGestionarCalendariosIndividuales extends Plantilla\View
                     var datos=$(this).attr("rel");
                     var nueva_fecha=datos.split("-");
                     generar_calendario(nueva_fecha[1],nueva_fecha[0]);
-                });
-
-                /**
-                 * A la hora de cambiar el nombre de la empresa , que te busque los trabajadores
-                 *
-                 * Anas
-                 **/
-
-                $( "#nomEmpresa").on("change",function () {
-                    try{
-
-                        var idEmpresa = $(this).val();
-
-                        $.ajax({
-
-                            type: "GET",
-                            url: "<?php echo parent::getUrlRaiz()?>/Controlador/Calendario/ControladorCalendario.php",
-                            data: { idEmpresa : idEmpresa , accion:"buscarTrab"}
-
-                        })
-                            .done(function(respuesta) {
-
-                                $("#trabajador").html(respuesta);
-
-                            })
-                            .fail(function() {
-                                alert( "error" );
-                            });
-
-                    }catch (err){
-                        alert(err)
-                    }
                 });
 
             });

@@ -2,6 +2,7 @@
 
 namespace Modelo\BD;
 
+use Modelo\Base\Vehiculo;
 
 require_once __DIR__."/GenericoBD.php";
 
@@ -108,9 +109,9 @@ abstract class VehiculoBD extends GenericoBD{
     public static function updateVehiculo($datos){
         $con = parent::conectar();
 
-        $vehiculo = new Vehiculo($datos['id'], $datos['matricula'], $datos['marca'], null, null);
+        $vehiculo = new Vehiculo($datos['id'], $datos['matricula'], $datos['marca'], $datos['centro'], null);
 
-        $query = "UPDATE ".self::$tabla." SET nombre ='".$centro->getNombre()."', localizacion ='".$centro->getLocalizacion()."' WHERE id ='".$centro->getId()."'";
+        $query = "UPDATE ".self::$tabla." SET matricula ='".$vehiculo->getMatricula()."', marca ='".$vehiculo->getMarca()."', idCentro ='".$vehiculo->getCentro()."' WHERE id ='".$vehiculo->getId()."'";
 
         $rs = mysqli_query($con, $query) or die(mysqli_error($con));
 

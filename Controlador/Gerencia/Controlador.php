@@ -136,6 +136,11 @@ abstract class Controlador
         BD\TrabajadorBD::updateFotoByTrabajador($trabajador);
     }
 
+    public static function getTrabajadorByDni($dni){
+        $trabajador = BD\TrabajadorBD::getTrabajadorByDni($dni);
+        return $trabajador;
+    }
+
     public static function eliminarDir($carpeta)
     {
         foreach (glob($carpeta . "/*") as $archivos_carpeta) {
@@ -279,7 +284,6 @@ abstract class Controlador
     {
         $datos['tipo'] = str_replace('\' ', '\'', ucwords(str_replace('\'', '\' ', strtolower(($datos['tipo'])))));
         $tipo = new TiposFranjas(null, $datos['tipo'], $datos['precio']);
-
         $tipo->save();
     }
 
@@ -400,9 +404,51 @@ abstract class Controlador
 
     }
 
+    public static function updateValidarParteLogistica($datos){
+        BD\PartelogisticaBD::updateValidar($datos['id']);
+    }
+    /* Ganeko */
+    public static function buscarEmpresaId($id){
+        $empresa =  BD\EmpresaBD::getEmpresaByID($id);
+        return $empresa;
+    }/* Ganeko */
+    public static function getCentroId($id){
+        $centro = BD\CentroBD::getCentrosById($id);
+        return $centro;
+    }/* Ganeko */
+    public static function getVehiculoId($id){
+        $vehiculo = BD\VehiculoBD::getVehiculosById($id);
+        return $vehiculo;
+    }/* Ganeko */
+    public static function getFranjaById($id){
+        $franja = BD\TipoFranjaBD::getTipoFranjaById($id);
+        return $franja;
+    }/* Ganeko */
+    public static function getConvenioById($id){
+        $convenio = BD\HorasConvenioBD::selectConvenioById($id);
+        return $convenio;
+    }/* Ganeko */
+    public static function updateEmpresa($datos){
+        BD\EmpresaBD::updateEmpresa($datos);
+    }
+    public static function updateCentro($datos){
+        BD\CentroBD::updateCentro($datos);
+    }
+    public static function updateVehiculo($datos){
+        BD\VehiculoBD::updateVehiculo($datos);
+    }
+    public static function guardarParteProduccion($datos)
+    {
+        $parte = unserialize($_SESSION['parte']);
+    }
+    public static function updateFinalizarParteLogistica($datos){
+        BD\PartelogisticaBD::saveHorasExtra($datos['id'],$datos['horas']);
+
+
     public static function updateFinalizarParteLogistica($datos)
     {
         BD\PartelogisticaBD::saveHorasExtra($datos['id'], $datos['horas']);
+
         BD\PartelogisticaBD::updateFinalizar($datos['id']);
     }
 
@@ -460,6 +506,7 @@ abstract class Controlador
         }
 
     }
+
 
     // Alejandra
 
@@ -675,5 +722,6 @@ abstract class Controlador
     public static function vacacionesSolicitadas($v)
     {
     }
+
 
 }

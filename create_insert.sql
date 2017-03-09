@@ -113,7 +113,6 @@ ENGINE = MyISAM
 AUTO_INCREMENT = 21944
 DEFAULT CHARACTER SET = latin1;
 
-
 -- -----------------------------------------------------
 -- Table `himevico`.`festivos`
 -- -----------------------------------------------------

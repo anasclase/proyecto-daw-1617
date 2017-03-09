@@ -130,32 +130,8 @@ abstract class CentroBD extends GenericoBD{
 
     }
 
-    // IRUNE
 
-    public static function cargarCentros() {
-
-        $centros = [];
-
-        $con = parent::conectar();
-
-        $query = "SELECT * FROM ".self::$tabla;
-
-        $rs = mysqli_query($con, $query) or die("Error getAllCentros");
-        $fila = mysqli_fetch_array($rs);
-        while ($fila != null) {
-            $centro = new Centro($fila['id'], $fila['nombre'], $fila['localizacion']);
-            array_push($centros, $centro);
-            $fila = mysqli_fetch_array($rs);
-        }
-
-        parent::desconectar($con);
-
-        return $centros;
-
-    }
-
-
-    public static function getNombreCentro(){           //Aitor
+    public static function getNombreCentro(){
 
         $con = parent::conectar();
 
@@ -197,7 +173,6 @@ abstract class CentroBD extends GenericoBD{
 
     }
 
-
     //Ganeko
     public static function updateCentro($datos){
         $con = parent::conectar();
@@ -210,6 +185,7 @@ abstract class CentroBD extends GenericoBD{
 
         parent::desconectar($con);
     }
+
 
     // Alejandra
 
@@ -229,5 +205,6 @@ abstract class CentroBD extends GenericoBD{
         parent::desconectar($con);
         return $centros;
     }
+
 
 }

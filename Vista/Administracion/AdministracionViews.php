@@ -1994,7 +1994,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
 				echo "<button type='button' class='btn btn-danger pBorrar' rel='".$parte->getId()."'>Eliminar Parte</button>";
 			}/*CAMBIAR BOTONES PABLO*/
 		}?>
-            <div class="pull-right">
+            <div class="text-center">
                 <button type="submit" name="guardarParteProduccion"  class="btn btn-primary">Guardar</button>
 				<a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/Administracion.php?cod=2" style='text-decoration:none;'><button type="button" class="btn btn-warning cerrar">Volver</button></a>&nbsp;&nbsp;
 

@@ -638,12 +638,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                                 <input class="form-control" type="text" name="marca" required>
                             </div>
                         </div>
-                        <div class="form-group"><!--Ganeko-->
-                            <div class="col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-2">
-                                <input class="btn btn-primary" type="submit" value="Añadir" name="addVehiculo">
-                                <input class="btn btn-warning" type="submit" name="volver" value="Volver">
-                            </div>
-                        </div>
+                        
                     </fieldset>
                 </form><form class="form-horizontal" name="atras" method="post" action="<?php echo self::getUrlRaiz()?>/Controlador/Administracion/Router.php"<div class="form-group"><!--Ganeko-->
                         <div class="col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-2">
@@ -760,12 +755,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                             <input class="form-control" type="text" name="denominacion" required>
                         </div>
                     </div>
-                    <div class="form-group"><!--Ganeko-->
-                        <div class="col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-2">
-                            <input class="btn btn-primary" type="submit" value="Añadir" name="addHorasConvenio">
-                            <input class="btn btn-warning" type="submit" name="volver" value="Volver">
-                        </div>
-                    </div>
+                    
                 </fieldset>
             </form><form class="form-horizontal" name="atras" method="post" action="<?php echo self::getUrlRaiz()?>/Controlador/Administracion/Router.php"<div class="form-group"><!--Ganeko-->
                         <div class="col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-2">
@@ -976,12 +966,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                             <input class="form-control" type="text" name="precio" required>
                         </div>
                     </div>
-                    <div class="form-group"><!--Ganeko-->
-                        <div class="col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-2">
-                            <input class="btn btn-primary" type="submit" value="Añadir" name="addTipoFranja">
-                            <input class="btn btn-warning" type="submit" name="volver" value="Volver">
-                        </div>
-                    </div>
+                    
                 </fieldset>
             </form><form class="form-horizontal" name="atras" method="post" action="<?php echo self::getUrlRaiz()?>/Controlador/Administracion/Router.php"<div class="form-group"><!--Ganeko-->
                         <div class="col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-2">
@@ -1178,12 +1163,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                         </select>
                     </div>
                 </div>
-                <div class="form-group"><!--Ganeko-->
-                    <div class="col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-2">
-                        <input class="btn btn-primary" type="submit" value="Añadir" name="addHorario">
-                        <input class="btn btn-warning" type="submit" name="volver" value="Volver">
-                    </div>
-                </div>
+                
 
             </form><form class="form-horizontal" name="atras" method="post" action="<?php echo self::getUrlRaiz()?>/Controlador/Administracion/Router.php"<div class="form-group"><!--Ganeko-->
                         <div class="col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-2">
@@ -1309,12 +1289,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                         </select>
                     </div>
                 </div>
-                <div class="form-group"><!-- Ganeko -->
-                    <div class="col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-2">
-                        <input class="btn btn-primary" type="submit" value="Añadir" name="añadirHorarioTrabajador">
-                        <input class="btn btn-warning" type="submit" name="volver" value="Volver">
-                    </div>
-                </div>
+                
             </form><form class="form-horizontal" name="atras" method="post" action="<?php echo self::getUrlRaiz()?>/Controlador/Administracion/Router.php"<div class="form-group"><!--Ganeko-->
                         <div class="col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-2">
                             <input class="btn btn-primary" type="submit" name="añadirHorarioTrabajador" value="Añadir">

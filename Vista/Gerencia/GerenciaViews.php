@@ -30,7 +30,6 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
             <h3 class="page-header">Convenios
                 <a href="<?php echo self::getUrlRaiz()?>/Vista/Gerencia/insertHorasConvenio.php"><span class="glyphicon glyphicon-plus" style="font-size: 24px; color: green;"></a>
                 <a href="<?php echo self::getUrlRaiz()?>/Vista/Gerencia/deleteHorasConvenio.php"><span class="glyphicon glyphicon-eye-open" style="font-size: 24px; color: black;"></a>
-                <a href="<?php echo self::getUrlRaiz()?>/Vista/Gerencia/updateHorasConvenio.php"><span class="glyphicon glyphicon-pencil" style="font-size: 24px;"></a>
             </h3>
             <h3 class="page-header">Centros
                 <a href="<?php echo self::getUrlRaiz()?>/Vista/Gerencia/insertCentro.php"><span class="glyphicon glyphicon-plus" style="font-size: 24px; color: green;"></a>
@@ -39,7 +38,6 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
             <h3 class="page-header">Horarios
                 <a href="<?php echo self::getUrlRaiz()?>/Vista/Gerencia/insertTipoFranja.php"><span class="glyphicon glyphicon-plus" style="font-size: 24px; color: green;"></a>
                 <a href="<?php echo self::getUrlRaiz()?>/Vista/Gerencia/deleteTipoFranja.php"><span class="glyphicon glyphicon-eye-open" style="font-size: 24px; color: black;"></a>
-                <a href="<?php echo self::getUrlRaiz()?>/Vista/Gerencia/updateTipoFranja.php"><span class="glyphicon glyphicon-pencil" style="font-size: 24px;"></a>
             </h3>
 
 
@@ -198,6 +196,14 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
                                     <td>
                                         <form name="deleteTrabajador" method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Gerencia/Router.php">
                                             <button type="submit" name="eliminarTrabajador" value="Eliminar" style="border: none; background: none;"><span class="glyphicon glyphicon-remove" style="color:red; font-size: 1.5em"></span></button>
+                                            <!-- Ganeko --> <button type="submit" name="vistaEditarFoto" value="Foto"
+                                            style="border: none; background: none;"><span
+                                            class="glyphicon glyphicon-picture"
+                                            style="color:deepskyblue; font-size: 1.5em"></span></button>
+                                            <button type="submit" name="vistaEditarPass" value="Pass"
+                                            style="border: none; background: none;"><span
+                                            class="glyphicon glyphicon-pencil"
+                                            style="color:black; font-size: 1.5em"></span></button>
                                             <input type="hidden" name="dni" value="<?php echo $trabajador->getDni(); ?>">
                                         </form>
                                     </td>
@@ -292,6 +298,10 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
                                             style="border: none; background: none;"><span
                                             class="glyphicon glyphicon-remove"
                                             style="color:red; font-size: 1.5em"></span></button>
+                                    <button type="submit" name="vistaEditarEmpresa" value="Editar"
+                                            style="border: none; background: none;"><span
+                                            class="glyphicon glyphicon-pencil"
+                                            style="color:black; font-size: 1.5em"></span></button>
                                     <input type="hidden" name="id" value="<?php echo $empresa->getId(); ?>">
                                 </form>
                             </td>
@@ -399,6 +409,10 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
                                                 style="border: none; background: none;"><span
                                                 class="glyphicon glyphicon-remove"
                                                 style="color:red; font-size: 1.5em"></span></button>
+                                        <button type="submit" name="vistaEditarCentro" value="Editar"
+                                                style="border: none; background: none;"><span
+                                                class="glyphicon glyphicon-pencil"
+                                                style="color:black; font-size: 1.5em"></span></button>
                                     </td>
                                 </tr>
                                 <input type="hidden" name="id" value="<?php echo $centro->getId(); ?>">
@@ -580,6 +594,10 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
                                             value="Eliminar" style="border: none; background: none;"><span
                                             class="glyphicon glyphicon-remove"
                                             style="color:red; font-size: 1.5em"></span></button>
+                                    <button class="btn btn-primary" type="submit" name="vistaEditarVehiculo"
+                                                value="Editar" style="border: none; background: none;"><span
+                                                class="glyphicon glyphicon-pencil"
+                                                style="color:black; font-size: 1.5em"></span></button>
                                     <input type="hidden" name="id" value="<?php echo $vehiculo->getId(); ?>">
                                 </form>
                             </td>
@@ -700,6 +718,73 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
             <form name="deleteEstado" method="post"
                   action="<?php echo self::getUrlRaiz() ?>/Controlador/Gerencia/Router.php">
                 <div class="col-md-10 col-md-offset-1"><!-- Ganeko -->
+                    <div class="pull-right">
+                        <input class="btn btn-primary" type="submit" name="vistaEditarConvenio" value="Editar">
+                        <input class="btn btn-warning pull-right" type="submit" name="volver" value="Volver">
+                    </div>
+                </div>
+            </form>
+            <?php
+            require_once __DIR__ . "/../Plantilla/pie.php";
+
+        }
+    }
+
+    public static function updateHorasConvenio()
+    {
+
+        parent::setOn(true);
+        parent::setRoot(true);
+
+        require_once __DIR__ . "/../Plantilla/cabecera.php";
+        $horas = Gerencia\Controlador::getAllHorasConvenio();
+        if (is_null($horas)) {
+            echo "No hay horas";
+        } else {
+            ?>
+            <h2 class="page-header">Convenios</h2>
+            <div class="table-responsive col-md-offset-1 col-md-10">
+                <table class="table table-bordered">
+                    <tr>
+                        <th>NOMBRE</th>
+                        <th>HORAS</th>
+                        <th>CENTRO</th>
+                        <th>NUEVO PRECIO</th>
+                        <th>ACCIÓN</th>
+                    </tr>
+                    <?php
+                    foreach ($horas as $hora) {
+                        ?>
+                        <tr>
+                            <td><?php echo $hora->getDenominacion(); ?></td>
+                            <td><?php echo $hora->getHorasAnual(); ?></td>
+                            <td><?php echo $hora->getCentro()->getNombre(); ?></td>
+                            <td>
+                                <form name="deleteEstado" method="post"
+                                      action="<?php echo self::getUrlRaiz() ?>/Controlador/Gerencia/Router.php">
+                                    <input type="text" name="nuevo" size="5" placeholder="1200">
+                                    <input type="hidden" name="id" value="<?php echo $hora->getId(); ?>">
+                                </form>
+                            </td>
+                            <td>
+                                <form name="deleteEstado" method="post"
+                                      action="<?php echo self::getUrlRaiz() ?>/Controlador/Gerencia/Router.php">
+                                    <button type="submit" name="updateHorasConvenio" value="Editar"
+                                            style="border: none; background: none;"><span
+                                            class="glyphicon glyphicon-edit"
+                                            style="color:blue; font-size: 1.5em"></span></button>
+                                    <input type="hidden" name="id" value="<?php echo $hora->getId(); ?>">
+                                </form>
+                            </td>
+                        </tr>
+                        <?php
+                    }
+                    ?>
+                </table>
+            </div>
+            <form name="deleteEstado" method="post"
+                  action="<?php echo self::getUrlRaiz() ?>/Controlador/Gerencia/Router.php">
+                <div class="col-md-10 col-md-offset-1"><!-- Ganeko -->
                     <input class="btn btn-warning pull-right" type="submit" name="volver" value="Volver">
                 </div>
             </form>
@@ -709,8 +794,11 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
         }
     }
 
-    public static function updateTipoFranja()
-    {
+/*****************************************************/
+/* TIPO FRANJA */
+/*****************************************************/
+
+    public static function updateTipoFranja(){
 
         parent::setOn(true);
         parent::setRoot(true);
@@ -847,7 +935,10 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
             <form name="deleteEstado" method="post"
                   action="<?php echo self::getUrlRaiz() ?>/Controlador/Gerencia/Router.php">
                 <div class="col-md-10 col-md-offset-1"><!-- Ganeko -->
-                    <input class="btn btn-warning pull-right" type="submit" name="volver" value="Volver">
+                    <div class="pull-right">
+                        <input class="btn btn-primary" type="submit" name="vistaUpdateTipoFranja" value="Editar">
+                        <input class="btn btn-warning pull-right" type="submit" name="volver" value="Volver">
+                    </div>
                 </div>
             </form>
             <?php
@@ -856,69 +947,7 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
         }
     }
 
-    public static function updateHorasConvenio()
-    {
 
-        parent::setOn(true);
-        parent::setRoot(true);
-
-        require_once __DIR__ . "/../Plantilla/cabecera.php";
-        $horas = Gerencia\Controlador::getAllHorasConvenio();
-        if (is_null($horas)) {
-            echo "No hay horas";
-        } else {
-            ?>
-            <h2 class="page-header">Convenios</h2>
-            <div class="table-responsive col-md-offset-1 col-md-10">
-                <table class="table table-bordered">
-                    <tr>
-                        <th>NOMBRE</th>
-                        <th>HORAS</th>
-                        <th>CENTRO</th>
-                        <th>NUEVO PRECIO</th>
-                        <th>ACCIÓN</th>
-                    </tr>
-                    <?php
-                    foreach ($horas as $hora) {
-                        ?>
-                        <tr>
-                            <td><?php echo $hora->getDenominacion(); ?></td>
-                            <td><?php echo $hora->getHorasAnual(); ?></td>
-                            <td><?php echo $hora->getCentro()->getNombre(); ?></td>
-                            <td>
-                                <form name="deleteEstado" method="post"
-                                      action="<?php echo self::getUrlRaiz() ?>/Controlador/Gerencia/Router.php">
-                                    <input type="text" name="nuevo" size="5" placeholder="1200">
-                                    <input type="hidden" name="id" value="<?php echo $hora->getId(); ?>">
-                                </form>
-                            </td>
-                            <td>
-                                <form name="deleteEstado" method="post"
-                                      action="<?php echo self::getUrlRaiz() ?>/Controlador/Gerencia/Router.php">
-                                    <button type="submit" name="updateHorasConvenio" value="Editar"
-                                            style="border: none; background: none;"><span
-                                            class="glyphicon glyphicon-edit"
-                                            style="color:blue; font-size: 1.5em"></span></button>
-                                    <input type="hidden" name="id" value="<?php echo $hora->getId(); ?>">
-                                </form>
-                            </td>
-                        </tr>
-                        <?php
-                    }
-                    ?>
-                </table>
-            </div>
-            <form name="deleteEstado" method="post"
-                  action="<?php echo self::getUrlRaiz() ?>/Controlador/Gerencia/Router.php">
-                <div class="col-md-10 col-md-offset-1"><!-- Ganeko -->
-                    <input class="btn btn-warning pull-right" type="submit" name="volver" value="Volver">
-                </div>
-            </form>
-            <?php
-            require_once __DIR__ . "/../Plantilla/pie.php";
-
-        }
-    }
 /*
     public static function allPartesByDni()
         {

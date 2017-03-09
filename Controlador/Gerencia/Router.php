@@ -32,13 +32,58 @@ if(isset($_POST['eliminarEmpresa'])){
     //headerLocation a vista Eliminar
     header("Location: ".Views::getUrlRaiz()."/Vista/Gerencia/deleteEmpresa.php");
 }
+if(isset($_POST['vistaEditarEmpresa'])){
+    //Ganeko
+    $_SESSION['id'] = $_POST['id'];
+    //headerLocation a vista Editar
+    header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/updateEmpresa.php");
+}
+if(isset($_POST['editarEmpresa'])){
+    //Ganeko
+    Controlador::updateEmpresa($_POST);
+    header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/deleteEmpresa.php");
+}
+if(isset($_POST['vistaEditarCentro'])){
+    //Ganeko
+    $_SESSION['id'] = $_POST['id'];
+    header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/updateCentro.php");
+}
+if(isset($_POST['editarCentro'])){
+    //Ganeko
+    Controlador::updateCentro($_POST);
+    header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/deleteCentro.php");
+}
+if(isset($_POST['vistaEditarVehiculo'])){
+    //Ganeko
+    $_SESSION['id'] = $_POST['id'];
+    header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/updateVehiculo.php");
+}
+if(isset($_POST['editarVehiculo'])){
+    //Ganeko
+    Controlador::updateVehiculo($_POST);
+    header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/deleteVehiculo.php");
+}
+if(isset($_POST['vistaEditarFoto'])){
+    //Ganeko
+    $_SESSION['dni'] = $_POST['dni'];
+    header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/updateFoto.php");
+}
+if(isset($_POST['vistaEditarPass'])){
+    //Ganeko
+    $_SESSION['dni'] = $_POST['dni'];
+    header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/updatePassword.php");
+}
+if(isset($_POST['vistaEditarConvenio'])){
+    //Ganeko
+    header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/updateConvenio.php");
+}
 if(isset($_POST['addEstado'])){
     Controlador::AddEstado($_POST);
     //headerLocation a vista Eliminar
     header($gestionListas);
 }
 if(isset($_POST['eliminarEstado'])){
-    echo "hola";    Controlador::deleteEstado($_POST);
+    Controlador::deleteEstado($_POST);
     //headerLocation a vista Eliminar
     header("Location: ".Views::getUrlRaiz()."/Vista/Gerencia/deleteEstado.php");
 }

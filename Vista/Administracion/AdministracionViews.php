@@ -624,13 +624,13 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                         <div class="form-group">
                             <label class="control-label col-sm-2 col-md-2">Matrícula:</label>
                             <div class="col-sm-4 col-md-3">
-                                <input class="form-control" type="text" name="matricula">
+                                <input class="form-control" type="text" name="matricula" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-sm-2 col-md-2">Marca:</label>
                             <div class="col-sm-4 col-md-3">
-                                <input class="form-control" type="text" name="marca">
+                                <input class="form-control" type="text" name="marca" required>
                             </div>
                         </div>
                         <div class="form-group"><!--Ganeko-->
@@ -798,6 +798,10 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                                                 style="border: none; background: none;"><span
                                                 class="glyphicon glyphicon-remove"
                                                 style="color:red; font-size: 1.5em"></span></button>
+					<button type="submit" name="vistaEditarConvenio" value="Editar"
+                                                style="border: none; background: none;"><span
+                                                class="glyphicon glyphicon-pencil"
+                                                style="color:black; font-size: 1.5em"></span></button>	
                                         <input type="hidden" name="id" value="<?php echo $horaconvenio->getId(); ?>">
                                     </form>
                                 </td>
@@ -811,7 +815,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
 
                     <div class="col-md-10 col-md-offset-1"><!--Ganeko-->
                         <div class="pull-right">
-                            <input class="btn btn-primary" type="submit" name="vistaEditarConvenio" value="Editar">
+                            
                             <input class="btn btn-warning" type="submit" name="volver" value="Volver">
                         </div>
                     </div>

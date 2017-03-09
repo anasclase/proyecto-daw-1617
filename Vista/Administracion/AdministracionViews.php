@@ -2355,14 +2355,16 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                                 style="border: none; background: none"><span
                                 class="glyphicon glyphicon-list" style="color:blue; font-size: 1.5em">
                             </button>
+                            <?php if($log->getEstado()->getTipo() != "Finalizado"){?>
                         <button type="submit" name="modificarParteLog"
                                 style="border: none; background: none"><span
                                 class="glyphicon glyphicon-edit" style="color:blue; font-size: 1.5em">
                                     </button>
-                        <button type="submit" name="eliminarParteProduccion"
+                        <button type="submit" name="eliminarParteLogistica"
                                 style="border: none; background: none"><span
                                 class="glyphicon glyphicon-remove" style="color:red; font-size: 1.5em">
                             </button>
+                            <?php } /*Aitor I (Todo los if de este tipo)*/?>
                             <?php
                         if ($log->getEstado()->getTipo() == "Cerrado") {
                             ?>
@@ -2381,7 +2383,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                             <?php
                         if ($log->getEstado()->getTipo() == "Validado") {
                             ?>
-                            <button type="submit" name="finalizarParteProduccion"
+                            <button type="submit" name="finalizarParteLogistica"
                                     style="border: none; background: none"><span
                                     class="glyphicon glyphicon-ok"
                                     style="color:green; font-size: 1.5em"></span></button>
@@ -2496,8 +2498,8 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                                  style="border: none; background: none"><span
                                  class="glyphicon glyphicon-list" style="color:blue; font-size: 1.5em">
                             </button>
-
-                            <button type="submit" name="modificarParteLog"
+                            <?php if($prod->getEstado()->getTipo()!= "Finalizado"){ /*Aitor I (Todo los if de este tipo)*/?>
+                            <button type="submit" name="modificarParteProd"
                                             style="border: none; background: none"><span
                                             class="glyphicon glyphicon-edit" style="color:blue; font-size: 1.5em">
                                     </button>
@@ -2505,15 +2507,15 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                                         style="border: none; background: none"><span
                                         class="glyphicon glyphicon-remove" style="color:red; font-size: 1.5em">
                             </button>
-
+                            <?php }?>
                             <?php
                             if ($prod->getEstado()->getTipo() == "Cerrado") {
                                 ?>
-                                <button type="submit" name="abrirParteLogistica"
+                                <button type="submit" name="abrirParteProduccion"
                                                 style="border: none; background: none"><span
                                                 class="glyphicon glyphicon-open-file" style="color:blue; font-size: 1.5em">
                                         </button>
-                                        <button type="submit" name="validarParteLogistica"
+                                        <button type="submit" name="validarParteProduccion"
                                                 style="border: none; background: none"><span
                                                 class="glyphicon glyphicon-ok"
                                                 style="color:green; font-size: 1.5em"></span></button>

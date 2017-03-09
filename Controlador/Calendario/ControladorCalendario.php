@@ -354,10 +354,9 @@ switch ($_GET["accion"])
 
     case "actualizarEstado": {
 
-        $fecha = $_GET['fecha'];
         $trabajador = $_GET['trabajador'];
 
-        $query = \Modelo\BD\FestivoBD::asignarDisfrutados($fecha, $trabajador);
+        $query = \Modelo\BD\FestivoBD::asignarDisfrutados($trabajador);
         break;
 
     }

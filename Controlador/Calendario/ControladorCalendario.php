@@ -227,10 +227,10 @@ switch ($_GET["accion"])
         }
 
         if($query){
-            echo "Vacaciones solicitadas";
+            echo true;
 
         }else{
-            echo "Error al solicitar las vacaciones";
+            echo false;
         }
 
         break;

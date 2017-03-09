@@ -42,7 +42,7 @@ abstract class CalendarioVac extends Plantilla\Views
                     <label for="nomTrabajador">Trabajador :</label>
                     <select name="trabajador" id="trabajador">
 
-                    </select><br>
+                    </select><div id="eNomTrab"></div><br>
                     <label for="FechaSolic">Vacaciones solicitadas : &nbsp;</label><br>
                     <label name="vacOpen" id="vacOpen"></label>
                 </div>
@@ -66,9 +66,10 @@ abstract class CalendarioVac extends Plantilla\Views
                 <div style="visibility: hidden"  id="fecha2">
                     <label for="fInicial"> Desde : </label>  <input type="date" id="fInicial" min="<?php echo date('Y-m-d') ?>" />
 
-                    <label for="fFinal"> Hasta : </label>  <input type="date" id="fFinal"  />
+                    <label for="fFinal"> Hasta : </label>  <input type="date" id="fFinal"  /><br/>
+                    <div id="errorFechas"> </div>
 
-                    <input type="button" value="Seleccionar dias" id="rangoDias" name="rangoDias"/>
+                    <input type="button" value="Seleccionar dias" id="rangoDias2" name="rangoDias"/>
                 </div>
 
                 <label for="fechaDisfrutadas">Vacaciones disfrutadas:</label><br><label name="vacacionesDisfrutadas" id="vacacionesDisfrutadas"></label>
@@ -109,53 +110,64 @@ abstract class CalendarioVac extends Plantilla\Views
                  * Anas
                  * **/
 
-                $("#rangoDias").click(function () {
+                $("#rangoDias2").click(function () {
                     var fIni = [];
                     var fFin = [];
                     try {
                         if ($("#nomEmpresa").val() != "-1") {
 
+                            $("#eNomTrab").css("display","none");
 
-                            var fInicial = $("#fInicial").val();
-                            var fFinal = $("#fFinal").val();
+                            if($("#fInicial").val()!="" && $("#fFinal").val()!=""){
 
-                            var dniTrabajador = $("#trabajador option:selected").val();
+                                $("#errorFechas").css("display","none");
 
-                            var d = new Date();
-                            var ano = d.getFullYear();
-                            var fecha = generarFecha();
+                                var fInicial = $("#fInicial").val();
+                                var fFinal = $("#fFinal").val();
 
-                            fIni = generarRango($("#fInicial").val(), $("#fFinal").val(), "inicio");
+                                var dniTrabajador = $("#trabajador option:selected").val();
 
-                            fFin = generarRango($("#fInicial").val(), $("#fFinal").val(), "fin");
+                                var d = new Date();
+                                var ano = d.getFullYear();
+                                var fecha = generarFecha();
 
+                                fIni = generarRango($("#fInicial").val(), $("#fFinal").val(), "inicio");
 
-                            var estado = "A";
+                                fFin = generarRango($("#fInicial").val(), $("#fFinal").val(), "fin");
 
-                            $.ajax({
+                                var estado = "A";
 
-                                type: "GET",
-                                url: "<?php echo parent::getUrlRaiz()?>/Controlador/Calendario/ControladorCalendario.php",
-                                data: {
-                                    dniTrabajador: dniTrabajador,
-                                    fecha: fecha,
-                                    horaInicio: fIni,
-                                    horaFin: fFin,
-                                    calendario_id: ano,
-                                    estado: estado,
-                                    accion: "insertarCal"
-                                }
+                                $.ajax({
 
-                            })
-                                .done(function (respuesta) {
-                                    alert(respuesta);
+                                    type: "GET",
+                                    url: "<?php echo parent::getUrlRaiz()?>/Controlador/Calendario/ControladorCalendario.php",
+                                    data: {
+                                        dniTrabajador: dniTrabajador,
+                                        fecha: fecha,
+                                        horaInicio: fIni,
+                                        horaFin: fFin,
+                                        calendario_id: ano,
+                                        estado: estado,
+                                        accion: "insertarCal"
+                                    }
 
                                 })
-                                .fail(function () {
-                                    alert("error");
-                                });
+                                    .done(function (respuesta) {
+                                        if(respuesta){
+                                            alert("Insertadas");
+                                            location.reload();
+                                        }else{
+                                            alert("NO Insertadas")
+                                        }
+                                    })
+                                    .fail(function () {
+                                        alert("error");
+                                    });
+                            }else{
+                                $("#errorFechas").html("Fecha inicial o Fecha final no seleccionada").css({'color':'red','font-weight':'bold'});
+                            }
                         } else {
-                            alert("Selecciona el nombre de la empresa")
+                            $("#eNomTrab").html("Selecciona el nombre de la empresa").css({'color':'red','font-weight':'bold'});
                         }
                         fIni = [];
                         fFin = [];

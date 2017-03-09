@@ -327,45 +327,59 @@ switch ($_POST["accion"])
         var fIni = [];
         var fFin = [];
         try{
-            if($("#nomEmpresa").val()!="-1"){
+            if($("#nomEmpresa").val()!="-1") {
+                if ($("#fInicial").val() != "" && $("#fFinal").val() != "") {
+                    var dni = $("#dni").val();
 
-                var dni = $("#dni").val();
+                    var fInicial = $("#fInicial").val();
+                    var fFinal = $("#fFinal").val();
 
-                var fInicial = $("#fInicial").val();
-                var fFinal = $("#fFinal").val();
+                    var dniTrabajador = $("#trabajador option:selected").val();
 
-                var dniTrabajador = $("#trabajador option:selected").val();
+                    var d = new Date();
+                    var ano = d.getFullYear();
+                    var fecha = generarFecha();
 
-                var d = new Date();
-                var ano = d.getFullYear();
-                var fecha = generarFecha();
+                    fIni = generarRango($("#fInicial").val(), $("#fFinal").val(), "inicio");
 
-                fIni = generarRango($("#fInicial").val(),$("#fFinal").val(),"inicio");
+                    fFin = generarRango($("#fInicial").val(), $("#fFinal").val(), "fin");
 
-                fFin = generarRango($("#fInicial").val(),$("#fFinal").val(),"fin");
+                    var estado = "S";
 
+                    $.ajax({
 
-                var estado = "S";
-
-                $.ajax({
-
-                    type: "GET",
-                    url: "/Controlador/Calendario/ControladorCalendario.php",
-                    data: { dniTrabajador:dni , fecha:fecha , horaInicio:fIni , horaFin:fFin , calendario_id:ano ,estado:estado, accion:"insertarCal"}
-
-                })
-                    .done(function(respuesta) {
-                        alert(respuesta);
+                        type: "GET",
+                        url: "/Controlador/Calendario/ControladorCalendario.php",
+                        data: {
+                            dniTrabajador: dni,
+                            fecha: fecha,
+                            horaInicio: fIni,
+                            horaFin: fFin,
+                            calendario_id: ano,
+                            estado: estado,
+                            accion: "insertarCal"
+                        }
 
                     })
-                    .fail(function() {
-                        alert( "error" );
-                    });
+                        .done(function (respuesta) {
+                            if(respuesta){
+                                alert("Insertadas");
+                                location.reload();
+                            }else{
+                                alert("NO Insertadas")
+                            }
+                        })
+                        .fail(function () {
+                            alert("error");
+                        });
+                } else {
+                    alert("Selecciona el nombre de la empresa")
+                }
+                fIni = [];
+                fFin = [];
             }else{
-                alert("Selecciona el nombre de la empresa")
+                alert("Fecha inicial o Fecha final no seleccionada");
             }
-            fIni = [];
-            fFin = [];
         }catch (err){
             alert(err);
         }

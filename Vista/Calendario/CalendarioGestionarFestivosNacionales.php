@@ -43,7 +43,7 @@ abstract class CalendarioGestionarFestivosNacionales extends Plantilla\Views
                     </div>
                 </div>
                 <div style="visibility: hidden"  id="fecha2">
-                    <label for="fInicial"> Desde : </label>  <input type="date" id="fInicial" min="<?php echo date('Y-m-d') ?>"/>  <label for="fFinal"> Hasta : </label>  <input type="date" id="fFinal"/>
+                    <label for="fInicial"> Desde : </label>  <input type="date" id="fInicial" min="<?php echo date('Y-m-d') ?>"/>  <label for="fFinal"> Hasta : </label>  <input type="date" id="fFinal" min="<?php echo date('Y-m-d') ?>"/>
                     <input type="button" value="Seleccionar dias" id="rangoDias" name="rangoDias" onclick="guardarRango()"/>
                 </div>
             </form>
@@ -78,6 +78,7 @@ abstract class CalendarioGestionarFestivosNacionales extends Plantilla\Views
             $("#fInicial").change(function () {
 
                 $("#fFinal").attr("min", $("#fInicial").val());
+                $("#fFinal").val($("#fInicial").val());
 
             });
 
@@ -210,7 +211,7 @@ abstract class CalendarioGestionarFestivosNacionales extends Plantilla\Views
                             alert( "error" );
                         });
                 }
-
+                $("#diasNacionales").html("");
                 fechas = [];
             }
             <!--Iker-->

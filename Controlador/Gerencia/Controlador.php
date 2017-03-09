@@ -344,8 +344,20 @@ abstract class Controlador{
 
     }
 
+
     public static function updateFinalizarParteLogistica($datos){
         BD\PartelogisticaBD::saveHorasExtra($datos['id'],$datos['horas']);
+
+    /**public static function updateFinalizarParteLogistica($datos)
+    {
+        BD\PartelogisticaBD::saveHorasExtra($datos['id'], $datos['horas']);
+    }**/
+
+    public static function updateFinalizarParteLogistica($datos)
+    {
+        BD\PartelogisticaBD::saveHorasExtra($datos['id'], $datos['horas']);
+
+
         BD\PartelogisticaBD::updateFinalizar($datos['id']);
         }
         public static function updateCerrarParteLogistica($datos){

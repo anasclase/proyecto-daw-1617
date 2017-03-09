@@ -286,6 +286,19 @@ abstract class TrabajadorBD extends GenericoBD{
         return $trabajadores;
     }
 
+    public static function getPerfLoPro(){
+        $con = parent::conectar();
+        $query = "SELECT t.dni,p.tipo FROM himevico.trabajadores t,himevico.perfiles p WHERE t.idPerfil=p.id AND idPerfil in (3, 4)";
+        $rs = mysqli_query($con, $query) or die("Error getAllPerfiles");
+        $perfil = array();
+        while($fila = mysqli_fetch_assoc($rs)){
+            $perfil[] = array($fila['dni'], $fila['tipo']);
+        }
+        parent::desconectar($con);
+        return $perfil;
+    }
+
+
 
     public static function getCentroById(){ //Aitor
         $con = parent::conectar();

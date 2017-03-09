@@ -29,9 +29,9 @@ abstract class AusenciaTrabajadorBD extends GenericoBD
         $conexion = parent::conectar();
 
         $query = "INSERT INTO ausenciastrabajadores (dniTrabajador, idAusencia, fecha, horaInicio, horaFin, calendario_id) VALUES 
-        ('".$ausencia->getTrabajador()."', '".$ausencia->getAusencia()."','".$ausencia->getFecha()."','".$ausencia->getHoraInicio()."','".$ausencia->getHoraFin()."', ".$ausencia->getCalendario().")";
+        ('".$ausencia->getTrabajador()."', '".$ausencia->getAusencia()."','".$ausencia->getFecha()."','".$ausencia->getHoraInicio()."','".$ausencia->getHoraFin()."', ".intval(2017).")";
 
-        $rs = mysqli_query($conexion, $query);
+        $rs = mysqli_query($conexion, $query) or die(mysqli_error($conexion));
 
         parent::desconectar($conexion);
 

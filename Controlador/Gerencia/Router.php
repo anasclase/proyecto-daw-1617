@@ -132,13 +132,20 @@ if(isset($_POST['addTipoFranja'])){
     Controlador::addTipoFranja($_POST);
     header($gestionListas);
 }
+if(isset($_POST['vistaUpdateTipoFranja'])){
+    header("Location: ".Views::getUrlRaiz()."/Vista/Gerencia/updateTipoFranja.php");
+}
+if(isset($_POST['updateTipoFranja'])){
+    Controlador::UpdateTipoFranja($_POST);
+    header("Location: ".Views::getUrlRaiz()."/Vista/Gerencia/deleteTipoFranja.php");
+}
 if(isset($_POST['deleteTipoFranja'])){
     Controlador::DeleteTipoFranja($_POST);
     header("Location: ".Views::getUrlRaiz()."/Vista/Gerencia/deleteTipoFranja.php");
 }
 if(isset($_POST['updateHorasConvenio'])){
     Controlador::UpdateHorasConvenio($_POST);
-    header("Location: ".Views::getUrlRaiz()."/Vista/Gerencia/updateHorasConvenio.php");
+    header("Location: ".Views::getUrlRaiz()."/Vista/Gerencia/deleteHorasConvenio.php");
 }
 
 if(isset($_POST['añadirHorarioTrabajador'])){

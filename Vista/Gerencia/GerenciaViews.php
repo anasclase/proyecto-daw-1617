@@ -902,7 +902,7 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
             echo "no hay tipos";
         } else {
             ?>
-            <h2 class="page-header">Convenios</h2>
+            <h2 class="page-header">Franjas Horarias</h2>
             <div class="table-responsive col-md-offset-1 col-md-10">
                 <table class="table table-bordered">
                     <tr>

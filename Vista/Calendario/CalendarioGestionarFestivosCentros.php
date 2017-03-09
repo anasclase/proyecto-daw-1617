@@ -45,7 +45,34 @@ abstract class CalendarioGestionarFestivosCentros extends Plantilla\Views
 
                     ?>
                 </select></p>
-
+            <form name="rango" >
+                <h2>Solicitud de vacaciones:</h2>
+                <h4><br>
+                    <div class="form-group">
+                        <label style="font-weight: normal" for="rango"> Rango </label> <input type="radio" id="rango" name="rangoVacaciones" value="rango"/> &nbsp; &nbsp;
+                        <label style="font-weight: normal" for="dSueltos"> D&iacute;as Sueltos </label> <input type="radio" id="dSueltos" name="rangoVacaciones" value="sueltos"/>
+                    </div>
+                </h4>
+                <div style="visibility: hidden"  id="fecha1">
+                    <label id="diasNacionales"></label><br>
+                    <div class="form-group" style="margin-left: 0px">
+                        <label for="fInicial"> Día: </label> <input type="date" id="calendarioNacionales" onchange="guardarOpcion()" min="<?php echo date('Y-m-d') ?>" >
+                        <input class="btn btn-default btn-sm" type="button" value="Añadir" id="botonNacionales" onclick="guardarFecha()">
+                    </div>
+                    <input class="btn btn-primary" type="button" value="Guardar" onclick="guardarFechas()">
+                </div>
+                <div style="visibility: hidden"  id="fecha2">
+                    <div class="form-group">
+                        <label for="fInicial"> Desde: </label>  <input type="date" id="fInicial" min="<?php echo date('Y-m-d') ?>" />
+                    </div>
+                    <div class="form-group">
+                        <label for="fFinal"> Hasta: </label>  <input type="date" id="fFinal"  />
+                    </div>
+                    <input class="btn btn-primary" type="button" value="Seleccionar dias" id="rangoDias" name="rangoDias"/>
+                </div>
+                <br><input type="hidden" id='dni' value="<?php $dni = unserialize($_SESSION["trabajador"])->getDni(); echo $dni ?> ">
+            </form>
+<!--
             <form name="rango" >
                 <h4><p>Vacaciones por Rango o dias Sueltos:</p>
                     <label for="rango"> Rango </label> <input type="radio" name="rangoVacaciones" value="rango"/>
@@ -65,7 +92,7 @@ abstract class CalendarioGestionarFestivosCentros extends Plantilla\Views
                 </div>
 
             </form>
-
+-->
         </form>
 
         <?php if ($comprobar){?>

@@ -1371,20 +1371,19 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                         <th>ACCIÓN</th>
                     </tr>
                     <?php
-                    foreach ($horarioTrabajador as $horario) {
+                    for($x = 0 ; $x<count($horarioTrabajador); $x++) { /* PABLO */
                         ?>
                         <form method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
                             <tr>
-                                <td><?php echo $horario->getTrabajador()->getDni() ?></td>
-                                <td><?php echo $horario->getNumeroSemana() ?></td>
-                                <td><?php echo $horario->getHorario()->getTipo() ?></td>
-                                <td><?php echo $horario->getCalendario()->getId()?></td>
-                                <!-- PABLO -->
+                                <td><?php echo $horarioTrabajador[$x]->getTrabajador()->getDni() ?></td>
+                                <td><?php echo $horarioTrabajador[$x]->getNumeroSemana() ?></td>
+                                <td><?php echo $horarioTrabajador[$x]->getHorario()->getTipo() ?></td><!-- PABLO -->
+								<input type='hidden' value='<?php echo $x ?>' name='dht_semana'>
                                 <td><button type="submit" name="updateHorarioTrabajador" value="Update" style="border: none; background: none"><span class='glyphicon glyphicon-pencil' style='color:blue; font-size:24px;'></span></button>
 								<button type="submit" name="borrarHorarioTrabajador" value="Eliminar" style="border: none; background: none"><span class="glyphicon glyphicon-remove" style="color: red; font-size: 1.5em"></span></button></td>
 
                             </tr>
-                            <input type="hidden" value="<?php echo $horario->getId() ?>" name="id">
+                            <input type="hidden" value="<?php echo $horarioTrabajador[$x]->getId() ?>" name="id">
                         </form>
                         <?php
                     }

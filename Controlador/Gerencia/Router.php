@@ -436,3 +436,28 @@ if(isset($_POST['dni']) and !isset($_POST['semanas'])) {
         <?php
     }
 }
+
+/* Alejandra */
+
+if(isset($_POST['buscar'])){
+    switch($_POST["buscar"]){
+        case "incidencias":
+            Controlador::incidencias($_POST);
+            break;
+        case "partesAnu":
+            Controlador::partesAnuales($_POST);
+            break;
+        case "partesMen":
+            Controlador::partesMensuales($_POST);
+            break;
+        case "vacasApro":
+            Controlador::vacacionesAprobadas($_POST);
+            break;
+        case "vacasDis":
+            Controlador::vacacionesDisfrutadas($_POST);
+            break;
+        case "vacasSoli":
+            Controlador::vacacionesSolicitadas($_POST);
+            break;
+    }
+}

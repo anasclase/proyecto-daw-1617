@@ -247,19 +247,23 @@ switch ($_POST["accion"])
                     <label style="font-weight: normal" for="rango"> Rango </label> <input type="radio" id="rango" name="rangoVacaciones" value="rango"/> &nbsp; &nbsp;
                     <label style="font-weight: normal" for="dSueltos"> D&iacute;as Sueltos </label> <input type="radio" id="dSueltos" name="rangoVacaciones" value="sueltos"/>
                 </div>
-            </h4><br/>
+            </h4>
             <div style="visibility: hidden"  id="fecha1">
                 <label id="diasNacionales"></label><br>
-                <input type="date" id="calendarioNacionales" onchange="guardarOpcion()" min="<?php echo date('Y-m-d') ?>" >
-                <input type="button" value="Añadir" id="botonNacionales" onclick="guardarFecha()"><br/>
-                <input type="button" value="Guardar" onclick="guardarFechas()">
+                <div class="form-group" style="margin-left: 0px">
+                    <label for="fInicial"> Día: </label> <input type="date" id="calendarioNacionales" onchange="guardarOpcion()" min="<?php echo date('Y-m-d') ?>" >
+                    <input class="btn btn-default btn-sm" type="button" value="Añadir" id="botonNacionales" onclick="guardarFecha()">
+                </div>
+                <input class="btn btn-primary" type="button" value="Guardar" onclick="guardarFechas()">
             </div>
             <div style="visibility: hidden"  id="fecha2">
-                <label for="fInicial"> Desde : </label>  <input type="date" id="fInicial" min="<?php echo date('Y-m-d') ?>" />
-
-                <label for="fFinal"> Hasta : </label>  <input type="date" id="fFinal"  />
-
-                <input type="button" value="Seleccionar dias" id="rangoDias" name="rangoDias"/>
+                <div class="form-group" style="margin-left: 60px">
+                    <label for="fInicial"> Desde: </label>  <input type="date" id="fInicial" min="<?php echo date('Y-m-d') ?>" />
+                </div>
+                <div class="form-group" style="margin-left: 60px">
+                    <label for="fFinal"> Hasta: </label>  <input type="date" id="fFinal"  />
+                </div>
+                <input class="btn btn-primary" type="button" value="Seleccionar dias" id="rangoDias" name="rangoDias"/>
             </div>
             <br><input type="hidden" id='dni' value="<?php $dni = unserialize($_SESSION["trabajador"])->getDni(); echo $dni ?> ">
         </form>
@@ -435,7 +439,7 @@ switch ($_POST["accion"])
             $('#diasNacionales').empty();
             var y;
             var d = new Date($("#calendarioNacionales").val());
-            for(y = 0; y < fechas.length && (fechas[y].getDate() != d.getDate() || fechas[y].getMonth() != d.getMonth() || fechas[y].getFullYear() != d.getFullYear()); y++){                    }
+            for(y = 0; y < fechas.length && (fechas[y].getDate() != d.getDate() || fechas[y].getMonth() != d.getMonth() || fechas[y].getFullYear() != d.getFullYear()); y++){}
 
             if(y == fechas.length){
                 var date = new Date($("#calendarioNacionales").val());
@@ -460,7 +464,9 @@ switch ($_POST["accion"])
 
                 var f = dia + "-" + mes + "-" + ano;
                 $("#diasNacionales").append($('<label id="' + f +'">' + f + '</label>'));
-                $('#diasNacionales').append($('<input type="button" onclick="borrarFecha('+ x +')" value="X" name="' + f + '">'));
+                $("#diasNacionales").append("&nbsp;");
+                $('#diasNacionales').append($('<input class="btn alert-danger btn-xs" type="button" onclick="borrarFecha('+ x +')" value="X" name="' + f + '">'));
+                $("#diasNacionales").append("&nbsp;&nbsp;");
             }
         }
     }
@@ -507,7 +513,9 @@ switch ($_POST["accion"])
 
             var f = dia + "-" + mes + "-" + ano;
             $("#diasNacionales").append($('<label id="' + f +'">' + f + '</label>'));
-            $('#diasNacionales').append($('<input type="button" onclick="borrarFecha('+ x +')" value="X" name="' + f + '">'));
+            $("#diasNacionales").append("&nbsp;");
+            $('#diasNacionales').append($('<input class="btn alert-danger btn-xs" type="button" onclick="borrarFecha('+ x +')" value="X" name="' + f + '">'));
+            $("#diasNacionales").append("&nbsp;&nbsp;");
         }
     }
 

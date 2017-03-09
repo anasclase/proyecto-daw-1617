@@ -4,15 +4,29 @@ namespace Modelo\BD;
 
 
 use Modelo\Base\Administracion;
+use Modelo\Base\Centro;
 use Modelo\Base\Gerencia;
 use Modelo\Base\Logistica;
 use Modelo\Base\Produccion;
 use Modelo\BD;
 require_once __DIR__."/GenericoBD.php";
+require_once __DIR__."/../Base/TrabajadorClass.php";
 
 abstract class TrabajadorBD extends GenericoBD{
 
     private static $tabla = "trabajadores";
+
+    public static function editarCalendario($trabajador,$valor){
+        $con = parent::conectar();
+
+        $query = "UPDATE vacacionestrabajadores SET estado = '".$valor."' WHERE dniTrabajador = '".$trabajador."' AND estado = 'S'";
+
+        $rs = mysqli_query($con, $query) or die("Error getTrabajadoresByCentro");
+
+        $trabajadores = parent::mapear($rs, "Trabajador");
+
+        parent::desconectar($con);
+    }
 
     public static function getTrabajadoresByCentro($centro){
 
@@ -24,6 +38,45 @@ abstract class TrabajadorBD extends GenericoBD{
 
         $trabajadores = parent::mapear($rs, "Trabajador");
 
+        parent::desconectar($con);
+
+        return $trabajadores;
+
+    }
+
+    public static function getTodosTrabajadoresByCentro($centro){
+        $con = parent::conectar();
+
+        $query = "SELECT * FROM trabajadores WHERE idCentro = ".$centro->getId();
+
+        $rs = mysqli_query($con, $query) or die("Error getTrabajadoresByCentro");
+
+        $trabajadores = [];
+        while ($fila = mysqli_fetch_array($rs)){
+            /*
+             * Segun el id del tipo de perfil que devuelva , genera un tipo de trabajador u otro
+             */
+            if($fila["idPerfil"] == 1){
+                $gerencia = new Gerencia($fila["dni"],$fila["nombre"],$fila["apellido1"],$fila["apellido2"],$fila["telefono"],$fila["foto"],$fila["idCentro"],null,null,null);
+                array_push($trabajadores,$gerencia);
+            }else if($fila["idPerfil"] == 2){
+
+                $administracion = new Administracion($fila["dni"],$fila["nombre"],$fila["apellido1"],$fila["apellido2"],$fila["telefono"],$fila["foto"],$fila["idCentro"],null,null,null);
+                array_push($trabajadores,$administracion);
+
+            }else if($fila["idPerfil"] == 3){
+
+                $produccion = new Produccion($fila["dni"],$fila["nombre"],$fila["apellido1"],$fila["apellido2"],$fila["telefono"],$fila["foto"],$fila["idCentro"],null,null,null);
+                array_push($trabajadores,$produccion);
+
+            }else if($fila["idPerfil"] == 4){
+
+                $logistica = new Logistica($fila["dni"],$fila["nombre"],$fila["apellido1"],$fila["apellido2"],$fila["telefono"],$fila["foto"],$fila["idCentro"],null,null,null);
+                array_push($trabajadores,$logistica);
+
+            }
+
+        }
         parent::desconectar($con);
 
         return $trabajadores;
@@ -188,7 +241,6 @@ abstract class TrabajadorBD extends GenericoBD{
 
     }
 
-
     /* Alejandra */
 
     public static function getTrabajadoresByCentros($centros){
@@ -234,16 +286,23 @@ abstract class TrabajadorBD extends GenericoBD{
         return $trabajadores;
     }
 
-    public static function getPerfLoPro(){
+
+    public static function getCentroById(){ //Aitor
         $con = parent::conectar();
-        $query = "SELECT t.dni,p.tipo FROM himevico.trabajadores t,himevico.perfiles p WHERE t.idPerfil=p.id AND idPerfil in (3, 4)";
-        $rs = mysqli_query($con, $query) or die("Error getAllPerfiles");
-        $perfil = array();
-        while($fila = mysqli_fetch_assoc($rs)){
-            $perfil[] = array($fila['dni'], $fila['tipo']);
+        $query="SELECT idCentro FROM trabajadores WHERE dni='".$_SESSION["trabj"]."'";
+        $rs = mysqli_query($con, $query) or die("Error getCentroById");
+        while($rows=mysqli_fetch_array($rs)){
+            return $rows[0];
         }
-        parent::desconectar($con);
-        return $perfil;
     }
 
+
+    public  static function getDniFromNombre($nombre){ //Aitor
+        $con = parent::conectar();
+        $query="SELECT dni FROM trabajadores WHERE nombre='".$nombre."'";
+        $rs = mysqli_query($con, $query) or die("Error getDni");
+        while($rows=mysqli_fetch_array($rs)){
+            return $rows[0];
+        }
+    }
 }

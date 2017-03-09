@@ -114,7 +114,7 @@ class HorariosTrabajadores{
     /**
      * @return mixed
      */
-    public function getCalendario()
+    public function getCalendarioId()
     {
         return $this->calendario;
     }
@@ -122,7 +122,7 @@ class HorariosTrabajadores{
     /**
      * @param mixed $calendario
      */
-    public function setCalendario($calendario)
+    public function setCalendarioId($calendario)
     {
         $this->calendario = $calendario;
     }

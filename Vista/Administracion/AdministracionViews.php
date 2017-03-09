@@ -1137,7 +1137,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                 <div class="form-group">
                     <label class="control-label col-sm-2 col-md-2">Nombre horario:</label>
                     <div class="col-sm-4 col-md-3">
-                        <input class="form-control" type="text" name="horario">
+                        <input class="form-control" type="text" name="horario" required>
                     </div>
                 </div>
                 <div class="form-group">

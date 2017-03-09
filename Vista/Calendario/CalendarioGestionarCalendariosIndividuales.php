@@ -41,13 +41,14 @@ abstract class CalendarioGestionarCalendariosIndividuales extends Plantilla\View
                 </select>
             </div>
             <input style="margin-top: 20px;" type="submit" class="btn btn-default" name="aceptar" value="Aceptar">
+
         </form>
 
         <script src="<?php echo parent::getUrlRaiz();?>/Vista/Plantilla/JS/jquery-2.2.1.min.js"></script>
         <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.12.0/jquery.validate.min.js"></script>
         <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.12.0/localization/messages_es.js "></script>
 
-
+<!--
         <script>
             function generar_calendario(mes,anio)
             {
@@ -294,7 +295,7 @@ abstract class CalendarioGestionarCalendariosIndividuales extends Plantilla\View
 
             });
         </script>
-
+-->
         <!-- ESTO NO TE HACE FALTA! -->
         <script type="text/javascript">
             var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");

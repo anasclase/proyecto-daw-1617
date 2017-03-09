@@ -46,7 +46,6 @@ abstract class CalendarioGestionarFestivosCentros extends Plantilla\Views
                     ?>
                 </select></p>
             <form name="rango" >
-                <h2>Solicitud de vacaciones:</h2>
                 <h4><br>
                     <div class="form-group">
                         <label style="font-weight: normal" for="rango"> Rango </label> <input type="radio" id="rango" name="rangoVacaciones" value="rango"/> &nbsp; &nbsp;
@@ -66,12 +65,12 @@ abstract class CalendarioGestionarFestivosCentros extends Plantilla\Views
                         <label for="fInicial"> Desde: </label>  <input type="date" id="fInicial" min="<?php echo date('Y-m-d') ?>" />
                     </div>
                     <div class="form-group">
-                        <label for="fFinal"> Hasta: </label>  <input type="date" id="fFinal"  />
+                        <label for="fFinal"> Hasta: </label>  <input type="date" id="fFinal" min="<?php echo date('Y-m-d') ?>"/>
                     </div>
-                    <input class="btn btn-primary" type="button" value="Seleccionar dias" id="rangoDias" name="rangoDias"/>
+                    <input class="btn btn-primary" type="button" value="Seleccionar dias" id="rangoDias" name="rangoDias" onclick="guardarRango()"/>
                 </div>
-                <br><input type="hidden" id='dni' value="<?php $dni = unserialize($_SESSION["trabajador"])->getDni(); echo $dni ?> ">
             </form>
+
 <!--
             <form name="rango" >
                 <h4><p>Vacaciones por Rango o dias Sueltos:</p>
@@ -80,19 +79,20 @@ abstract class CalendarioGestionarFestivosCentros extends Plantilla\Views
                 </h4><br/>
                 <div style="visibility: hidden"  id="fecha1">
                     <label id="diasNacionales"></label><br>
-                    <input type="date" id="calendarioNacionales" min="<?php echo date('Y-m-d') ?>" onchange="guardarOpcion()">
+                    <input type="date" id="calendarioNacionales" min="<?php// echo date('Y-m-d') ?>" onchange="guardarOpcion()">
                     <input type="button" value="Añadir" id="botonNacionales" onclick="guardarFecha()">
                     <div>
                         <input type="button" value="Guardar" onclick="guardarFechas()">
                     </div>
                 </div>
                 <div style="visibility: hidden"  id="fecha2">
-                    <label for="fInicial"> Desde : </label>  <input type="date" id="fInicial" min="<?php echo date('Y-m-d') ?>"/>  <label for="fFinal"> Hasta : </label>  <input type="date" id="fFinal" min="<?php echo date('Y-m-d') ?>"/>
+                    <label for="fInicial"> Desde : </label>  <input type="date" id="fInicial" min="<?php// echo date('Y-m-d') ?>"/>  <label for="fFinal"> Hasta : </label>  <input type="date" id="fFinal" min="<?php// echo date('Y-m-d') ?>"/>
                     <input type="button" value="Seleccionar dias" id="rangoDias" name="rangoDias" onclick="guardarRango()"/>
                 </div>
 
             </form>
 -->
+
         </form>
 
         <?php if ($comprobar){?>

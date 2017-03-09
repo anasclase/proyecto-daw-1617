@@ -2049,6 +2049,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                                             style="border: none; background: none"><span
                                             class="glyphicon glyphicon-list" style="color:blue; font-size: 1.5em">
                                     </button>
+                                    <?php if($log->getEstado()->getTipo() != "Finalizado"){?>
                                     <button type="submit" name="modificarParteLog"
                                             style="border: none; background: none"><span
                                             class="glyphicon glyphicon-edit" style="color:blue; font-size: 1.5em">
@@ -2057,6 +2058,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                                             style="border: none; background: none"><span
                                             class="glyphicon glyphicon-remove" style="color:red; font-size: 1.5em">
                                     </button>
+                                    <?php }?>
                             <?php
                             if ($log->getEstado()->getTipo() == "Cerrado") {
                                 ?>
@@ -2116,6 +2118,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                                     style="border: none; background: none"><span
                                     class="glyphicon glyphicon-list" style="color:blue; font-size: 1.5em">
                             </button>
+                            <?php if($prod->getEstado()->getTipo() != "Finalizado"){?>
                             <button type="submit" name="modificarParteProd"
                                             style="border: none; background: none"><span
                                             class="glyphicon glyphicon-edit" style="color:blue; font-size: 1.5em">
@@ -2124,6 +2127,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                                         style="border: none; background: none"><span
                                         class="glyphicon glyphicon-remove" style="color:red; font-size: 1.5em">
                             </button>
+                            <?php }?>
                             <?php
                             if ($prod->getEstado()->getTipo() == "Cerrado") {
                                 ?>
@@ -2331,54 +2335,55 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                 foreach ($partes as $log) {
 
 
+
                         ?>
                         <form method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">                   <tr>
                         <td><?php echo $log->getTrabajador()->getDni(); ?></td>
-                        <td><?php echo $log->getTrabajador()->getNombre()." ".$log->getTrabajador()->getApellido1()." ".$log->getTrabajador()->getApellido2(); ?></td>
+                        <td><?php echo $log->getTrabajador()->getNombre() . " " . $log->getTrabajador()->getApellido1() . " " . $log->getTrabajador()->getApellido2(); ?></td>
                         <td><?php echo $log->getFecha(); ?></td>
                         <td><?php echo $log->getNota(); ?></td>
                         <td><?php echo $log->getEstado()->getTipo(); ?></td>
                         <td>
 
-                            <button type="submit" name="listarParteLog"
-                                    style="border: none; background: none"><span
-                                    class="glyphicon glyphicon-list" style="color:blue; font-size: 1.5em">
+                        <button type="submit" name="listarParteLog"
+                                style="border: none; background: none"><span
+                                class="glyphicon glyphicon-list" style="color:blue; font-size: 1.5em">
                             </button>
-                            <button type="submit" name="modificarParteLog"
-                                            style="border: none; background: none"><span
-                                            class="glyphicon glyphicon-edit" style="color:blue; font-size: 1.5em">
+                        <button type="submit" name="modificarParteLog"
+                                style="border: none; background: none"><span
+                                class="glyphicon glyphicon-edit" style="color:blue; font-size: 1.5em">
                                     </button>
-                                    <button type="submit" name="eliminarParteProduccion"
-                                        style="border: none; background: none"><span
-                                        class="glyphicon glyphicon-remove" style="color:red; font-size: 1.5em">
+                        <button type="submit" name="eliminarParteProduccion"
+                                style="border: none; background: none"><span
+                                class="glyphicon glyphicon-remove" style="color:red; font-size: 1.5em">
                             </button>
                             <?php
-                            if ($log->getEstado()->getTipo() == "Cerrado") {
-                                ?>
-                                <button type="submit" name="abrirParteLogistica"
-                                                style="border: none; background: none"><span
-                                                class="glyphicon glyphicon-open-file" style="color:blue; font-size: 1.5em">
-                                        </button>
-                                        <button type="submit" name="validarParteLogistica"
-                                                style="border: none; background: none"><span
-                                                class="glyphicon glyphicon-ok"
-                                                style="color:green; font-size: 1.5em"></span></button>
-                                <?php
-                            }
+                        if ($log->getEstado()->getTipo() == "Cerrado") {
                             ?>
+                            <button type="submit" name="abrirParteLogistica"
+                                    style="border: none; background: none"><span
+                                    class="glyphicon glyphicon-open-file" style="color:blue; font-size: 1.5em">
+                                        </button>
+                            <button type="submit" name="validarParteLogistica"
+                                    style="border: none; background: none"><span
+                                    class="glyphicon glyphicon-ok"
+                                    style="color:green; font-size: 1.5em"></span></button>
+                            <?php
+                        }
+                        ?>
 
                             <?php
-                            if ($log->getEstado()->getTipo() == "Validado") {
-                                ?>
-                                <button type="submit" name="finalizarParteProduccion"
-                                        style="border: none; background: none"><span
-                                        class="glyphicon glyphicon-ok"
-                                        style="color:green; font-size: 1.5em"></span></button>
+                        if ($log->getEstado()->getTipo() == "Validado") {
+                            ?>
+                            <button type="submit" name="finalizarParteProduccion"
+                                    style="border: none; background: none"><span
+                                    class="glyphicon glyphicon-ok"
+                                    style="color:green; font-size: 1.5em"></span></button>
 
-                                <?php
+                            <?php
 
 
-                            }
+                        }
 
 
                             ?>
@@ -2467,6 +2472,8 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                 <?php //ganeko
                 foreach ($partes as $prod) {
 
+
+
                         ?>
                         <form method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
                     <tr>
@@ -2483,6 +2490,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                                  style="border: none; background: none"><span
                                  class="glyphicon glyphicon-list" style="color:blue; font-size: 1.5em">
                             </button>
+
                             <button type="submit" name="modificarParteLog"
                                             style="border: none; background: none"><span
                                             class="glyphicon glyphicon-edit" style="color:blue; font-size: 1.5em">
@@ -2491,6 +2499,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                                         style="border: none; background: none"><span
                                         class="glyphicon glyphicon-remove" style="color:red; font-size: 1.5em">
                             </button>
+
                             <?php
                             if ($prod->getEstado()->getTipo() == "Cerrado") {
                                 ?>

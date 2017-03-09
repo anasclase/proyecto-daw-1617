@@ -1057,6 +1057,82 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
             require_once __DIR__ . "/../Plantilla/pie.php";
         }
 */
+
+ public static function updatePassword(){
+
+        parent::setOn(true);
+        parent::setRoot(true);
+
+        require_once __DIR__ . "/../Plantilla/cabecera.php";
+            ?>
+
+            <h2 class="page-header">Trabajadores</h2>
+            <div class="table-responsive col-md-offset-1 col-md-10">
+                <table class="table table-bordered">
+                    <tr>
+                        <th>DNI</th>
+                        <th>Nueva contraseña</th>
+                        <th>Acción</th>
+                    </tr>
+                    <form name="updatePassword" method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
+                        <tr>
+                            <td>
+                                <input type="text" class="form-control" name="trabajador" value="<?php echo $_SESSION["dni"]; ?>">
+
+                            </td>
+                            <td><input class="form-control" type="password" name="password"/></td>
+                            <td>
+                                <button type="submit" name="updatePassword" value="Cambiar"
+                                        style="border: none; background: none"><span class="glyphicon glyphicon-edit"
+                                                                                     style="color: blue; font-size: 1.5em"></span>
+                                </button>
+                            </td>
+                        </tr>
+                    </form>
+                </table>
+            </div>
+            <form name="updatePassword" method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
+                <div class="col-md-10 col-md-offset-1"><!--Ganeko-->
+                    <input class="btn btn-warning pull-right" type="submit" name="volver" value="Volver">
+                </div>
+            </form>
+
+            <?php
+
+            require_once __DIR__ . "/../Plantilla/pie.php";
+            require_once __DIR__ . "/../Plantilla/cabecera.php";
+            $horas = Administracion\Controlador::getAllHorasConvenio();
+            ?>
+
+            <table>
+                <tr>
+                    <th>NOMBRE</th>
+                    <th>HORAS</th>
+                    <th>NUEVO PRECIO</th>
+                    <th>CENTRO</th>
+                    <th>ACCIÓN</th>
+                </tr>
+                <?php
+                foreach ($horas as $hora) {
+                    ?>
+                    <form name="deleteEstado" method="post"
+                          action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
+                        <tr>
+                            <td><?php echo $hora->getDenominacion(); ?></td>
+                            <td><?php echo $hora->getHorasAnual(); ?></td>
+                            <td><?php echo $hora->getCentro()->getNombre(); ?></td>
+                            <td><input type="text" name="nuevo" size="5" placeholder="1200"></td>
+                            <td><input type="submit" name="updateHorasConvenio" value="Editar"></td>
+                        </tr>
+                        <input type="hidden" name="id" value="<?php echo $hora->getId(); ?>">
+                    </form>
+            </table>
+            <?php
+        }
+            require_once __DIR__ . "/../Plantilla/pie.php";
+
+        }
+
            public static function viewParteLog($parte,$viajes)
         {
             parent::setOn(true);
@@ -1560,6 +1636,49 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
     require_once __DIR__ . "/../Plantilla/pie.php";
     }
 
+
+    public static function updateFoto(){
+        //Ganeko
+        parent::setOn(true);
+        parent::setRoot(true);
+
+        require_once __DIR__ . "/../Plantilla/cabecera.php";
+
+        ?>
+
+        <h2 class="page-header">Trabajadores</h2>
+        <div class="table-responsive col-md-offset-1 col-md-10">
+            <table class="table table-bordered">
+                <tr>
+                    <th>DNI</th>
+                    <th>Nueva foto</th>
+                    <th>Acción</th>
+                </tr>
+                <form name="updatePassword" method="post" enctype="multipart/form-data" action="<?php echo self::getUrlRaiz() ?>/Controlador/Gerencia/Router.php">
+                    <tr>
+                        <td>
+                            <input type="text" class="form-control" name="trabajador" value="<?php echo $_SESSION["dni"]; ?>">
+
+                        </td>
+                        <td><input class="form-control" type="file" name="foto"/></td>
+                        <td><button type="submit" name="updateFoto" value="Cambiar" style="border: none; background: none"><span class="glyphicon glyphicon-edit" style="color: blue; font-size: 1.5em"></span></button></td>
+                    </tr>
+                </form>
+            </table>
+        </div>
+
+        <form method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Gerencia/Router.php">
+            <div class="col-md-10 col-md-offset-1 pull-rigth">
+                <!--Ibai-->
+                <input class="btn btn-warning pull-right" type="submit" name="volver" value="Volver">
+            </div>
+        </form>
+
+        <?php
+
+        require_once __DIR__ . "/../Plantilla/pie.php";
+
+    }
 
         public static function allPartesByDni()
         {

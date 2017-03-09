@@ -250,7 +250,6 @@ abstract class Controlador{
     public static function AddTipoFranja($datos){
         $datos['tipo'] = str_replace('\' ', '\'', ucwords(str_replace('\'', '\' ', strtolower(($datos['tipo'])))));
         $tipo = new TiposFranjas(null, $datos['tipo'], $datos['precio']);
-
         $tipo->save();
     }
     public static function DeleteTipoFranja($datos){
@@ -367,6 +366,10 @@ abstract class Controlador{
     public static function getFranjaById($id){
         $franja = BD\TipoFranjaBD::getTipoFranjaById($id);
         return $franja;
+    }/* Ganeko */
+    public static function getConvenioById($id){
+        $convenio = BD\HorasConvenioBD::selectConvenioById($id);
+        return $convenio;
     }/* Ganeko */
     public static function updateEmpresa($datos){
         BD\EmpresaBD::updateEmpresa($datos);

@@ -832,10 +832,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
         parent::setRoot(true);
 
         require_once __DIR__ . "/../Plantilla/cabecera.php";
-        $horas = Administracion\Controlador::getAllHorasConvenio();
-        if(is_null($horas)){
-            echo "no hay horas";
-        }else {
+        $hora = Administracion\Controlador::getConvenioById($_SESSION['id']);
             ?>
             <h2 class="page-header">Convenios</h2>
             <div class="table-responsive col-md-offset-1 col-md-10">
@@ -847,9 +844,6 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                         <th>NUEVAS HORAS</th>
                         <th>ACCIÓN</th>
                     </tr>
-                    <?php
-                    foreach ($horas as $hora) {
-                        ?>
                         <tr>
                             <td><?php echo $hora->getDenominacion(); ?></td>
                             <td><?php echo $hora->getHorasAnual(); ?></td>
@@ -872,9 +866,6 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                             </td>
                             </form>
                         </tr>
-                        <?php
-                    }
-                    ?>
                 </table>
             </div>
             <form name="deleteEstado" method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
@@ -884,10 +875,9 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                 </div>
             </form>
             <?php
-        }
-        require_once __DIR__ . "/../Plantilla/pie.php";
-
+            require_once __DIR__ . "/../Plantilla/pie.php";
     }
+
 
 /*****************************************************/
 /* TIPO FRANJA */

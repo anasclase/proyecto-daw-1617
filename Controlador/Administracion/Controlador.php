@@ -237,7 +237,6 @@ abstract class Controlador{
         self::eliminarDir(__DIR__."/../../Vista/Fotos/".$datos['dni']);
     }
 
-
     public static function AddCentro($datos){
         $empresa = BD\EmpresaBD::getEmpresaByID($datos['empresa']);
         $datos['nombre'] = str_replace('\' ', '\'', ucwords(str_replace('\'', '\' ', strtolower(($datos['nombre'])))));
@@ -389,6 +388,10 @@ abstract class Controlador{
     public static function getFranjaById($id){
         $franja = BD\TipoFranjaBD::getTipoFranjaById($id);
         return $franja;
+    }/* Ganeko */
+    public static function getConvenioById($id){
+        $convenio = BD\HorasConvenioBD::selectConvenioById($id);
+        return $convenio;
     }/* Ganeko */
     public static function updateEmpresa($datos){
         BD\EmpresaBD::updateEmpresa($datos);

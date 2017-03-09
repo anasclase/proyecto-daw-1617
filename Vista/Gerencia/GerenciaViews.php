@@ -706,6 +706,10 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
                                             style="border: none; background: none;"><span
                                             class="glyphicon glyphicon-remove"
                                             style="color:red; font-size: 1.5em"></span></button>
+                                    <button type="submit" name="vistaEditarConvenio" value="Editar"
+                                            style="border: none; background: none;"><span
+                                            class="glyphicon glyphicon-pencil"
+                                            style="color:black; font-size: 1.5em"></span></button>
                                     <input type="hidden" name="id" value="<?php echo $horaconvenio->getId(); ?>">
                                 </form>
                             </td>
@@ -719,7 +723,6 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
                   action="<?php echo self::getUrlRaiz() ?>/Controlador/Gerencia/Router.php">
                 <div class="col-md-10 col-md-offset-1"><!-- Ganeko -->
                     <div class="pull-right">
-                        <input class="btn btn-primary" type="submit" name="vistaEditarConvenio" value="Editar">
                         <input class="btn btn-warning pull-right" type="submit" name="volver" value="Volver">
                     </div>
                 </div>
@@ -737,10 +740,7 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
         parent::setRoot(true);
 
         require_once __DIR__ . "/../Plantilla/cabecera.php";
-        $horas = Gerencia\Controlador::getAllHorasConvenio();
-        if (is_null($horas)) {
-            echo "No hay horas";
-        } else {
+        $hora = Gerencia\Controlador::getConvenioById($_SESSION['id']);
             ?>
             <h2 class="page-header">Convenios</h2>
             <div class="table-responsive col-md-offset-1 col-md-10">
@@ -752,9 +752,6 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
                         <th>NUEVO PRECIO</th>
                         <th>ACCIÓN</th>
                     </tr>
-                    <?php
-                    foreach ($horas as $hora) {
-                        ?>
                         <tr>
                             <td><?php echo $hora->getDenominacion(); ?></td>
                             <td><?php echo $hora->getHorasAnual(); ?></td>
@@ -773,9 +770,6 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
                                 </form>
                             </td>
                         </tr>
-                        <?php
-                    }
-                    ?>
                 </table>
             </div>
             <form name="deleteEstado" method="post"
@@ -786,8 +780,6 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
             </form>
             <?php
             require_once __DIR__ . "/../Plantilla/pie.php";
-
-        }
     }
 
 /*****************************************************/

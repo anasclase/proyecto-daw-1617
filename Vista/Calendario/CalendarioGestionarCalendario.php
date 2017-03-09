@@ -17,47 +17,61 @@ abstract class CalendarioGestionarCalendario extends Plantilla\Views
               href="<?php echo parent::getUrlRaiz()?>/Vista/Plantilla/CSS/Bootstrap/estilos.css"
               xmlns="http://www.w3.org/1999/html">
 
+        <div class="container">
+
     <!-- IRUNE -->
 
-        <form name="buscar" action="<?php echo parent::getUrlRaiz()?>/Vista/Administracion/Administracion.php?cod=6" method="post">
+        <form class="col-sm-6" name="buscar" action="<?php echo parent::getUrlRaiz()?>/Vista/Administracion/Administracion.php?cod=6" method="post">
 
             <h2>Crear un calendario</h2>
-            <p><label>CALENDARIO: </label>
-                <div class="form-group">
-                <select style="width: 15%" name="calendario" class="form-control"><?php
-                    $anoActual = date(Y);
-                    echo "<option value=''> -- Selecciona -- </option>";
-                    for($x=0; $x<9; $x++){
-                        $ano = $anoActual + $x;
-                        echo "<option value='$ano'>$ano</option>";
-                    }
-                    ?>
-                </select>
-                </div></p>
-            <label>DESCRIPCION: </label><br>
-                <textarea name="descripcion" placeholder="Introduce la descripción aquí"></textarea><br>
+            <div class="form-group col-sm-12" style="padding: 0; margin-left: -15px">
+                <h4 class="col-sm-4">Calendarios: </h4>
+                <div class="col-sm-5">
+                    <select name="calendario" class="form-control"><?php
+                        $anoActual = date(Y);
+                        echo "<option value=''> -- Selecciona -- </option>";
+                        for($x=0; $x<9; $x++){
+                            $ano = $anoActual + $x;
+                            echo "<option value='$ano'>$ano</option>";
+                        }
+                        ?>
+                    </select>
+                </div>
 
-            <input class="btn btn-info" type="submit" name="crear" value="Crear">
+            </div>
+            <div class="form-group col-sm-12" style="padding: 0; margin-left: -15px">
+                <h4 class="col-sm-4">Descripci&oacute;n: </h4>
+                <textarea class="col-sm-5" name="descripcion" placeholder="Introduce la descripción aquí"></textarea><br>
+            </div>
+            <input class="btn btn-primary" type="submit" name="crear" value="Crear">
 
         </form>
 
-        <form name="buscar" action="<?php echo parent::getUrlRaiz()?>/Vista/Administracion/Administracion.php?cod=7" method="post"> <!--Aitor-->
+        <form class="col-sm-6" name="buscar" action="<?php echo parent::getUrlRaiz()?>/Vista/Administracion/Administracion.php?cod=7" method="post"> <!--Aitor-->
 
             <h2>Cerrar un calendario</h2>
-            <label>CALENDARIOS: </label><select style="width: 15%" class="form-control" name="calendario">  <!--Aitor-->
-                <?php
-                require_once "../../Modelo/BD/CalendarioBD.php";     //Aitor
-                echo "<option value=''>-- Selecciona --</option>";  //Aitor
-                $id = \Modelo\BD\CalendarioBD::getIdCalendario();    //Aitor
-                while ($rows=mysqli_fetch_array($id)){              //Aitor
-                    echo "<option value='".$rows["id"]."'>".$rows["id"]."</option>";    //Aitor
-                };
+            <div class="form-group col-sm-12" style="padding: 0; margin-left: -15px">
+                <h4 class="col-sm-4">Calendarios: </h4>
+                <div class="col-sm-5">
+                    <select name="calendario" class="form-control"><?php
+                        require_once "../../Modelo/BD/CalendarioBD.php";     //Aitor
+                        echo "<option value=''>-- Selecciona --</option>";  //Aitor
+                        $id = \Modelo\BD\CalendarioBD::getIdCalendario();    //Aitor
+                        while ($rows=mysqli_fetch_array($id)){              //Aitor
+                            echo "<option value='".$rows["id"]."'>".$rows["id"]."</option>";    //Aitor
+                        };
 
-                ?>
-            </select>
-            <input class="btn btn-info" type="submit" name="cerrar" value="Cerrar">
+                        ?>
+                    </select>
+                </div>
+
+            </div>
+            <br>
+            <input class="btn btn-warning" type="submit" name="cerrar" value="Cerrar">
 
         </form>
+
+        </div>
 
         <script src="<?php echo parent::getUrlRaiz();?>/Vista/Plantilla/JS/jquery-2.2.1.min.js"></script>
         <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.12.0/jquery.validate.min.js"></script>

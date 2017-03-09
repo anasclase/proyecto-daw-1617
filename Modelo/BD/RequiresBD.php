@@ -5,7 +5,6 @@ use Modelo\Base;
 require_once __DIR__.'/../Base/AdministracionClass.php';
 require_once __DIR__.'/../Base/AusenciaClass.php';
 require_once __DIR__.'/../Base/CentroClass.php';
-require_once __DIR__.'/../Base/CalendarioClass.php';
 require_once __DIR__.'/../Base/EmpresaClass.php';
 require_once __DIR__.'/../Base/EstadoClass.php';
 require_once __DIR__.'/../Base/FranjasClass.php';

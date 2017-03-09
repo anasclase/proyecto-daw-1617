@@ -6,10 +6,7 @@
  * Time: 11:59
  */
 
-
-
 namespace Modelo\BD;
-use Modelo\Base\TiposFranjas;
 require_once __DIR__."/GenericoBD.php";
 
 abstract class TipoFranjaBD extends GenericoBD{
@@ -30,18 +27,15 @@ abstract class TipoFranjaBD extends GenericoBD{
 
         $query = "SELECT * FROM ".self::$tabla." WHERE id = ".$tipoFranjaId;
 
-        $rs = mysqli_query($con, $query) or die(mysqli_error($con));
+        $rs = mysqli_query($con, $query) or die("Error getTipoFranjaById");
 
-        $fila = mysqli_fetch_assoc($rs);
-
-        $tipoFranja = new TiposFranjas($fila['id'], $fila['tipo'], $fila['precio']);
+        $tipoFranja = parent::mapear($rs, "TiposFranjas");
 
         parent::desconectar($con);
 
         return $tipoFranja;
 
     }
-
     public static function insert($tipoFranja){
 
         $conexion = parent::conectar();

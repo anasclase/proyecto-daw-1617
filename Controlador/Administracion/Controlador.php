@@ -1,5 +1,9 @@
 <?php
 namespace Controlador\Administracion;
+if(session_status()!=2){
+    session_start();
+}
+
 
 use Modelo\Base\Administracion;
 use Modelo\Base\Centro;
@@ -38,6 +42,7 @@ require_once __DIR__ .'/../../Modelo/Base/HorariosTrabajadoresClass.php';
 require_once __DIR__."/../../Modelo/Base/FestivoClass.php";
 require_once __DIR__."/../../Modelo/Base/ViajeClass.php";
 require_once __DIR__."/../../Vista/Administracion/AdministracionViews.php";
+require_once __DIR__."/../../Vista/Administracion/Incidencias.php";
 
 
 
@@ -61,19 +66,19 @@ abstract class Controlador{
         switch($perfil){
             case "Logistica":
                 $trabajador= new Logistica($datos["dni"],$datos['nombre'],$datos['apellido1'],$datos['apellido2'],$datos['telefono'],null/*foto*/,$centro,null,null,null,null);
-				$login=new Login(null, md5($datos["pass"]), $trabajador->getDni());
+				$login=new Login(null, $datos["pass"], $trabajador->getDni());
                 break;
             case "Administracion":
                 $trabajador= new Administracion($datos["dni"],$datos['nombre'],$datos['apellido1'],$datos['apellido2'],$datos['telefono'],null/*foto*/,$centro,null,null,null);
-				$login=new Login(null, md5($datos["pass"]), $trabajador->getDni());
+				$login=new Login(null, $datos["pass"], $trabajador->getDni());
                 break;
             case "Gerencia":
                 $trabajador= new Gerencia($datos["dni"],$datos['nombre'],$datos['apellido1'],$datos['apellido2'],$datos['telefono'],null/*foto*/,$centro,null,null,null);
-				$login=new Login(null, md5($datos["pass"]), $trabajador->getDni());
+				$login=new Login(null, $datos["pass"], $trabajador->getDni());
                 break;
             case "Produccion":
                 $trabajador= new Produccion($datos["dni"],$datos['nombre'],$datos['apellido1'],$datos['apellido2'],$datos['telefono'],null/*foto*/,$centro,null,null,null,null);
-				$login=new Login(null, md5($datos["pass"]), $trabajador->getDni());
+				$login=new Login(null, $datos["pass"], $trabajador->getDni());
                 break;
         }
 
@@ -143,11 +148,6 @@ abstract class Controlador{
         BD\TrabajadorBD::updateFotoByTrabajador($trabajador);
     }
 
-    public static function getTrabajadorByDni($dni){
-        $trabajador = BD\TrabajadorBD::getTrabajadorByDni($dni);
-        return $trabajador;
-    }
-
     public static function eliminarDir($carpeta)
     {
         foreach(glob($carpeta . "/*") as $archivos_carpeta)
@@ -199,10 +199,10 @@ abstract class Controlador{
     public static function deleteVehiculo($datos){
         BD\VehiculoBD::deletteVehiculo($datos["id"]);
     }
-    public static function AddEstado($datos){
-        $estado= new Estado(null,$datos["tipo"]);
-        BD\EstadoBD::add($estado);
-    }
+     public static function AddEstado($datos){
+         $estado= new Estado(null,$datos["tipo"]);
+         BD\EstadoBD::add($estado);
+     }
     public static function DeleteEstado($datos){
         BD\EstadoBD::delete($datos["id"]);
     }
@@ -236,6 +236,7 @@ abstract class Controlador{
         BD\TrabajadorBD::deleteTrabajador($datos["dni"]);
         self::eliminarDir(__DIR__."/../../Vista/Fotos/".$datos['dni']);
     }
+
 
     public static function AddCentro($datos){
         $empresa = BD\EmpresaBD::getEmpresaByID($datos['empresa']);
@@ -323,12 +324,9 @@ abstract class Controlador{
 
     }
 
-    public static function getAllHorarioTrabajador(){
-        return BD\HorarioTrabajadorBD::getAll();
-    }
-    public static function getAllHorarioTrabajadorFiltrado($filtros){
-        return BD\HorarioTrabajadorBD::getAllFiltrado($filtros);
-    }
+    public static function getAllHoraioTrabajador(){
+    return BD\HorarioTrabajadorBD::getAll();
+}
     public static function getHorarioTrabajador($trabajador){
         return BD\HorarioTrabajadorBD::getAll($trabajador);
     }
@@ -372,36 +370,7 @@ abstract class Controlador{
     public static function updateValidarParteLogistica($datos){
         BD\PartelogisticaBD::updateValidar($datos['id']);
     }
-    /* Ganeko */
-    public static function buscarEmpresaId($id){
-        $empresa =  BD\EmpresaBD::getEmpresaByID($id);
-        return $empresa;
-    }/* Ganeko */
-    public static function getCentroId($id){
-        $centro = BD\CentroBD::getCentrosById($id);
-        return $centro;
-    }/* Ganeko */
-    public static function getVehiculoId($id){
-        $vehiculo = BD\VehiculoBD::getVehiculosById($id);
-        return $vehiculo;
-    }/* Ganeko */
-    public static function getFranjaById($id){
-        $franja = BD\TipoFranjaBD::getTipoFranjaById($id);
-        return $franja;
-    }/* Ganeko */
-    public static function getConvenioById($id){
-        $convenio = BD\HorasConvenioBD::selectConvenioById($id);
-        return $convenio;
-    }/* Ganeko */
-    public static function updateEmpresa($datos){
-        BD\EmpresaBD::updateEmpresa($datos);
-    }
-    public static function updateCentro($datos){
-        BD\CentroBD::updateCentro($datos);
-    }
-    public static function updateVehiculo($datos){
-        BD\VehiculoBD::updateVehiculo($datos);
-    }
+
     public static function guardarParteProduccion($datos)
     {
         $parte = unserialize($_SESSION['parte']);
@@ -603,56 +572,76 @@ abstract class Controlador{
 
     }/* PABLO */
 	public static function updateHorarioTrabajador($datos){
-		BD\HorarioTrabajadorBD::updateHorarioTrabajador($datos["horario"], $_SESSION["dniht"] , $_SESSION["semht"]);
-    }
-    public static function getCentros($e = null){
-        return BD\CentroBD::getCentrosByEmpresas($e);
-    }
-
-    public static function getAllCalendarios(){
-        return BD\CalendarioBD::getAll();
-    }
-
-    public static function rellenarEmpresas(){ //Ibai
-        $empresas = Controlador::getAllEmpresas();
-        $mensaje = '<option value="" disabled  selected="selected">Elige</option>';
-
-        for ($x = 0; $x < count($empresas); $x++) {
-            $mensaje.='<option value="'. $empresas[$x]->getId().'">'.$empresas[$x]->getNombre().'</option>';
-        }
-
-        return $mensaje."</select>";
-    }
-
-    public static function rellenarCentros($id = null){ //Ibai
-        $centros = Controlador::getCentros([$id]);
-        $mensaje = '<option value="" disabled  selected="selected">Elige</option>';
-
-        for($x=0;$x<count($centros);$x++){
-            $mensaje.='<option value="'. $centros[$x]->getId().'">'.$centros[$x]->getNombre().'</option>';
-        }
-        return $mensaje;
-    }
-
-    public static function rellenarCalendarios()
-    { //Ibai
-        $calendarios = Controlador::getAllCalendarios();
-        $mensaje = '<option value="" disabled  selected="selected">Elige</option>';
-
-        for ($x = 0; $x < count($calendarios); $x++) {
-            $mensaje .= '<option value="' . $calendarios[$x]->getId() . '">' . $calendarios[$x]->getId() . '</option>';
-        }
-        return $mensaje;
-    }
-
-    public static function incidenciasHorarioTrabajador($dni,$semana,$calendario){
-        return BD\HorarioTrabajadorBD::checkIncidencias($dni,$semana,$calendario);
-    }
+		
+		
+		
+	}
 
     //David
     public static function insertarIncidencia($datos){
 
+        $fecha = getdate();
+        $fecha2 = date("Y-m-d");
 
+        $incidencia = new AusenciaTrabajador(null, $fecha2, "00:00", "00:00", $datos["dni"], $datos["motivo"], $fecha["year"]);
+
+        $res = \Modelo\BD\AusenciaTrabajadorBD::setAusencias($incidencia);
+
+        if($res != 1){
+            echo "<script>alert('Error al introducir la incidencia. Es posible que el DNI no sea correcto.')</script>";
+            \Vista\Administracion\Incidencias::mostrar();
+        }else{
+            echo "<script>alert('Incidencia introducida correctamente')</script>";
+            \Vista\Administracion\Incidencias::mostrar();
+        }
+    }
+
+    // IRUNE
+
+    public static function crearObjetoCalendario() {
+
+        if ($_POST['calendario'] != "" && $_POST['descripcion'] != "") {
+
+            $calendario = new \Modelo\Base\Calendario($_POST['calendario'], $_POST['descripcion'], 1);
+            return $calendario;
+
+        }
+        else {
+            return false;
+        }
+
+    }
+
+    // IRUNE
+
+    public static function cerrarCalendario() {
+
+        if ($_POST['calendario'] != "") {
+            return true;
+        }
+        else {
+            return false;
+        }
+
+    }
+
+    public static function comprobarFestivos($calendario) {
+
+        if(BD\CalendarioBD::comprobarFestivos($calendario)){
+            return true;
+        }
+        else {
+            return false;
+        }
+
+    }
+
+    // IRUNE
+
+    public static function crearObjetoCentro() {
+
+        $centro = new Centro($_POST['centro']);
+        return $centro;
 
     }
 

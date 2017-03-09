@@ -32,58 +32,13 @@ if(isset($_POST['eliminarEmpresa'])){
     //headerLocation a vista Eliminar
     header("Location: ".Views::getUrlRaiz()."/Vista/Gerencia/deleteEmpresa.php");
 }
-if(isset($_POST['vistaEditarEmpresa'])){
-    //Ganeko
-    $_SESSION['id'] = $_POST['id'];
-    //headerLocation a vista Editar
-    header("Location: ".Views::getUrlRaiz()."/Vista/Gerencia/updateEmpresa.php");
-}
-if(isset($_POST['editarEmpresa'])){
-    //Ganeko
-    Controlador::updateEmpresa($_POST);
-    header("Location: ".Views::getUrlRaiz()."/Vista/Gerencia/deleteEmpresa.php");
-}
-if(isset($_POST['vistaEditarCentro'])){
-    //Ganeko
-    $_SESSION['id'] = $_POST['id'];
-    header("Location: ".Views::getUrlRaiz()."/Vista/Gerencia/updateCentro.php");
-}
-if(isset($_POST['editarCentro'])){
-    //Ganeko
-    Controlador::updateCentro($_POST);
-    header("Location: ".Views::getUrlRaiz()."/Vista/Gerencia/deleteCentro.php");
-}
-if(isset($_POST['vistaEditarVehiculo'])){
-    //Ganeko
-    $_SESSION['id'] = $_POST['id'];
-    header("Location: ".Views::getUrlRaiz()."/Vista/Gerencia/updateVehiculo.php");
-}
-if(isset($_POST['editarVehiculo'])){
-    //Ganeko
-    Controlador::updateVehiculo($_POST);
-    header("Location: ".Views::getUrlRaiz()."/Vista/Gerencia/deleteVehiculo.php");
-}
-if(isset($_POST['vistaEditarFoto'])){
-    //Ganeko
-    $_SESSION['dni'] = $_POST['dni'];
-    header("Location: ".Views::getUrlRaiz()."/Vista/Gerencia/updateFoto.php");
-}
-if(isset($_POST['vistaEditarPass'])){
-    //Ganeko
-    $_SESSION['dni'] = $_POST['dni'];
-    header("Location: ".Views::getUrlRaiz()."/Vista/Gerencia/updatePassword.php");
-}
-if(isset($_POST['vistaEditarConvenio'])){
-    //Ganeko
-    header("Location: ".Views::getUrlRaiz()."/Vista/Gerencia/updateConvenio.php");
-}
 if(isset($_POST['addEstado'])){
     Controlador::AddEstado($_POST);
     //headerLocation a vista Eliminar
     header($gestionListas);
 }
 if(isset($_POST['eliminarEstado'])){
-    Controlador::deleteEstado($_POST);
+    echo "hola";    Controlador::deleteEstado($_POST);
     //headerLocation a vista Eliminar
     header("Location: ".Views::getUrlRaiz()."/Vista/Gerencia/deleteEstado.php");
 }
@@ -124,25 +79,21 @@ if(isset($_POST['eliminarCentro'])){
     header("Location: ".Views::getUrlRaiz()."/Vista/Gerencia/deleteCentro.php");
 }
 
+if(isset($_POST['updateTipoFranja'])){
+    Controlador::UpdateTipoFranja($_POST);
+    header("Location: ".Views::getUrlRaiz()."/Vista/Gerencia/updateTipoFranja.php");
+}
 if(isset($_POST['addTipoFranja'])){
     Controlador::addTipoFranja($_POST);
     header($gestionListas);
 }
-if(isset($_POST['vistaUpdateTipoFranja'])){
-    header("Location: ".Views::getUrlRaiz()."/Vista/Gerencia/updateTipoFranja.php");
-}
-if(isset($_POST['updateTipoFranja'])){
-    Controlador::UpdateTipoFranja($_POST);
-    header("Location: ".Views::getUrlRaiz()."/Vista/Gerencia/deleteTipoFranja.php");
-}
-
 if(isset($_POST['deleteTipoFranja'])){
     Controlador::DeleteTipoFranja($_POST);
     header("Location: ".Views::getUrlRaiz()."/Vista/Gerencia/deleteTipoFranja.php");
 }
 if(isset($_POST['updateHorasConvenio'])){
     Controlador::UpdateHorasConvenio($_POST);
-    header("Location: ".Views::getUrlRaiz()."/Vista/Gerencia/deleteHorasConvenio.php");
+    header("Location: ".Views::getUrlRaiz()."/Vista/Gerencia/updateHorasConvenio.php");
 }
 
 if(isset($_POST['añadirHorarioTrabajador'])){
@@ -434,30 +385,5 @@ if(isset($_POST['dni']) and !isset($_POST['semanas'])) {
         </table>
         </span>
         <?php
-    }
-}
-
-/* Alejandra */
-
-if(isset($_POST['buscar'])){
-    switch($_POST["buscar"]){
-        case "incidencias":
-            Controlador::incidencias($_POST);
-            break;
-        case "partesAnu":
-            Controlador::partesAnuales($_POST);
-            break;
-        case "partesMen":
-            Controlador::partesMensuales($_POST);
-            break;
-        case "vacasApro":
-            Controlador::vacacionesAprobadas($_POST);
-            break;
-        case "vacasDis":
-            Controlador::vacacionesDisfrutadas($_POST);
-            break;
-        case "vacasSoli":
-            Controlador::vacacionesSolicitadas($_POST);
-            break;
     }
 }

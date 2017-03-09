@@ -4,7 +4,7 @@ require_once __DIR__.'/../../Modelo/BD/GenericoBD.php';;
 require_once __DIR__.'/../Plantilla/Views.php';
 
 use Vista\Plantilla;
-abstract class CalendarioGestionarCalendario extends Plantilla\Views
+abstract class CalendarioGestionarCalendariosIndividuales extends Plantilla\Views
 {
     public static function cal($comprobar){
         parent::setOn(true);
@@ -16,15 +16,39 @@ abstract class CalendarioGestionarCalendario extends Plantilla\Views
         <link type="text/css" rel="stylesheet" media="all" href="<?php echo parent::getUrlRaiz()?>/Vista/Plantilla/CSS/Bootstrap/estilos.css">
 
 
-        <div class="calendario_ajax">
-            <div class="cal"></div><div id="mask"></div>
-        </div>
+        <form name="trabajador" method="post" action="../../Controlador/Calendario/ControladorCalendario.php">
+
+            <h2>Crear calendarios individuales</h2>
+
+            <div id="empresa">
+                <label for="nomEmpresa">Nombre de la empresa :</label>
+                <select style="width: 15%" class="form-control" id="nomEmpresa">
+                    <option value="-1" > Seleccionar </option>
+                    <?php
+                    $empresas = \Modelo\BD\EmpresaBD::getAll();
+                    foreach($empresas as $empresa){
+                        ?>
+                        <option value="<?php echo $empresa->getId(); ?>"><?php echo $empresa->getNombre(); ?></option>
+                        <?php
+                    }
+                    ?>
+                </select>
+
+
+                <label for="nomTrabajador">Trabajador :</label>
+                <select style="width: 15%" class="form-control" name="trabajador" id="trabajador">
+
+                </select>
+            </div>
+            <input style="margin-top: 20px;" type="submit" class="btn btn-default" name="aceptar" value="Aceptar">
+
+        </form>
 
         <script src="<?php echo parent::getUrlRaiz();?>/Vista/Plantilla/JS/jquery-2.2.1.min.js"></script>
         <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.12.0/jquery.validate.min.js"></script>
         <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.12.0/localization/messages_es.js "></script>
 
-
+<!--
         <script>
             function generar_calendario(mes,anio)
             {
@@ -237,9 +261,41 @@ abstract class CalendarioGestionarCalendario extends Plantilla\Views
                     generar_calendario(nueva_fecha[1],nueva_fecha[0]);
                 });
 
+                /**
+                 * A la hora de cambiar el nombre de la empresa , que te busque los trabajadores
+                 *
+                 * Anas
+                 **/
+
+                $( "#nomEmpresa").on("change",function () {
+                    try{
+
+                        var idEmpresa = $(this).val();
+
+                        $.ajax({
+
+                            type: "GET",
+                            url: "<?php echo parent::getUrlRaiz()?>/Controlador/Calendario/ControladorCalendario.php",
+                            data: { idEmpresa : idEmpresa , accion:"buscarTrab"}
+
+                        })
+                            .done(function(respuesta) {
+
+                                $("#trabajador").html(respuesta);
+
+                            })
+                            .fail(function() {
+                                alert( "error" );
+                            });
+
+                    }catch (err){
+                        alert(err)
+                    }
+                });
+
             });
         </script>
-
+-->
         <!-- ESTO NO TE HACE FALTA! -->
         <script type="text/javascript">
             var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");

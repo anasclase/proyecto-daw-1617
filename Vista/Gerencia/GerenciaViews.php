@@ -63,49 +63,60 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
                     <div class="form-group">
                         <label class="control-label col-sm-2 col-md-2">DNI:</label>
                         <div class="col-sm-4 col-md-3">
-                            <input class="form-control" type="text" name="dni" maxlength="9">
+                            <input class="form-control" type="text" name="dni" maxlength="9" required>
                         </div>
-                    </div>
+                    </div><!--CONTRASEÑA EN CREAR TRABAJADOR PABLO-->
+					<div class="form-group">
+
+						<label class="control-label col-sm-2 col-md-2">Contraseña</label>
+						<div class="col-sm-4 col-md-3">
+
+							<input class="form-control" type="password" name="pass" maxlength="15" required>
+
+						</div>
+
+					</div>
                     <div class="form-group">
                         <label class="control-label col-sm-2 col-md-2">Nombre:</label>
                         <div class="col-sm-4 col-md-3">
-                            <input class="form-control" type="text" name="nombre">
+                            <input class="form-control" type="text" name="nombre" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-2 col-md-2">Apellido 1:</label>
                         <div class="col-sm-4 col-md-3">
-                            <input class="form-control" type="text" name="apellido1">
+                            <input class="form-control" type="text" name="apellido1" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-2 col-md-2">Apellido 2:</label>
                         <div class="col-sm-4 col-md-3">
-                            <input class="form-control" type="text" name="apellido2">
+                            <input class="form-control" type="text" name="apellido2" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-2 col-md-2">Foto:</label>
                         <div class="col-sm-4 col-md-3">
-                             <input name="foto" type="file">
+                            <input name="foto" type="file" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-2 col-md-2">Teléfono:</label>
                         <div class="col-sm-4 col-md-3">
-                            <input class="form-control" type="text" name="telefono">
+                            <input class="form-control" type="text" name="telefono" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-2 col-md-2">Empresa:</label>
-                        <div class="col-sm-4 col-md-3 ">
-                            <select class="form-control" name="empresa">
+                        <div class="col-sm-4 col-md-3">
+                            <select class="form-control" name="empresa" onchange="SincronizarCentrosConEmpresasALaFormaGuarra()">
                                 <?php
                                 foreach($empresas as $empresa){
 
                                     ?>
-                                    <option value="<?php echo $empresa->getId(); ?>"><?php echo $empresa->getNombre(); ?></option>
+                                    <option rel="<?php echo $empresa->getId(); ?>" value="<?php echo $empresa->getId(); ?>"><?php echo $empresa->getNombre(); ?></option>
                                     <?php
+
                                 }
                                 ?>
                             </select>
@@ -119,13 +130,38 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
                                 foreach($empresas as $empresa) {
                                     foreach($empresa->getCentros() as $centro){
                                         ?>
-                                        <option value="<?php echo $centro->getId(); ?>"><?php echo $centro->getNombre(); ?></option>
+                                        <option rel="<?php echo $empresa->getId(); ?>" value="<?php echo $centro->getId(); ?>"><?php echo $centro->getNombre(); ?></option>
                                         <?php
                                     }
                                 }
                                 ?>
                             </select>
                         </div>
+                       <script>
+                           //Funcion que muestra las option de los centros sincronizadamente a lo guarro Aitor I
+
+                        function SincronizarCentrosConEmpresasALaFormaGuarra() {
+                            OcultarYMostrar(document.getElementsByName("empresa")[0].value);
+                        }
+
+                        function OcultarYMostrar(id) {
+                            nodos = document.getElementsByName("centro")[0].children;
+                            for(var x = 0; x < nodos.length; x++){
+                             if(nodos[x].getAttribute("rel") == id){
+                                 nodos[x].style.display = "block";
+                                 nodos[x].setAttribute("selected","selected");
+                            }
+                            else{
+                                 nodos[x].style.display= "none";
+                                 nodos[x].removeAttribute("selected");
+                                }
+                            }
+                        }
+
+                        SincronizarCentrosConEmpresasALaFormaGuarra();
+                    </script>
+
+
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-2 col-md-2">Perfil:</label>
@@ -141,21 +177,25 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
                             </select>
                         </div>
                     </div>
-                    <!-- Ganeko -->
-                    <div class="form-group">
-                        <div class="col-sm-4 col-sm-offset-2 col-md-4">
-                            <input class="btn btn-primary" type="submit" name="addTrabajador" value="Añadir">
-                            <input class="btn btn-warning" type="submit" name="volver" value="Volver">
-                        </div>
-                    </div>
                 </fieldset>
+                <div class="form-group"><!--Ganeko & Ibai-->
+                    <div class="col-sm-1 col-sm-offset-2">
+                        <input class="btn btn-primary" type="submit" value="Añadir" name="addTrabajador">
+                    </div>
+            </form>
+            <form method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Gerencia/Router.php">
+
+                    <div class="col-sm-1">
+                        <input class="btn btn-warning" type="submit" name="volver" value="Volver">
+                    </div>
+                </div>
             </form>
         </div>
         <?php
 
-        require_once __DIR__ . "/../Plantilla/pie.php";
+            require_once __DIR__ . "/../Plantilla/pie.php";
 
-    }
+        }
 
     public static function deleteTrabajador(){
 
@@ -241,23 +281,28 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
                     <div class="form-group">
                         <label class="control-label col-sm-2 col-md-2">Nombre:</label>
                         <div class="col-sm-4 col-md-3">
-                            <input class="form-control" type="text" name="nombre">
+                            <input class="form-control" type="text" name="nombre" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-2 col-md-2">NIF:</label>
                         <div class="col-sm-4 col-md-3">
-                            <input class="form-control" type="text" name="nif" maxlength="9">
+                            <input class="form-control" type="text" name="nif" maxlength="9" required>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <div class="col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-2"><!-- Ganeko -->
-                            <input class="btn btn-primary" type="submit" name="addEmpresa" value="Añadir">
+                    </fieldset>
+                    <div class="form-group"><!--Ganeko & Ibai-->
+                        <div class="col-sm-1 col-sm-offset-2">
+                            <input class="btn btn-primary" type="submit" value="Añadir" name="addEmpresa">
+                        </div>
+                </form>
+                <form method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Gerencia/Router.php">
+
+                        <div class="col-sm-1">
                             <input class="btn btn-warning" type="submit" name="volver" value="Volver">
                         </div>
                     </div>
-                </fieldset>
-            </form>
+                </form>
         </div>
         <?php
         require_once __DIR__ . "/../Plantilla/pie.php";
@@ -338,19 +383,19 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
                     <div class="form-group">
                         <label class="control-label col-sm-2 col-md-2">Nombre:</label>
                         <div class="col-sm-4 col-md-3">
-                            <input class="form-control" type="text" name="nombre">
+                            <input class="form-control" type="text" name="nombre" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-2 col-md-2">Localización:</label>
                         <div class="col-sm-4 col-md-3">
-                            <input class="form-control" type="text" name="localizacion">
+                            <input class="form-control" type="text" name="localizacion" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-2 col-md-2">Empresa:</label>
                         <div class="col-sm-4 col-md-3">
-                            <select class="form-control" name="empresa">
+                            <select class="form-control" name="empresa" required>
                                 <?php
                                 foreach($empresas as $empresa){
                                     ?>
@@ -361,14 +406,19 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
                             </select>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <div class="col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-2"><!-- Ganeko -->
-                            <input class="btn btn-primary" type="submit" name="addCentro" value="Añadir">
+                    </fieldset>
+                    <div class="form-group"><!--Ganeko & Ibai-->
+                        <div class="col-sm-1 col-sm-offset-2">
+                            <input class="btn btn-primary" type="submit" value="Añadir" name="addCentro">
+                        </div>
+                </form>
+                <form method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Gerencia/Router.php">
+
+                        <div class="col-sm-1">
                             <input class="btn btn-warning" type="submit" name="volver" value="Volver">
                         </div>
                     </div>
-                </fieldset>
-            </form>
+                </form>
         </div>
         <?php
         require_once __DIR__ . "/../Plantilla/pie.php";
@@ -545,13 +595,18 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
                             <input class="form-control" type="text" name="marca">
                         </div>
                     </div>
-                    <div class="form-group">
-                        <div class="col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-2"><!-- Ganeko -->
-                            <input class="btn btn-primary" type="submit" value="Añadir" name="addVehiculo">
-                            <input class="btn btn-warning" type="submit" name="volver" value="Volver">
-                        </div>
+                    </fieldset>
+                <div class="form-group"><!--Ganeko & Ibai-->
+                    <div class="col-sm-1 col-sm-offset-2">
+                        <input class="btn btn-primary" type="submit" value="Añadir" name="addVehiculo">
                     </div>
-                </fieldset>
+            </form>
+            <form method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Gerencia/Router.php">
+
+                    <div class="col-sm-1">
+                        <input class="btn btn-warning" type="submit" name="volver" value="Volver">
+                    </div>
+                </div>
             </form>
         </div>
         <?php
@@ -635,7 +690,7 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
                     <div class="form-group">
                         <label class="control-label col-sm-2 col-md-2">Centro:</label>
                         <div class="col-sm-4 col-md-3">
-                            <select class="form-control" name="centro">
+                            <select class="form-control" name="centro" required>
                                 <?php
                                 foreach($centros as $indice => $valor){
                                     ?>
@@ -649,23 +704,28 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
                     <div class="form-group">
                         <label class="control-label col-sm-2 col-md-2">Número de horas al año:</label>
                         <div class="col-sm-4 col-md-3">
-                            <input class="form-control" type="number" name="horasAnual">
+                            <input class="form-control" type="number" name="horasAnual" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-2 col-md-2">Denominación:</label>
                         <div class="col-sm-4 col-md-3">
-                            <input class="form-control" type="text" name="denominacion">
+                            <input class="form-control" type="text" name="denominacion" required>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <div class="col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-2"><!-- Ganeko -->
+                    </fieldset>
+                    <div class="form-group"><!--Ganeko & Ibai-->
+                        <div class="col-sm-1 col-sm-offset-2">
                             <input class="btn btn-primary" type="submit" value="Añadir" name="addHorasConvenio">
+                        </div>
+                </form>
+                <form method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Gerencia/Router.php">
+
+                        <div class="col-sm-1">
                             <input class="btn btn-warning" type="submit" name="volver" value="Volver">
                         </div>
                     </div>
-                </fieldset>
-            </form>
+                </form>
         </div>
         <?php
         require_once __DIR__ . "/../Plantilla/pie.php";
@@ -856,14 +916,19 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
                             <input class="form-control" type="text" name="precio" placeholder="20.15">
                             </div>
                     </div>
-                    <div class="form-group">
-                        <div class="col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-2"><!-- Ganeko -->
+                    </fieldset>
+                    <div class="form-group"><!--Ganeko & Ibai-->
+                        <div class="col-sm-1 col-sm-offset-2">
                             <input class="btn btn-primary" type="submit" value="Añadir" name="addTipoFranja">
+                        </div>
+                </form>
+                <form method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Gerencia/Router.php">
+
+                        <div class="col-sm-1">
                             <input class="btn btn-warning" type="submit" name="volver" value="Volver">
                         </div>
                     </div>
-                </fieldset>
-            </form>
+                </form>
         </div>
         <?php
         require_once __DIR__ . "/../Plantilla/pie.php";

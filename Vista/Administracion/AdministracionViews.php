@@ -117,13 +117,13 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                     <div class="form-group">
                         <label class="control-label col-sm-2 col-md-2">Apellido 2:</label>
                         <div class="col-sm-4 col-md-3">
-                            <input class="form-control" type="text" name="apellido2">
+                            <input class="form-control" type="text" name="apellido2" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-2 col-md-2">Foto:</label>
                         <div class="col-sm-4 col-md-3">
-                            <input name="foto" type="file">
+                            <input name="foto" type="file" required>
                         </div>
                     </div>
                     <div class="form-group">
@@ -205,12 +205,18 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                     </div>
                     
                 </fieldset>
-            </form><form class="form-horizontal" name="atras" method="post" action="<?php echo self::getUrlRaiz()?>/Controlador/Administracion/Router.php"<div class="form-group"><!--Ganeko-->
-                        <div class="col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-2">
-                            <input class="btn btn-primary" type="submit" name="addTrabajador" value="Añadir">
-                            <input class="btn btn-warning" type="submit" name="volver" value="Volver">
-                        </div>
-                    </div></form>
+                <div class="form-group"><!--Ganeko & Ibai-->
+                    <div class="col-sm-1 col-sm-offset-2">
+                        <input class="btn btn-primary" type="submit" value="Añadir" name="addTrabajador">
+                    </div>
+            </form>
+            <form method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
+
+                    <div class="col-sm-1">
+                        <input class="btn btn-warning" type="submit" name="volver" value="Volver">
+                    </div>
+                </div>
+            </form>
         </div>
         <?php
 
@@ -322,19 +328,19 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                             <input class="form-control" type="text" name="nif" maxlength="9" required>
                         </div>
                     </div>
-                    <div class="form-group"><!--Ganeko-->
-                        <div class="col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-2">
-                            <input class="btn btn-primary" type="submit" name="addEmpresa" value="Añadir">
-                            <input class="btn btn-warning" type="submit" name="volver" value="Volver">
-                        </div>
-                    </div>
                 </fieldset>
-            </form><form class="form-horizontal" name="atras" method="post" action="<?php echo self::getUrlRaiz()?>/Controlador/Administracion/Router.php"<div class="form-group"><!--Ganeko-->
-                        <div class="col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-2">
-                            <input class="btn btn-primary" type="submit" name="addEmpresa" value="Añadir">
-                            <input class="btn btn-warning" type="submit" name="volver" value="Volver">
-                        </div>
-                    </div></form>
+                <div class="form-group"><!--Ganeko & Ibai-->
+                    <div class="col-sm-1 col-sm-offset-2">
+                        <input class="btn btn-primary" type="submit" value="Añadir" name="addEmpresa">
+                    </div>
+            </form>
+            <form method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
+
+                    <div class="col-sm-1">
+                        <input class="btn btn-warning" type="submit" name="volver" value="Volver">
+                    </div>
+                </div>
+            </form>
         </div>
         <?php
         require_once __DIR__ . "/../Plantilla/pie.php";
@@ -445,12 +451,19 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                     </div>
                     
                 </fieldset>
-            </form><form class="form-horizontal" name="atras" method="post" action="<?php echo self::getUrlRaiz()?>/Controlador/Administracion/Router.php"<div class="form-group"><!--Ganeko-->
-                        <div class="col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-2">
-                            <input class="btn btn-primary" type="submit" name="addCentro" value="Añadir">
-                            <input class="btn btn-warning" type="submit" name="volver" value="Volver">
-                        </div>
-                    </div></form>
+                <div class="form-group"><!--Ganeko & Ibai-->
+                    <div class="col-sm-1 col-sm-offset-2">
+                        <input class="btn btn-primary" type="submit" value="Añadir" name="addCentro">
+                    </div>
+            </form>
+            <form method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
+
+                    <div class="col-sm-1">
+                        <input class="btn btn-warning" type="submit" name="volver" value="Volver">
+                    </div>
+                </div>
+            </form>
+
         </div>
         <?php
         require_once __DIR__ . "/../Plantilla/pie.php";
@@ -537,12 +550,18 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                            <input class="form-control" type="text" name="tipo">
                         </div>
                     </div>
-                    <div class="form-group">
-                        <div class="col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-2">
-                            <input class="btn btn-primary" type="submit" name="addEstado" value="Añadir">
-                        </div>
-                    </div>
                 </fieldset>
+                <div class="form-group"><!--Ganeko & Ibai-->
+                    <div class="col-sm-1 col-sm-offset-2">
+                        <input class="btn btn-primary" type="submit" value="Añadir" name="addEstado">
+                    </div>
+            </form>
+            <form method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
+
+                    <div class="col-sm-1">
+                        <input class="btn btn-warning" type="submit" name="volver" value="Volver">
+                    </div>
+                </div>
             </form>
         </div>
         <?php
@@ -638,19 +657,19 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                                 <input class="form-control" type="text" name="marca" required>
                             </div>
                         </div>
-                        <div class="form-group"><!--Ganeko-->
-                            <div class="col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-2">
-                                <input class="btn btn-primary" type="submit" value="Añadir" name="addVehiculo">
-                                <input class="btn btn-warning" type="submit" name="volver" value="Volver">
-                            </div>
-                        </div>
                     </fieldset>
-                </form><form class="form-horizontal" name="atras" method="post" action="<?php echo self::getUrlRaiz()?>/Controlador/Administracion/Router.php"<div class="form-group"><!--Ganeko-->
-                        <div class="col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-2">
-                            <input class="btn btn-primary" type="submit" name="addVehiculo" value="Añadir">
+                    <div class="form-group"><!--Ganeko & Ibai-->
+                        <div class="col-sm-1 col-sm-offset-2">
+                            <input class="btn btn-primary" type="submit" value="Añadir" name="addVehiculo">
+                        </div>
+                </form>
+                <form method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
+
+                        <div class="col-sm-1">
                             <input class="btn btn-warning" type="submit" name="volver" value="Volver">
                         </div>
-                    </div></form>
+                    </div>
+                </form>
             </div>
             <?php
 
@@ -760,19 +779,19 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                             <input class="form-control" type="text" name="denominacion" required>
                         </div>
                     </div>
-                    <div class="form-group"><!--Ganeko-->
-                        <div class="col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-2">
-                            <input class="btn btn-primary" type="submit" value="Añadir" name="addHorasConvenio">
-                            <input class="btn btn-warning" type="submit" name="volver" value="Volver">
-                        </div>
+                    </fieldset>
+                <div class="form-group"><!--Ganeko & Ibai-->
+                    <div class="col-sm-1 col-sm-offset-2">
+                        <input class="btn btn-primary" type="submit" value="Añadir" name="addHorasConvenio">
                     </div>
-                </fieldset>
-            </form><form class="form-horizontal" name="atras" method="post" action="<?php echo self::getUrlRaiz()?>/Controlador/Administracion/Router.php"<div class="form-group"><!--Ganeko-->
-                        <div class="col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-2">
-                            <input class="btn btn-primary" type="submit" name="addHorasConvenio" value="Añadir">
-                            <input class="btn btn-warning" type="submit" name="volver" value="Volver">
-                        </div>
-                    </div></form>
+            </form>
+            <form method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
+
+                    <div class="col-sm-1">
+                        <input class="btn btn-warning" type="submit" name="volver" value="Volver">
+                    </div>
+                </div>
+            </form>
         </div>
         <?php
         require_once __DIR__ . "/../Plantilla/pie.php";
@@ -976,19 +995,19 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                             <input class="form-control" type="text" name="precio" required>
                         </div>
                     </div>
-                    <div class="form-group"><!--Ganeko-->
-                        <div class="col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-2">
-                            <input class="btn btn-primary" type="submit" value="Añadir" name="addTipoFranja">
-                            <input class="btn btn-warning" type="submit" name="volver" value="Volver">
-                        </div>
-                    </div>
                 </fieldset>
-            </form><form class="form-horizontal" name="atras" method="post" action="<?php echo self::getUrlRaiz()?>/Controlador/Administracion/Router.php"<div class="form-group"><!--Ganeko-->
-                        <div class="col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-2">
-                            <input class="btn btn-primary" type="submit" name="addTipoFranja" value="Añadir">
-                            <input class="btn btn-warning" type="submit" name="volver" value="Volver">
-                        </div>
-                    </div></form>
+                <div class="form-group"><!--Ganeko & Ibai-->
+                    <div class="col-sm-1 col-sm-offset-2">
+                        <input class="btn btn-primary" type="submit" value="Añadir" name="addTipoFranja">
+                    </div>
+            </form>
+            <form method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
+
+                    <div class="col-sm-1">
+                        <input class="btn btn-warning" type="submit" name="volver" value="Volver">
+                    </div>
+                </div>
+            </form>
         </div>
         <?php
         require_once __DIR__ . "/../Plantilla/pie.php";
@@ -1179,19 +1198,18 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                     </div>
                 </div>
                 <div class="form-group"><!--Ganeko-->
-                    <div class="col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-2">
+                    <div class="col-sm-1 col-sm-offset-2">
                         <input class="btn btn-primary" type="submit" value="Añadir" name="addHorario">
+                    </div>
+            </form>
+            <form method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
+
+                    <div class="col-sm-1">
                         <input class="btn btn-warning" type="submit" name="volver" value="Volver">
                     </div>
                 </div>
-
-            </form><form class="form-horizontal" name="atras" method="post" action="<?php echo self::getUrlRaiz()?>/Controlador/Administracion/Router.php"<div class="form-group"><!--Ganeko-->
-                        <div class="col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-2">
-                            <input class="btn btn-primary" type="submit" name="addHorario" value="Añadir">
-                            <input class="btn btn-warning" type="submit" name="volver" value="Volver">
-                        </div>
-                    </div></form>
-
+            </form>
+            </div>
             <?php
 
             require_once __DIR__ . "/../Plantilla/pie.php";
@@ -1262,8 +1280,8 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                 <div class="form-group">
                     <label class="control-label col-sm-2 col-md-2">Trabajador: </label>
                     <div class="col-sm-4 col-md-3">
-                        <select class="form-control" name="trabajador" id="trabajador">
-                            <option value="">Selecciona...</option>
+                        <select class="form-control" name="trabajador" id="trabajador" required>
+                            <option value="" disabled selected="selected">Selecciona...</option>
                             <?php
                             foreach ($trabajadores as $trabajador) {
                                 ?>
@@ -1309,18 +1327,19 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                         </select>
                     </div>
                 </div>
-                <div class="form-group"><!-- Ganeko -->
-                    <div class="col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-2">
+                    </fieldset>
+                <div class="form-group"><!--Ganeko & Ibai-->
+                    <div class="col-sm-1 col-sm-offset-2">
                         <input class="btn btn-primary" type="submit" value="Añadir" name="añadirHorarioTrabajador">
+                    </div>
+            </form>
+            <form method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
+
+                    <div class="col-sm-1">
                         <input class="btn btn-warning" type="submit" name="volver" value="Volver">
                     </div>
                 </div>
-            </form><form class="form-horizontal" name="atras" method="post" action="<?php echo self::getUrlRaiz()?>/Controlador/Administracion/Router.php"<div class="form-group"><!--Ganeko-->
-                        <div class="col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-2">
-                            <input class="btn btn-primary" type="submit" name="añadirHorarioTrabajador" value="Añadir">
-                            <input class="btn btn-warning" type="submit" name="volver" value="Volver">
-                        </div>
-                    </div></form>
+            </form>
 
             <?php
             require_once __DIR__ . "/../Plantilla/pie.php";
@@ -2218,18 +2237,18 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                         <input class="form-control" type="text" name="fecha" placeholder="aaaa-mm-dd" size="5">
                     </div>
                 </div>
-                <div class="form-group">
-                    <div class="col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-2">
-                        <button class="btn btn-primary" type="submit" name="añadirFestivo">Añadir</button>
+                    </fieldset>
+                <div class="form-group"><!--Ganeko & Ibai-->
+                    <div class="col-sm-1 col-sm-offset-2">
+                        <input class="btn btn-primary" type="submit" value="Añadir" name="añadirFestivo">
+                    </div>
+            </form>
+            <form method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
+
+                    <div class="col-sm-1">
+                        <input class="btn btn-warning" type="submit" name="volver" value="Volver">
                     </div>
                 </div>
-                <div class="form-group">
-                    <div class="col-md-10 col-md-offset-1">
-                            <input class="btn btn-warning pull-right" type="submit" name="volver" value="Volver">
-                    </div>
-
-                </div>
-
             </form>
 
             <?php

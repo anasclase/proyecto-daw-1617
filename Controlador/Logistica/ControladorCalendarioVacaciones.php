@@ -331,8 +331,8 @@ switch ($_POST["accion"])
         var fIni = [];
         var fFin = [];
         try{
-            if($("#nomEmpresa").val()!="-1") {
-                if ($("#fInicial").val() != "" && $("#fFinal").val() != "") {
+            if ($("#fInicial").val() != "" && $("#fFinal").val() != "") {
+
                     var dni = $("#dni").val();
 
                     var fInicial = $("#fInicial").val();
@@ -376,14 +376,11 @@ switch ($_POST["accion"])
                         .fail(function () {
                             alert("error");
                         });
-                } else {
-                    alert("Selecciona el nombre de la empresa")
-                }
-                fIni = [];
-                fFin = [];
-            }else{
+            }else {
                 alert("Fecha inicial o Fecha final no seleccionada");
             }
+            fIni = [];
+            fFin = [];
         }catch (err){
             alert(err);
         }
@@ -554,11 +551,19 @@ switch ($_POST["accion"])
 
                 })
                     .done(function(respuesta) {
-                        alert(respuesta);
+                        if(respuesta){
+                            alert("Insertado");
+                            location.reload()
+                        }else{
+                            alert("NO Insertado");
+                        }
+
 
                     })
                     .fail(function() {
+
                         alert( "error" );
+
                     });
             }else{
                 alert("Selecciona el nombre de la empresa")

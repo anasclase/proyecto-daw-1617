@@ -172,4 +172,25 @@ abstract class HorarioTrabajadorBD extends GenericoBD{
 		parent::desconectar($con);
 		
 	}
+    public static function checkIncidencias($dni,$semana,$calendario){ //Ibai
+        $con= parent::conectar();
+        $incidencias = false;
+        if(count($semana)<2)
+            $semana = "0".$semana;
+        //Primer dia de la semana
+        $date1 = date( 'Y-m-d', strtotime($calendario."W".$semana."1") );
+        //Ultimo dia de la semana
+        $date2 = date( 'Y-m-d', strtotime($calendario."W".$semana."7") );
+        $query = "SELECT id FROM vacacionestrabajadores WHERE dniTrabajador = '".$dni."' and fecha between '".$date1."' AND '".$date2."'";
+        $rs = mysqli_query($con, $query) or die(mysqli_error($con));
+        if(mysqli_affected_rows($con) >0)
+            $incidencias = true;
+        $query = "SELECT id FROM ausenciastrabajadores WHERE upper(dniTrabajador) = upper('".$dni."') and fecha between '".$date1."' AND '".$date2."'";
+        $rs = mysqli_query($con, $query) or die(mysqli_error($con));
+        if(mysqli_affected_rows($con) >0)
+            $incidencias = true;
+
+        parent::desconectar($con);
+        return $incidencias;
+    }
 }

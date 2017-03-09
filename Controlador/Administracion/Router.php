@@ -78,6 +78,10 @@ if(isset($_POST['vistaEditarPass'])){
     //headerLocation a vista Editar
     header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/updatePassword.php");
 }
+if(isset($_POST['vistaEditarConvenio'])){
+    //Ganeko
+    header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/updateConvenio.php");
+}
 if(isset($_POST['addEstado'])){
     Controlador::AddEstado($_POST);
     header($gestionListas);
@@ -131,9 +135,12 @@ if(isset($_POST['eliminarHorario'])){
     header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/deleteHorario.php");
 
 }
+if(isset($_POST['vistaUpdateTipoFranja'])){
+    header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/updateTipoFranja.php");
+}
 if(isset($_POST['updateTipoFranja'])){
     Controlador::UpdateTipoFranja($_POST);
-    header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/updateTipoFranja.php");
+    header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/deleteTipoFranja.php");
 }
 if(isset($_POST['addTipoFranja'])){
     Controlador::addTipoFranja($_POST);
@@ -230,7 +237,7 @@ if(isset($_POST['abrirParteLogistica'])){
 
 }/* PABLO */
 if(isset($_POST['updateHorarioTrabajador'])){
-    $_SESSION["dht_semana"]=$_POST["dht_semana"] + 1;
+    $_SESSION["dht_semana"]=$_POST["dht_semana"];
 	
 	header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/updateHorarioTrabajador.php");
 	

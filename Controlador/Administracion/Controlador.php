@@ -385,7 +385,11 @@ abstract class Controlador{
     public static function getVehiculoId($id){
         $vehiculo = BD\VehiculoBD::getVehiculosById($id);
         return $vehiculo;
-    }
+    }/* Ganeko */
+    public static function getFranjaById($id){
+        $franja = BD\TipoFranjaBD::getTipoFranjaById($id);
+        return $franja;
+    }/* Ganeko */
     public static function updateEmpresa($datos){
         BD\EmpresaBD::updateEmpresa($datos);
     }
@@ -636,6 +640,10 @@ abstract class Controlador{
             $mensaje .= '<option value="' . $calendarios[$x]->getId() . '">' . $calendarios[$x]->getId() . '</option>';
         }
         return $mensaje;
+    }
+
+    public static function incidenciasHorarioTrabajador($dni,$semana,$calendario){
+        return BD\HorarioTrabajadorBD::checkIncidencias($dni,$semana,$calendario);
     }
 
     //David

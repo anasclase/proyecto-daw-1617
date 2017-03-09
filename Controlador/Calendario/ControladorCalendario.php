@@ -225,7 +225,7 @@ switch ($_GET["accion"])
             if($estado == false){
                 $query = \Modelo\BD\VacacionesTrabajadoresBD::insertarVacacionesTrabajadores($vacacionesTrab);
             }elseif ($estado != "A"){
-                $query = \Modelo\BD\VacacionesTrabajadoresBD::insertarVacacionesTrabajadores($vacacionesTrab->getDniTrabajador(),$vacacionesTrab->getFecha(),$vacacionesTrab->getEstado());
+                $query = \Modelo\BD\VacacionesTrabajadoresBD::updateVacaciones($vacacionesTrab->getDniTrabajador(),$vacacionesTrab->getFecha(),$vacacionesTrab->getEstado());
             }
 
         }

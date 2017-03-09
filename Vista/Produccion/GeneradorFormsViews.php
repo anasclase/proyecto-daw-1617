@@ -1,6 +1,5 @@
 <?php
 namespace Vista\Produccion;
-use Modelo\BD\TrabajadorBD;
 use Vista\Plantilla;
 use Controlador\Produccion;
 use Modelo\Base;
@@ -67,7 +66,7 @@ use Modelo\Base;
                             <input type="text" id="paquetesTotal" class="form-control" readonly="readonly">
                         </div>
                         </div><div class="form-group">
-                        <div class="col-sm-12 col-xs-offset-1">
+                        <div class="col-sm-12 col-xs-offset-1"> 
 						<!--- Cambiar boton GUARDAR POR AÑADIR
 						Pablo y Aitor I(lo de modif)--->
 
@@ -102,41 +101,35 @@ use Modelo\Base;
                             <div class="">
                                 <label for="horaInicio1" class="col-sm-3 control-label">Hora de inicio: </label>
                                 <div class="col-sm-1 container">
-                                    <?php
-                                    //Aitor I
-                                    $now=new \DateTime();
+                                    <?php $now=new \DateTime();
                                     $ahora=$now->format("H");
-                                    $semana = date("W");
-                                    $trabajador = unserialize($_SESSION['trabajador']);
-                                    $horaInicio = explode(":",$trabajador->getHorariosTrabajadorBySemana($semana)->getHorario()->getHorariosFranja()[0]->getFranja()->getHoraInicio())[0];
-                                    $horaFin = explode(":",$trabajador->getHorariosTrabajadorBySemana($semana)->getHorario()->getHorariosFranja()[7]->getFranja()->getHoraFin())[0];
 
                                     ?>
                                     <select id="horasInicio1" data-validetta="required" class="form-control">
-                                        <option<?php if($horaInicio=="00"){echo " selected";} ?> name="00" value="00">00</option>
-                                        <option<?php if($horaInicio=="01"){echo " selected";} ?> name="00" value="01">01</option>
-                                        <option<?php if($horaInicio=="02"){echo " selected";} ?> name="00" value="02">02</option>
-                                        <option<?php if($horaInicio=="03"){echo " selected";} ?> name="00" value="03">03</option>
-                                        <option<?php if($horaInicio=="04"){echo " selected";} ?> name="00" value="04">04</option>
-                                        <option<?php if($horaInicio=="05"){echo " selected";} ?> name="00" value="05">05</option>
-                                        <option<?php if($horaInicio=="06"){echo " selected";} ?> name="00" value="06">06</option>
-                                        <option<?php if($horaInicio=="07"){echo " selected";} ?> name="00" value="07">07</option>
-                                        <option<?php if($horaInicio=="08"){echo " selected";} ?> name="00" value="08">08</option>
-                                        <option<?php if($horaInicio=="09"){echo " selected";} ?> name="00" value="09">09</option>
-                                        <option<?php if($horaInicio=="10"){echo " selected";} ?> name="00" value="10">10</option>
-                                        <option<?php if($horaInicio=="11"){echo " selected";} ?> name="00" value="11">11</option>
-                                        <option<?php if($horaInicio=="12"){echo " selected";} ?> name="00" value="12">12</option>
-                                        <option<?php if($horaInicio=="13"){echo " selected";} ?> name="00" value="13">13</option>
-                                        <option<?php if($horaInicio=="14"){echo " selected";} ?> name="00" value="14">14</option>
-                                        <option<?php if($horaInicio=="15"){echo " selected";} ?> name="00" value="15">15</option>
-                                        <option<?php if($horaInicio=="16"){echo " selected";} ?> name="00" value="16">16</option>
-                                        <option<?php if($horaInicio=="17"){echo " selected";} ?> name="00" value="17">17</option>
-                                        <option<?php if($horaInicio=="18"){echo " selected";} ?> name="00" value="18">18</option>
-                                        <option<?php if($horaInicio=="19"){echo " selected";} ?> name="00" value="19">19</option>
-                                        <option<?php if($horaInicio=="20"){echo " selected";} ?> name="00" value="20">20</option>
-                                        <option<?php if($horaInicio=="21"){echo " selected";} ?> name="00" value="21">21</option>
-                                        <option<?php if($horaInicio=="22"){echo " selected";} ?> name="00" value="22">22</option>
-                                        <option<?php if($horaInicio=="23"){echo " selected";} ?> name="00" value="23">23</option>
+                                        <option<?php if($ahora=="00"){echo " selected";} ?> name="00" value="00">00</option>
+                                        <option<?php if($ahora=="01"){echo " selected";} ?> name="00" value="01">01</option>
+                                        <option<?php if($ahora=="02"){echo " selected";} ?> name="00" value="02">02</option>
+                                        <option<?php if($ahora=="03"){echo " selected";} ?> name="00" value="03">03</option>
+                                        <option<?php if($ahora=="04"){echo " selected";} ?> name="00" value="04">04</option>
+                                        <option<?php if($ahora=="05"){echo " selected";} ?> name="00" value="05">05</option>
+                                        <option<?php if($ahora=="06"){echo " selected";} ?> name="00" value="06">06</option>
+                                        <option<?php if($ahora=="07"){echo " selected";} ?> name="00" value="07">07</option>
+                                        <option<?php if($ahora=="08"){echo " selected";} ?> name="00" value="08">08</option>
+                                        <option<?php if($ahora=="09"){echo " selected";} ?> name="00" value="09">09</option>
+                                        <option<?php if($ahora=="10"){echo " selected";} ?> name="00" value="10">10</option>
+                                        <option<?php if($ahora=="11"){echo " selected";} ?> name="00" value="11">11</option>
+                                        <option<?php if($ahora=="12"){echo " selected";} ?> name="00" value="12">12</option>
+                                        <option<?php if($ahora=="13"){echo " selected";} ?> name="00" value="13">13</option>
+                                        <option<?php if($ahora=="14"){echo " selected";} ?> name="00" value="14">14</option>
+                                        <option<?php if($ahora=="15"){echo " selected";} ?> name="00" value="15">15</option>
+                                        <option<?php if($ahora=="16"){echo " selected";} ?> name="00" value="16">16</option>
+                                        <option<?php if($ahora=="17"){echo " selected";} ?> name="00" value="17">17</option>
+                                        <option<?php if($ahora=="18"){echo " selected";} ?> name="00" value="18">18</option>
+                                        <option<?php if($ahora=="19"){echo " selected";} ?> name="00" value="19">19</option>
+                                        <option<?php if($ahora=="20"){echo " selected";} ?> name="00" value="20">20</option>
+                                        <option<?php if($ahora=="21"){echo " selected";} ?> name="00" value="21">21</option>
+                                        <option<?php if($ahora=="22"){echo " selected";} ?> name="00" value="22">22</option>
+                                        <option<?php if($ahora=="23"){echo " selected";} ?> name="00" value="23">23</option>
                                     </select>
                                 </div>
                                 <span class="col-sm-1"><h4>:</h4></span>
@@ -163,30 +156,30 @@ use Modelo\Base;
                                 <label for="horasFin1" class="col-sm-3 control-label">Hora de fin: </label>
                                 <div class="col-sm-1 container">
                                     <select id="horasFin1" data-validetta="required" class="form-control">
-                                        <option<?php if($horaFin=="00"){echo " selected";} ?> name="00" value="00">00</option>
-                                        <option<?php if($horaFin=="01"){echo " selected";} ?> name="00" value="01">01</option>
-                                        <option<?php if($horaFin=="02"){echo " selected";} ?> name="00" value="02">02</option>
-                                        <option<?php if($horaFin=="03"){echo " selected";} ?> name="00" value="03">03</option>
-                                        <option<?php if($horaFin=="04"){echo " selected";} ?> name="00" value="04">04</option>
-                                        <option<?php if($horaFin=="05"){echo " selected";} ?> name="00" value="05">05</option>
-                                        <option<?php if($horaFin=="06"){echo " selected";} ?> name="00" value="06">06</option>
-                                        <option<?php if($horaFin=="07"){echo " selected";} ?> name="00" value="07">07</option>
-                                        <option<?php if($horaFin=="08"){echo " selected";} ?> name="00" value="08">08</option>
-                                        <option<?php if($horaFin=="09"){echo " selected";} ?> name="00" value="09">09</option>
-                                        <option<?php if($horaFin=="10"){echo " selected";} ?> name="00" value="10">10</option>
-                                        <option<?php if($horaFin=="11"){echo " selected";} ?> name="00" value="11">11</option>
-                                        <option<?php if($horaFin=="12"){echo " selected";} ?> name="00" value="12">12</option>
-                                        <option<?php if($horaFin=="13"){echo " selected";} ?> name="00" value="13">13</option>
-                                        <option<?php if($horaFin=="14"){echo " selected";} ?> name="00" value="14">14</option>
-                                        <option<?php if($horaFin=="15"){echo " selected";} ?> name="00" value="15">15</option>
-                                        <option<?php if($horaFin=="16"){echo " selected";} ?> name="00" value="16">16</option>
-                                        <option<?php if($horaFin=="17"){echo " selected";} ?> name="00" value="17">17</option>
-                                        <option<?php if($horaFin=="18"){echo " selected";} ?> name="00" value="18">18</option>
-                                        <option<?php if($horaFin=="19"){echo " selected";} ?> name="00" value="19">19</option>
-                                        <option<?php if($horaFin=="20"){echo " selected";} ?> name="00" value="20">20</option>
-                                        <option<?php if($horaFin=="21"){echo " selected";} ?> name="00" value="21">21</option>
-                                        <option<?php if($horaFin=="22"){echo " selected";} ?> name="00" value="22">22</option>
-                                        <option<?php if($horaFin=="23"){echo " selected";} ?> name="00" value="23">23</option>
+                                        <option<?php if($ahora=="00"){echo " selected";} ?> name="00" value="00">00</option>
+                                        <option<?php if($ahora=="01"){echo " selected";} ?> name="00" value="01">01</option>
+                                        <option<?php if($ahora=="02"){echo " selected";} ?> name="00" value="02">02</option>
+                                        <option<?php if($ahora=="03"){echo " selected";} ?> name="00" value="03">03</option>
+                                        <option<?php if($ahora=="04"){echo " selected";} ?> name="00" value="04">04</option>
+                                        <option<?php if($ahora=="05"){echo " selected";} ?> name="00" value="05">05</option>
+                                        <option<?php if($ahora=="06"){echo " selected";} ?> name="00" value="06">06</option>
+                                        <option<?php if($ahora=="07"){echo " selected";} ?> name="00" value="07">07</option>
+                                        <option<?php if($ahora=="08"){echo " selected";} ?> name="00" value="08">08</option>
+                                        <option<?php if($ahora=="09"){echo " selected";} ?> name="00" value="09">09</option>
+                                        <option<?php if($ahora=="10"){echo " selected";} ?> name="00" value="10">10</option>
+                                        <option<?php if($ahora=="11"){echo " selected";} ?> name="00" value="11">11</option>
+                                        <option<?php if($ahora=="12"){echo " selected";} ?> name="00" value="12">12</option>
+                                        <option<?php if($ahora=="13"){echo " selected";} ?> name="00" value="13">13</option>
+                                        <option<?php if($ahora=="14"){echo " selected";} ?> name="00" value="14">14</option>
+                                        <option<?php if($ahora=="15"){echo " selected";} ?> name="00" value="15">15</option>
+                                        <option<?php if($ahora=="16"){echo " selected";} ?> name="00" value="16">16</option>
+                                        <option<?php if($ahora=="17"){echo " selected";} ?> name="00" value="17">17</option>
+                                        <option<?php if($ahora=="18"){echo " selected";} ?> name="00" value="18">18</option>
+                                        <option<?php if($ahora=="19"){echo " selected";} ?> name="00" value="19">19</option>
+                                        <option<?php if($ahora=="20"){echo " selected";} ?> name="00" value="20">20</option>
+                                        <option<?php if($ahora=="21"){echo " selected";} ?> name="00" value="21">21</option>
+                                        <option<?php if($ahora=="22"){echo " selected";} ?> name="00" value="22">22</option>
+                                        <option<?php if($ahora=="23"){echo " selected";} ?> name="00" value="23">23</option>
                                     </select>
                                 </div>
                                 <span class="col-sm-1"><h4>:</h4></span>
@@ -216,43 +209,35 @@ use Modelo\Base;
                             <div class="">
                                 <label for="horaInicio2" class="col-sm-3 control-label">Hora de inicio: </label>
                                 <div class="col-sm-1 container">
-                                    <?php
-
-                                    //Aitor I
-                                    $now=new \DateTime();
+                                    <?php $now=new \DateTime();
                                     $ahora=$now->format("H");
-                                    $semana = date("W");
-                                    $trabajador = unserialize($_SESSION['trabajador']);
-                                    $horaInicio = explode(":",$trabajador->getHorariosTrabajadorBySemana($semana)->getHorario()->getHorariosFranja()[0]->getFranja()->getHoraInicio())[0];
-                                    $horaFin = explode(":",$trabajador->getHorariosTrabajadorBySemana($semana)->getHorario()->getHorariosFranja()[7]->getFranja()->getHoraFin())[0];
-
 
                                     ?>
                                     <select id="horasInicio2" data-validetta="required" class="form-control">
-                                        <option<?php if($horaInicio=="00"){echo " selected";} ?> name="00" value="00">00</option>
-                                        <option<?php if($horaInicio=="01"){echo " selected";} ?> name="00" value="01">01</option>
-                                        <option<?php if($horaInicio=="02"){echo " selected";} ?> name="00" value="02">02</option>
-                                        <option<?php if($horaInicio=="03"){echo " selected";} ?> name="00" value="03">03</option>
-                                        <option<?php if($horaInicio=="04"){echo " selected";} ?> name="00" value="04">04</option>
-                                        <option<?php if($horaInicio=="05"){echo " selected";} ?> name="00" value="05">05</option>
-                                        <option<?php if($horaInicio=="06"){echo " selected";} ?> name="00" value="06">06</option>
-                                        <option<?php if($horaInicio=="07"){echo " selected";} ?> name="00" value="07">07</option>
-                                        <option<?php if($horaInicio=="08"){echo " selected";} ?> name="00" value="08">08</option>
-                                        <option<?php if($horaInicio=="09"){echo " selected";} ?> name="00" value="09">09</option>
-                                        <option<?php if($horaInicio=="10"){echo " selected";} ?> name="00" value="10">10</option>
-                                        <option<?php if($horaInicio=="11"){echo " selected";} ?> name="00" value="11">11</option>
-                                        <option<?php if($horaInicio=="12"){echo " selected";} ?> name="00" value="12">12</option>
-                                        <option<?php if($horaInicio=="13"){echo " selected";} ?> name="00" value="13">13</option>
-                                        <option<?php if($horaInicio=="14"){echo " selected";} ?> name="00" value="14">14</option>
-                                        <option<?php if($horaInicio=="15"){echo " selected";} ?> name="00" value="15">15</option>
-                                        <option<?php if($horaInicio=="16"){echo " selected";} ?> name="00" value="16">16</option>
-                                        <option<?php if($horaInicio=="17"){echo " selected";} ?> name="00" value="17">17</option>
-                                        <option<?php if($horaInicio=="18"){echo " selected";} ?> name="00" value="18">18</option>
-                                        <option<?php if($horaInicio=="19"){echo " selected";} ?> name="00" value="19">19</option>
-                                        <option<?php if($horaInicio=="20"){echo " selected";} ?> name="00" value="20">20</option>
-                                        <option<?php if($horaInicio=="21"){echo " selected";} ?> name="00" value="21">21</option>
-                                        <option<?php if($horaInicio=="22"){echo " selected";} ?> name="00" value="22">22</option>
-                                        <option<?php if($horaInicio=="23"){echo " selected";} ?> name="00" value="23">23</option>
+                                        <option<?php if($ahora=="00"){echo " selected";} ?> name="00" value="00">00</option>
+                                        <option<?php if($ahora=="01"){echo " selected";} ?> name="00" value="01">01</option>
+                                        <option<?php if($ahora=="02"){echo " selected";} ?> name="00" value="02">02</option>
+                                        <option<?php if($ahora=="03"){echo " selected";} ?> name="00" value="03">03</option>
+                                        <option<?php if($ahora=="04"){echo " selected";} ?> name="00" value="04">04</option>
+                                        <option<?php if($ahora=="05"){echo " selected";} ?> name="00" value="05">05</option>
+                                        <option<?php if($ahora=="06"){echo " selected";} ?> name="00" value="06">06</option>
+                                        <option<?php if($ahora=="07"){echo " selected";} ?> name="00" value="07">07</option>
+                                        <option<?php if($ahora=="08"){echo " selected";} ?> name="00" value="08">08</option>
+                                        <option<?php if($ahora=="09"){echo " selected";} ?> name="00" value="09">09</option>
+                                        <option<?php if($ahora=="10"){echo " selected";} ?> name="00" value="10">10</option>
+                                        <option<?php if($ahora=="11"){echo " selected";} ?> name="00" value="11">11</option>
+                                        <option<?php if($ahora=="12"){echo " selected";} ?> name="00" value="12">12</option>
+                                        <option<?php if($ahora=="13"){echo " selected";} ?> name="00" value="13">13</option>
+                                        <option<?php if($ahora=="14"){echo " selected";} ?> name="00" value="14">14</option>
+                                        <option<?php if($ahora=="15"){echo " selected";} ?> name="00" value="15">15</option>
+                                        <option<?php if($ahora=="16"){echo " selected";} ?> name="00" value="16">16</option>
+                                        <option<?php if($ahora=="17"){echo " selected";} ?> name="00" value="17">17</option>
+                                        <option<?php if($ahora=="18"){echo " selected";} ?> name="00" value="18">18</option>
+                                        <option<?php if($ahora=="19"){echo " selected";} ?> name="00" value="19">19</option>
+                                        <option<?php if($ahora=="20"){echo " selected";} ?> name="00" value="20">20</option>
+                                        <option<?php if($ahora=="21"){echo " selected";} ?> name="00" value="21">21</option>
+                                        <option<?php if($ahora=="22"){echo " selected";} ?> name="00" value="22">22</option>
+                                        <option<?php if($ahora=="23"){echo " selected";} ?> name="00" value="23">23</option>
                                     </select>
                                 </div>
                                 <span class="col-sm-1"><h4>:</h4></span>
@@ -279,30 +264,30 @@ use Modelo\Base;
                                 <label for="horaFin2" class="col-sm-3 control-label">Hora de fin: </label>
                                 <div class="col-sm-1 container">
                                     <select id="horasFin2" data-validetta="required" class="form-control">
-                                        <option<?php if($horaFin=="00"){echo " selected";} ?> name="00" value="00">00</option>
-                                        <option<?php if($horaFin=="01"){echo " selected";} ?> name="00" value="01">01</option>
-                                        <option<?php if($horaFin=="02"){echo " selected";} ?> name="00" value="02">02</option>
-                                        <option<?php if($horaFin=="03"){echo " selected";} ?> name="00" value="03">03</option>
-                                        <option<?php if($horaFin=="04"){echo " selected";} ?> name="00" value="04">04</option>
-                                        <option<?php if($horaFin=="05"){echo " selected";} ?> name="00" value="05">05</option>
-                                        <option<?php if($horaFin=="06"){echo " selected";} ?> name="00" value="06">06</option>
-                                        <option<?php if($horaFin=="07"){echo " selected";} ?> name="00" value="07">07</option>
-                                        <option<?php if($horaFin=="08"){echo " selected";} ?> name="00" value="08">08</option>
-                                        <option<?php if($horaFin=="09"){echo " selected";} ?> name="00" value="09">09</option>
-                                        <option<?php if($horaFin=="10"){echo " selected";} ?> name="00" value="10">10</option>
-                                        <option<?php if($horaFin=="11"){echo " selected";} ?> name="00" value="11">11</option>
-                                        <option<?php if($horaFin=="12"){echo " selected";} ?> name="00" value="12">12</option>
-                                        <option<?php if($horaFin=="13"){echo " selected";} ?> name="00" value="13">13</option>
-                                        <option<?php if($horaFin=="14"){echo " selected";} ?> name="00" value="14">14</option>
-                                        <option<?php if($horaFin=="15"){echo " selected";} ?> name="00" value="15">15</option>
-                                        <option<?php if($horaFin=="16"){echo " selected";} ?> name="00" value="16">16</option>
-                                        <option<?php if($horaFin=="17"){echo " selected";} ?> name="00" value="17">17</option>
-                                        <option<?php if($horaFin=="18"){echo " selected";} ?> name="00" value="18">18</option>
-                                        <option<?php if($horaFin=="19"){echo " selected";} ?> name="00" value="19">19</option>
-                                        <option<?php if($horaFin=="20"){echo " selected";} ?> name="00" value="20">20</option>
-                                        <option<?php if($horaFin=="21"){echo " selected";} ?> name="00" value="21">21</option>
-                                        <option<?php if($horaFin=="22"){echo " selected";} ?> name="00" value="22">22</option>
-                                        <option<?php if($horaFin=="23"){echo " selected";} ?> name="00" value="23">23</option>
+                                        <option<?php if($ahora=="00"){echo " selected";} ?> name="00" value="00">00</option>
+                                        <option<?php if($ahora=="01"){echo " selected";} ?> name="00" value="01">01</option>
+                                        <option<?php if($ahora=="02"){echo " selected";} ?> name="00" value="02">02</option>
+                                        <option<?php if($ahora=="03"){echo " selected";} ?> name="00" value="03">03</option>
+                                        <option<?php if($ahora=="04"){echo " selected";} ?> name="00" value="04">04</option>
+                                        <option<?php if($ahora=="05"){echo " selected";} ?> name="00" value="05">05</option>
+                                        <option<?php if($ahora=="06"){echo " selected";} ?> name="00" value="06">06</option>
+                                        <option<?php if($ahora=="07"){echo " selected";} ?> name="00" value="07">07</option>
+                                        <option<?php if($ahora=="08"){echo " selected";} ?> name="00" value="08">08</option>
+                                        <option<?php if($ahora=="09"){echo " selected";} ?> name="00" value="09">09</option>
+                                        <option<?php if($ahora=="10"){echo " selected";} ?> name="00" value="10">10</option>
+                                        <option<?php if($ahora=="11"){echo " selected";} ?> name="00" value="11">11</option>
+                                        <option<?php if($ahora=="12"){echo " selected";} ?> name="00" value="12">12</option>
+                                        <option<?php if($ahora=="13"){echo " selected";} ?> name="00" value="13">13</option>
+                                        <option<?php if($ahora=="14"){echo " selected";} ?> name="00" value="14">14</option>
+                                        <option<?php if($ahora=="15"){echo " selected";} ?> name="00" value="15">15</option>
+                                        <option<?php if($ahora=="16"){echo " selected";} ?> name="00" value="16">16</option>
+                                        <option<?php if($ahora=="17"){echo " selected";} ?> name="00" value="17">17</option>
+                                        <option<?php if($ahora=="18"){echo " selected";} ?> name="00" value="18">18</option>
+                                        <option<?php if($ahora=="19"){echo " selected";} ?> name="00" value="19">19</option>
+                                        <option<?php if($ahora=="20"){echo " selected";} ?> name="00" value="20">20</option>
+                                        <option<?php if($ahora=="21"){echo " selected";} ?> name="00" value="21">21</option>
+                                        <option<?php if($ahora=="22"){echo " selected";} ?> name="00" value="22">22</option>
+                                        <option<?php if($ahora=="23"){echo " selected";} ?> name="00" value="23">23</option>
                                     </select>
                                 </div>
                                 <span class="col-sm-1"><h4>:</h4></span>
@@ -329,7 +314,7 @@ use Modelo\Base;
 
                         </div>
                         <div class="form-group col-sm-4">
-                            <label class="col-sm-6 control-label">Autopista:</label>
+                            <label class="col-sm-6 control-label">Autopista/Peajes:</label>
                             <div class="input-group col-sm-3">
                                 <input type="text" class="form-control" name="autopista" id="autopistas" aria-describedby="basic-addon2">
                                 <span class="input-group-addon" id="basic-addon2">€</span>

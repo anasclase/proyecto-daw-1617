@@ -49,16 +49,15 @@ switch($_GET['cod']) {
 
             if (\Controlador\Administracion\Controlador::comprobarFestivos($_POST["calendario"])) {
 
-                if(Modelo\BD\CalendarioBD::cerrarCalendario($_POST["calendario"]))
+                if(Modelo\BD\CalendarioBD::cerrarCalendario($_POST["calendario"])){
                     echo "<script>alert('Calendario cerrado.');</script>";
-                \CalendarioGestionarCalendario::cal(true);
-
+                    \CalendarioGestionarCalendario::cal(true);
+                }
             }
             else {
                 echo "<script>alert('El calendario seleccionado no tiene los festivos asignados.');</script>";
                 \CalendarioGestionarCalendario::cal(true);
             }
-
         }
         else {
             echo "<script>alert('Tienes que seleccionar un calendario abierto.');</script>";

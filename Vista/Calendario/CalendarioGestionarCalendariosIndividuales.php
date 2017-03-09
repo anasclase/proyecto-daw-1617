@@ -18,9 +18,11 @@ abstract class CalendarioGestionarCalendariosIndividuales extends Plantilla\View
 
         <form name="trabajador" method="post" action="../../Controlador/Calendario/ControladorCalendario.php">
 
+            <h2>Crear calendarios individuales</h2>
+
             <div id="empresa">
                 <label for="nomEmpresa">Nombre de la empresa :</label>
-                <select id="nomEmpresa">
+                <select style="width: 15%" class="form-control" id="nomEmpresa">
                     <option value="-1" > Seleccionar </option>
                     <?php
                     $empresas = \Modelo\BD\EmpresaBD::getAll();
@@ -34,18 +36,19 @@ abstract class CalendarioGestionarCalendariosIndividuales extends Plantilla\View
 
 
                 <label for="nomTrabajador">Trabajador :</label>
-                <select name="trabajador" id="trabajador">
+                <select style="width: 15%" class="form-control" name="trabajador" id="trabajador">
 
                 </select>
             </div>
-            <input type="submit" name="aceptar" value="Aceptar">
+            <input style="margin-top: 20px;" type="submit" class="btn btn-default" name="aceptar" value="Aceptar">
+
         </form>
 
         <script src="<?php echo parent::getUrlRaiz();?>/Vista/Plantilla/JS/jquery-2.2.1.min.js"></script>
         <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.12.0/jquery.validate.min.js"></script>
         <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.12.0/localization/messages_es.js "></script>
 
-
+<!--
         <script>
             function generar_calendario(mes,anio)
             {
@@ -292,7 +295,7 @@ abstract class CalendarioGestionarCalendariosIndividuales extends Plantilla\View
 
             });
         </script>
-
+-->
         <!-- ESTO NO TE HACE FALTA! -->
         <script type="text/javascript">
             var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");

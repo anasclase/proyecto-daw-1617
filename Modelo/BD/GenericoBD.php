@@ -130,7 +130,8 @@ abstract class GenericoBD
                 return new Base\HorariosFranja($fila['id']);
                 break;
             case  "HorarioTrabajador":
-                return new Base\HorariosTrabajadores($fila['id'], $fila['numeroSemana'], null, null, CalendarioBD::getCalendarioById($fila['calendario_id']));
+                include_once __DIR__."/CalendarioBDcopia.php";
+                return new Base\HorariosTrabajadores($fila['id'], $fila['numeroSemana'], null, null, CalendarioBDcopia::getCalendarioById($fila['calendario_id']));
                 //return new Base\HorariosTrabajadores($fila['id'], $fila['numeroSemana'], TrabajadorBD::getTrabajadorByDni($fila['dniTrabajador']), CalendarioBD::getCalendarioById($fila['calendario_id']));
                 break;
             case  "Calendario":

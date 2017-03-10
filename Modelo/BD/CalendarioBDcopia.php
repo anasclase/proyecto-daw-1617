@@ -5,7 +5,7 @@ namespace Modelo\BD;
 
 require_once __DIR__."/GenericoBD.php";
 
-abstract class CalendarioBD extends GenericoBD{
+abstract class CalendarioBDcopia extends GenericoBD{
 
     private static $tabla = "calendario";
 
@@ -27,20 +27,6 @@ abstract class CalendarioBD extends GenericoBD{
 
 }
 
-/*
- * <?php
-//
-error_reporting(E_ERROR | E_WARNING | E_PARSE);
-date_default_timezone_set('Europe/Madrid');
-$dbhost="localhost";
-$dbname="himevico";
-$dbuser="root";
-$dbpass="root";
-$tabla="";
-$db = new mysqli($dbhost,$dbuser,$dbpass,$dbname);
-if ($db->connect_errno) {
-    die ("<h1>Fallo al conectar a MySQL: (" . $db->connect_errno . ") " . $db->connect_error."</h1>");
-}
+require_once __DIR__."/Mysqli.php";
 ?>
 
- */

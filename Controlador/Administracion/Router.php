@@ -234,7 +234,7 @@ if(isset($_POST['abrirParteLogistica'])){
 }/* PABLO */
 if(isset($_POST['updateHorarioTrabajador'])){
     $_SESSION["dht_semana"]=$_POST["dht_semana"];
-	
+
 	header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/updateHorarioTrabajador.php");
 	
 }
@@ -402,6 +402,7 @@ if (isset($_POST["semanas"]))
 
     }
     ?>
+<div><label>Todos</label><input type="checkbox" name="todos" id="todos" onclick="seleccionar()"/></div>
 <?php
 }
 if (isset($_POST["empresas"])) { //Ibai

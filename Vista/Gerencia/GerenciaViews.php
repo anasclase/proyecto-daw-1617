@@ -35,9 +35,18 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
                 <a href="<?php echo self::getUrlRaiz()?>/Vista/Gerencia/insertCentro.php"><span class="glyphicon glyphicon-plus" style="font-size: 24px; color: green;"></a>
                 <a href="<?php echo self::getUrlRaiz()?>/Vista/Gerencia/deleteCentro.php"><span class="glyphicon glyphicon-eye-open" style="font-size: 24px; color: black;"></a>
             </h3>
+			<h3 class="page-header">Tipo Franja
+                <a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/insertTipoFranja.php"><span src="" class="glyphicon glyphicon-plus" style="font-size: 24px; color: green;"></span></a>
+                <a href="<?php echo self::getUrlRaiz()?>/Vista/Administracion/deleteTipoFranja.php"><span class="glyphicon glyphicon-eye-open" style="font-size: 24px; color: black;"></span></a>
+                
+            </h3>
             <h3 class="page-header">Horarios
                 <a href="<?php echo self::getUrlRaiz()?>/Vista/Gerencia/insertTipoFranja.php"><span class="glyphicon glyphicon-plus" style="font-size: 24px; color: green;"></a>
                 <a href="<?php echo self::getUrlRaiz()?>/Vista/Gerencia/deleteTipoFranja.php"><span class="glyphicon glyphicon-eye-open" style="font-size: 24px; color: black;"></a>
+            </h3>
+			<h3 class="page-header">Horario-Trabajador
+                <a href="<?php echo self::getUrlRaiz() ?>/Vista/Gerencia/insertHorarioTrabajador.php"><span src="" class="glyphicon glyphicon-plus" style="font-size: 24px; color: green;"></span></a>
+                <a href="<?php echo self::getUrlRaiz() ?>/Vista/Gerencia/filtroHorarioTrabajador.php"><span class="glyphicon glyphicon-eye-open" style="font-size: 24px; color: black;"></span></a>
             </h3>
 
 
@@ -481,7 +490,246 @@ abstract class GerenciaViews extends \Vista\Plantilla\Views{
             }
             require_once __DIR__ . "/../Plantilla/pie.php";
         }
+	
+/*****************************************************/
+/* HORARIO TRABAJADOR */
+/*****************************************************/
 
+        public static function insertHorarioTrabajador()
+        {
+            parent::setOn(true);
+            parent::setRoot(true);
+
+            require_once __DIR__ . "/../Plantilla/cabecera.php";
+            ?>
+            <script src="<?php echo parent::getUrlRaiz() ?>/Vista/Administracion/funciones.js"></script>
+            <?php
+            $trabajadores = Administracion\Controlador::getAllTrabajadores();
+            $horarios = Administracion\Controlador::getAllHorarios();
+            ?>
+
+            <form class="form-horizontal" method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
+                <div class="form-group">
+                    <label class="control-label col-sm-2 col-md-2">Trabajador: </label>
+                    <div class="col-sm-4 col-md-3">
+                        <select class="form-control" name="trabajador" id="trabajador" required>
+                            <option value="" disabled selected="selected">Selecciona...</option>
+                            <?php
+                            foreach ($trabajadores as $trabajador) {
+                                ?>
+                                <option
+                                    value="<?php echo $trabajador->getDni() ?>"><?php echo $trabajador->getDni() . " -- " . $trabajador->getNombre() ?></option>
+                                <?php
+                            }
+                            ?>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2 col-md-2">Semana: </label>
+                    <div class="col-sm-4 col-md-3" id="semanas"> <!-- Pablo -->
+					<select class="form-control" name="semanas"><div style="float: left";>
+						<?php
+							for($x = 1;$x <= 52; $x++){
+								?>
+								
+									
+									
+										<option value="<?php echo $x ?>"><?php echo $x ?> </option>
+									
+									
+								
+								<?php
+							}?></div></select>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label class="control-label col-sm-2 col-md-2">Horario: </label>
+                    <div class="col-sm-4 col-md-3">
+                        <select class="form-control" name="horario">
+                            <?php
+                            foreach ($horarios as $horario) {
+                                ?>
+                                <option value="<?php echo $horario->getId() ?>"><?php echo $horario->getTipo() ?></option>
+                                <?php
+                            }
+                            ?>
+                        </select>
+                    </div>
+                </div>
+                    </fieldset>
+                <div class="form-group"><!--Ganeko & Ibai-->
+                    <div class="col-sm-1 col-sm-offset-2">
+                        <input class="btn btn-primary" type="submit" value="Añadir" name="añadirHorarioTrabajador">
+                    </div>
+            </form>
+            <form method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
+
+                    <div class="col-sm-1">
+                        <input class="btn btn-warning" type="submit" name="volver" value="Volver">
+                    </div>
+                </div>
+            </form>
+
+            <?php
+            require_once __DIR__ . "/../Plantilla/pie.php";
+        }
+
+        // Función para mostrar filtros de empresa,centro... al mostrar horarios-trabajador a administracion
+        // Ibai
+        public static function filtroHorarioTrabajador(){
+            parent::setOn(true);
+            parent::setRoot(true);
+            require_once __DIR__ . "/../Plantilla/cabecera.php";
+            ?>
+            <script src="<?php echo parent::getUrlRaiz() ?>/Vista/Plantilla/JS/jquery-2.2.1.min.js"></script>
+
+
+                <form id="formulario" method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Gerencia/Router.php">
+                <div class="ins form-inline">
+                    <div class="form-group col-xs-6 col-sm-3">
+                        <label class="col-2">Empresa</label>
+                        <div class="col-9" id="divEmpresas">
+                            <select class="form-control" name="empresa" id="selectEmpresa">
+
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group col-xs-6 col-sm-3">
+                      <label class="col-2">Centro</label>
+                      <div class="col-9">
+                            <select class="form-control" name="centro" id="selectCentro">
+
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group col-xs-6 col-sm-3">
+                      <label class="col-2">Calendario</label>
+                      <div class="col-9">
+                            <select class="form-control" name="calendario" id="selectCalendario">
+
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group col-xs-6 col-sm-3">
+                      <label class="col-2">Mes</label>
+                      <div class="col-9">
+                            <select class="form-control" name="mes" id="selectMes">
+
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group container text-center" style="margin-top:20px;">
+                        <div class="">
+                            <button class="btn btn-primary"  type="submit" name="mostrarHorarioTrabajador" id="aplicarFiltros">Buscar</button>
+                            <button class="btn btn-danger"  type="button" id="resetFiltros">Reset</button>
+                            <input class="btn btn-warning" type="submit" name="volver" value="Volver">
+                        </div>
+                    </div>
+                </div>
+                </form>
+            <?php
+            require_once __DIR__ . "/../Plantilla/pie.php";
+        }
+
+        public static function deleteHorarioTrabajador()
+        {
+            parent::setOn(true);
+            parent::setRoot(true);
+            $horarioTrabajador = Gerencia\Controlador::getAllHorarioTrabajadorFiltrado($_SESSION["filtrosHorarios"]);
+
+            require_once __DIR__ . "/../Plantilla/cabecera.php";
+            ?>
+            <div class="table-responsive col-md-offset-1 col-md-10">
+                <table class="table table-bordered">
+                    <tr>
+                        <th>TRABAJADOR</th>
+                        <th>SEMANA</th>
+                        <th>HORARIO</th>
+                        <th>CALENDARIO</th> <!--Ibai-->
+                        <th>ACCIÓN</th>
+                    </tr>
+                    <?php
+                    for($x = 0 ; $x<count($horarioTrabajador); $x++) { /* PABLO */
+                        ?>
+                        <form method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Gerencia/Router.php">
+                            <?php
+                                echo Gerencia\Controlador::incidenciasHorarioTrabajador($horarioTrabajador[$x]->getTrabajador()->getDni(), $horarioTrabajador[$x]->getNumeroSemana(), $horarioTrabajador[$x]->getCalendario()->getId()) ?
+                                    "<tr style='background-color:lightcoral'>":
+                                    "<tr>";
+                             ?>
+                                <td><?php echo $horarioTrabajador[$x]->getTrabajador()->getDni() ?></td>
+                                <td><?php echo $horarioTrabajador[$x]->getNumeroSemana() ?></td>
+                                <td><?php echo $horarioTrabajador[$x]->getHorario()->getTipo() ?></td><!-- PABLO -->
+                                <td><?php echo $horarioTrabajador[$x]->getCalendario()->getId()?></td>
+								<input type='hidden' value='<?php echo $x ?>' name='dht_semana'>
+                                <td><button type="submit" name="updateHorarioTrabajador" value="Update" style="border: none; background: none"><span class='glyphicon glyphicon-pencil' style='color:blue; font-size:24px;'></span></button>
+								<button type="submit" name="borrarHorarioTrabajador" value="Eliminar" style="border: none; background: none"><span class="glyphicon glyphicon-remove" style="color: red; font-size: 1.5em"></span></button></td>
+
+                            </tr>
+                            <input type="hidden" value="<?php echo $horarioTrabajador[$x]->getId() ?>" name="id">
+                        </form>
+                        <?php
+                    }
+                    ?>
+                </table>
+            </div>
+            <form method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Gerencia/Router.php">
+                <div class="col-md-10 col-md-offset-1"><!-- Ganeko -->
+                    <input class="btn btn-warning pull-right" type="submit" name="volver" value="Volver">
+                </div>
+            </form>
+            <?php
+
+
+            require_once __DIR__ . "/../Plantilla/pie.php";
+        }
+		public static function updateHorarioTrabajador(){ /*PABLO*/
+		parent::setOn(true);
+        	parent::setRoot(true);
+			$horarioTrabajador = Gerencia\Controlador::getAllHorarioTrabajador();
+			$horarios = Gerencia\Controlador::getAllHorarios();
+			
+            require_once __DIR__ . "/../Plantilla/cabecera.php";
+            ?>
+            <div class="table-responsive col-md-offset-1 col-md-10">
+                <table class="table table-bordered">
+                    <tr>
+                        <th>TRABAJADOR</th>
+                        <th>SEMANA</th>
+                        <th>HORARIO</th>
+						<th>CALENDARIO</th> <!--Ibai-->
+						<th>ACCIÓN</th>
+                    </tr>
+                    
+                        <form method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Gerencia/Router.php">
+                            <tr>
+							<?php $_SESSION["dniht"]=$horarioTrabajador[$_SESSION["dht_semana"]]->getTrabajador()->getDni(); $_SESSION["semht"]=$horarioTrabajador[$_SESSION["dht_semana"]]->getNumeroSemana();?>
+                                <td><?php echo $horarioTrabajador[$_SESSION["dht_semana"]]->getTrabajador()->getDni(); ?></td>
+                                <td><?php echo $horarioTrabajador[$_SESSION["dht_semana"]]->getNumeroSemana(); ?></td>
+                               <!-- PABLO --> <td><select class='form-control' name="horario"><?php $x=1; foreach ($horarios as $hor){?><option value="<?php echo $x; ?>"><?php echo $hor->getTipo();?></option><?php $x++; } ?></select>
+                                <td><?php echo $horarioTrabajador[$_SESSION["dht_semana"]]->getCalendario()->getId()?></td>
+							    <td><button type="submit" name="updateT3" value="Editar"
+                                            style="border: none; background: none;"><span
+                                            class="glyphicon glyphicon-edit"
+                                            style="color:blue; font-size: 1.5em"></span></td>
+                            </tr>
+                        </form>
+
+                </table>
+            </div>
+            <form method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Gerencia/Router.php">
+                <div class="col-md-10 col-md-offset-1"><!-- Ganeko -->
+                    <input class="btn btn-warning pull-right" type="submit" name="volver" value="Volver">
+                </div>
+            </form>
+			<?php
+		
+		require_once __DIR__ ."/../Plantilla/pie.php";
+		
+	}
     public static function insertEstado(){
 
         parent::setOn(true);

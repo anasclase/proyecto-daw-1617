@@ -343,6 +343,9 @@ abstract class Controlador{
         GerenciaViews::viewParteProd($parte,$estado);
 
     }
+    public static function updateFinalizarParteLogistica($datos){
+        BD\PartelogisticaBD::saveHorasExtra($datos['id'],$datos['horas']);
+
 
 
     public static function updateFinalizarParteLogistica($datos){

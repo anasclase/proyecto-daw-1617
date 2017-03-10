@@ -3,6 +3,8 @@ namespace Modelo\BD;
 
 
 
+use Modelo\Base\Empresa;
+
 require_once __DIR__."/GenericoBD.php";
 
 abstract class EmpresaBD extends GenericoBD{
@@ -62,5 +64,19 @@ abstract class EmpresaBD extends GenericoBD{
         return $respuesta;
 
     }
+    //Ganeko
+    public static function updateEmpresa($datos){
+        $con = parent::conectar();
+
+        $empresa = new Empresa($datos["id"], $datos["nombre"], $datos["nif"], null);
+
+
+        $query = "UPDATE ".self::$tabla." SET nombre ='".$empresa->getNombre()."', nif ='".$empresa->getNif()."' WHERE id ='".$empresa->getId()."'";
+
+        $rs = mysqli_query($con, $query) or die(mysqli_error($con));
+
+        parent::desconectar($con);
+    }
+
 
 }

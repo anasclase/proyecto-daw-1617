@@ -404,9 +404,6 @@ abstract class Controlador
         GerenciaViews::viewParteProd($parte, $estado);
 
     }
-    public static function updateFinalizarParteLogistica($datos){
-        BD\PartelogisticaBD::saveHorasExtra($datos['id'], $datos['horas']);
-    }
     public static function updateValidarParteLogistica($datos){
         BD\PartelogisticaBD::updateValidar($datos['id']);
     }
@@ -456,10 +453,6 @@ abstract class Controlador
     {
         $parte = unserialize($_SESSION['parte']);
     }
-    /**public static function updateFinalizarParteLogistica($datos)
-    {
-        BD\PartelogisticaBD::saveHorasExtra($datos['id'], $datos['horas']);
-    }**/
 
     public static function updateFinalizarParteLogistica($datos)
     {

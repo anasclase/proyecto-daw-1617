@@ -164,7 +164,7 @@ abstract class HorarioTrabajadorBD extends GenericoBD{
 	public static function updateHorarioTrabajador($horario, $dni, $semana){
 		
 		$con= parent::conectar();
-		$semana=$semana-1;
+		
 		$update= "UPDATE horariotrabajadores SET idHorario = '".$horario."' WHERE dniTrabajador='".$dni."' AND numeroSemana='".$semana."'";
 		
 		mysqli_query($con, $update) or die ("Error updateHT");

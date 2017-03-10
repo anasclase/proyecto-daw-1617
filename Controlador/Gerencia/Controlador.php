@@ -1,7 +1,6 @@
 <?php
 namespace Controlador\Gerencia;
 use Modelo\Base\Administracion;
-use Modelo\Base\Calendario;
 use Modelo\Base\Centro;
 use Modelo\Base\Empresa;
 use Modelo\Base\Estado;
@@ -23,7 +22,6 @@ use Vista\Gerencia\GerenciaViews;
 require_once __DIR__."/../../Modelo/BD/RequiresBD.php";
 require_once __DIR__ ."/../../Modelo/Base/LogisticaClass.php";
 require_once __DIR__ ."/../../Modelo/Base/AdministracionClass.php";
-require_once __DIR__ ."/../../Modelo/Base/CalendarioClass.php";
 require_once __DIR__ ."/../../Modelo/Base/ProduccionClass.php";
 require_once __DIR__ ."/../../Modelo/Base/GerenciaClass.php";
 require_once __DIR__ .'/../../Modelo/Base/EstadoClass.php';

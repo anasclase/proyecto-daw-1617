@@ -402,7 +402,6 @@ if (isset($_POST["semanas"]))
 
     }
     ?>
-<div><label>Todos</label><input type="checkbox" name="todos" id="todos" onclick="seleccionar()"/></div>
 <?php
 }
 if (isset($_POST["empresas"])) { //Ibai

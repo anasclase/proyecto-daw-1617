@@ -74,4 +74,24 @@ abstract class FranjaBD extends GenericoBD{
         return $respuesta;
     }
 
+    public static function getHoraInicio($idHorario){
+
+        $conexion=parent::conectar();
+        $query="SELECT * FROM ".self::$tabla." WHERE id = (SELECT idFranja FROM horariosfranja WHERE idHorario=".$idHorario." ORDER BY id LIMIT 1)";
+        $rs=mysqli_query($conexion,$query) or die(mysqli_error($conexion));
+        $respuesta=parent::mapear($rs,"Franja");
+        parent::desconectar($conexion);
+        return $respuesta;
+    }
+
+    public static function getHoraFinal($idHorario){
+
+        $conexion=parent::conectar();
+        $query="SELECT * FROM ".self::$tabla." WHERE id = (SELECT idFranja FROM horariosfranja WHERE idHorario=".$idHorario." ORDER BY id DESC LIMIT 1)";
+        $rs=mysqli_query($conexion,$query) or die(mysqli_error($conexion));
+        $respuesta=parent::mapear($rs,"Franja");
+        parent::desconectar($conexion);
+        return $respuesta;
+    }
+
 }

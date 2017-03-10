@@ -2,6 +2,7 @@
 namespace Controlador\Administracion;
 
 use Modelo\Base\Administracion;
+use Modelo\Base\Calendario;
 use Modelo\Base\Centro;
 use Modelo\Base\Empresa;
 use Modelo\Base\Estado;
@@ -27,6 +28,7 @@ use Vista\Administracion\AdministracionViews;
 require_once __DIR__."/../../Modelo/BD/RequiresBD.php";
 require_once __DIR__ ."/../../Modelo/Base/LogisticaClass.php";
 require_once __DIR__ ."/../../Modelo/Base/AdministracionClass.php";
+require_once __DIR__ ."/../../Modelo/Base/CalendarioClass.php";
 require_once __DIR__ ."/../../Modelo/Base/ProduccionClass.php";
 require_once __DIR__ ."/../../Modelo/Base/GerenciaClass.php";
 require_once __DIR__ .'/../../Modelo/Base/EstadoClass.php';
@@ -308,19 +310,23 @@ abstract class Controlador{
         return BD\HorarioBD::getAll();
     }
 
+    public static function getHoraInicioHorario($horario){
+        $franja = BD\FranjaBD::getHoraInicio($horario->getId());
+        return $franja->getHoraInicio();
+    }
+
+    public static function getHoraFinHorario($horario){
+        $franja = BD\FranjaBD::getHoraFinal($horario->getId());
+        return $franja->getHoraFin();
+    }
+
     public static function deleteHorario($datos){
         BD\HorarioBD::delete($datos["id"]);
     }
-    public static function addHorarioTrabajador($datos){
-
-        for ($x = 1; $x <= 52; $x++) {
-            if (isset($datos[$x]))
-            {
-                $horarioTrabajador= new HorariosTrabajadores(null,$datos[$x], BD\TrabajadorBD::getTrabajadorByDni($datos["trabajador"]),BD\HorarioBD::getHorarioById($datos["horario"]));
-                BD\HorarioTrabajadorBD::add($horarioTrabajador);
-            }
-        }
-
+    public static function addHorarioTrabajador($datos){ //Ibai
+        $calendario = new Calendario($datos["calendario"]);
+        $horarioTrabajador= new HorariosTrabajadores(null,$datos["semana"], BD\TrabajadorBD::getTrabajadorByDni($datos["trabajador"]),BD\HorarioBD::getHorarioById($datos["horario"]), $calendario);
+        BD\HorarioTrabajadorBD::add($horarioTrabajador);
     }
 
     public static function getAllHorarioTrabajador(){

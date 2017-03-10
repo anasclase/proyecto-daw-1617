@@ -9,6 +9,7 @@ use Modelo\BD;
 require_once __DIR__ . "/../Plantilla/Views.php";
 require_once __DIR__ . "/../../Controlador/Administracion/Controlador.php";
 require_once __DIR__.'/../../Modelo/BD/GenericoBD.php';
+require_once __DIR__.'/../../Modelo/Base/FranjasClass.php';
 require_once __DIR__.'/../../Modelo/BD/CalendarioBD.php';
 
 abstract class AdministracionViews extends \Vista\Plantilla\Views
@@ -1229,6 +1230,8 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                     <table class="table table-bordered">
                         <tr>
                             <th>HORARIO</th>
+                            <th>HORA INICIO</th>
+                            <th>HORA FIN</th>
                             <th>ACCIÓN</th>
                         </tr>
                         <?php
@@ -1237,6 +1240,8 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                             <form name="deleteHorario" method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
                                 <tr>
                                     <td><?php echo $horario->getTipo() ?></td>
+                                    <td><?php echo Administracion\Controlador::getHoraInicioHorario($horario)  ?></td>
+                                    <td><?php echo Administracion\Controlador::getHoraFinHorario($horario)  ?></td>
 								    <!-- PABLO cambiar botones por glypicon unico boton volver-->
                                     <td><button type="submit" name="eliminarHorario" value="Eliminar" style="border: none; background: none;"><span class="glyphicon glyphicon-remove" style="color:red; font-size: 1.5em"></span></button></td>
                                 </tr>
@@ -1274,6 +1279,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
             <?php
             $trabajadores = Administracion\Controlador::getAllTrabajadores();
             $horarios = Administracion\Controlador::getAllHorarios();
+            $calendarios = Administracion\Controlador::getAllCalendarios();
             ?>
 
             <form class="form-horizontal" method="post" action="<?php echo self::getUrlRaiz() ?>/Controlador/Administracion/Router.php">
@@ -1296,7 +1302,7 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                 <div class="form-group">
                     <label class="control-label col-sm-2 col-md-2">Semana: </label>
                     <div class="col-sm-4 col-md-3" id="semanas"> <!-- Pablo -->
-					<select class="form-control" name="semanas"><div style="float: left";>
+					<select class="form-control" name="semana"><div style="float: left";>
 						<?php
 							for($x = 1;$x <= 52; $x++){
 								?>
@@ -1321,6 +1327,20 @@ abstract class AdministracionViews extends \Vista\Plantilla\Views
                             foreach ($horarios as $horario) {
                                 ?>
                                 <option value="<?php echo $horario->getId() ?>"><?php echo $horario->getTipo() ?></option>
+                                <?php
+                            }
+                            ?>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-sm-2 col-md-2">Calendario: </label>
+                  <div class="col-sm-4 col-md-3">
+                        <select class="form-control" name="calendario">
+                            <?php
+                            foreach ($calendarios as $calendario) {
+                                ?>
+                                <option value="<?php echo $calendario->getId() ?>"><?php echo $calendario->getId() ?></option>
                                 <?php
                             }
                             ?>

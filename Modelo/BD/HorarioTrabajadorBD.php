@@ -55,16 +55,16 @@ abstract class HorarioTrabajadorBD extends GenericoBD{
 
     }
 
-    public static function add($horarioTrabajador){
-
+    public static function add($horarioTrabajador){ //Ibai
         $con = parent::conectar();
 
-        $query = "INSERT INTO ".self::$tabla." VALUES(null,'".$horarioTrabajador->getTrabajador()->getDni()."','".$horarioTrabajador->getHorario()->getId()."','".$horarioTrabajador->getNumeroSemana()."')";
+        $query = "INSERT INTO ".self::$tabla." VALUES(null,'".$horarioTrabajador->getTrabajador()->getDni()."','".$horarioTrabajador->getHorario()->getId()."','".$horarioTrabajador->getNumeroSemana()."','".$horarioTrabajador->getCalendario()->getId()."')";
 
-        mysqli_query($con, $query) or die("Error addCentro");
+        mysqli_query($con, $query) or die($query);
 
         parent::desconectar($con);
     }
+
     public static function getAll($trabajador = null){
         $con = parent::conectar();
 

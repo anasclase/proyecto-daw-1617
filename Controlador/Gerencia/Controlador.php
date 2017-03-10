@@ -1,6 +1,7 @@
 <?php
 namespace Controlador\Gerencia;
 use Modelo\Base\Administracion;
+use Modelo\Base\Calendario;
 use Modelo\Base\Centro;
 use Modelo\Base\Empresa;
 use Modelo\Base\Estado;
@@ -22,6 +23,7 @@ use Vista\Gerencia\GerenciaViews;
 require_once __DIR__."/../../Modelo/BD/RequiresBD.php";
 require_once __DIR__ ."/../../Modelo/Base/LogisticaClass.php";
 require_once __DIR__ ."/../../Modelo/Base/AdministracionClass.php";
+require_once __DIR__ ."/../../Modelo/Base/CalendarioClass.php";
 require_once __DIR__ ."/../../Modelo/Base/ProduccionClass.php";
 require_once __DIR__ ."/../../Modelo/Base/GerenciaClass.php";
 require_once __DIR__ .'/../../Modelo/Base/EstadoClass.php';
@@ -345,10 +347,9 @@ abstract class Controlador
         BD\HorarioBD::delete($datos["id"]);
     }
 
-    public static function addHorarioTrabajador($datos)
-    {
-
-        $horarioTrabajador = new HorariosTrabajadores(null, $datos["semana"], BD\TrabajadorBD::getTrabajadorByDni($datos["trabajador"]), BD\HorarioBD::getHorarioById($datos["horario"]));
+    public static function addHorarioTrabajador($datos){ //Ibai
+        $calendario = new Calendario($datos["calendario"]);
+        $horarioTrabajador= new HorariosTrabajadores(null,$datos["semana"], BD\TrabajadorBD::getTrabajadorByDni($datos["trabajador"]),BD\HorarioBD::getHorarioById($datos["horario"]), $calendario);
         BD\HorarioTrabajadorBD::add($horarioTrabajador);
     }
 
@@ -404,9 +405,8 @@ abstract class Controlador
 
     }
     public static function updateFinalizarParteLogistica($datos){
-        BD\PartelogisticaBD::saveHorasExtra($datos['id'],$datos['horas']);
-
-
+        BD\PartelogisticaBD::saveHorasExtra($datos['id'], $datos['horas']);
+    }
     public static function updateValidarParteLogistica($datos){
         BD\PartelogisticaBD::updateValidar($datos['id']);
     }

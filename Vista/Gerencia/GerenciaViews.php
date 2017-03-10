@@ -1,4 +1,3 @@
-
 <?php
 namespace Vista\Gerencia;
 

@@ -16,7 +16,7 @@ require_once __DIR__."/../BD/HorasConvenioBD.php";
 
 
 
- class Trabajador{
+abstract class Trabajador{
 
     private $dni;
     private $nombre;

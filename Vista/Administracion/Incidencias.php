@@ -6,8 +6,6 @@
  * Time: 9:02
  */
 
-//David
-
 namespace Vista\Administracion;
 
 use \Controlador\Administracion;
@@ -39,12 +37,7 @@ abstract class Incidencias extends \Vista\Plantilla\Views
             <div class="form-group text-center">
                 <label class="control-label col-sm-5 col-md-5">Motivo: </label>
                 <div class="col-sm-4 col-md-3">
-                    <select class="form-control" name="motivo">
-                        <option value="1">Permiso</option>
-                        <option value="2">Enfermedad profesional</option>
-                        <option value="3">Enfermedad comun</option>
-                        <option value="4">Otro</option>
-                    </select>
+                    <input class="form-control" type="text" name="motivo">
                 </div>
             </div>
             <div class="form-group text-center">

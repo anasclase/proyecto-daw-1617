@@ -407,6 +407,18 @@ abstract class Controlador
     public static function updateValidarParteLogistica($datos){
         BD\PartelogisticaBD::updateValidar($datos['id']);
     }
+	public static function updateHorarioTrabajador($datos){
+		BD\HorarioTrabajadorBD::updateHorarioTrabajador($datos["horario"], $_SESSION["dniht"] , $_SESSION["semht"]);
+    }
+	public static function getAllHorarioTrabajador(){
+        return BD\HorarioTrabajadorBD::getAll();
+    }
+	public static function getAllHorarioTrabajadorFiltrado($filtros){
+        return BD\HorarioTrabajadorBD::getAllFiltrado($filtros);
+    }
+	public static function incidenciasHorarioTrabajador($dni,$semana,$calendario){
+        return BD\HorarioTrabajadorBD::checkIncidencias($dni,$semana,$calendario);
+    }
     /* Ganeko */
     public static function buscarEmpresaId($id){
         $empresa =  BD\EmpresaBD::getEmpresaByID($id);

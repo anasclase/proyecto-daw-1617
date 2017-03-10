@@ -92,6 +92,22 @@ if(isset($_POST['addVehiculo'])){
     //headerLocation a vista Eliminar
     header($gestionListas);
 }
+if(isset($_POST['mostrarHorarioTrabajador'])){ //Ibai
+    $_SESSION["filtrosHorarios"] = $_POST;
+    header("Location: ".Views::getUrlRaiz()."/Vista/Gerencia/deleteHorarioTrabajador.php");
+}
+if(isset($_POST['updateHorarioTrabajador'])){
+    $_SESSION["dht_semana"]=$_POST["dht_semana"];
+	
+	header("Location: ".Views::getUrlRaiz()."/Vista/Gerencia/updateHorarioTrabajador.php");
+	
+}
+if(isset ($_POST['updateT3'])){
+
+    Controlador::updateHorarioTrabajador($_POST);
+    header("Location: ".Views::getUrlRaiz()."/Vista/Administracion/Administracion.php?cod=1");
+
+}
 if(isset($_POST['eliminarVehiculo'])){
 
     Controlador::deleteVehiculo($_POST);
